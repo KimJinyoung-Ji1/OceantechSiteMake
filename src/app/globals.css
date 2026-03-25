@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary — Ocean Blue */
+  --primary-900: #021097;
+  --primary-700: #0148C8;
+  --primary-500: #0168EF;
+  --primary-300: #03E9F8;
+  --primary-100: #E0F7FF;
+
+  /* Secondary — Eco Green */
+  --secondary-500: #17E9B5;
+  --secondary-700: #0EAD87;
+
+  /* Neutral */
+  --gray-900: #0F172A;
+  --gray-800: #1E293B;
+  --gray-600: #475569;
+  --gray-400: #94A3B8;
+  --gray-200: #E2E8F0;
+  --gray-100: #F1F5F9;
+  --gray-50: #F8FAFC;
+
+  --background: #FFFFFF;
+  --foreground: #1E293B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+}
