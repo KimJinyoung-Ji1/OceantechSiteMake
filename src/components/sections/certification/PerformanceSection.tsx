@@ -46,7 +46,7 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
                 {p.year}
               </p>
               <ul className="space-y-2">
-                {p.items.map((item, i) => (
+                {(isEn ? p.itemsEn : p.itemsKo).map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span
                       className="mt-1.5 w-2 h-2 rounded-full shrink-0"

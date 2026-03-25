@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import type { Locale } from '@/lib/i18n';
 import { getTranslation } from '@/lib/i18n';
-import { supabase } from '@/lib/supabase';
+import { getSupabaseClient } from '@/lib/supabase';
 
 interface ContactFormProps {
   locale: Locale;
@@ -50,13 +50,18 @@ export default function ContactForm({ locale, onSuccess }: ContactFormProps) {
     setLoading(true);
     setError(null);
 
-    const { error: sbError } = await supabase.from('inquiries').insert({
+    const client = getSupabaseClient();
+    if (!client) {
+      setError('서비스 연결에 실패했습니다. 잠시 후 다시 시도해주세요.');
+      setLoading(false);
+      return;
+    }
+    const { error: sbError } = await client.from('inquiries').insert({
       name: values.name,
       email: values.email,
       phone: values.phone || null,
-      type: values.type || null,
-      message: values.message,
-      locale,
+      inquiry_type: values.type || null,
+      content: values.message,
     });
 
     setLoading(false);

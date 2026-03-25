@@ -1,8 +1,54 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-let browserClient: ReturnType<typeof createClient> | null = null;
+export type Database = {
+  oceantech: {
+    Tables: {
+      inquiries: {
+        Row: {
+          id: number;
+          created_at: string;
+          name: string;
+          email: string;
+          phone: string | null;
+          inquiry_type: string | null;
+          content: string;
+        };
+        Insert: {
+          id?: number;
+          created_at?: string;
+          name: string;
+          email: string;
+          phone?: string | null;
+          inquiry_type?: string | null;
+          content: string;
+        };
+        Update: {
+          id?: number;
+          created_at?: string;
+          name?: string;
+          email?: string;
+          phone?: string | null;
+          inquiry_type?: string | null;
+          content?: string;
+        };
+        Relationships: [];
+      };
+    };
+    Views: {
+      [_ in never]: never;
+    };
+    Functions: {
+      [_ in never]: never;
+    };
+    Enums: {
+      [_ in never]: never;
+    };
+  };
+};
 
-export function getSupabaseClient() {
+let browserClient: SupabaseClient<Database, 'oceantech'> | null = null;
+
+export function getSupabaseClient(): SupabaseClient<Database, 'oceantech'> | null {
   if (browserClient) return browserClient;
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -10,6 +56,6 @@ export function getSupabaseClient() {
 
   if (!url || !anonKey) return null;
 
-  browserClient = createClient(url, anonKey, { db: { schema: 'oceantech' } });
+  browserClient = createClient<Database, 'oceantech'>(url, anonKey, { db: { schema: 'oceantech' } });
   return browserClient;
 }

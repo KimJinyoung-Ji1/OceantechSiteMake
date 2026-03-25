@@ -25,7 +25,7 @@ export default async function AboutPage(props: PageProps<'/[locale]/about'>) {
         subtitle="바다와 공생을 통한 건강한 생태계 구축"
         breadcrumb={[{ label: '홈', href: '/' }, { label: t.about.title }]}
       />
-      <AboutCeoSection locale={l} ceoMessage={SITE_CONFIG.ceoMessage} />
+      <AboutCeoSection locale={l} ceoMessage={SITE_CONFIG.ceoMessage[l].join('\n')} />
       <AboutVisionSection locale={l} />
       <AboutHistorySection locale={l} history={SITE_CONFIG.history} />
       <AboutOverviewSection locale={l} />

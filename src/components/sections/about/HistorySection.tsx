@@ -67,7 +67,7 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
                         {item.year}
                       </p>
                       <p className="text-base font-medium" style={{ color: 'var(--text-body)' }}>
-                        {item.event}
+                        {locale === 'en' ? item.eventEn : item.eventKo}
                       </p>
                     </div>
                   </div>

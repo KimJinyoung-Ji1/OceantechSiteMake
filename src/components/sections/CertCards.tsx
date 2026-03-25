@@ -88,7 +88,7 @@ const certItems = [
     icon: <TrophyIcon />,
     title: '우수특허 대상 수상',
     titleEn: 'Excellence Patent Award',
-    number: SITE_CONFIG.certifications.patentAward.name,
+    number: SITE_CONFIG.certifications.patentAward.number,
     period: SITE_CONFIG.certifications.patentAward.date,
     color: {
       bg: 'linear-gradient(135deg, #FFFBF0 0%, #FFF6E0 100%)',

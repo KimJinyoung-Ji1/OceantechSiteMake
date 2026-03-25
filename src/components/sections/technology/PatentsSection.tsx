@@ -52,11 +52,11 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                   border: '1px solid var(--gray-200)',
                   boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
                 }}
-                onClick={imgSrc ? () => setModal({ src: imgSrc, title: patent.title }) : undefined}
+                onClick={imgSrc ? () => setModal({ src: imgSrc, title: isEn ? patent.titleEn : patent.titleKo }) : undefined}
                 role={imgSrc ? 'button' : undefined}
                 tabIndex={imgSrc ? 0 : undefined}
-                onKeyDown={imgSrc ? (e) => e.key === 'Enter' && setModal({ src: imgSrc, title: patent.title }) : undefined}
-                aria-label={imgSrc ? `${patent.title} 인증서 보기` : undefined}
+                onKeyDown={imgSrc ? (e) => e.key === 'Enter' && setModal({ src: imgSrc, title: isEn ? patent.titleEn : patent.titleKo }) : undefined}
+                aria-label={imgSrc ? `${isEn ? patent.titleEn : patent.titleKo} 인증서 보기` : undefined}
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
@@ -70,7 +70,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                   {patent.number}
                 </p>
                 <p className="text-sm font-semibold leading-snug" style={{ color: 'var(--gray-800)' }}>
-                  {patent.title}
+                  {isEn ? patent.titleEn : patent.titleKo}
                 </p>
                 {patent.date && (
                   <p className="text-xs mt-2" style={{ color: 'var(--gray-400)' }}>
@@ -115,7 +115,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
             <div className="space-y-1">
               {designPatents.map((dp, i) => (
                 <p key={i} className="text-sm font-medium" style={{ color: 'var(--gray-700)' }}>
-                  {dp.title} × {dp.count}
+                  {isEn ? dp.titleEn : dp.titleKo} × {dp.count}
                 </p>
               ))}
             </div>
