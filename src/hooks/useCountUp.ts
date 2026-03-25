@@ -11,14 +11,11 @@ interface UseCountUpOptions {
 
 export function useCountUp({ target, duration = 2000, startOnView = true }: UseCountUpOptions) {
   const [count, setCount] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [hasStarted, setHasStarted] = useState(!startOnView);
   const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (!startOnView) {
-      setHasStarted(true);
-      return;
-    }
+    if (!startOnView) return;
 
     const el = ref.current;
     if (!el) return;

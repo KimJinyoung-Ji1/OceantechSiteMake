@@ -61,7 +61,18 @@ export default function Button(props: ButtonProps) {
     );
   }
 
-  const { as: _as, href: _href, ...rest } = props as ButtonAsButton & { href?: never; as?: never };
+  const rest = { ...props } as ButtonHTMLAttributes<HTMLButtonElement> & {
+    as?: never;
+    href?: never;
+    variant?: never;
+    size?: never;
+    className?: never;
+  };
+  delete rest.as;
+  delete rest.href;
+  delete rest.variant;
+  delete rest.size;
+  delete rest.className;
   return (
     <button {...rest} className={classes} style={style} />
   );

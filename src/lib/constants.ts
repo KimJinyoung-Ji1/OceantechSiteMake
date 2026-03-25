@@ -16,10 +16,11 @@ export const SITE_CONFIG = {
     mobile: '010-6348-1210',
   },
   address: {
-    main: '경기도 남양주시 경춘로773번길 12-33(일패동) 101호',
+    main: '경기도 남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29-30호',
     office: '경기도 남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29-30호',
     lab: '서울특별시 광진구 이자산로 375 크레신타워 B1~408호(구의동)',
   },
+  domain: 'oceantechinc.com',
   certifications: {
     greenTech: { number: 'GT-25-02356', period: '2025.07.24 ~ 2029.07.23' },
     greenProduct: { number: 'GTP-25-04857', period: '2025.07.24 ~ 2029.07.23' },
@@ -110,3 +111,27 @@ export const NAV_ITEMS = [
 ] as const;
 
 export type NavItem = (typeof NAV_ITEMS)[number];
+
+export const NEWS_ITEMS = [
+  {
+    title: "중금속 '납추' 바다 생태계 위협… 어민 '후손 위해 친환경 아연추 사용해야'",
+    source: '강원도민일보',
+    date: '2023.08.17',
+    summary: '세계 최초로 개발된 친환경 아연추를 고성군이 지난해 도입해 국내 최초로 1년간 시범 운영. 어업경영인들이 납추를 아연추로 모두 바꿔야 한다고 입을 모았다.',
+    image: '/images/news/kado-article-2023.png',
+  },
+  {
+    title: '(주)오션테크, 제17회 대한민국 우수특허 대상 수상',
+    source: '한국일보',
+    date: '2023.12.27',
+    summary: '기계/해양 부문 대상 수상. 친환경 어장용 추 제조방법 특허 기술력 인정.',
+    image: '/images/news/hankook-article-2023.png',
+  },
+  {
+    title: '친환경 아연 어장추, 고성군 31개월 시범사업 성공',
+    source: '오션테크',
+    date: '2024.03',
+    summary: '강원도 고성군청과 31개월간 시범운영 결과, 무게 변화 1g, 내구성 10년 실증. 수협중앙회 단가계약 체결.',
+    image: '/images/products/install-page11.png',
+  },
+] as const;

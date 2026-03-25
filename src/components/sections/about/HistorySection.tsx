@@ -11,16 +11,19 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
   const t = getTranslation(locale);
 
   return (
-    <section id="history" className="py-20 lg:py-28 px-4" aria-label="연혁">
+    <section id="history" className="py-20 lg:py-28 px-6 lg:px-12 text-center" aria-label="연혁">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-14">
+        <div className="mb-14">
           <p
-            className="text-sm font-bold uppercase tracking-widest mb-3"
+            className="text-base font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.about.history.title}
           </p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
+          <h2
+            className="text-4xl lg:text-5xl font-black"
+            style={{ color: 'var(--text-primary)' }}
+          >
             {locale === 'en' ? 'Our Journey' : '오션테크의 발자취'}
           </h2>
         </div>
@@ -30,7 +33,7 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
           {/* Center line */}
           <div
             className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden md:block"
-            style={{ background: 'var(--primary-200, #bfdbfe)' }}
+            style={{ background: 'var(--border)' }}
             aria-hidden="true"
           />
 
@@ -47,23 +50,23 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
                   {/* Content card */}
                   <div
                     className={`flex-1 md:max-w-[calc(50%-2rem)] ${
-                      isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8'
+                      isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8 text-left'
                     }`}
                   >
                     <div
-                      className="inline-block p-4 rounded-xl hover:shadow-md transition-shadow duration-200"
+                      className="inline-block p-5 rounded-2xl hover:shadow-lg transition-shadow duration-200"
                       style={{
-                        background: 'white',
-                        border: '1px solid var(--gray-200, #e5e7eb)',
+                        background: 'var(--background-alt)',
+                        border: '1px solid var(--border)',
                       }}
                     >
                       <p
-                        className="text-xs font-bold mb-1"
+                        className="text-base font-black mb-1"
                         style={{ color: 'var(--primary-500)' }}
                       >
                         {item.year}
                       </p>
-                      <p className="text-sm font-medium" style={{ color: 'var(--gray-700)' }}>
+                      <p className="text-base font-medium" style={{ color: 'var(--text-body)' }}>
                         {item.event}
                       </p>
                     </div>

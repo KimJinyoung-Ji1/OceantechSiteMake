@@ -21,8 +21,15 @@
   --gray-100: #F1F5F9;
   --gray-50: #F8FAFC;
 
+  /* Design system */
   --background: #FFFFFF;
-  --foreground: #1E293B;
+  --background-alt: #F0F8FF;
+  --card-bg: #F0F8FF;
+  --border: #D0E4F5;
+  --text-primary: #021097;
+  --text-body: #1A3A6E;
+  --text-secondary: #4A7AB5;
+  --foreground: #1A3A6E;
 }
 
 html {
@@ -32,6 +39,7 @@ html {
 body {
   font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
     system-ui, Roboto, sans-serif;
+  font-size: 17px;
   color: var(--foreground);
   background: var(--background);
 }

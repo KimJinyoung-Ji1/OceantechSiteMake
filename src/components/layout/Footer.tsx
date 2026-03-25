@@ -18,28 +18,28 @@ export default function Footer({ locale }: FooterProps) {
       style={{ background: 'var(--gray-900)' }}
       aria-label="푸터"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Column 1 — Company Info */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <div className="mb-4">
+      <div className="w-full px-6 lg:px-12 max-w-[1440px] mx-auto py-14 lg:py-18">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
+          {/* Column 1 — Company Info (2 cols) */}
+          <div className="sm:col-span-2 lg:col-span-2">
+            <div className="mb-5">
               <p
-                className="text-xl font-bold"
+                className="text-2xl font-black"
                 style={{ color: 'var(--primary-300)' }}
               >
                 OCEANTECH
               </p>
-              <p className="text-sm mt-0.5" style={{ color: 'var(--gray-400)' }}>
+              <p className="text-base mt-0.5" style={{ color: 'var(--gray-400)' }}>
                 {SITE_CONFIG.company.name}
               </p>
             </div>
             <p
-              className="text-sm mb-4 leading-relaxed"
+              className="text-base mb-5 leading-relaxed"
               style={{ color: 'var(--gray-400)' }}
             >
               {SITE_CONFIG.company.slogan}
             </p>
-            <ul className="space-y-1 text-sm" style={{ color: 'var(--gray-400)' }}>
+            <ul className="space-y-2 text-sm" style={{ color: 'var(--gray-400)' }}>
               <li>
                 <span className="text-gray-500">{t.footer.ceo}:</span> {SITE_CONFIG.company.ceo}
               </li>
@@ -64,15 +64,19 @@ export default function Footer({ locale }: FooterProps) {
                   {SITE_CONFIG.contact.email}
                 </a>
               </li>
+              <li>
+                <span className="text-gray-500">주소:</span>{' '}
+                <span>{SITE_CONFIG.address.office}</span>
+              </li>
             </ul>
           </div>
 
           {/* Column 2 — Quick Links */}
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider mb-4" style={{ color: 'var(--gray-400)' }}>
+            <h3 className="font-semibold text-sm uppercase tracking-wider mb-5" style={{ color: 'var(--gray-400)' }}>
               {t.footer.links}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[
                 { label: locale === 'en' ? 'About Us' : '회사소개', href: '/about' },
                 { label: locale === 'en' ? 'CEO Message' : 'CEO 인사말', href: '/about#ceo' },
@@ -82,7 +86,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-sm transition-colors"
+                    className="text-base transition-colors hover:text-white"
                     style={{ color: 'var(--gray-400)' }}
                   >
                     {link.label}
@@ -94,10 +98,10 @@ export default function Footer({ locale }: FooterProps) {
 
           {/* Column 3 — Technology */}
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider mb-4" style={{ color: 'var(--gray-400)' }}>
+            <h3 className="font-semibold text-sm uppercase tracking-wider mb-5" style={{ color: 'var(--gray-400)' }}>
               {t.footer.technology}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[
                 { label: locale === 'en' ? 'Technology' : '기술력', href: '/technology' },
                 { label: locale === 'en' ? 'Certifications' : '인증현황', href: '/certification' },
@@ -107,7 +111,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-sm transition-colors"
+                    className="text-base transition-colors hover:text-white"
                     style={{ color: 'var(--gray-400)' }}
                   >
                     {link.label}
@@ -117,43 +121,60 @@ export default function Footer({ locale }: FooterProps) {
             </ul>
           </div>
 
-          {/* Column 4 — Certifications */}
+          {/* Column 4 — Certifications (separate column) */}
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider mb-4" style={{ color: 'var(--gray-400)' }}>
-              {t.footer.support}
+            <h3 className="font-semibold text-sm uppercase tracking-wider mb-5" style={{ color: 'var(--gray-400)' }}>
+              {locale === 'en' ? 'Certifications' : '인증현황'}
             </h3>
             <div className="space-y-3">
-              {/* Green Tech Badge */}
               <div
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl"
                 style={{ background: 'rgba(23, 233, 181, 0.1)', border: '1px solid rgba(23, 233, 181, 0.2)' }}
               >
-                <span className="w-2 h-2 rounded-full" style={{ background: 'var(--secondary-500)' }} />
-                <span className="text-xs font-medium" style={{ color: 'var(--secondary-500)' }}>
-                  녹색기술인증 {SITE_CONFIG.certifications.greenTech.number}
-                </span>
+                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: 'var(--secondary-500)' }} />
+                <div>
+                  <p className="text-xs" style={{ color: 'var(--gray-400)' }}>녹색기술인증</p>
+                  <p className="text-sm font-semibold" style={{ color: 'var(--secondary-500)' }}>
+                    {SITE_CONFIG.certifications.greenTech.number}
+                  </p>
+                </div>
               </div>
               <div
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl"
                 style={{ background: 'rgba(23, 233, 181, 0.1)', border: '1px solid rgba(23, 233, 181, 0.2)' }}
               >
-                <span className="w-2 h-2 rounded-full" style={{ background: 'var(--secondary-500)' }} />
-                <span className="text-xs font-medium" style={{ color: 'var(--secondary-500)' }}>
-                  벤처기업 {SITE_CONFIG.certifications.venture.number}
-                </span>
+                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: 'var(--secondary-500)' }} />
+                <div>
+                  <p className="text-xs" style={{ color: 'var(--gray-400)' }}>녹색기술제품</p>
+                  <p className="text-sm font-semibold" style={{ color: 'var(--secondary-500)' }}>
+                    {SITE_CONFIG.certifications.greenProduct.number}
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl"
+                style={{ background: 'rgba(1, 104, 239, 0.1)', border: '1px solid rgba(1, 104, 239, 0.2)' }}
+              >
+                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: 'var(--primary-500)' }} />
+                <div>
+                  <p className="text-xs" style={{ color: 'var(--gray-400)' }}>벤처기업</p>
+                  <p className="text-xs font-semibold" style={{ color: 'var(--primary-300)' }}>
+                    {SITE_CONFIG.certifications.venture.number}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="mt-10 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <p className="text-xs" style={{ color: 'var(--gray-600)' }}>
+            <p className="text-sm" style={{ color: 'var(--gray-600)' }}>
               {t.footer.copyright}
             </p>
-            <p className="text-xs" style={{ color: 'var(--gray-600)' }}>
-              {SITE_CONFIG.address.main}
+            <p className="text-sm" style={{ color: 'var(--gray-600)' }}>
+              oceantechinc.com
             </p>
           </div>
         </div>

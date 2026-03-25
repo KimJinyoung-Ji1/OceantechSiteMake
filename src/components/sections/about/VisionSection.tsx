@@ -13,23 +13,29 @@ const visionCards = [
     descKo: '바다와 공생을 통한 건강한 생태계 구축을 통하여 지속 가능한 바다 환경을 만들어 갑니다.',
     descEn: 'Building a sustainable ocean environment through coexistence with the sea.',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <circle cx="16" cy="16" r="14" stroke="var(--primary-400,#60a5fa)" strokeWidth="2" />
-        <path d="M8 20 Q16 8 24 20" stroke="var(--secondary-500,#17e9b5)" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <circle cx="18" cy="18" r="15" stroke="var(--primary-300)" strokeWidth="2.5" />
+        <path d="M9 22 Q18 9 27 22" stroke="var(--secondary-500)" strokeWidth="2.5" strokeLinecap="round" fill="none" />
       </svg>
     ),
+    gradBg: 'linear-gradient(135deg, #F0F8FF 0%, #E8F4FF 100%)',
+    iconBg: 'rgba(3,233,248,0.1)',
+    border: '#D0E4F5',
   },
   {
     key: 'mission',
     labelKo: '미션',
     labelEn: 'Mission',
     descKo: '친환경 아연 어장추로 납을 대체하여 해양 생태계와 어민의 삶의 질을 동시에 향상시킵니다.',
-    descEn: 'Replace lead with eco-friendly zinc fishing weights to improve marine ecosystems and fishers\' lives.',
+    descEn: "Replace lead with eco-friendly zinc fishing weights to improve marine ecosystems and fishers' lives.",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M16 4 L28 28 L16 22 L4 28 Z" stroke="var(--primary-400,#60a5fa)" strokeWidth="2" strokeLinejoin="round" fill="none" />
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M18 4 L32 32 L18 24 L4 32 Z" stroke="var(--primary-500)" strokeWidth="2.5" strokeLinejoin="round" fill="rgba(1,104,239,0.07)" />
       </svg>
     ),
+    gradBg: 'linear-gradient(135deg, #F0F4FF 0%, #E8EFFF 100%)',
+    iconBg: 'rgba(1,104,239,0.08)',
+    border: 'rgba(1,104,239,0.2)',
   },
   {
     key: 'value',
@@ -38,10 +44,13 @@ const visionCards = [
     descKo: '건강한 바다 · 행복한 어민 · 지속 가능한 혁신. 세 가치가 오션테크를 이끄는 나침반입니다.',
     descEn: 'Healthy ocean · Happy fishers · Sustainable innovation. Three values that guide Ocean Tech.',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <polygon points="16,3 20,12 29,13 23,20 25,29 16,24 7,29 9,20 3,13 12,12" stroke="var(--secondary-500,#17e9b5)" strokeWidth="2" fill="none" />
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <polygon points="18,3 22,14 33,15 25,23 28,33 18,27 8,33 11,23 3,15 14,14" stroke="var(--secondary-500)" strokeWidth="2.5" fill="rgba(23,233,181,0.08)" />
       </svg>
     ),
+    gradBg: 'linear-gradient(135deg, #F0FFF9 0%, #E0FFF5 100%)',
+    iconBg: 'rgba(23,233,181,0.1)',
+    border: 'rgba(23,233,181,0.25)',
   },
 ];
 
@@ -51,19 +60,22 @@ export default function VisionSection({ locale }: VisionSectionProps) {
   return (
     <section
       id="vision"
-      className="py-20 lg:py-28 px-4"
-      style={{ background: 'var(--gray-50, #f9fafb)' }}
+      className="py-20 lg:py-28 px-6 lg:px-12 text-center"
+      style={{ background: 'var(--background-alt)' }}
       aria-label="비전"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="mb-14">
           <p
-            className="text-sm font-bold uppercase tracking-widest mb-3"
+            className="text-base font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.about.vision.title}
           </p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
+          <h2
+            className="text-4xl lg:text-5xl font-black"
+            style={{ color: 'var(--text-primary)' }}
+          >
             {t.about.vision.subtitle}
           </h2>
         </div>
@@ -72,18 +84,23 @@ export default function VisionSection({ locale }: VisionSectionProps) {
           {visionCards.map((card) => (
             <article
               key={card.key}
-              className="p-8 rounded-2xl flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300"
+              className="p-10 rounded-3xl flex flex-col items-center gap-5 hover:-translate-y-2 transition-transform duration-300"
               style={{
-                background: 'white',
-                border: '1px solid var(--gray-200, #e5e7eb)',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.05)',
+                background: card.gradBg,
+                border: `1px solid ${card.border}`,
+                boxShadow: '0 4px 24px rgba(2,16,151,0.06)',
               }}
             >
-              <div>{card.icon}</div>
-              <h3 className="text-lg font-bold" style={{ color: 'var(--gray-900)' }}>
+              <div
+                className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                style={{ background: card.iconBg }}
+              >
+                {card.icon}
+              </div>
+              <h3 className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>
                 {locale === 'en' ? card.labelEn : card.labelKo}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)' }}>
+              <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
                 {locale === 'en' ? card.descEn : card.descKo}
               </p>
             </article>
