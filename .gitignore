@@ -42,3 +42,5 @@ next-env.d.ts
 # Original PDFs are too large for git
 public/documents/originals/
 docs/pdf_renders/
+
+.vercel
