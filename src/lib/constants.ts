@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
     bizNo: '127-87-02624',
     corpNo: '284111-0408596',
     slogan: '바다와 함께 공생하는 기업',
-    sloganSub: '건강한바다 행복한어민',
+    sloganSub: '건강한 바다, 행복한 어민',
   },
   contact: {
     tel: '031-566-7720',
@@ -16,48 +16,197 @@ export const SITE_CONFIG = {
     mobile: '010-6348-1210',
   },
   address: {
-    main: '경기도 남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29-30호',
-    office: '경기도 남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29-30호',
-    lab: '서울특별시 광진구 이자산로 375 크레신타워 B1~408호(구의동)',
+    main: '남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29-30호',
+    office: '남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29-30호',
+    headOffice: '경기 남양주시 경춘로773번길 12-33(일패동) 101호',
+    lab: '서울 광진구 이자산로 375 크레신타워 B1~408호',
   },
   domain: 'oceantechinc.com',
   certifications: {
-    greenTech: { number: 'GT-25-02356', period: '2025.07.24 ~ 2029.07.23' },
-    greenProduct: { number: 'GTP-25-04857', period: '2025.07.24 ~ 2029.07.23' },
-    venture: { number: '2023121403001', period: '2023.12.14 ~ 2026.12.13' },
-    sme: { number: '0010-2023-333874' },
-    researchDept: { number: '2023155066', date: '2023.07.23' },
-    patentAward: { name: '제17회 대한민국 우수특허 대상', date: '2023.12.27' },
+    greenTech: {
+      nameKo: '녹색기술인증',
+      nameEn: 'Green Technology Certification',
+      number: 'GT-25-02356',
+      period: '2025.07.24 ~ 2029.07.23',
+      issuerKo: '환경부',
+      issuerEn: 'Ministry of Environment',
+    },
+    greenProduct: {
+      nameKo: '녹색기술제품확인',
+      nameEn: 'Green Product Verification',
+      number: 'GTP-25-04857',
+      period: '2025.07.24 ~ 2029.07.23',
+      issuerKo: '한국환경산업기술원',
+      issuerEn: 'KEITI',
+    },
+    venture: {
+      nameKo: '벤처기업 확인',
+      nameEn: 'Venture Company Certificate',
+      number: '2023121403001',
+      period: '2023.12.14 ~ 2026.12.13',
+      issuerKo: '벤처기업확인기관',
+      issuerEn: 'Venture Certification Authority',
+    },
+    researchDept: {
+      nameKo: '기업부설연구소 인정',
+      nameEn: 'Corporate R&D Center Recognition',
+      number: '2023155066',
+      date: '2023.07.23',
+      issuerKo: 'KOITA',
+      issuerEn: 'KOITA',
+    },
+    sme: {
+      nameKo: '중소기업 확인서',
+      nameEn: 'SME Certificate',
+      number: '0010-2023-333874',
+      issuerKo: '중소벤처기업부',
+      issuerEn: 'MSS',
+    },
+    patentAward: {
+      nameKo: '대한민국 우수특허대상',
+      nameEn: 'Korea Excellence Patent Award',
+      number: '2023 제17회',
+      date: '2023.12.27',
+      issuerKo: '한국일보',
+      issuerEn: 'Hankook Ilbo',
+    },
   },
   patents: [
-    { number: '10-2197917', title: '친환경 어장용 추 제조방법', date: '2020.12.28' },
-    { number: '10-1887767', title: '수중 장애물 이탈 구조형 낚시 추', date: '' },
-    { number: '10-2508401', title: '발광체가 구비된 수중 장애물 이탈 구조형 낚시 추', date: '' },
-    { number: '10-1895932', title: '문어 어획용 낚시어구', date: '' },
-    { number: '10-1622799', title: '휴대용 구명팩', date: '' },
-    { number: '10-1802799', title: '에어포켓 타입의 어구용 축광부자', date: '' },
+    {
+      number: '10-2197917',
+      titleKo: '친환경 어장추 제조방법',
+      titleEn: 'Eco-friendly Fishing Weight Manufacturing Method',
+      date: '2020.12.28',
+      image: '/documents/certs/patent-2197917.png',
+    },
+    {
+      number: '10-1887767',
+      titleKo: '수중 장애물 탈출 구조 어장추',
+      titleEn: 'Fishing Weight with Underwater Obstacle Escape Structure',
+      date: '',
+      image: '/documents/certs/patent-page5.png',
+    },
+    {
+      number: '10-2508401',
+      titleKo: '발광체 구비 수중 장애물 탈출 구조 어장추',
+      titleEn: 'Obstacle Escape Fishing Weight with Luminous Body',
+      date: '',
+      image: '/documents/certs/patent-page6.png',
+    },
+    {
+      number: '10-1895932',
+      titleKo: '문어 유인용 낚시기구',
+      titleEn: 'Octopus Luring Fishing Gear',
+      date: '',
+      image: null,
+    },
+    {
+      number: '10-1622799',
+      titleKo: '어구 부력체',
+      titleEn: 'Fishing Gear Buoyancy Body',
+      date: '',
+      image: null,
+    },
+    {
+      number: '10-1802799',
+      titleKo: '어장추용 내구성 증대 구조',
+      titleEn: 'Durability-enhanced Structure for Fishing Weights',
+      date: '',
+      image: null,
+    },
   ],
   designPatents: [
-    { title: '어장용 추', count: 2 },
-    { title: '낚시용 발광찌', count: 1 },
-    { title: '통발 낚시용 미끼', count: 1 },
+    { titleKo: '어장추', titleEn: 'Fishing Weight', count: 2 },
+    { titleKo: '낚시용 발광체', titleEn: 'Fishing Luminous Body', count: 1 },
+    { titleKo: '문어 유인기 미끼', titleEn: 'Octopus Lure Bait', count: 1 },
   ],
+  documents: {
+    certificates: [
+      {
+        key: 'greenTech',
+        titleKo: '녹색기술인증서',
+        titleEn: 'Green Technology Certificate',
+        image: '/documents/certs/green-tech-cert.png',
+        number: 'GT-25-02356',
+        accent: 'mint',
+      },
+      {
+        key: 'greenProduct',
+        titleKo: '녹색기술제품확인서',
+        titleEn: 'Green Product Certificate',
+        image: '/documents/certs/green-product-cert.png',
+        number: 'GTP-25-04857',
+        accent: 'mint',
+      },
+      {
+        key: 'venture',
+        titleKo: '벤처기업 확인서',
+        titleEn: 'Venture Company Certificate',
+        image: '/documents/certs/venture-cert.png',
+        number: '2023121403001',
+        accent: 'blue',
+      },
+      {
+        key: 'researchDept',
+        titleKo: '기업부설연구소 인정서',
+        titleEn: 'Corporate R&D Center Recognition',
+        image: '/documents/certs/research-dept.png',
+        number: '2023155066',
+        accent: 'blue',
+      },
+      {
+        key: 'sme',
+        titleKo: '중소기업 확인서',
+        titleEn: 'SME Certificate',
+        image: '/documents/certs/sme-cert.png',
+        number: '0010-2023-333874',
+        accent: 'blue',
+      },
+      {
+        key: 'patentAward',
+        titleKo: '대한민국 우수특허대상',
+        titleEn: 'Korea Excellence Patent Award',
+        image: '/documents/certs/patent-award-2023.png',
+        number: '2023 제17회',
+        accent: 'gold',
+      },
+      {
+        key: 'svhc',
+        titleKo: 'SVHC 보고서',
+        titleEn: 'SVHC Report',
+        image: '/documents/certs/svhc-report.png',
+        number: '235종 불검출',
+        accent: 'mint',
+      },
+      {
+        key: 'testTak',
+        titleKo: '시험성적서 TAK',
+        titleEn: 'Test Report TAK',
+        image: '/documents/certs/test-report-tak.png',
+        number: 'TAK-2024-008089',
+        accent: 'blue',
+      },
+      {
+        key: 'testTbk',
+        titleKo: '시험성적서 TBK',
+        titleEn: 'Test Report TBK',
+        image: '/documents/certs/test-report-tbk.png',
+        number: 'TBK-2024-000252',
+        accent: 'blue',
+      },
+    ],
+  },
   history: [
-    { year: '2009.05', event: '친환경추 연구개발 착수' },
-    { year: '2015.02', event: '어망용추 의장취득' },
-    { year: '2015.05', event: '휴대용구멍팩 특허취득' },
-    { year: '2017.03', event: '통발 낚시용 미끼 의장취득' },
-    { year: '2017.03', event: '낚시용 발광찌 의장취득' },
-    { year: '2017.10', event: '미래시스템 사명 변경' },
-    { year: '2017.11', event: '에어포켓 타입의 어구용축광부자 특허취득' },
-    { year: '2017.11', event: '수중 장애물 이탈 구조용 낚시추 특허취득' },
-    { year: '2018.01', event: '문어 어획용 낚시어구 특허취득' },
-    { year: '2022.05', event: '수협 중앙회와 친환경 어장추 국내 최초 단가계약 체결' },
-    { year: '2023.04', event: '(주)오션테크 법인설립' },
-    { year: '2023.07', event: '기업부설 연구개발전담부서 인정 (KOITA)' },
-    { year: '2023.12', event: '벤처기업 등록' },
-    { year: '2023.12', event: '제17회 대한민국 우수특허 대상 수상 (기계/해양)' },
-    { year: '2025.07', event: '녹색기술인증 / 녹색기술제품 확인서 취득' },
+    { year: '2009.05', eventKo: '친환경 어장추 연구개발 착수', eventEn: 'Started R&D on eco-friendly fishing weights' },
+    { year: '2015.02', eventKo: '해양추 관련 특허 취득', eventEn: 'Acquired marine weight-related patents' },
+    { year: '2017.10', eventKo: '미래산업으로 상호 변경', eventEn: 'Renamed business entity' },
+    { year: '2018.01', eventKo: '문어 유인용 낚시기구 특허 취득', eventEn: 'Patented octopus luring fishing gear' },
+    { year: '2022.05', eventKo: '수협중앙회 친환경 어장추 국내 최초 단가계약 체결', eventEn: 'Signed the first unit-price contract for eco-friendly weights with SUHYUP' },
+    { year: '2023.04', eventKo: '(주)오션테크 법인 설립', eventEn: 'Established Ocean Tech Inc.' },
+    { year: '2023.07', eventKo: '기업부설연구소 인정', eventEn: 'Recognized as a corporate R&D center' },
+    { year: '2023.12', eventKo: '벤처기업 확인', eventEn: 'Confirmed as a venture company' },
+    { year: '2023.12', eventKo: '대한민국 우수특허대상 수상', eventEn: 'Won the Korea Excellence Patent Award' },
+    { year: '2025.07', eventKo: '녹색기술인증 및 녹색기술제품확인 동시 취득', eventEn: 'Acquired both green technology and green product certifications' },
   ],
   stats: {
     patents: 6,
@@ -66,30 +215,83 @@ export const SITE_CONFIG = {
     svhc: 235,
     costReduction: 80,
     trialMonths: 31,
+    fishingBoats: 19,
   },
   performance: [
-    { year: '2022', items: ['친환경 어장추 수협중앙회 단가 체결 완료', '강원도 고성군 수협 수주 계약체결/납품 완료'] },
-    { year: '2023', items: ['강원도 고성군 수협 수주 계약 체결/납품 완료'] },
-    { year: '2024', items: ['강원도 속초시 수협 수주 계약 체결/납품 완료', '강원도 고성군 수협 수주 계약 체결'] },
+    {
+      year: '2022',
+      itemsKo: ['수협중앙회 친환경 어장추 단가계약 체결', '강원 고성군 실증사업 납품 개시'],
+      itemsEn: ['Signed a unit-price contract with SUHYUP', 'Started supply for Goseong pilot program'],
+    },
+    {
+      year: '2023',
+      itemsKo: ['강원 고성군 실증사업 지속 납품', '벤처기업 확인 및 우수특허대상 수상'],
+      itemsEn: ['Continued supply for the Goseong pilot program', 'Received venture confirmation and excellence patent award'],
+    },
+    {
+      year: '2024',
+      itemsKo: ['TAK/TBK 시험성적서 확보', 'SVHC 235종 불검출 보고서 확보'],
+      itemsEn: ['Secured TAK/TBK test reports', 'Secured SVHC non-detection report for 235 substances'],
+    },
   ],
-  ceoMessage: `"바다와 공생을 통한 건강한 생태계를 만들어가야 합니다."
-
-지구를 위한 친환경 정책 '탄소노미(Taxonomy)'는 더 이상 선택이 아닌 실천의 문제로 다가왔습니다.
-기후변화와 해양오염이 그 어느 때보다 급격히 다가오고 있는 지금, 지속 가능한 바다생태환경을 만들어가는 노력이 시급합니다.
-
-친환경 바다생태환경을 만들기 위한 끊임없는 연구개발과 제품개발을 통하여 인간과 바다가 함께 공생해 갈 수 있도록
-(주)오션테크는 '건강한 바다, 행복한 어민'을 모토로 참여해 가겠습니다.
-
-그물에는 부표와 어장추 등의 어자재가 사용되고 있습니다. 정부는 친환경 정책에 따라 스티로폼을 부표로
-잘라형 팬투를 고체하는 시범사업을 시작하고, 바다에 대한 체계적인 방제 시스템을 다양한 모색을 하고 있습니다.
-
-따라서 (주)오션테크는 이런 추세에 발맞춰 기존 납으로 만든 사용되고 있는 어장추를 다년간의 개발을 거쳐
-친환경 아연으로 특허제품을 개발함으로써 친환경성과 내구성을 겸했습니다.
-
-시범사업을 거쳐 혁발적인 어민들의 반응에 힘입어 다양한 진흥과 어구 개발을 통하여 어민들의 소득증대를
-위해 함께 노력해 가겠습니다.
-
-(주)오션테크 대표이사 이운봉`,
+  news: [
+    {
+      titleKo: "중금속 납추 대신 바다 생태계 지키는 친환경 대체재 주목",
+      titleEn: 'Eco-friendly substitute gains attention as an alternative to toxic lead weights',
+      sourceKo: '강원도일보',
+      sourceEn: 'Gangwon Domin Ilbo',
+      date: '2023.08.17',
+      summaryKo: '강원도 기사에서 오션테크의 아연 어장추가 해양 생태계를 보호하는 대안으로 소개됐다.',
+      summaryEn: "Gangwon media highlighted Ocean Tech's zinc fishing weights as a practical way to protect marine ecosystems.",
+      image: '/images/news/kado-article-2023.png',
+    },
+    {
+      titleKo: '오션테크, 제17회 대한민국 우수특허대상 수상',
+      titleEn: 'Ocean Tech wins the 17th Korea Excellence Patent Award',
+      sourceKo: '한국일보',
+      sourceEn: 'Hankook Ilbo',
+      date: '2023.12.27',
+      summaryKo: '친환경 어장추 제조기술의 독창성과 사업성을 인정받아 기계·해양 부문 대상을 수상했다.',
+      summaryEn: 'The company was recognized for the originality and commercial value of its eco-friendly fishing weight technology.',
+      image: '/images/news/hankook-article-2023.png',
+    },
+    {
+      titleKo: '강원 고성군 31개월 실증사업 완료, 비용 절감과 내구성 검증',
+      titleEn: '31-month field pilot verified cost savings and durability',
+      sourceKo: '오션테크',
+      sourceEn: 'Ocean Tech',
+      date: '2024.03',
+      summaryKo: '실제 어업 현장에서 31개월 동안 사용하며 교체 비용 절감과 내구성이 검증됐다.',
+      summaryEn: 'A 31-month field pilot confirmed durability and strong replacement cost savings in real fishing conditions.',
+      image: '/images/products/install-page11.png',
+    },
+    {
+      titleKo: '녹색기술인증과 녹색기술제품확인 동시 취득',
+      titleEn: 'Acquired both green technology and green product certifications',
+      sourceKo: '환경부',
+      sourceEn: 'Ministry of Environment',
+      date: '2025.07',
+      summaryKo: '핵심 제조기술과 제품 경쟁력을 동시에 공식 인증받으며 대표 친환경 기술 기업으로 자리매김했다.',
+      summaryEn: 'The company secured formal recognition for both its core technology and product competitiveness.',
+      image: '/images/green-cert-mark.png',
+    },
+  ],
+  ceoMessage: {
+    ko: [
+      '바다와 공생하는 건강한 생태계를 만드는 일은 선택이 아니라 책임입니다.',
+      '오션테크는 친환경 아연 어장추를 통해 납추를 대체하고, 해양 생태계와 어민의 삶을 동시에 지키는 기술을 만들고 있습니다.',
+      '수협중앙회와의 계약, 31개월 현장 실증, 녹색기술 인증은 저희가 걸어온 길이 현장성과 공공성을 모두 갖추고 있음을 보여줍니다.',
+      '앞으로도 바다와 어민, 산업이 함께 지속될 수 있도록 더 나은 기술과 더 단단한 실행으로 답하겠습니다.',
+      '(주)오션테크 대표이사 이운봉',
+    ],
+    en: [
+      'Building a healthier marine ecosystem is not an option. It is our responsibility.',
+      'Ocean Tech develops eco-friendly zinc fishing weights that replace lead and protect both marine life and the livelihood of fishers.',
+      'Our contract with SUHYUP, 31-month field pilot, and green certifications prove that our technology works in the real world.',
+      'We will continue to deliver practical innovation so the ocean, the industry, and fishing communities can thrive together.',
+      'Lee Un-bong, CEO of Ocean Tech Inc.',
+    ],
+  },
 } as const;
 
 export const NAV_ITEMS = [
@@ -102,6 +304,7 @@ export const NAV_ITEMS = [
       { label: 'CEO 인사말', labelEn: 'CEO Message', href: '/about#ceo' },
       { label: '비전', labelEn: 'Vision', href: '/about#vision' },
       { label: '연혁', labelEn: 'History', href: '/about#history' },
+      { label: '회사개요', labelEn: 'Overview', href: '/about#overview' },
     ],
   },
   { label: '기술력', labelEn: 'Technology', href: '/technology' },
@@ -111,27 +314,3 @@ export const NAV_ITEMS = [
 ] as const;
 
 export type NavItem = (typeof NAV_ITEMS)[number];
-
-export const NEWS_ITEMS = [
-  {
-    title: "중금속 '납추' 바다 생태계 위협… 어민 '후손 위해 친환경 아연추 사용해야'",
-    source: '강원도민일보',
-    date: '2023.08.17',
-    summary: '세계 최초로 개발된 친환경 아연추를 고성군이 지난해 도입해 국내 최초로 1년간 시범 운영. 어업경영인들이 납추를 아연추로 모두 바꿔야 한다고 입을 모았다.',
-    image: '/images/news/kado-article-2023.png',
-  },
-  {
-    title: '(주)오션테크, 제17회 대한민국 우수특허 대상 수상',
-    source: '한국일보',
-    date: '2023.12.27',
-    summary: '기계/해양 부문 대상 수상. 친환경 어장용 추 제조방법 특허 기술력 인정.',
-    image: '/images/news/hankook-article-2023.png',
-  },
-  {
-    title: '친환경 아연 어장추, 고성군 31개월 시범사업 성공',
-    source: '오션테크',
-    date: '2024.03',
-    summary: '강원도 고성군청과 31개월간 시범운영 결과, 무게 변화 1g, 내구성 10년 실증. 수협중앙회 단가계약 체결.',
-    image: '/images/products/install-page11.png',
-  },
-] as const;

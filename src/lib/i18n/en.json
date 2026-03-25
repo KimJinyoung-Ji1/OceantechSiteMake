@@ -11,13 +11,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Green Technology Certified",
-    "title": "Coexisting with\nthe Ocean",
+    "badge": "Official Green Technology Certification",
+    "title": "An eco-focused technology company\ncoexisting with the ocean",
     "subtitle": "Healthy Ocean, Happy Fishers",
-    "description": "Ocean Tech protects marine ecosystems with eco-friendly zinc fishing weights. We signed the first unit price contract with the National Federation of Fisheries Cooperatives using patented technology replacing lead weights.",
+    "description": "Ocean Tech replaces lead weights with eco-friendly zinc fishing weights, protecting marine ecosystems while improving fishermen's operating conditions.",
     "ctaPrimary": "Contact Us",
-    "ctaSecondary": "Learn About Us",
-    "greenTechLabel": "Green Tech Cert.",
+    "ctaSecondary": "About the Company",
+    "greenTechLabel": "Green Technology",
     "greenProductLabel": "Green Product"
   },
   "about": {
@@ -29,7 +29,7 @@
     },
     "vision": {
       "title": "Vision",
-      "subtitle": "Innovation for a Healthy Marine Ecosystem"
+      "subtitle": "Innovation for a healthier marine ecosystem"
     },
     "history": {
       "title": "History"
@@ -37,23 +37,23 @@
   },
   "technology": {
     "title": "Technology",
-    "subtitle": "Patented eco-friendly technology born from years of R&D",
+    "subtitle": "Eco-friendly fishing weight technology proven by the field and public certification",
     "zinc": {
-      "title": "Eco-Friendly Zinc Fishing Weights",
-      "description": "Lead-free eco-friendly material, 10-year durability, patented underwater obstacle escape structure"
+      "title": "Eco-friendly Zinc Fishing Weight",
+      "description": "A lead-free material with longer lifespan and practical structures validated in real fishing environments."
     }
   },
   "certification": {
-    "title": "Certifications",
-    "subtitle": "Verified trust through government-certified credentials"
+    "title": "Certification",
+    "subtitle": "Trust backed by official certifications and verification materials"
   },
   "sustainability": {
     "title": "Sustainability",
-    "subtitle": "Ocean Tech's commitment toward carbon neutrality"
+    "subtitle": "We build a healthier ocean by replacing lead weights with zinc fishing weights"
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Product purchase and partnership inquiries",
+    "title": "Contact",
+    "subtitle": "Leave us your product inquiry or partnership request",
     "namePlaceholder": "Name",
     "emailPlaceholder": "Email",
     "phonePlaceholder": "Phone",
@@ -64,9 +64,9 @@
   "footer": {
     "companyInfo": "Company Info",
     "links": "Quick Links",
-    "technology": "Technology",
+    "technology": "Technology & Certificates",
     "support": "Support",
-    "copyright": "ⓒ 2025 Ocean Tech Inc. All rights reserved.",
+    "copyright": "© 2025 Ocean Tech. All rights reserved.",
     "bizNo": "Biz No.",
     "corpNo": "Corp No.",
     "ceo": "CEO",
@@ -82,72 +82,72 @@
     "close": "Close",
     "back": "Back",
     "loading": "Loading...",
-    "ko": "한국어",
+    "ko": "Korean",
     "en": "English"
   },
   "greenCert": {
-    "badge": "Acquired July 2025",
-    "techTitle": "Green Technology Certification",
+    "badge": "Acquired in July 2025",
+    "techTitle": "Green Technology",
     "techNumber": "GT-25-02356",
-    "productTitle": "Green Product Verification",
+    "productTitle": "Green Product",
     "productNumber": "GTP-25-04857",
     "period": "2025.07.24 ~ 2029.07.23",
-    "description": "Official certification from Korea Environmental Industry & Technology Institute"
+    "description": "Core certification proving Ocean Tech's eco-friendly transition"
   },
   "valueSection": {
     "title": "WHY OCEANTECH",
-    "subtitle": "Reasons to Choose Ocean Tech",
+    "subtitle": "Why Ocean Tech stands out",
     "items": [
       {
         "icon": "leaf",
-        "title": "Eco-Friendly Material",
-        "description": "Zero marine heavy metal pollution with lead-free zinc alloy. 235 SVHC substances not detected."
+        "title": "Eco-friendly Material",
+        "description": "Zinc-based fishing weights reduce heavy metal pollution and passed SVHC non-detection verification for 235 substances."
       },
       {
         "icon": "shield",
-        "title": "10-Year Durability",
-        "description": "Zinc's natural corrosion-resistant properties provide 10x longer lifespan than traditional lead weights."
+        "title": "Long Durability",
+        "description": "With a lifespan up to ten times longer than conventional lead weights, replacement burden is significantly reduced."
       },
       {
         "icon": "fish",
-        "title": "Increased Fisher Income",
-        "description": "80% cost reduction on replacements, completed 31-month fisherman pilot program."
+        "title": "Field Validation",
+        "description": "A 31-month pilot program verified real-world usability and meaningful cost savings."
       },
       {
         "icon": "award",
-        "title": "Patented Technology",
-        "description": "6 patents and 4 design patents. Winner of 17th Korea Excellence Patent Award."
+        "title": "Certified Technology",
+        "description": "Six patents, four design patents, and a major patent award demonstrate strong technical competitiveness."
       }
     ]
   },
   "compare": {
-    "title": "Zinc vs Lead Weight Comparison",
-    "zinc": "Eco-Friendly Zinc",
-    "lead": "Traditional Lead",
+    "title": "How Zinc Weights Differ from Lead Weights",
+    "zinc": "Eco-friendly Zinc Weight",
+    "lead": "Conventional Lead Weight",
     "rows": [
-      { "label": "Environmental Safety", "zinc": "Eco-Friendly (SVHC Free)", "lead": "Toxic Heavy Metal" },
-      { "label": "Durability", "zinc": "10+ Years", "lead": "1~2 Years" },
-      { "label": "Cost Efficiency", "zinc": "80% Savings", "lead": "Frequent Replacement" },
-      { "label": "Gov. Certification", "zinc": "Green Tech Certified", "lead": "No Certification" }
+      { "label": "Environmental Safety", "zinc": "No hazardous substances detected", "lead": "Risk of heavy metal pollution" },
+      { "label": "Durability", "zinc": "10+ years", "lead": "About 1-2 years" },
+      { "label": "Maintenance Cost", "zinc": "80% lower replacement cost", "lead": "Frequent replacement required" },
+      { "label": "Public Certification", "zinc": "Green technology certified", "lead": "No equivalent certification" }
     ]
   },
   "stats": {
-    "title": "Ocean Tech By Numbers",
-    "patents": "Patents",
+    "title": "Ocean Tech by Numbers",
+    "patents": "Patents & Designs",
     "patentsUnit": "",
     "durability": "Durability",
     "durabilityUnit": "yrs",
-    "svhc": "SVHC Free",
+    "svhc": "SVHC Non-detected",
     "svhcUnit": "types",
     "costReduction": "Cost Savings",
     "costReductionUnit": "%",
-    "trialMonths": "Pilot Program",
+    "trialMonths": "Pilot Period",
     "trialMonthsUnit": "months"
   },
   "cta": {
-    "title": "Let's Build the Future\nof Eco-Friendly Fishing",
-    "description": "National Federation of Fisheries Cooperatives contracted product. Switch from lead to zinc weights for a healthier ocean.",
+    "title": "Let's build the future\nof eco-friendly fishing together",
+    "description": "Ocean Tech's zinc weights are already used in a SUHYUP unit-price contract product line. Switch from lead to zinc and help create a healthier ocean.",
     "primary": "Contact Us",
-    "secondary": "Download Product Catalog"
+    "secondary": "View Technical Materials"
   }
 }

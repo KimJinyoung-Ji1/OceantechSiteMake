@@ -11,12 +11,12 @@
     "contact": "문의하기"
   },
   "hero": {
-    "badge": "녹색기술인증 취득",
-    "title": "바다와 함께\n공생하는 기업",
+    "badge": "녹색기술 공식 인증",
+    "title": "바다와 함께 공생하는\n친환경 기술 기업",
     "subtitle": "건강한 바다, 행복한 어민",
-    "description": "친환경 아연 어장추로 바다생태계를 지키는 (주)오션테크. 납 어장추를 대체하는 특허 기술로 수협중앙회와 국내 최초 단가계약을 체결했습니다.",
+    "description": "오션테크는 친환경 아연 어장추로 납추를 대체하며, 해양 생태계 보호와 어민 소득 개선을 동시에 실현하는 기술 기업입니다.",
     "ctaPrimary": "제품 문의하기",
-    "ctaSecondary": "회사 소개 보기",
+    "ctaSecondary": "회사소개 보기",
     "greenTechLabel": "녹색기술인증",
     "greenProductLabel": "녹색기술제품"
   },
@@ -37,36 +37,36 @@
   },
   "technology": {
     "title": "기술력",
-    "subtitle": "다년간의 연구개발로 탄생한 친환경 특허 기술",
+    "subtitle": "현장성과 공공성을 동시에 입증한 친환경 어장추 기술",
     "zinc": {
       "title": "친환경 아연 어장추",
-      "description": "납 없는 친환경 소재, 10년 내구성, 수중 장애물 이탈 구조 특허"
+      "description": "납을 대체하는 친환경 소재, 긴 수명, 실제 어업 현장에서 검증된 구조 기술"
     }
   },
   "certification": {
     "title": "인증현황",
-    "subtitle": "정부 공인 인증으로 검증된 신뢰"
+    "subtitle": "정부 공인 인증과 검증 자료로 확인되는 신뢰"
   },
   "sustainability": {
     "title": "친환경",
-    "subtitle": "탄소중립을 향한 (주)오션테크의 약속"
+    "subtitle": "납추를 대체하는 아연 어장추로 더 건강한 바다를 만듭니다"
   },
   "contact": {
     "title": "문의하기",
-    "subtitle": "제품 구매 및 제휴 문의",
-    "namePlaceholder": "성함",
+    "subtitle": "제품 문의와 협업 상담을 편하게 남겨주세요",
+    "namePlaceholder": "이름",
     "emailPlaceholder": "이메일",
     "phonePlaceholder": "연락처",
-    "messagePlaceholder": "문의 내용을 입력하세요",
+    "messagePlaceholder": "문의 내용을 입력해주세요",
     "submit": "문의 보내기",
     "successMessage": "문의가 접수되었습니다. 빠르게 연락드리겠습니다."
   },
   "footer": {
     "companyInfo": "회사정보",
     "links": "바로가기",
-    "technology": "기술/인증",
+    "technology": "기술·인증",
     "support": "지원",
-    "copyright": "ⓒ 2025 (주)오션테크. All rights reserved.",
+    "copyright": "© 2025 오션테크. All rights reserved.",
     "bizNo": "사업자번호",
     "corpNo": "법인번호",
     "ceo": "대표이사",
@@ -86,13 +86,13 @@
     "en": "English"
   },
   "greenCert": {
-    "badge": "2025년 07월 취득",
+    "badge": "2025년 7월 취득",
     "techTitle": "녹색기술인증",
     "techNumber": "GT-25-02356",
-    "productTitle": "녹색기술제품 확인",
+    "productTitle": "녹색기술제품확인",
     "productNumber": "GTP-25-04857",
     "period": "2025.07.24 ~ 2029.07.23",
-    "description": "환경부 산하 한국환경산업기술원 공식 인증"
+    "description": "친환경 어업 전환을 입증하는 핵심 인증"
   },
   "valueSection": {
     "title": "WHY OCEANTECH",
@@ -101,53 +101,53 @@
       {
         "icon": "leaf",
         "title": "친환경 소재",
-        "description": "납 없는 아연 합금으로 해양 중금속 오염 제로. 유해물질(SVHC) 235종 미검출"
+        "description": "납이 아닌 아연 소재로 해양 중금속 오염을 줄이고, SVHC 235종 불검출을 입증했습니다."
       },
       {
         "icon": "shield",
-        "title": "10년 내구성",
-        "description": "아연의 자연 부식 방지 특성으로 기존 납추 대비 10배 이상 수명"
+        "title": "긴 내구성",
+        "description": "기존 납추 대비 약 10배 이상의 수명으로 어업 현장의 교체 부담을 크게 줄입니다."
       },
       {
         "icon": "fish",
-        "title": "어민 소득 증대",
-        "description": "교체 비용 80% 절감, 31개월 어민 실증 시범사업 완료"
+        "title": "현장 실증",
+        "description": "31개월 실증사업으로 실제 어업 현장에서 비용 절감과 사용성을 확인했습니다."
       },
       {
         "icon": "award",
-        "title": "특허 기술력",
-        "description": "특허 6건·디자인특허 4건, 제17회 대한민국 우수특허 대상 수상"
+        "title": "공인 기술력",
+        "description": "특허 6건, 디자인특허 4건, 우수특허대상 수상으로 기술 경쟁력을 입증했습니다."
       }
     ]
   },
   "compare": {
-    "title": "아연추 vs 납추 비교",
+    "title": "아연추와 납추의 차이",
     "zinc": "친환경 아연추",
     "lead": "기존 납추",
     "rows": [
-      { "label": "환경 안전성", "zinc": "친환경 (SVHC 미검출)", "lead": "유해 중금속" },
-      { "label": "내구성", "zinc": "10년 이상", "lead": "1~2년" },
-      { "label": "비용 효율", "zinc": "80% 절감", "lead": "잦은 교체" },
-      { "label": "정부 인증", "zinc": "녹색기술 인증", "lead": "인증 없음" }
+      { "label": "환경 안전성", "zinc": "유해물질 검출 없음", "lead": "중금속 오염 우려" },
+      { "label": "내구성", "zinc": "10년 이상", "lead": "1~2년 수준" },
+      { "label": "관리 비용", "zinc": "교체 비용 80% 절감", "lead": "잦은 교체 발생" },
+      { "label": "공인 인증", "zinc": "녹색기술 인증 보유", "lead": "별도 인증 없음" }
     ]
   },
   "stats": {
     "title": "숫자로 보는 오션테크",
-    "patents": "특허 보유",
+    "patents": "특허·디자인특허",
     "patentsUnit": "건",
     "durability": "내구성",
     "durabilityUnit": "년",
-    "svhc": "SVHC 미검출",
+    "svhc": "SVHC 불검출",
     "svhcUnit": "종",
     "costReduction": "비용 절감",
     "costReductionUnit": "%",
-    "trialMonths": "실증 시범기간",
+    "trialMonths": "실증 기간",
     "trialMonthsUnit": "개월"
   },
   "cta": {
     "title": "친환경 어업의 미래를\n함께 만들어 갑시다",
-    "description": "수협중앙회 단가계약 제품. 납추에서 아연추로 전환하여 더 건강한 바다를 만들어 주세요.",
+    "description": "수협중앙회 단가계약 제품. 납추에서 아연추로 전환하여 더 건강한 바다를 만드는 데 함께하세요.",
     "primary": "제품 문의하기",
-    "secondary": "제품 카탈로그 다운로드"
+    "secondary": "기술 자료 보기"
   }
 }
