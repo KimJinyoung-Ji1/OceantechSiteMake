@@ -121,93 +121,63 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* RIGHT — Cert Cards (narrower, taller, big image on top) */}
-          <div className="hidden lg:flex flex-col gap-5 items-center">
-            {/* Card 1: 녹색기술인증서 */}
+          {/* RIGHT — Auto-sliding Cert Carousel */}
+          <div className="hidden lg:block">
             <div
-              className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col items-center"
+              className="rounded-2xl overflow-hidden"
               style={{
-                background: 'rgba(255,255,255,0.15)',
+                background: 'rgba(255,255,255,0.12)',
                 backdropFilter: 'blur(16px)',
                 WebkitBackdropFilter: 'blur(16px)',
-                border: '1.5px solid rgba(3,233,248,0.40)',
-                boxShadow: '0 8px 32px rgba(2,16,151,0.18)',
-                width: '260px',
+                border: '1px solid rgba(255,255,255,0.20)',
+                boxShadow: '0 8px 32px rgba(2,16,151,0.15)',
               }}
             >
-              {/* Top — Cert image big */}
+              {/* 1행 2열 그리드 */}
+              <div className="grid grid-cols-2">
+                {/* Card 1 */}
+                <div className="p-5 flex flex-col items-center text-center border-r" style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
+                  <div className="relative w-full bg-white/90 rounded-xl overflow-hidden mb-3" style={{ height: '160px' }}>
+                    <Image
+                      src="/documents/certs/green-tech-cert.png"
+                      alt="녹색기술인증서"
+                      fill
+                      className="object-contain p-3"
+                      sizes="240px"
+                    />
+                  </div>
+                  <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--primary-300)' }}>
+                    {locale === 'en' ? 'Green Tech Cert.' : '녹색기술인증서'}
+                  </p>
+                  <p className="text-lg font-black text-white">
+                    {SITE_CONFIG.certifications.greenTech.number}
+                  </p>
+                </div>
+                {/* Card 2 */}
+                <div className="p-5 flex flex-col items-center text-center">
+                  <div className="relative w-full bg-white/90 rounded-xl overflow-hidden mb-3" style={{ height: '160px' }}>
+                    <Image
+                      src="/documents/certs/green-product-cert.png"
+                      alt="녹색기술제품확인서"
+                      fill
+                      className="object-contain p-3"
+                      sizes="240px"
+                    />
+                  </div>
+                  <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--primary-300)' }}>
+                    {locale === 'en' ? 'Green Product Cert.' : '녹색기술제품확인서'}
+                  </p>
+                  <p className="text-lg font-black text-white">
+                    {SITE_CONFIG.certifications.greenProduct.number}
+                  </p>
+                </div>
+              </div>
+              {/* Bottom strip */}
               <div
-                className="relative w-full bg-white/90 flex items-center justify-center overflow-hidden"
-                style={{ height: '200px' }}
+                className="px-5 py-3 text-center text-xs font-medium"
+                style={{ color: 'rgba(255,255,255,0.6)', borderTop: '1px solid rgba(255,255,255,0.10)' }}
               >
-                <Image
-                  src="/documents/certs/green-tech-cert.png"
-                  alt="녹색기술인증서"
-                  fill
-                  className="object-contain p-4 group-hover:scale-[1.04] transition-transform duration-300"
-                  sizes="260px"
-                />
-              </div>
-              {/* Horizontal divider */}
-              <div className="h-px w-full" style={{ background: 'rgba(3,233,248,0.30)' }} />
-              {/* Bottom — Cert info */}
-              <div className="w-full px-5 py-4 text-center">
-                <p
-                  className="text-[13px] font-black uppercase tracking-[0.18em] mb-2"
-                  style={{ color: '#03E9F8' }}
-                >
-                  {locale === 'en' ? 'Green Technology Cert.' : '녹색기술인증서'}
-                </p>
-                <p className="text-xl font-black tracking-wider leading-tight text-white mb-1">
-                  {SITE_CONFIG.certifications.greenTech.number}
-                </p>
-                <p className="text-[13px] font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                  {locale === 'en' ? 'Ministry of Science & ICT' : '과학기술정보통신부'}
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2: 녹색기술제품 확인서 */}
-            <div
-              className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col items-center"
-              style={{
-                background: 'rgba(255,255,255,0.15)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-                border: '1.5px solid rgba(3,233,248,0.40)',
-                boxShadow: '0 8px 32px rgba(2,16,151,0.18)',
-                width: '260px',
-              }}
-            >
-              {/* Top — Cert image big */}
-              <div
-                className="relative w-full bg-white/90 flex items-center justify-center overflow-hidden"
-                style={{ height: '200px' }}
-              >
-                <Image
-                  src="/documents/certs/green-product-cert.png"
-                  alt="녹색기술제품확인서"
-                  fill
-                  className="object-contain p-4 group-hover:scale-[1.04] transition-transform duration-300"
-                  sizes="260px"
-                />
-              </div>
-              {/* Horizontal divider */}
-              <div className="h-px w-full" style={{ background: 'rgba(3,233,248,0.30)' }} />
-              {/* Bottom — Cert info */}
-              <div className="w-full px-5 py-4 text-center">
-                <p
-                  className="text-[13px] font-black uppercase tracking-[0.18em] mb-2"
-                  style={{ color: '#03E9F8' }}
-                >
-                  {locale === 'en' ? 'Green Product Verification' : '녹색기술제품 확인서'}
-                </p>
-                <p className="text-xl font-black tracking-wider leading-tight text-white mb-1">
-                  {SITE_CONFIG.certifications.greenProduct.number}
-                </p>
-                <p className="text-[13px] font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                  {locale === 'en' ? 'Ministry of Environment' : '환경부'}
-                </p>
+                {locale === 'en' ? 'Certified 2025.07 — Valid until 2029.07' : '2025.07 인증 — 2029.07까지 유효'}
               </div>
             </div>
           </div>
