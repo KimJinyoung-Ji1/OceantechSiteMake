@@ -14,12 +14,8 @@ export default function CeoSection({ locale }: CeoSectionProps) {
   return (
     <section id="ceo" className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="CEO 인사말">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <p className="section-eyebrow mb-6" style={{ color: 'var(--primary-500)' }}>
-          {t.about.ceo.title}
-        </p>
-
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-14">
-          {/* LEFT: CEO silhouette avatar */}
+          {/* LEFT: label + avatar stacked */}
           <div className="flex flex-col items-center shrink-0">
             <div
               style={{
@@ -40,21 +36,13 @@ export default function CeoSection({ locale }: CeoSectionProps) {
                 fill="none"
                 aria-hidden="true"
               >
-                {/* Head */}
                 <circle cx="60" cy="38" r="22" fill="var(--gray-400, #9ca3af)" />
-                {/* Body / shoulders */}
                 <path
                   d="M10 108 C10 78 30 62 60 62 C90 62 110 78 110 108 Z"
                   fill="var(--gray-400, #9ca3af)"
                 />
               </svg>
             </div>
-            <p
-              className="mt-4 text-base font-semibold text-center"
-              style={{ color: 'var(--gray-700, #374151)' }}
-            >
-              {locale === 'en' ? 'CEO, OceanTech Inc.' : '(주)오션테크 대표이사 이우철'}
-            </p>
           </div>
 
           {/* RIGHT: CEO message */}

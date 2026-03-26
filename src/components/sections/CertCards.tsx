@@ -113,10 +113,10 @@ export default function CertCards({ locale }: CertCardsProps) {
                 </div>
               )}
 
-              {/* Cert image — bigger */}
+              {/* Cert image */}
               <div
                 className="w-full bg-white flex items-center justify-center overflow-hidden"
-                style={{ height: 220, borderBottom: `1px solid ${cert.accentBorder}` }}
+                style={{ height: 280, borderBottom: `1px solid ${cert.accentBorder}` }}
               >
                 <Image
                   src={cert.image}
@@ -128,25 +128,20 @@ export default function CertCards({ locale }: CertCardsProps) {
                 />
               </div>
 
-              {/* Info — centered, reduced padding */}
-              <div className="p-2 text-center w-full">
+              {/* Info — centered vertically and horizontally */}
+              <div className="flex-1 flex flex-col items-center justify-center p-4 text-center w-full">
                 <h3
-                  className="font-bold text-base mb-1"
+                  className="font-bold text-lg mb-1"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {locale === 'en' ? cert.titleEn : cert.titleKo}
                 </h3>
                 <p
-                  className="text-sm font-mono font-semibold mb-0.5 break-all"
+                  className="text-base font-mono font-semibold break-all"
                   style={{ color: cert.accent }}
                 >
                   {cert.number}
                 </p>
-                {cert.period && (
-                  <p className="text-sm" style={{ color: 'var(--text-body)', opacity: 0.7 }}>
-                    {cert.period}
-                  </p>
-                )}
 
                 {/* Click hint */}
                 <div

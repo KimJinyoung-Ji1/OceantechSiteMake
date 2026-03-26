@@ -69,122 +69,78 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
         aria-label={t.products.categoryTitle}
       >
         <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-          <motion.div
-            className="text-center mb-12 lg:mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
-              {isEn ? 'PRODUCT LINEUP' : '제품 라인업'}
-            </p>
-            <h2 className="section-title" style={{ color: 'var(--gray-900)' }}>
-              {t.products.categoryTitle}
-            </h2>
-          </motion.div>
-
-          <div className="space-y-20 lg:space-y-28">
-            {categories.map((category, catIdx) => (
+          <div className="space-y-16 lg:space-y-20">
+            {categories.map((category) => (
               <motion.div
                 key={category.id}
-                className={`flex flex-col lg:flex-row gap-10 lg:gap-16 items-start ${catIdx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.15 }}
                 variants={stagger}
               >
-                {/* Category hero image */}
-                <motion.div
-                  className="w-full lg:w-2/5 flex-shrink-0"
-                  variants={fadeInUp}
-                >
-                  <div
-                    className="rounded-2xl overflow-hidden"
-                    style={{
-                      background: '#f5f5f5',
-                      border: '1px solid var(--gray-200)',
-                      aspectRatio: '4/3',
-                      position: 'relative',
-                    }}
-                  >
-                    <Image
-                      src={category.image}
-                      alt={isEn ? category.nameEn : category.nameKo}
-                      fill
-                      className="object-contain p-6"
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                    />
-                  </div>
+                {/* Category header — single line */}
+                <motion.div className="mb-8" variants={fadeInUp}>
+                  <h3 className="text-xl lg:text-2xl font-bold" style={{ color: 'var(--primary-500)' }}>
+                    {isEn ? category.nameEn : category.nameKo}
+                    <span className="font-normal text-base lg:text-lg ml-3" style={{ color: 'var(--text-secondary)' }}>
+                      {isEn ? category.descriptionEn : category.descriptionKo}
+                    </span>
+                  </h3>
                 </motion.div>
 
-                {/* Category info + product grid */}
-                <motion.div className="flex-1" variants={fadeInUp}>
-                  <span
-                    className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-4"
-                    style={{
-                      background: 'var(--primary-50)',
-                      color: 'var(--primary-600)',
-                      border: '1px solid var(--primary-100)',
-                    }}
-                  >
-                    {isEn ? 'ECO-FRIENDLY ZINC' : '친환경 아연 어망추'}
-                  </span>
-                  <h3 className="section-title mb-3" style={{ color: 'var(--gray-900)' }}>
-                    {isEn ? category.nameEn : category.nameKo}
-                  </h3>
-                  <p className="section-subtitle mb-8 max-w-lg" style={{ fontSize: '1.125rem', textAlign: 'center' }}>
-                    {isEn ? category.descriptionEn : category.descriptionKo}
-                  </p>
-
-                  {/* Product variant grid */}
-                  <div>
-                    <p className="mb-4 font-bold uppercase tracking-wider" style={{ color: 'var(--gray-500)', fontSize: '1rem' }}>
-                      {t.products.specTitle}
-                    </p>
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
-                      {category.items.map((item) => (
-                        <motion.div
-                          key={item.model}
-                          className="rounded-xl overflow-hidden flex flex-col"
-                          style={{
-                            background: 'white',
-                            border: '1px solid var(--gray-200)',
-                            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-                            borderRadius: '12px',
-                            transition: 'all 0.3s ease',
-                          }}
-                          whileHover={{ y: -4, boxShadow: '0 8px 24px rgba(0,0,0,0.14)' }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {/* Product image */}
-                          <div
-                            className="relative w-full"
-                            style={{ aspectRatio: '1/1', background: '#f5f5f5' }}
-                          >
-                            <Image
-                              src={item.image}
-                              alt={item.model}
-                              fill
-                              className="object-contain p-3"
-                              sizes="(max-width: 768px) 45vw, (max-width: 1024px) 22vw, 12vw"
-                            />
-                          </div>
-                          {/* Spec info */}
-                          <div className="p-3 border-t text-center" style={{ borderColor: 'var(--gray-100)' }}>
-                            <p className="text-xs font-bold mb-1.5" style={{ color: '#0168EF' }}>
-                              {item.model}
-                            </p>
-                            <div className="flex justify-center gap-2 text-sm" style={{ color: 'var(--gray-500)' }}>
-                              <span style={{ fontSize: '0.8rem' }}>{t.products.weight}: {item.weight}</span>
-                              <span style={{ color: 'var(--gray-300)' }}>·</span>
-                              <span style={{ fontSize: '0.8rem' }}>{t.products.size}: {item.size}</span>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
+                {/* 4x1 product grid */}
+                <motion.div
+                  className="grid grid-cols-2 lg:grid-cols-4 gap-4"
+                  variants={stagger}
+                >
+                  {category.items.map((item, idx) => {
+                    // Manual scale per item index
+                    const jungchiScales = [0.986, 0.8, 0.7, 0.5];
+                    const jamangScales = [0.8, 0.69, 0.63, 0.59];
+                    const scales = category.id === 'jungchi' ? jungchiScales : jamangScales;
+                    const scale = scales[idx] ?? 1;
+                    return (
+                    <motion.div
+                      key={item.model}
+                      className="rounded-xl overflow-hidden flex flex-col"
+                      style={{
+                        background: 'white',
+                        border: '1px solid var(--gray-200)',
+                        boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                        borderRadius: '12px',
+                        transition: 'all 0.3s ease',
+                      }}
+                      variants={fadeInUp}
+                      whileHover={{ y: -4, boxShadow: '0 8px 24px rgba(0,0,0,0.14)' }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div
+                        className="relative w-full flex items-center justify-center"
+                        style={{ aspectRatio: '1/1', background: '#f5f5f5' }}
+                      >
+                        <div className="relative" style={{ width: `${Math.round(scale * 100)}%`, height: `${Math.round(scale * 100)}%` }}>
+                        <Image
+                          src={item.image}
+                          alt={item.model}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 45vw, (max-width: 1024px) 22vw, 20vw"
+                        />
+                        </div>
+                      </div>
+                      <div className="p-4 border-t text-center" style={{ borderColor: 'var(--gray-100)' }}>
+                        <p className="text-lg font-bold mb-1" style={{ color: '#0168EF' }}>
+                          {item.model}
+                        </p>
+                        <div className="flex justify-center gap-2 text-lg" style={{ color: 'var(--text-secondary)' }}>
+                          <span>{item.weight}</span>
+                          <span style={{ color: 'var(--gray-300)' }}>·</span>
+                          <span>{item.size}</span>
+                        </div>
+                      </div>
+                    </motion.div>
+                    );
+                  })}
                 </motion.div>
               </motion.div>
             ))}
@@ -264,12 +220,14 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
       {/* ── Lead vs Zinc Comparison ── */}
       <section
         className="py-16 lg:py-24"
-        style={{ background: 'var(--background)' }}
+        style={{
+          background: 'linear-gradient(180deg, var(--background) 0%, #F0F7FF 50%, var(--background) 100%)',
+        }}
         aria-label={t.products.comparisonTitle}
       >
         <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-14"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -278,13 +236,16 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
             <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
               {isEn ? 'COMPARISON' : '비교'}
             </p>
-            <h2 className="section-title" style={{ color: 'var(--gray-900)' }}>
+            <h2 className="section-title mb-2" style={{ color: 'var(--primary-500)' }}>
               {t.products.comparisonTitle}
             </h2>
+            <p className="text-base" style={{ color: 'var(--text-secondary)' }}>
+              {isEn ? 'See why zinc outperforms lead in every way' : '아연추가 납추보다 우수한 이유를 확인하세요'}
+            </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
+            className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-0 lg:gap-0 max-w-5xl mx-auto items-stretch"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -292,104 +253,133 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
           >
             {/* Lead weight card */}
             <motion.div
-              className="rounded-2xl overflow-hidden"
+              className="rounded-2xl lg:rounded-r-none overflow-hidden flex flex-col"
               style={{
-                border: '2px solid rgba(239,68,68,0.3)',
-                background: 'rgba(239,68,68,0.03)',
+                border: '2px solid rgba(239,68,68,0.25)',
+                background: 'white',
+                boxShadow: '0 8px 32px rgba(239,68,68,0.08)',
               }}
               variants={fadeInUp}
             >
-              <div className="relative w-full" style={{ aspectRatio: '4/3', background: '#FEF2F2', padding: '16px' }}>
+              <div
+                className="relative w-full"
+                style={{
+                  aspectRatio: '4/3',
+                  background: 'linear-gradient(135deg, #FEF2F2 0%, #FECACA40 100%)',
+                }}
+              >
                 <Image
                   src="/images/products/lead-weight.png"
                   alt={isEn ? 'Conventional lead fishing weight' : '기존 납추'}
                   fill
-                  className="object-contain p-8"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  style={{ objectFit: 'contain' }}
+                  className="object-contain p-6"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  unoptimized
                 />
-              </div>
-              <div
-                className="p-6 border-t"
-                style={{ borderColor: 'rgba(239,68,68,0.2)', background: 'rgba(239,68,68,0.05)' }}
-              >
-                <div className="flex items-center gap-2 mb-3">
+                <div className="absolute top-4 left-4">
                   <span
-                    className="text-xs font-bold px-2 py-0.5 rounded-full"
-                    style={{ background: 'rgba(239,68,68,0.12)', color: '#dc2626' }}
+                    className="text-sm font-bold px-4 py-1.5 rounded-full"
+                    style={{ background: 'rgba(239,68,68,0.9)', color: 'white' }}
                   >
-                    {isEn ? 'CONVENTIONAL' : '기존'}
+                    {isEn ? 'CONVENTIONAL' : '기존 납추'}
                   </span>
                 </div>
-                <h3 className="card-title mb-4" style={{ color: 'var(--gray-900)' }}>
+              </div>
+              <div className="p-6 flex-1 flex flex-col items-center justify-center" style={{ background: 'rgba(239,68,68,0.03)' }}>
+                <h3 className="text-xl font-bold mb-4" style={{ color: '#DC2626' }}>
                   {t.products.lead}
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3 inline-block">
                   {[
                     isEn ? 'Heavy metal contamination risk' : '중금속 오염 위험',
                     isEn ? 'Short lifespan (1–2 years)' : '짧은 수명 (1~2년)',
                     isEn ? 'High replacement frequency' : '높은 교체 빈도',
                     isEn ? 'No eco-certification' : '친환경 인증 없음',
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm" style={{ color: 'var(--gray-600)' }}>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                        <circle cx="8" cy="8" r="7" stroke="rgba(239,68,68,0.5)" strokeWidth="1.5" />
-                        <path d="M5 8h6" stroke="#dc2626" strokeWidth="1.5" strokeLinecap="round" />
+                  ].map((text) => (
+                    <li key={text} className="flex items-center gap-3 text-base" style={{ color: 'var(--text-body)' }}>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="shrink-0">
+                        <circle cx="10" cy="10" r="9" fill="#FEE2E2" stroke="#DC2626" strokeWidth="1.5" />
+                        <path d="M7 10h6" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
                       </svg>
-                      {item}
+                      {text}
                     </li>
                   ))}
                 </ul>
               </div>
             </motion.div>
 
+            {/* VS divider */}
+            <div className="hidden lg:flex flex-col items-center justify-center px-2" style={{ zIndex: 10 }}>
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center font-black text-lg"
+                style={{
+                  background: 'linear-gradient(135deg, var(--primary-500), var(--primary-700))',
+                  color: 'white',
+                  boxShadow: '0 4px 20px rgba(1,104,239,0.35)',
+                }}
+              >
+                VS
+              </div>
+            </div>
+            <div className="flex lg:hidden items-center justify-center py-4">
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center font-black text-base"
+                style={{ background: 'var(--primary-500)', color: 'white' }}
+              >
+                VS
+              </div>
+            </div>
+
             {/* Zinc weight card */}
             <motion.div
-              className="rounded-2xl overflow-hidden"
+              className="rounded-2xl lg:rounded-l-none overflow-hidden flex flex-col"
               style={{
                 border: '2px solid rgba(23,233,181,0.4)',
-                background: 'rgba(23,233,181,0.03)',
+                background: 'white',
+                boxShadow: '0 8px 32px rgba(23,233,181,0.10)',
               }}
               variants={fadeInUp}
             >
-              <div className="relative w-full" style={{ aspectRatio: '4/3', background: '#E8F5F1', padding: '16px' }}>
+              <div
+                className="relative w-full"
+                style={{
+                  aspectRatio: '4/3',
+                  background: 'linear-gradient(135deg, #ECFDF5 0%, #D1FAE540 100%)',
+                }}
+              >
                 <Image
                   src="/images/products/zinc-weight.png"
                   alt={isEn ? 'OceanTech zinc fishing weight' : '오션테크 아연추'}
                   fill
-                  className="object-contain p-8"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  style={{ objectFit: 'contain' }}
+                  className="object-contain p-6"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                 />
-              </div>
-              <div
-                className="p-6 border-t"
-                style={{ borderColor: 'rgba(23,233,181,0.25)', background: 'rgba(23,233,181,0.05)' }}
-              >
-                <div className="flex items-center gap-2 mb-3">
+                <div className="absolute top-4 left-4">
                   <span
-                    className="text-xs font-bold px-2 py-0.5 rounded-full"
-                    style={{ background: 'rgba(23,233,181,0.15)', color: 'var(--secondary-700)' }}
+                    className="text-sm font-bold px-4 py-1.5 rounded-full"
+                    style={{ background: 'rgba(14,173,135,0.9)', color: 'white' }}
                   >
-                    {isEn ? 'OCEANTECH' : '오션테크'}
+                    {isEn ? 'OCEANTECH' : '오션테크 아연추'}
                   </span>
                 </div>
-                <h3 className="card-title mb-4" style={{ color: 'var(--gray-900)' }}>
+              </div>
+              <div className="p-6 flex-1 flex flex-col items-center justify-center" style={{ background: 'rgba(23,233,181,0.03)' }}>
+                <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--secondary-700)' }}>
                   {t.products.zinc}
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3 inline-block">
                   {[
                     isEn ? 'SVHC 235 substances non-detected' : 'SVHC 235종 불검출 인증',
                     isEn ? '10x longer lifespan' : '납추 대비 10배 이상 수명',
                     isEn ? '80% lower replacement cost' : '교체 비용 80% 절감',
                     isEn ? 'Green Technology certified' : '녹색기술 공식 인증',
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm" style={{ color: 'var(--gray-600)' }}>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                        <circle cx="8" cy="8" r="7" fill="rgba(23,233,181,0.2)" stroke="var(--secondary-500)" strokeWidth="1.5" />
-                        <path d="M5 8l2 2 4-4" stroke="var(--secondary-700)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  ].map((text) => (
+                    <li key={text} className="flex items-center gap-3 text-base" style={{ color: 'var(--text-body)' }}>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="shrink-0">
+                        <circle cx="10" cy="10" r="9" fill="#D1FAE5" stroke="var(--secondary-700)" strokeWidth="1.5" />
+                        <path d="M6 10l3 3 5-5" stroke="var(--secondary-700)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      {item}
+                      {text}
                     </li>
                   ))}
                 </ul>

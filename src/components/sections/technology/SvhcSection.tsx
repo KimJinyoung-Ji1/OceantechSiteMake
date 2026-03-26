@@ -1,10 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import Image from 'next/image';
 import type { Locale } from '@/lib/i18n';
 import { SITE_CONFIG } from '@/lib/constants';
-import Modal from '@/components/ui/Modal';
 
 interface SvhcSectionProps {
   locale: Locale;
@@ -12,94 +9,51 @@ interface SvhcSectionProps {
 
 export default function SvhcSection({ locale }: SvhcSectionProps) {
   const isEn = locale === 'en';
-  const [open, setOpen] = useState(false);
 
   return (
-    <section className="py-16 lg:py-20" aria-label="SVHC 불검출">
+    <section className="py-16 lg:py-20" aria-label="SVHC 235종 불검출">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div
-          className="rounded-2xl p-10 lg:p-14 max-w-4xl mx-auto"
+          className="rounded-2xl p-10 lg:p-16 text-center"
           style={{
-            background: 'linear-gradient(135deg, var(--primary-700,#1d4ed8) 0%, var(--primary-500,#3b82f6) 100%)',
+            background: 'linear-gradient(135deg, var(--primary-900,#021097) 0%, var(--primary-700,#0148C8) 50%, var(--primary-500,#0168EF) 100%)',
           }}
         >
-          <div className="flex flex-col lg:flex-row items-center gap-10">
-            <div className="text-center lg:text-left flex-1">
-              <p
-                className="text-sm font-bold uppercase tracking-widest mb-3"
-                style={{ color: 'rgba(255,255,255,0.7)' }}
-              >
-                EU REACH 기준
-              </p>
-              <p
-                className="text-5xl sm:text-7xl lg:text-8xl font-black mb-2"
-                style={{ color: 'var(--secondary-400, #34d399)' }}
-              >
-                {SITE_CONFIG.stats.svhc}
-              </p>
-              <p className="text-xl sm:text-3xl font-bold text-white mb-4">
-                {isEn ? 'SVHC Substances\nNot Detected' : '종 유해물질\n미검출'}
-              </p>
-              <p className="text-white/70 text-lg leading-relaxed">
-                {isEn
-                  ? 'Based on EU REACH regulations, all 235 SVHC (Substances of Very High Concern) substances were not detected, proving complete eco-friendliness.'
-                  : 'EU REACH 규정 기반 고위험성 우려 물질(SVHC) 235종 전종 미검출. 완전한 친환경성이 공식 입증되었습니다.'}
-              </p>
-              <p
-                className="text-sm leading-relaxed mt-2"
-                style={{ color: 'rgba(255,255,255,0.5)' }}
-              >
-                {isEn
-                  ? '* SVHC (Substances of Very High Concern) are hazardous chemicals designated under EU REACH regulations as harmful to human health and the environment. Non-detection of all 235 substances means the product\'s safety has been fully verified to international standards.'
-                  : '* SVHC(고위험성 우려물질)란 EU REACH 규정에서 지정한 인체·환경에 유해한 화학물질을 뜻합니다. 이 235종이 모두 불검출되었다는 것은 오션테크 제품의 안전성이 국제 기준으로 완벽히 검증되었음을 의미합니다.'}
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
-              <button
-                className="px-6 py-4 rounded-2xl font-bold text-base transition-all duration-200 hover:shadow-lg hover:brightness-105"
-                style={{ background: 'white', color: 'var(--primary-600)' }}
-                onClick={() => setOpen(true)}
-                aria-label={isEn ? 'View SVHC report' : 'SVHC 성적서 보기'}
-              >
-                {isEn ? 'View Report' : '성적서 보기'}
-              </button>
-              <a
-                href="/documents/downloads/svhc-report.pdf"
-                download
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold text-base transition-all duration-200 hover:shadow-lg"
-                style={{
-                  background: 'rgba(255,255,255,0.15)',
-                  color: 'white',
-                  border: '1px solid rgba(255,255,255,0.3)',
-                }}
-                aria-label={isEn ? 'Download SVHC report PDF' : 'SVHC 성적서 PDF 다운로드'}
-              >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M8 2v9M5 8l3 3 3-3M3 14h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                {isEn ? 'Download PDF' : 'PDF 다운로드'}
-              </a>
-            </div>
+          <p
+            className="text-sm font-bold uppercase tracking-widest mb-4"
+            style={{ color: 'rgba(255,255,255,0.6)' }}
+          >
+            EU REACH Regulation · {isEn ? 'Officially Verified' : '공식 검증'}
+          </p>
+          <div className="flex items-baseline justify-center gap-3 mb-3">
+            <span
+              className="text-6xl sm:text-8xl lg:text-9xl font-black"
+              style={{ color: 'var(--secondary-400, #34d399)' }}
+            >
+              {SITE_CONFIG.stats.svhc}
+            </span>
+            <span className="text-xl sm:text-3xl font-bold text-white">
+              {isEn ? 'types' : '종'}
+            </span>
           </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-4">
+            {isEn ? 'SVHC Substances Not Detected' : 'SVHC 유해물질 미검출'}
+          </h2>
+          <p className="text-white/70 max-w-4xl mx-auto text-lg leading-relaxed">
+            {isEn
+              ? 'Substances of Very High Concern (SVHC) are chemicals subject to regulation under EU REACH regulations. All 235 substances listed were not detected in Ocean Tech\'s zinc weights, proving complete eco-friendliness.'
+              : 'SVHC(고위험 우려물질)는 EU REACH 규정에 따라 관리되는 화학물질입니다. 오션테크 아연추에서는 목록에 등재된 235종 전종이 미검출되어 완전한 친환경성이 입증되었습니다.'}
+          </p>
+          <p
+            className="text-sm leading-relaxed mt-2 max-w-3xl mx-auto"
+            style={{ color: 'rgba(255,255,255,0.45)' }}
+          >
+            {isEn
+              ? '* SVHC testing means that an accredited laboratory systematically checks whether a product contains any of the 235 hazardous substances listed by the EU — such as carcinogens, mutagens, and reproductive toxins. Passing this test is the highest international standard of chemical safety, and it directly assures fishers, consumers, and regulators that Ocean Tech\'s zinc weights pose zero chemical risk to people or the marine ecosystem.'
+              : '* SVHC 시험이란 EU가 지정한 발암물질·변이원·생식독성물질 등 235종의 고위험 화학물질이 제품에 포함되어 있는지를 공인기관이 체계적으로 검사하는 것입니다. 이 시험을 통과한다는 것은 국제 최고 수준의 화학 안전성을 확보했다는 의미로, 어민·소비자·규제기관 모두에게 오션테크 아연추가 인체와 해양 생태계에 화학적 위험이 전혀 없음을 공식적으로 보증합니다.'}
+          </p>
         </div>
       </div>
-
-      <Modal
-        open={open}
-        onClose={() => setOpen(false)}
-        title={isEn ? 'SVHC Test Report' : 'SVHC 시험성적서'}
-      >
-        <div className="relative w-full" style={{ minHeight: '400px' }}>
-          <Image
-            src="/documents/certs/svhc-report.png"
-            alt="SVHC 시험성적서"
-            fill
-            className="object-contain"
-            sizes="(max-width: 768px) 90vw, 672px"
-          />
-        </div>
-      </Modal>
     </section>
   );
 }

@@ -87,7 +87,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
       {/* Content */}
       <div className="relative z-10 w-full px-4 sm:px-8 lg:px-24 max-w-[1920px] mx-auto py-16 sm:py-20 lg:py-28">
         <div
-          className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-center gap-8"
+          className="grid grid-cols-1 lg:grid-cols-[6fr_1.6fr] items-center gap-8"
         >
           {/* LEFT — Text */}
           <div className="pl-0 lg:pl-20">
@@ -184,42 +184,40 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 boxShadow: '0 8px 32px rgba(2,16,151,0.12)',
               }}
             >
-              {/* Slide area */}
-              <div className="relative" style={{ height: '280px' }}>
+              {/* Slide area — vertical layout for narrow column */}
+              <div className="relative" style={{ height: '420px' }}>
                 {CERT_SLIDES.map((slide, i) => (
                   <div
                     key={i}
-                    className="absolute inset-0 flex items-center gap-6 px-6"
+                    className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 py-5"
                     style={{
                       opacity: currentSlide === i ? 1 : 0,
                       transform: currentSlide === i ? 'scale(1)' : 'scale(0.95)',
-                      transition: currentSlide === i
-                        ? 'opacity 0.5s ease-in, transform 0.5s ease-in'
-                        : 'opacity 0.5s ease-out, transform 0.5s ease-out',
+                      transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
                       pointerEvents: currentSlide === i ? 'auto' : 'none',
                     }}
                   >
                     {/* Cert image */}
-                    <div className="relative w-[180px] h-[220px] bg-white/90 rounded-xl overflow-hidden flex-shrink-0">
+                    <div className="relative w-[160px] h-[220px] bg-white/90 rounded-xl overflow-hidden flex-shrink-0">
                       <Image
                         src={slide.image}
                         alt={slide.labelKo}
                         fill
-                        className="object-contain p-3"
-                        sizes="180px"
+                        className="object-contain p-2"
+                        sizes="140px"
                       />
                     </div>
-                    {/* Cert info */}
-                    <div className="flex-1 min-w-0">
-                      <p className="text-base font-bold uppercase tracking-wider mb-2" style={{ color: 'rgba(255,255,255,0.92)' }}>
+                    {/* Cert info — centered */}
+                    <div className="text-center min-w-0">
+                      <p className="text-sm font-bold uppercase tracking-wider mb-1" style={{ color: 'rgba(255,255,255,0.92)' }}>
                         {locale === 'en' ? slide.labelEn : slide.labelKo}
                       </p>
-                      <p className="text-2xl font-black text-white leading-tight mb-3">
+                      <p className="text-xl font-black text-white leading-tight mb-2">
                         {slide.number}
                       </p>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center justify-center gap-2">
                         <span className="w-2 h-2 rounded-full" style={{ background: 'var(--secondary-500)' }} />
-                        <span className="text-base text-white/60">
+                        <span className="text-sm text-white/60">
                           {locale === 'en' ? 'Certified & Verified' : '국가공인 인증'}
                         </span>
                       </div>

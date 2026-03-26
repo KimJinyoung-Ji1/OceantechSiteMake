@@ -54,21 +54,25 @@ export default function Header({ locale }: HeaderProps) {
             </Link>
 
             {/* Center nav — spread wide */}
-            <nav className="hidden flex-1 items-center justify-evenly xl:flex" aria-label="주요 메뉴">
+            <nav className="hidden flex-1 items-stretch justify-evenly xl:flex h-full" aria-label="주요 메뉴">
               {items.map((item) => (
                 <div
                   key={item.href}
-                  className="relative flex items-center"
+                  className="relative flex flex-1 items-stretch"
                 >
                   <Link
                     href={localePath(item.href)}
-                    className="group relative flex items-center gap-1.5 py-2 min-h-[44px] text-[28px] font-semibold transition-colors duration-150"
-                    style={{ color: 'rgba(255,255,255,0.82)' }}
+                    className="group relative flex flex-1 items-center justify-center gap-1.5 h-full text-[22px] font-semibold transition-all duration-200"
+                    style={{ color: 'rgba(255,255,255,0.82)', background: 'transparent' }}
                     onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      el.style.color = '#ffffff';
+                      el.style.background = 'rgba(255,255,255,0.12)';
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.82)';
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      el.style.color = 'rgba(255,255,255,0.82)';
+                      el.style.background = 'transparent';
                     }}
                   >
                     <span>{label(item)}</span>
@@ -82,43 +86,6 @@ export default function Header({ locale }: HeaderProps) {
 
             {/* Right: CTA + Lang */}
             <div className="hidden items-center gap-3 xl:flex shrink-0">
-              <Link
-                href={localePath('/certification')}
-                className="rounded-xl border px-5 py-2.5 min-h-[44px] inline-flex items-center text-[24px] font-semibold transition-colors duration-150"
-                style={{
-                  borderColor: 'rgba(255,255,255,0.18)',
-                  color: 'rgba(255,255,255,0.8)',
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.borderColor = 'rgba(255,255,255,0.4)';
-                  el.style.color = '#ffffff';
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.borderColor = 'rgba(255,255,255,0.18)';
-                  el.style.color = 'rgba(255,255,255,0.8)';
-                }}
-              >
-                {locale === 'en' ? 'Certification' : '인증현황'}
-              </Link>
-              <Link
-                href={localePath('/contact')}
-                className="rounded-xl px-6 py-2.5 min-h-[44px] inline-flex items-center text-[24px] font-black transition-all duration-150"
-                style={{
-                  background: 'rgba(255,255,255,0.95)',
-                  color: '#021097',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.filter = 'brightness(1.08)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.filter = 'brightness(1)';
-                }}
-              >
-                {locale === 'en' ? 'Contact' : '문의하기'}
-              </Link>
               <Link
                 href={locale === 'ko' ? '/en' : '/ko'}
                 className="rounded-lg border px-4 py-2 min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[20px] font-semibold transition-colors duration-150"

@@ -22,18 +22,18 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
             >
               {isEn ? 'Lead is Poisoning\nOur Ocean' : '납이 바다를\n오염시키고 있습니다'}
             </h2>
-            <div className="space-y-4" style={{ color: 'var(--gray-600)' }}>
-              <p className="section-subtitle">
+            <div className="space-y-5" style={{ color: 'var(--gray-600)', fontSize: '1.1rem', lineHeight: '2' }}>
+              <p>
                 {isEn
                   ? 'Lead weights used in fishing nets gradually dissolve in seawater, releasing toxic heavy metals that accumulate in marine organisms and eventually enter the human food chain.'
                   : '그물에 사용되는 납 어망추는 해수에서 서서히 용해되어 독성 중금속을 방출합니다. 이는 해양 생물에 축적되고, 결국 인간의 식탁까지 위협합니다.'}
               </p>
-              <p className="section-subtitle">
+              <p>
                 {isEn
                   ? 'Lead is classified as a Group 2A carcinogen by the International Agency for Research on Cancer (IARC). Continued use of lead weights is now recognized globally as a serious marine pollution issue.'
                   : '납은 국제암연구소(IARC)가 지정한 2A군 발암물질입니다. 납추의 지속 사용은 이미 국제적으로 심각한 해양 오염 문제로 인식되고 있습니다.'}
               </p>
-              <p className="section-subtitle">
+              <p>
                 {isEn
                   ? "Ocean Tech's zinc weights are a completely eco-friendly alternative — zinc is an essential mineral naturally found in seawater with zero toxicity."
                   : '오션테크의 아연추는 완전한 친환경 대안입니다. 아연은 해수 중에 자연적으로 존재하는 필수 미네랄로, 독성이 없습니다.'}
@@ -41,98 +41,118 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
             </div>
           </div>
 
-          {/* Product photo comparison */}
-          <div className="flex flex-col sm:flex-row items-stretch gap-4">
-            {/* Lead weight */}
+          {/* Lead vs Zinc comparison — same as products page */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-0 items-stretch">
+            {/* Lead */}
             <div
-              className="rounded-2xl overflow-hidden flex flex-col flex-1"
+              className="rounded-2xl lg:rounded-r-none overflow-hidden flex flex-col"
               style={{
-                border: '2px solid rgba(239,68,68,0.5)',
-                background: 'rgba(239,68,68,0.04)',
-                boxShadow: '0 4px 20px rgba(239,68,68,0.12)',
+                border: '2px solid rgba(239,68,68,0.25)',
+                background: 'white',
+                boxShadow: '0 8px 32px rgba(239,68,68,0.08)',
               }}
             >
-              <div className="relative w-full" style={{ aspectRatio: '1/1', background: '#FEF2F2' }}>
+              <div
+                className="relative w-full"
+                style={{ aspectRatio: '4/3', background: 'linear-gradient(135deg, #FEF2F2 0%, #FECACA40 100%)' }}
+              >
                 <Image
                   src="/images/products/lead-weight.png"
-                  alt={isEn ? 'Lead fishing weight' : '납추'}
+                  alt={isEn ? 'Lead fishing weight' : '기존 납추'}
                   fill
-                  className="object-contain p-4"
-                  sizes="(max-width: 768px) 45vw, 300px"
-                  style={{ objectFit: 'contain' }}
+                  className="object-contain p-6"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  unoptimized
                 />
-                <div
-                  className="absolute inset-0 flex items-center justify-center"
-                  style={{ background: 'rgba(239,68,68,0.12)' }}
-                >
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                    <circle cx="24" cy="24" r="20" fill="rgba(239,68,68,0.85)" />
-                    <path d="M15 15l18 18M33 15L15 33" stroke="white" strokeWidth="3" strokeLinecap="round" />
-                  </svg>
+                <div className="absolute top-4 left-4">
+                  <span className="text-sm font-bold px-4 py-1.5 rounded-full" style={{ background: 'rgba(239,68,68,0.9)', color: 'white' }}>
+                    {isEn ? 'CONVENTIONAL' : '기존 납추'}
+                  </span>
                 </div>
               </div>
-              <div className="p-5">
-                <p className="font-bold text-xl mb-3" style={{ color: '#DC2626' }}>
-                  {isEn ? 'Lead Weight' : '납추'}
-                </p>
-                <ul className="text-base space-y-2" style={{ color: 'var(--gray-600)' }}>
-                  <li>• {isEn ? 'Toxic heavy metal' : '독성 중금속'}</li>
-                  <li>• {isEn ? '1~2 yr lifespan' : '1~2년 수명'}</li>
-                  <li>• {isEn ? 'Frequent replacement' : '잦은 교체'}</li>
-                  <li>• {isEn ? 'IARC 2A carcinogen' : 'IARC 2A 발암물질'}</li>
+              <div className="p-6 flex-1 flex flex-col items-center justify-center" style={{ background: 'rgba(239,68,68,0.03)' }}>
+                <h3 className="text-xl font-bold mb-4" style={{ color: '#DC2626' }}>
+                  {isEn ? 'Conventional Lead' : '기존 납추'}
+                </h3>
+                <ul className="space-y-3 inline-block">
+                  {[
+                    isEn ? 'Toxic heavy metal' : '독성 중금속',
+                    isEn ? 'Short lifespan (1–2 years)' : '짧은 수명 (1~2년)',
+                    isEn ? 'Frequent replacement' : '잦은 교체',
+                    isEn ? 'IARC 2A carcinogen' : 'IARC 2A 발암물질',
+                  ].map((text) => (
+                    <li key={text} className="flex items-center gap-3 text-base" style={{ color: 'var(--text-body)' }}>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="shrink-0">
+                        <circle cx="10" cy="10" r="9" fill="#FEE2E2" stroke="#DC2626" strokeWidth="1.5" />
+                        <path d="M7 10h6" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                      {text}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
 
-            {/* VS divider */}
-            <div className="flex sm:flex-col items-center justify-center px-2 py-4 sm:py-0 gap-2">
-              <div className="flex-1 sm:w-px sm:flex-initial sm:h-full" style={{ background: 'var(--gray-200)', height: '1px', width: '100%' }} />
-              <span
-                className="text-xl font-black px-3 py-1.5 rounded-full shrink-0"
-                style={{ background: 'var(--gray-100)', color: 'var(--gray-500)', border: '1px solid var(--gray-200)' }}
+            {/* VS */}
+            <div className="hidden lg:flex flex-col items-center justify-center px-2" style={{ zIndex: 10 }}>
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center font-black text-lg"
+                style={{ background: 'linear-gradient(135deg, var(--primary-500), var(--primary-700))', color: 'white', boxShadow: '0 4px 20px rgba(1,104,239,0.35)' }}
               >
                 VS
-              </span>
-              <div className="flex-1 sm:w-px sm:flex-initial sm:h-full" style={{ background: 'var(--gray-200)', height: '1px', width: '100%' }} />
+              </div>
+            </div>
+            <div className="flex lg:hidden items-center justify-center py-4">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center font-black text-base" style={{ background: 'var(--primary-500)', color: 'white' }}>
+                VS
+              </div>
             </div>
 
-            {/* Zinc weight */}
+            {/* Zinc */}
             <div
-              className="rounded-2xl overflow-hidden flex flex-col flex-1"
+              className="rounded-2xl lg:rounded-l-none overflow-hidden flex flex-col"
               style={{
-                border: '2px solid rgba(23,233,181,0.55)',
-                background: 'rgba(23,233,181,0.05)',
-                boxShadow: '0 4px 20px rgba(23,233,181,0.15)',
+                border: '2px solid rgba(23,233,181,0.4)',
+                background: 'white',
+                boxShadow: '0 8px 32px rgba(23,233,181,0.10)',
               }}
             >
-              <div className="relative w-full" style={{ aspectRatio: '1/1', background: '#E8F5F1' }}>
+              <div
+                className="relative w-full"
+                style={{ aspectRatio: '4/3', background: 'linear-gradient(135deg, #ECFDF5 0%, #D1FAE540 100%)' }}
+              >
                 <Image
                   src="/images/products/zinc-weight.png"
-                  alt={isEn ? 'Zinc fishing weight' : '아연추'}
+                  alt={isEn ? 'OceanTech zinc fishing weight' : '오션테크 아연추'}
                   fill
-                  className="object-contain p-4"
-                  sizes="(max-width: 768px) 45vw, 300px"
-                  style={{ objectFit: 'contain' }}
+                  className="object-contain p-6"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                 />
-                <div
-                  className="absolute inset-0 flex items-center justify-center"
-                  style={{ background: 'rgba(23,233,181,0.10)' }}
-                >
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                    <circle cx="24" cy="24" r="20" fill="rgba(23,233,181,0.9)" />
-                    <path d="M13 24l7.5 7.5 14.5-15" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                <div className="absolute top-4 left-4">
+                  <span className="text-sm font-bold px-4 py-1.5 rounded-full" style={{ background: 'rgba(14,173,135,0.9)', color: 'white' }}>
+                    {isEn ? 'OCEANTECH' : '오션테크 아연추'}
+                  </span>
                 </div>
               </div>
-              <div className="p-5">
-                <p className="font-bold text-xl mb-3" style={{ color: 'var(--secondary-700,#047857)' }}>
-                  {isEn ? 'Zinc Weight' : '아연추'}
-                </p>
-                <ul className="text-base space-y-2" style={{ color: 'var(--gray-600)' }}>
-                  <li>• {isEn ? 'Zero toxicity' : '독성 없음'}</li>
-                  <li>• {isEn ? '10+ yr lifespan' : '10년 이상 수명'}</li>
-                  <li>• {isEn ? '80% cost savings' : '비용 80% 절감'}</li>
-                  <li>• {isEn ? 'SVHC 235 free' : 'SVHC 235종 미검출'}</li>
+              <div className="p-6 flex-1 flex flex-col items-center justify-center" style={{ background: 'rgba(23,233,181,0.03)' }}>
+                <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--secondary-700)' }}>
+                  {isEn ? 'OceanTech Zinc' : '오션테크 아연추'}
+                </h3>
+                <ul className="space-y-3 inline-block">
+                  {[
+                    isEn ? 'Zero toxicity' : '독성 없음',
+                    isEn ? '10x longer lifespan' : '10년 이상 수명',
+                    isEn ? '80% cost savings' : '비용 80% 절감',
+                    isEn ? 'SVHC 235 non-detected' : 'SVHC 235종 미검출',
+                  ].map((text) => (
+                    <li key={text} className="flex items-center gap-3 text-base" style={{ color: 'var(--text-body)' }}>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="shrink-0">
+                        <circle cx="10" cy="10" r="9" fill="#D1FAE5" stroke="var(--secondary-700)" strokeWidth="1.5" />
+                        <path d="M6 10l3 3 5-5" stroke="var(--secondary-700)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      {text}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

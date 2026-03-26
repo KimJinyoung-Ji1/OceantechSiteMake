@@ -66,12 +66,12 @@ export default function NewsBanner() {
 
   return (
     <section
-      className="py-10 lg:py-14 px-4 sm:px-6 lg:px-24"
+      className="py-6 lg:py-10 px-3 sm:px-4 lg:px-6"
       style={{ background: 'var(--background)' }}
       aria-label="뉴스 배너"
     >
-      <div className="max-w-[1920px] mx-auto">
-        <div className="text-center mb-6">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="text-center mb-4">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             NEWS
           </p>
@@ -90,61 +90,8 @@ export default function NewsBanner() {
           onMouseLeave={() => setIsPaused(false)}
         >
           <div className="flex items-stretch">
-            {/* Left: thumbnail + content — crossfade via stacked absolutes */}
-            <div className="relative flex-1" style={{ minHeight: '220px' }}>
-              {NEWS_ITEMS.map((n, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col lg:flex-row"
-                  style={{
-                    position: idx === 0 ? 'relative' : 'absolute',
-                    inset: idx === 0 ? undefined : 0,
-                    opacity: idx === current ? 1 : 0,
-                    transition: 'opacity 0.5s ease-in-out',
-                    pointerEvents: idx === current ? 'auto' : 'none',
-                  }}
-                >
-                  {n.image && (
-                    <div
-                      className="shrink-0 overflow-hidden lg:rounded-none rounded-t-2xl"
-                      style={{ width: '100%', maxWidth: 280, minHeight: 200 }}
-                    >
-                      <Image
-                        src={n.image}
-                        alt={n.title}
-                        width={280}
-                        height={200}
-                        className="w-full h-full object-cover"
-                        style={{ minHeight: 200 }}
-                        sizes="(max-width: 1024px) 100vw, 280px"
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0 px-6 py-6 lg:px-8 lg:py-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span
-                        className="px-4 py-1.5 rounded-full text-base font-bold"
-                        style={{ background: 'rgba(2,16,151,0.08)', color: 'var(--primary-500)' }}
-                      >
-                        {n.source}
-                      </span>
-                      <span className="text-base font-medium" style={{ color: 'var(--text-secondary)' }}>
-                        {n.date}
-                      </span>
-                    </div>
-                    <h3 className="text-xl lg:text-2xl font-bold mb-3 leading-snug" style={{ color: 'var(--text-primary)' }}>
-                      {n.title}
-                    </h3>
-                    <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
-                      {n.summary}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Right: news selection list */}
-            <div className="hidden xl:flex flex-col shrink-0 border-l" style={{ width: 300, borderColor: 'var(--border)' }}>
+            {/* Left: news selection list */}
+            <div className="hidden xl:flex flex-col shrink-0 border-r" style={{ width: 420, borderColor: 'var(--border)' }}>
               {NEWS_ITEMS.map((n, idx) => (
                 <button
                   key={idx}
@@ -168,10 +115,63 @@ export default function NewsBanner() {
                 </button>
               ))}
             </div>
+
+            {/* Right: thumbnail + content — crossfade */}
+            <div className="relative flex-1" style={{ minHeight: '180px' }}>
+              {NEWS_ITEMS.map((n, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col lg:flex-row"
+                  style={{
+                    position: idx === 0 ? 'relative' : 'absolute',
+                    inset: idx === 0 ? undefined : 0,
+                    opacity: idx === current ? 1 : 0,
+                    transition: 'opacity 0.5s ease-in-out',
+                    pointerEvents: idx === current ? 'auto' : 'none',
+                  }}
+                >
+                  {n.image && (
+                    <div
+                      className="shrink-0 overflow-hidden lg:rounded-none rounded-t-2xl w-full lg:w-auto"
+                      style={{ maxWidth: 'min(280px, 100%)', minHeight: 160 }}
+                    >
+                      <Image
+                        src={n.image}
+                        alt={n.title}
+                        width={280}
+                        height={200}
+                        className="w-full h-full object-cover"
+                        style={{ minHeight: 200 }}
+                        sizes="(max-width: 1024px) 100vw, 280px"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0 px-4 py-4 sm:px-6 sm:py-5 lg:px-6 lg:py-5">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span
+                        className="px-4 py-1.5 rounded-full text-base font-bold"
+                        style={{ background: 'rgba(2,16,151,0.08)', color: 'var(--primary-500)' }}
+                      >
+                        {n.source}
+                      </span>
+                      <span className="text-base font-medium" style={{ color: 'var(--text-secondary)' }}>
+                        {n.date}
+                      </span>
+                    </div>
+                    <h3 className="text-xl lg:text-2xl font-bold mb-3 leading-snug" style={{ color: 'var(--text-primary)' }}>
+                      {n.title}
+                    </h3>
+                    <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                      {n.summary}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Controls */}
-          <div className="flex items-center justify-between px-6 pb-4 lg:px-8">
+          <div className="flex items-center justify-between px-4 pb-3 sm:px-6 lg:px-6">
             {/* Dots */}
             <div className="flex items-center gap-2">
               {NEWS_ITEMS.map((_, i) => (
