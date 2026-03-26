@@ -49,7 +49,7 @@ export default function OceanDivider({ variant = 1, height = 220 }: OceanDivider
       {/* Dark overlay for depth */}
       <div
         className="absolute inset-0 z-0"
-        style={{ background: 'rgba(12,114,135,0.22)' }}
+        style={{ background: 'rgba(2,16,151,0.22)' }}
       />
 
       {/* SVG wave clip — bottom edge */}

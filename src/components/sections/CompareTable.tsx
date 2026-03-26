@@ -7,7 +7,7 @@ interface CompareTableProps {
 
 const CheckIcon = () => (
   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-    <circle cx="11" cy="11" r="11" fill="#0C7287" />
+    <circle cx="11" cy="11" r="11" fill="#021097" />
     <path d="M6.5 11.5l3 3 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
@@ -54,7 +54,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
             <div
               className="px-6 py-5 text-center"
               style={{
-                background: 'linear-gradient(135deg, #0C7287 0%, #11A88F 100%)',
+                background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
                 borderRight: '1px solid rgba(255,255,255,0.15)',
               }}
             >
@@ -105,7 +105,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
                 <CheckIcon />
                 <span
                   className="text-lg font-bold"
-                  style={{ color: '#0C7287' }}
+                  style={{ color: '#021097' }}
                 >
                   {row.zinc}
                 </span>

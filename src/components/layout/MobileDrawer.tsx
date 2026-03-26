@@ -50,7 +50,7 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
             {/* Header */}
             <div
               className="flex items-center justify-between px-6 py-5 border-b border-white/10"
-              style={{ background: 'linear-gradient(135deg, #0C7287 0%, #11A88F 50%, #34D9B5 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #021097 0%, #0168EF 50%, #03E9F8 100%)' }}
             >
               <span className="text-white font-bold text-lg">OCEANTECH</span>
               <button
@@ -72,8 +72,8 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
                     href={localePath(item.href)}
                     onClick={onClose}
                     className="flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-colors"
-                    style={{ color: '#0C7287' }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(12,114,135,0.08)'; (e.currentTarget as HTMLAnchorElement).style.color = '#0C7287'; }}
+                    style={{ color: '#021097' }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(2,16,151,0.08)'; (e.currentTarget as HTMLAnchorElement).style.color = '#021097'; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = ''; }}
                   >
                     <span className="flex items-center gap-2">
@@ -94,14 +94,14 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
 
                   {/* Sub items */}
                   {item.children && (
-                    <div className="ml-4 border-l-2 pl-4 mt-1 mb-2" style={{ borderColor: 'rgba(12,114,135,0.2)' }}>
+                    <div className="ml-4 border-l-2 pl-4 mt-1 mb-2" style={{ borderColor: 'rgba(2,16,151,0.2)' }}>
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={localePath(child.href)}
                           onClick={onClose}
                           className="block py-2 text-sm transition-colors"
-                          style={{ color: 'rgba(12,114,135,0.7)' }}
+                          style={{ color: 'rgba(2,16,151,0.7)' }}
                         >
                           {locale === 'en' ? child.labelEn : child.label}
                         </Link>
@@ -119,7 +119,7 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
                   href={locale === 'ko' ? '/en' : '/ko'}
                   onClick={onClose}
                   className="text-sm font-medium transition-colors"
-                  style={{ color: '#0C7287' }}
+                  style={{ color: '#021097' }}
                 >
                   {locale === 'ko' ? 'English' : '한국어'}
                 </Link>
@@ -127,7 +127,7 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
                   href={localePath('/contact')}
                   onClick={onClose}
                   className="px-4 py-2 rounded-full text-sm font-bold text-white transition-colors"
-                  style={{ background: 'linear-gradient(135deg, #0C7287 0%, #11A88F 100%)' }}
+                  style={{ background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)' }}
                 >
                   문의하기
                 </Link>

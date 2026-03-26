@@ -17,7 +17,7 @@ const compareRows = [
 
 const CheckIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-    <circle cx="10" cy="10" r="10" fill="#0C7287" />
+    <circle cx="10" cy="10" r="10" fill="#021097" />
     <path d="M5.5 10.5l3 3 6-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
@@ -54,8 +54,8 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
         <div
           className="rounded-3xl overflow-hidden"
           style={{
-            border: '1px solid rgba(12,114,135,0.18)',
-            boxShadow: '0 8px 40px rgba(12,114,135,0.10), 0 2px 8px rgba(0,0,0,0.06)',
+            border: '1px solid rgba(2,16,151,0.18)',
+            boxShadow: '0 8px 40px rgba(2,16,151,0.10), 0 2px 8px rgba(0,0,0,0.06)',
           }}
         >
           {/* Header */}
@@ -64,17 +64,17 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
               className="px-6 py-6"
               style={{
                 background: '#F0FDF9',
-                borderRight: '1px solid rgba(12,114,135,0.15)',
+                borderRight: '1px solid rgba(2,16,151,0.15)',
               }}
             >
-              <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#0C7287' }}>
+              <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#021097' }}>
                 {isEn ? 'Category' : '항목'}
               </p>
             </div>
             <div
               className="px-6 py-6 text-center"
               style={{
-                background: 'linear-gradient(135deg, #0C7287 0%, #11A88F 100%)',
+                background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
                 borderRight: '1px solid rgba(255,255,255,0.15)',
               }}
             >
@@ -106,7 +106,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
               key={i}
               className="grid grid-cols-3 border-t"
               style={{
-                borderColor: 'rgba(12,114,135,0.10)',
+                borderColor: 'rgba(2,16,151,0.10)',
                 background: i % 2 === 0 ? '#FFFFFF' : '#F0FDF9',
               }}
             >
@@ -115,7 +115,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                 className="px-6 py-5 font-semibold text-base flex items-center"
                 style={{
                   color: 'var(--gray-700)',
-                  borderRight: '1px solid rgba(12,114,135,0.10)',
+                  borderRight: '1px solid rgba(2,16,151,0.10)',
                 }}
               >
                 {isEn ? row.labelEn : row.labelKo}
@@ -124,10 +124,10 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
               {/* Zinc */}
               <div
                 className="px-6 py-5 flex items-center justify-center gap-2 border-r"
-                style={{ borderColor: 'rgba(12,114,135,0.10)', background: 'rgba(17,168,143,0.04)' }}
+                style={{ borderColor: 'rgba(2,16,151,0.10)', background: 'rgba(1,72,200,0.04)' }}
               >
                 <CheckIcon />
-                <span className="text-base font-semibold" style={{ color: '#0C7287' }}>
+                <span className="text-base font-semibold" style={{ color: '#021097' }}>
                   {row.zinc}
                 </span>
               </div>

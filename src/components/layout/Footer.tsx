@@ -53,7 +53,7 @@ export default function Footer({ locale }: FooterProps) {
                 <span className="text-[11px] font-black tracking-[0.2em] text-white">OT</span>
               </div>
               <div>
-                <p className="text-xl font-black tracking-[0.1em]" style={{ color: '#7AEDC8' }}>
+                <p className="text-xl font-black tracking-[0.1em]" style={{ color: '#17E9B5' }}>
                   OCEANTECH
                 </p>
                 <p className="text-sm mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>
@@ -81,7 +81,7 @@ export default function Footer({ locale }: FooterProps) {
                 <span className="shrink-0" style={{ color: 'rgba(255,255,255,0.3)' }}>{t.footer.tel}:</span>
                 <a
                   href={`tel:${SITE_CONFIG.contact.tel}`}
-                  className="transition-colors hover:text-[#34D9B5]"
+                  className="transition-colors hover:text-[#03E9F8]"
                 >
                   {SITE_CONFIG.contact.tel}
                 </a>
@@ -90,7 +90,7 @@ export default function Footer({ locale }: FooterProps) {
                 <span className="shrink-0" style={{ color: 'rgba(255,255,255,0.3)' }}>{t.footer.email}:</span>
                 <a
                   href={`mailto:${SITE_CONFIG.contact.email}`}
-                  className="transition-colors hover:text-[#34D9B5]"
+                  className="transition-colors hover:text-[#03E9F8]"
                 >
                   {SITE_CONFIG.contact.email}
                 </a>
@@ -111,9 +111,9 @@ export default function Footer({ locale }: FooterProps) {
                 border: '1px solid rgba(23,233,181,0.2)',
               }}
             >
-              <span className="h-2.5 w-2.5 rounded-full shrink-0" style={{ background: '#34D9B5' }} />
+              <span className="h-2.5 w-2.5 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
               <div>
-                <p className="text-sm font-semibold" style={{ color: '#34D9B5' }}>
+                <p className="text-sm font-semibold" style={{ color: '#03E9F8' }}>
                   {locale === 'en' ? 'Green Technology Certified' : '녹색기술인증'}
                 </p>
                 <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
@@ -136,7 +136,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-base transition-colors hover:text-[#34D9B5]"
+                    className="text-base transition-colors hover:text-[#03E9F8]"
                     style={{ color: 'rgba(255,255,255,0.5)' }}
                   >
                     {link.label}
@@ -159,7 +159,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-base transition-colors hover:text-[#34D9B5]"
+                    className="text-base transition-colors hover:text-[#03E9F8]"
                     style={{ color: 'rgba(255,255,255,0.5)' }}
                   >
                     {link.label}
@@ -182,7 +182,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-base transition-colors hover:text-[#34D9B5]"
+                    className="text-base transition-colors hover:text-[#03E9F8]"
                     style={{ color: 'rgba(255,255,255,0.5)' }}
                   >
                     {link.label}
@@ -200,12 +200,12 @@ export default function Footer({ locale }: FooterProps) {
                   border: '1px solid rgba(23,233,181,0.16)',
                 }}
               >
-                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#34D9B5' }} />
+                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
                 <div>
                   <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>
                     {locale === 'en' ? 'Green Product' : '녹색기술제품'}
                   </p>
-                  <p className="text-sm font-semibold" style={{ color: '#34D9B5' }}>
+                  <p className="text-sm font-semibold" style={{ color: '#03E9F8' }}>
                     {SITE_CONFIG.certifications.greenProduct.number}
                   </p>
                 </div>
@@ -213,16 +213,16 @@ export default function Footer({ locale }: FooterProps) {
               <div
                 className="flex items-center gap-2 rounded-xl px-3 py-2.5"
                 style={{
-                  background: 'rgba(12,114,135,0.08)',
-                  border: '1px solid rgba(12,114,135,0.2)',
+                  background: 'rgba(2,16,151,0.08)',
+                  border: '1px solid rgba(2,16,151,0.2)',
                 }}
               >
-                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#7AEDC8' }} />
+                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#17E9B5' }} />
                 <div>
                   <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>
                     {locale === 'en' ? 'Venture Company' : '벤처기업'}
                   </p>
-                  <p className="text-sm font-semibold" style={{ color: '#7AEDC8' }}>
+                  <p className="text-sm font-semibold" style={{ color: '#17E9B5' }}>
                     {SITE_CONFIG.certifications.venture.number}
                   </p>
                 </div>

@@ -79,7 +79,7 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
             >
               <div
                 className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                style={{ background: 'rgba(122,237,200,0.10)' }}
+                style={{ background: 'rgba(23,233,181,0.10)' }}
               >
                 {item.icon}
               </div>

@@ -71,14 +71,14 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
 
             <div
               className="p-6 rounded-2xl flex flex-col items-center text-center gap-3"
-              style={{ background: 'rgba(122,237,200,0.10)', border: '1px solid rgba(122,237,200,0.35)' }}
+              style={{ background: 'rgba(23,233,181,0.10)', border: '1px solid rgba(23,233,181,0.35)' }}
             >
               <div
                 className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(122,237,200,0.18)' }}
+                style={{ background: 'rgba(23,233,181,0.18)' }}
               >
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                  <circle cx="14" cy="14" r="12" stroke="var(--secondary-500,#7AEDC8)" strokeWidth="2" />
+                  <circle cx="14" cy="14" r="12" stroke="var(--secondary-500,#17E9B5)" strokeWidth="2" />
                   <path d="M8 14l4 4 8-8" stroke="var(--secondary-500)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>

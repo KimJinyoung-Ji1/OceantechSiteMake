@@ -41,7 +41,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(125deg, rgba(2,20,40,0.85) 0%, rgba(12,114,135,0.70) 45%, rgba(2,20,40,0.60) 100%)',
+              'linear-gradient(125deg, rgba(2,20,40,0.85) 0%, rgba(2,16,151,0.70) 45%, rgba(2,20,40,0.60) 100%)',
           }}
         />
       </div>
@@ -71,7 +71,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
 
             <p
               className="text-2xl font-medium mb-6"
-              style={{ color: '#7AEDC8' }}
+              style={{ color: '#17E9B5' }}
             >
               {t.hero.subtitle}
             </p>
@@ -130,14 +130,14 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 background: 'rgba(255,255,255,0.96)',
                 backdropFilter: 'blur(24px)',
                 WebkitBackdropFilter: 'blur(24px)',
-                border: '1.5px solid rgba(52,217,181,0.40)',
-                boxShadow: '0 8px 32px rgba(12,114,135,0.18), 0 0 0 1px rgba(255,255,255,0.6)',
+                border: '1.5px solid rgba(3,233,248,0.40)',
+                boxShadow: '0 8px 32px rgba(2,16,151,0.18), 0 0 0 1px rgba(255,255,255,0.6)',
               }}
             >
               {/* Top accent bar */}
               <div
                 className="h-1 w-full"
-                style={{ background: 'linear-gradient(90deg, #0C7287, #11A88F, #34D9B5)' }}
+                style={{ background: 'linear-gradient(90deg, #021097, #0168EF, #03E9F8)' }}
               />
               {/* Cert image area */}
               <div className="relative w-full bg-white" style={{ height: '140px' }}>
@@ -154,26 +154,26 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 />
               </div>
               {/* Divider */}
-              <div className="mx-5" style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(52,217,181,0.35), transparent)' }} />
+              <div className="mx-5" style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(3,233,248,0.35), transparent)' }} />
               {/* Cert info */}
               <div className="px-4 py-3 flex items-start gap-3">
                 <div
                   className="mt-0.5 w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
-                  style={{ background: 'rgba(52,217,181,0.12)', border: '1px solid rgba(52,217,181,0.3)' }}
+                  style={{ background: 'rgba(3,233,248,0.12)', border: '1px solid rgba(3,233,248,0.3)' }}
                 >
                   <Image src="/images/green-cert-mark.png" alt="" width={20} height={20} className="object-contain" />
                 </div>
                 <div className="min-w-0">
                   <p
                     className="text-[10px] font-black uppercase tracking-[0.18em] mb-0.5"
-                    style={{ color: '#11A88F' }}
+                    style={{ color: '#0168EF' }}
                   >
                     {locale === 'en' ? 'Green Technology Cert.' : '녹색기술인증서'}
                   </p>
-                  <p className="text-lg font-black tracking-wider leading-tight" style={{ color: '#0C7287' }}>
+                  <p className="text-lg font-black tracking-wider leading-tight" style={{ color: '#021097' }}>
                     {SITE_CONFIG.certifications.greenTech.number}
                   </p>
-                  <p className="text-[10px] mt-0.5 font-medium" style={{ color: 'rgba(12,114,135,0.5)' }}>
+                  <p className="text-[10px] mt-0.5 font-medium" style={{ color: 'rgba(2,16,151,0.5)' }}>
                     {locale === 'en' ? 'Ministry of Science & ICT' : '과학기술정보통신부'}
                   </p>
                 </div>
@@ -187,14 +187,14 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 background: 'rgba(255,255,255,0.96)',
                 backdropFilter: 'blur(24px)',
                 WebkitBackdropFilter: 'blur(24px)',
-                border: '1.5px solid rgba(52,217,181,0.40)',
-                boxShadow: '0 8px 32px rgba(12,114,135,0.18), 0 0 0 1px rgba(255,255,255,0.6)',
+                border: '1.5px solid rgba(3,233,248,0.40)',
+                boxShadow: '0 8px 32px rgba(2,16,151,0.18), 0 0 0 1px rgba(255,255,255,0.6)',
               }}
             >
               {/* Top accent bar */}
               <div
                 className="h-1 w-full"
-                style={{ background: 'linear-gradient(90deg, #0C7287, #11A88F, #34D9B5)' }}
+                style={{ background: 'linear-gradient(90deg, #021097, #0168EF, #03E9F8)' }}
               />
               {/* Cert image area */}
               <div className="relative w-full bg-white" style={{ height: '140px' }}>
@@ -211,26 +211,26 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 />
               </div>
               {/* Divider */}
-              <div className="mx-5" style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(52,217,181,0.35), transparent)' }} />
+              <div className="mx-5" style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(3,233,248,0.35), transparent)' }} />
               {/* Cert info */}
               <div className="px-4 py-3 flex items-start gap-3">
                 <div
                   className="mt-0.5 w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
-                  style={{ background: 'rgba(52,217,181,0.12)', border: '1px solid rgba(52,217,181,0.3)' }}
+                  style={{ background: 'rgba(3,233,248,0.12)', border: '1px solid rgba(3,233,248,0.3)' }}
                 >
                   <Image src="/images/green-cert-mark.png" alt="" width={20} height={20} className="object-contain" />
                 </div>
                 <div className="min-w-0">
                   <p
                     className="text-[10px] font-black uppercase tracking-[0.18em] mb-0.5"
-                    style={{ color: '#11A88F' }}
+                    style={{ color: '#0168EF' }}
                   >
                     {locale === 'en' ? 'Green Product Verification' : '녹색기술제품 확인서'}
                   </p>
-                  <p className="text-lg font-black tracking-wider leading-tight" style={{ color: '#0C7287' }}>
+                  <p className="text-lg font-black tracking-wider leading-tight" style={{ color: '#021097' }}>
                     {SITE_CONFIG.certifications.greenProduct.number}
                   </p>
-                  <p className="text-[10px] mt-0.5 font-medium" style={{ color: 'rgba(12,114,135,0.5)' }}>
+                  <p className="text-[10px] mt-0.5 font-medium" style={{ color: 'rgba(2,16,151,0.5)' }}>
                     {locale === 'en' ? 'Ministry of Environment' : '환경부'}
                   </p>
                 </div>

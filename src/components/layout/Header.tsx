@@ -40,11 +40,11 @@ export default function Header({ locale }: HeaderProps) {
         <header
           className="border-b"
           style={{
-            background: 'linear-gradient(135deg, rgba(12,114,135,0.92) 0%, rgba(17,168,143,0.88) 50%, rgba(52,217,181,0.90) 100%)',
+            background: 'linear-gradient(135deg, rgba(2,16,151,0.92) 0%, rgba(1,72,200,0.88) 50%, rgba(3,233,248,0.90) 100%)',
             backdropFilter: 'blur(28px) saturate(180%)',
             WebkitBackdropFilter: 'blur(28px) saturate(180%)',
             borderColor: 'rgba(255,255,255,0.20)',
-            boxShadow: '0 12px 48px rgba(12,114,135,0.18)',
+            boxShadow: '0 12px 48px rgba(2,16,151,0.18)',
           }}
         >
           <div className="mx-auto flex h-14 lg:h-[72px] w-full max-w-[1920px] items-center justify-between px-4 lg:px-10">
@@ -71,24 +71,24 @@ export default function Header({ locale }: HeaderProps) {
                   <Link
                     href={localePath(item.href)}
                     className="group relative flex items-center gap-1.5 py-2 text-[16px] font-semibold transition-colors duration-150"
-                    style={{ color: openMenu === item.href ? '#34D9B5' : 'rgba(255,255,255,0.82)' }}
+                    style={{ color: openMenu === item.href ? '#03E9F8' : 'rgba(255,255,255,0.82)' }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
                     }}
                     onMouseLeave={(e) => {
                       (e.currentTarget as HTMLAnchorElement).style.color =
-                        openMenu === item.href ? '#34D9B5' : 'rgba(255,255,255,0.82)';
+                        openMenu === item.href ? '#03E9F8' : 'rgba(255,255,255,0.82)';
                     }}
                   >
                     <span>{label(item)}</span>
                     {item.badge ? (
-                      <span className="h-2 w-2 rounded-full" style={{ background: '#34D9B5' }} aria-hidden="true" />
+                      <span className="h-2 w-2 rounded-full" style={{ background: '#03E9F8' }} aria-hidden="true" />
                     ) : null}
                     {/* Mint underline indicator for active */}
                     <span
                       className="absolute inset-x-0 -bottom-1 h-[2px] rounded-full transition-transform duration-200 origin-left"
                       style={{
-                        background: '#34D9B5',
+                        background: '#03E9F8',
                         transform: openMenu === item.href ? 'scaleX(1)' : 'scaleX(0)',
                       }}
                     />
@@ -124,7 +124,7 @@ export default function Header({ locale }: HeaderProps) {
                 className="rounded-xl px-5 py-2 text-[14px] font-black transition-all duration-150"
                 style={{
                   background: 'rgba(255,255,255,0.95)',
-                  color: '#0C7287',
+                  color: '#021097',
                   boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
                 }}
                 onMouseEnter={(e) => {
@@ -201,7 +201,7 @@ export default function Header({ locale }: HeaderProps) {
               transition={{ duration: 0.16 }}
               className="border-b overflow-hidden"
               style={{
-                background: 'rgba(12,114,135,0.97)',
+                background: 'rgba(2,16,151,0.97)',
                 backdropFilter: 'blur(28px) saturate(180%)',
                 WebkitBackdropFilter: 'blur(28px) saturate(180%)',
                 borderColor: 'rgba(255,255,255,0.08)',
@@ -216,7 +216,7 @@ export default function Header({ locale }: HeaderProps) {
                     borderColor: 'rgba(255,255,255,0.09)',
                   }}
                 >
-                  <p className="mb-3 text-xs font-black uppercase tracking-[0.28em]" style={{ color: '#34D9B5' }}>
+                  <p className="mb-3 text-xs font-black uppercase tracking-[0.28em]" style={{ color: '#03E9F8' }}>
                     {locale === 'en' ? 'Section' : '섹션'}
                   </p>
                   <h2 className="mb-3 text-3xl font-black text-white">{label(activeMenu)}</h2>
@@ -240,7 +240,7 @@ export default function Header({ locale }: HeaderProps) {
                       onMouseEnter={(e) => {
                         const el = e.currentTarget as HTMLAnchorElement;
                         el.style.background = 'rgba(255,255,255,0.11)';
-                        el.style.borderColor = 'rgba(52,217,181,0.45)';
+                        el.style.borderColor = 'rgba(3,233,248,0.45)';
                         el.style.transform = 'translateY(-2px)';
                       }}
                       onMouseLeave={(e) => {

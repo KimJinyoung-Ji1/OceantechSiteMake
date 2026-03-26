@@ -208,7 +208,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
               style={{
                 background: 'var(--background-alt)',
                 border: '1px solid var(--border)',
-                boxShadow: '0 2px 12px rgba(12,114,135,0.05)',
+                boxShadow: '0 2px 12px rgba(2,16,151,0.05)',
               }}
             >
               <h3 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
