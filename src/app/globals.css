@@ -63,21 +63,21 @@ body {
 }
 
 .section-title {
-  font-size: 1.75rem; /* 28px */
+  font-size: 2.25rem; /* 36px — mobile */
   font-weight: 900;
   color: var(--text-primary);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
   margin-bottom: 0.75rem;
 }
 @media (min-width: 1024px) {
   .section-title {
-    font-size: 2.25rem; /* 36px */
+    font-size: 3.25rem; /* 52px — desktop (2x of previous 28px) */
   }
 }
 
 .section-subtitle {
-  font-size: 1rem;
+  font-size: 0.813rem; /* 13px — 60% of previous 16px */
   color: var(--text-secondary);
   line-height: 1.7;
 }
