@@ -35,8 +35,8 @@ export default async function LocaleLayout(props: LayoutProps<'/[locale]'>) {
       </head>
       <body className="min-h-full flex flex-col">
         <Header locale={locale} />
-        {/* pt-14 on mobile (56px), lg:pt-[72px] on desktop offsets the fixed header height */}
-        <main className="flex-1 pt-14 lg:pt-[72px]">{props.children}</main>
+        {/* pt-16 on mobile (64px), lg:pt-[88px] on desktop offsets the fixed header height */}
+        <main className="flex-1 pt-16 lg:pt-[88px]">{props.children}</main>
         <Footer locale={locale} />
       </body>
     </html>

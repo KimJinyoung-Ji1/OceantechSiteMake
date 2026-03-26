@@ -47,7 +47,7 @@ export default function Header({ locale }: HeaderProps) {
             boxShadow: '0 12px 48px rgba(2,16,151,0.18)',
           }}
         >
-          <div className="mx-auto flex h-14 lg:h-[72px] w-full max-w-[1920px] items-center justify-between px-4 lg:px-24">
+          <div className="mx-auto flex h-16 lg:h-[88px] w-full max-w-[1920px] items-center justify-between px-4 lg:px-24">
             {/* Logo */}
             <Link href={localePath('/')} className="flex items-center gap-3 shrink-0">
               <Image
@@ -71,7 +71,7 @@ export default function Header({ locale }: HeaderProps) {
                 >
                   <Link
                     href={localePath(item.href)}
-                    className="group relative flex items-center gap-1.5 py-2 text-[16px] font-semibold transition-colors duration-150"
+                    className="group relative flex items-center gap-1.5 py-2 text-[28px] font-semibold transition-colors duration-150"
                     style={{ color: openMenu === item.href ? '#03E9F8' : 'rgba(255,255,255,0.82)' }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
@@ -102,7 +102,7 @@ export default function Header({ locale }: HeaderProps) {
             <div className="hidden items-center gap-3 xl:flex shrink-0">
               <Link
                 href={localePath('/certification')}
-                className="rounded-xl border px-4 py-2 text-[14px] font-semibold transition-colors duration-150"
+                className="rounded-xl border px-5 py-2.5 text-[24px] font-semibold transition-colors duration-150"
                 style={{
                   borderColor: 'rgba(255,255,255,0.18)',
                   color: 'rgba(255,255,255,0.8)',
@@ -122,7 +122,7 @@ export default function Header({ locale }: HeaderProps) {
               </Link>
               <Link
                 href={localePath('/contact')}
-                className="rounded-xl px-5 py-2 text-[14px] font-black transition-all duration-150"
+                className="rounded-xl px-6 py-2.5 text-[24px] font-black transition-all duration-150"
                 style={{
                   background: 'rgba(255,255,255,0.95)',
                   color: '#021097',
@@ -139,7 +139,7 @@ export default function Header({ locale }: HeaderProps) {
               </Link>
               <Link
                 href={locale === 'ko' ? '/en' : '/ko'}
-                className="rounded-lg border px-3 py-1.5 text-[13px] font-semibold transition-colors duration-150"
+                className="rounded-lg border px-4 py-2 text-[20px] font-semibold transition-colors duration-150"
                 style={{
                   borderColor: 'rgba(255,255,255,0.18)',
                   color: 'rgba(255,255,255,0.7)',
@@ -164,7 +164,7 @@ export default function Header({ locale }: HeaderProps) {
             <div className="flex items-center gap-2 xl:hidden">
               <Link
                 href={locale === 'ko' ? '/en' : '/ko'}
-                className="rounded-lg border px-3 py-1.5 text-[13px] font-semibold"
+                className="rounded-lg border px-3 py-1.5 text-[16px] font-semibold"
                 style={{ borderColor: 'rgba(255,255,255,0.18)', color: 'rgba(255,255,255,0.7)' }}
                 aria-label="언어 전환"
               >

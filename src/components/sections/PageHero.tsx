@@ -13,7 +13,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
 
   return (
     <section
-      className="relative pt-[72px] pb-3 px-6 lg:px-24 overflow-hidden"
+      className="relative pt-[88px] pb-3 px-6 lg:px-24 overflow-hidden"
       aria-label="페이지 히어로"
       style={{
         background:

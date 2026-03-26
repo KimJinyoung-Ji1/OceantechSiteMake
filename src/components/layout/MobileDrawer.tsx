@@ -71,7 +71,7 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
                   <Link
                     href={localePath(item.href)}
                     onClick={onClose}
-                    className="flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-colors"
+                    className="flex items-center justify-between px-4 py-3 rounded-xl text-lg font-semibold transition-colors"
                     style={{ color: '#021097' }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(2,16,151,0.08)'; (e.currentTarget as HTMLAnchorElement).style.color = '#021097'; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = ''; }}
@@ -100,7 +100,7 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
                           key={child.href}
                           href={localePath(child.href)}
                           onClick={onClose}
-                          className="block py-2 text-sm transition-colors"
+                          className="block py-2.5 text-base transition-colors"
                           style={{ color: 'rgba(2,16,151,0.7)' }}
                         >
                           {locale === 'en' ? child.labelEn : child.label}
