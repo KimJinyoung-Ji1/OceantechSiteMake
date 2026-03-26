@@ -50,7 +50,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
             >
               <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
                 <Image
-                  src="/images/products/product-page9.png"
+                  src="/images/products/lead-weight.png"
                   alt={isEn ? 'Lead fishing weight' : '납추'}
                   fill
                   className="object-cover"
@@ -86,7 +86,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
             >
               <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
                 <Image
-                  src="/images/products/product-page8.png"
+                  src="/images/products/zinc-weight.png"
                   alt={isEn ? 'Zinc fishing weight' : '아연추'}
                   fill
                   className="object-cover"
