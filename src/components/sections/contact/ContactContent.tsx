@@ -80,12 +80,13 @@ function KakaoMap({ tall }: { tall?: boolean }) {
   }, []);
 
   return (
-    <div className="relative overflow-hidden flex-1 w-full" style={{ maxWidth: '100%' }}>
+    <div className="relative overflow-hidden flex-1 w-full" style={{ maxWidth: '100%', minHeight: '300px' }}>
       <div
         ref={mapRef}
-        className="w-full h-full rounded-2xl overflow-hidden"
+        className="w-full rounded-2xl overflow-hidden"
         style={{
-          minHeight: tall ? '100%' : '260px',
+          minHeight: '300px',
+          height: tall ? '100%' : '300px',
           maxWidth: '100%',
           border: '1px solid var(--border)',
           background: 'var(--background-alt)',
@@ -96,7 +97,7 @@ function KakaoMap({ tall }: { tall?: boolean }) {
       {mapError && (
         <div
           className="w-full rounded-2xl flex flex-col items-center justify-center gap-3 py-6 px-4"
-          style={{ minHeight: tall ? '100%' : '260px', background: 'var(--background-alt)', border: '1px solid var(--border)' }}
+          style={{ minHeight: '300px', background: 'var(--background-alt)', border: '1px solid var(--border)' }}
         >
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z" stroke="var(--primary-500)" strokeWidth="1.5" fill="none" />

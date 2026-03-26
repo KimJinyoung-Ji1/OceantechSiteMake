@@ -26,8 +26,8 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
       style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)' }}
       aria-label="납추 vs 아연추 비교"
     >
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="text-center mb-14">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
+        <div className="text-center mb-8 md:mb-14">
           <p className="section-eyebrow" style={{ color: '#C2410C' }}>
             {isEn ? 'DETAILED COMPARISON' : '상세 비교'}
           </p>
@@ -37,9 +37,9 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
         </div>
 
         <div className="max-w-3xl mx-auto">
-          {/* Header bar */}
+          {/* Header bar — desktop only (hidden on mobile) */}
           <div
-            className="grid grid-cols-[1fr_1px_1fr] items-center rounded-t-2xl overflow-hidden"
+            className="hidden sm:grid grid-cols-[1fr_1px_1fr] items-center rounded-t-2xl overflow-hidden"
             style={{ background: 'linear-gradient(135deg, var(--primary-900,#021097) 0%, var(--primary-700,#0148C8) 100%)' }}
           >
             <div className="px-6 py-4 flex items-center justify-center gap-2">
@@ -57,6 +57,25 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
             </div>
           </div>
 
+          {/* Mobile header */}
+          <div
+            className="sm:hidden grid grid-cols-2 rounded-t-2xl overflow-hidden"
+            style={{ background: 'linear-gradient(135deg, var(--primary-900,#021097) 0%, var(--primary-700,#0148C8) 100%)' }}
+          >
+            <div className="px-3 py-3 flex items-center justify-center gap-1.5">
+              <div className="w-2 h-2 rounded-full" style={{ background: '#F97316' }} />
+              <span className="text-xs font-bold text-white tracking-wide">
+                {isEn ? 'Zinc' : '아연추'}
+              </span>
+            </div>
+            <div className="px-3 py-3 flex items-center justify-center gap-1.5" style={{ borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
+              <div className="w-2 h-2 rounded-full" style={{ background: '#64748B' }} />
+              <span className="text-xs font-bold tracking-wide" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                {isEn ? 'Lead' : '납추'}
+              </span>
+            </div>
+          </div>
+
           {/* Rows */}
           <div
             className="rounded-b-2xl overflow-hidden"
@@ -65,59 +84,66 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
             {rows.map((row, i) => (
               <div
                 key={i}
-                className="group grid grid-cols-[1fr_auto_1fr] items-center transition-all duration-400 cursor-default"
                 style={{
                   borderTop: i > 0 ? '1px solid var(--gray-100)' : 'none',
                   background: 'white',
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(90deg, rgba(249,115,22,0.03) 0%, white 30%, white 70%, rgba(148,163,184,0.03) 100%)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'white';
-                }}
               >
-                {/* Zinc */}
-                <div className="px-6 py-4 flex items-center gap-3 justify-center">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <path d="M2 8l4.5 4.5L14 5" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span
-                    className="text-base font-semibold transition-all duration-300 group-hover:tracking-wide"
-                    style={{ color: '#EA580C' }}
-                  >
-                    {isEn ? row.goodEn : row.good}
-                  </span>
-                </div>
-
-                {/* Label */}
+                {/* Desktop row */}
                 <div
-                  className="w-px self-stretch transition-all duration-300"
-                  style={{ background: 'var(--gray-100)', position: 'relative' }}
+                  className="hidden sm:grid group grid-cols-[1fr_auto_1fr] items-center transition-all duration-400 cursor-default"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(90deg, rgba(249,115,22,0.03) 0%, white 30%, white 70%, rgba(148,163,184,0.03) 100%)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = '';
+                  }}
                 >
-                  <span
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-bold px-4 py-1.5 rounded-full transition-all duration-300 group-hover:shadow-sm"
-                    style={{
-                      background: 'var(--primary-50)',
-                      color: 'var(--primary-700)',
-                      border: '1px solid var(--primary-100)',
-                    }}
-                  >
-                    {isEn ? row.en : row.ko}
-                  </span>
+                  <div className="px-6 py-4 flex items-center gap-3 justify-center">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <path d="M2 8l4.5 4.5L14 5" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-base font-semibold transition-all duration-300 group-hover:tracking-wide" style={{ color: '#EA580C' }}>
+                      {isEn ? row.goodEn : row.good}
+                    </span>
+                  </div>
+                  <div className="w-px self-stretch transition-all duration-300" style={{ background: 'var(--gray-100)', position: 'relative' }}>
+                    <span
+                      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-bold px-4 py-1.5 rounded-full transition-all duration-300 group-hover:shadow-sm"
+                      style={{ background: 'var(--primary-50)', color: 'var(--primary-700)', border: '1px solid var(--primary-100)' }}
+                    >
+                      {isEn ? row.en : row.ko}
+                    </span>
+                  </div>
+                  <div className="px-6 py-4 flex items-center gap-3 justify-center">
+                    <span className="text-base transition-all duration-300" style={{ color: 'var(--gray-500)' }}>
+                      {isEn ? row.badEn : row.bad}
+                    </span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <path d="M3 3l8 8M11 3l-8 8" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </div>
                 </div>
 
-                {/* Lead */}
-                <div className="px-6 py-4 flex items-center gap-3 justify-center">
-                  <span
-                    className="text-base transition-all duration-300"
-                    style={{ color: 'var(--gray-500)' }}
-                  >
-                    {isEn ? row.badEn : row.bad}
-                  </span>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <path d="M3 3l8 8M11 3l-8 8" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
+                {/* Mobile row — 2 cols with label above */}
+                <div className="sm:hidden">
+                  <div className="px-3 py-1.5 text-center" style={{ background: 'var(--primary-50)', borderBottom: '1px solid var(--gray-100)' }}>
+                    <span className="text-xs font-bold" style={{ color: 'var(--primary-700)' }}>
+                      {isEn ? row.en : row.ko}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2">
+                    <div className="px-3 py-3 flex items-center justify-center" style={{ borderRight: '1px solid var(--gray-100)' }}>
+                      <span className="text-sm font-semibold text-center" style={{ color: '#EA580C' }}>
+                        {isEn ? row.goodEn : row.good}
+                      </span>
+                    </div>
+                    <div className="px-3 py-3 flex items-center justify-center">
+                      <span className="text-sm text-center" style={{ color: 'var(--gray-500)' }}>
+                        {isEn ? row.badEn : row.bad}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

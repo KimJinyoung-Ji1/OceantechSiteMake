@@ -52,9 +52,9 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
   const isEn = locale === 'en';
 
   return (
-    <section className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="환경 영향">
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="text-center mb-12">
+    <section className="py-8 md:py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="환경 영향">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
+        <div className="text-center mb-8 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--secondary-700,#047857)' }}>
             {isEn ? 'ENVIRONMENTAL IMPACT' : '환경 영향'}
           </p>
@@ -63,7 +63,7 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {items.map((item, i) => (
             <div
               key={i}
@@ -74,22 +74,22 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
                 boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
               }}
             >
-              <div className="px-6 pt-8 pb-4">
+              <div className="px-3 md:px-6 pt-5 md:pt-8 pb-3 md:pb-4">
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                  className="w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4"
                   style={{ background: item.accentBg, border: `1px solid ${item.accentBorder}` }}
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
+                <h3 className="text-sm md:text-lg font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
                   {isEn ? item.en : item.ko}
                 </h3>
               </div>
 
-              <div className="mx-6" style={{ height: '1px', background: 'var(--gray-100)' }} />
+              <div className="mx-3 md:mx-6" style={{ height: '1px', background: 'var(--gray-100)' }} />
 
-              <div className="px-6 py-5 flex-1">
-                <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <div className="px-3 md:px-6 py-3 md:py-5 flex-1">
+                <p className="text-xs md:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   {isEn ? item.bodyEn : item.bodyKo}
                 </p>
               </div>

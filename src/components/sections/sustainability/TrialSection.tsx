@@ -46,12 +46,12 @@ export default function TrialSection({ locale }: TrialSectionProps) {
 
   return (
     <section
-      className="py-16 lg:py-20"
+      className="py-8 md:py-16 lg:py-20"
       style={{ background: 'var(--background)' }}
       aria-label="시범사업 결과"
     >
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="text-center mb-12">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
+        <div className="text-center mb-8 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'PILOT PROGRAM' : '시범사업 결과'}
           </p>
@@ -65,7 +65,7 @@ export default function TrialSection({ locale }: TrialSectionProps) {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {stats.map((s, i) => (
             <div
               key={i}
@@ -76,27 +76,27 @@ export default function TrialSection({ locale }: TrialSectionProps) {
                 boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
               }}
             >
-              <div className="px-6 pt-8 pb-4">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              <div className="px-3 md:px-6 pt-5 md:pt-8 pb-3 md:pb-4">
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4"
                   style={{ background: 'rgba(1,104,239,0.06)', border: '1px solid rgba(1,104,239,0.12)' }}
                 >
                   {s.icon}
                 </div>
                 <p
-                  className="text-4xl sm:text-5xl font-black mb-2"
+                  className="text-3xl md:text-5xl font-black mb-1 md:mb-2"
                   style={{ color: 'var(--primary-500)' }}
                 >
                   {s.value}
                 </p>
-                <p className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+                <p className="text-sm md:text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
                   {isEn ? s.labelEn : s.labelKo}
                 </p>
               </div>
 
-              <div className="mx-6" style={{ height: '1px', background: 'var(--gray-100)' }} />
+              <div className="mx-3 md:mx-6" style={{ height: '1px', background: 'var(--gray-100)' }} />
 
-              <div className="px-6 py-5 flex-1">
-                <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <div className="px-3 md:px-6 py-3 md:py-5 flex-1">
+                <p className="text-xs md:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   {isEn ? s.detailEn : s.detailKo}
                 </p>
               </div>

@@ -129,7 +129,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5">
           {gridItems.map((item) => (
             <article
               key={item.key}
@@ -146,7 +146,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
             >
               {/* Image area */}
               <button
-                className="relative cursor-pointer transition-opacity flex items-center justify-center w-full overflow-hidden h-[180px] md:h-auto"
+                className="relative cursor-pointer transition-opacity flex items-center justify-center w-full overflow-hidden h-[130px] md:h-auto"
                 style={{
                   aspectRatio: '4/3',
                   background: item.isTestReport
@@ -201,7 +201,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
               </button>
 
               {/* Info area — centered, larger text */}
-              <div className="p-3 md:p-5 flex flex-col gap-2 md:gap-3 flex-1 items-center text-center">
+              <div className="p-2 md:p-5 flex flex-col gap-1 md:gap-3 flex-1 items-center text-center">
                 <span
                   className="text-sm font-black px-4 py-1.5 rounded-full tracking-wide"
                   style={
