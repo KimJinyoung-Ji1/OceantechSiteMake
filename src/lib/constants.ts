@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
   company: {
     name: '(주)오션테크',
     nameEn: 'Ocean Tech Inc.',
-    ceo: '이운봉',
+    ceo: '이우철',
     bizNo: '127-87-02624',
     corpNo: '284111-0408596',
     slogan: '바다와 함께 공생하는 기업',
@@ -121,6 +121,14 @@ export const SITE_CONFIG = {
       date: '',
       image: null,
     },
+  ],
+  patentApplications: [
+    { number: '10-2023-0070861', titleKo: '친환경 어망추 제조방법 및 그에 의해 제조된 어망추', titleEn: 'Eco-friendly Fishing Net Weight Manufacturing Method', date: '2023.06' },
+    { number: '10-2023-0070872', titleKo: '친환경 소재를 이용한 에어포켓 타입의 어구용 부자', titleEn: 'Air-pocket Type Fishing Buoy with Eco-friendly Material', date: '2023.06' },
+    { number: '10-2023-0070875', titleKo: '친환경 소재를 이용한 어구용 부자', titleEn: 'Fishing Buoy with Eco-friendly Material', date: '2023.06' },
+    { number: '10-2023-0070877', titleKo: '친환경 소재를 이용한 에어포켓 타입의 부표', titleEn: 'Air-pocket Type Buoy with Eco-friendly Material', date: '2023.06' },
+    { number: '10-2023-0070881', titleKo: '친환경 문어 어획용 낚시어구 제조방법', titleEn: 'Eco-friendly Octopus Fishing Gear Manufacturing Method', date: '2023.06' },
+    { number: '10-2023-0070882', titleKo: '친환경 채낚기 추 제조방법 및 그에 의해 제조된 채낚기 추', titleEn: 'Eco-friendly Jigging Weight Manufacturing Method', date: '2023.06' },
   ],
   designPatents: [
     { titleKo: '어장추', titleEn: 'Fishing Weight', count: 2 },
@@ -289,14 +297,14 @@ export const SITE_CONFIG = {
       '오션테크는 친환경 아연 어장추를 통해 납추를 대체하고, 해양 생태계와 어민의 삶을 동시에 지키는 기술을 만들고 있습니다.',
       '수협중앙회와의 계약, 31개월 현장 실증, 녹색기술 인증은 저희가 걸어온 길이 현장성과 공공성을 모두 갖추고 있음을 보여줍니다.',
       '앞으로도 바다와 어민, 산업이 함께 지속될 수 있도록 더 나은 기술과 더 단단한 실행으로 답하겠습니다.',
-      '(주)오션테크 대표이사 이운봉',
+      '(주)오션테크 대표이사 이우철',
     ],
     en: [
       'Building a healthier marine ecosystem is not an option. It is our responsibility.',
       'Ocean Tech develops eco-friendly zinc fishing weights that replace lead and protect both marine life and the livelihood of fishers.',
       'Our contract with SUHYUP, 31-month field pilot, and green certifications prove that our technology works in the real world.',
       'We will continue to deliver practical innovation so the ocean, the industry, and fishing communities can thrive together.',
-      'Lee Un-bong, CEO of Ocean Tech Inc.',
+      'Lee Woo-chul, CEO of Ocean Tech Inc.',
     ],
   },
 } as const;
