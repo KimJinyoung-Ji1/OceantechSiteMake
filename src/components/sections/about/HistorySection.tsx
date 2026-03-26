@@ -56,15 +56,16 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
               <div key={rowIdx}>
                 {/* Node row */}
                 <div className="relative">
-                  {/* Horizontal connecting line */}
+                  {/* Horizontal connecting line — spans full width, sits behind nodes */}
                   <div
-                    className="absolute top-[52px] h-0.5 z-0"
+                    className="absolute top-[52px] h-[3px] z-0"
                     style={{
-                      left: `calc(${100 / (COLS * 2)}%)`,
-                      right: `calc(${100 / (COLS * 2)}%)`,
+                      left: '10%',
+                      right: '10%',
                       background: isReversed
                         ? 'linear-gradient(90deg, #10b981 0%, #17e9b5 50%, #06b6d4 100%)'
                         : 'linear-gradient(90deg, #021297 0%, #2563eb 50%, #06b6d4 100%)',
+                      opacity: 0.7,
                     }}
                     aria-hidden="true"
                   />
@@ -115,19 +116,18 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
 
                 {/* Vertical connector between rows (ㄹ elbow) */}
                 {rowIdx < rows.length - 1 && (
-                  <div className="relative h-10 mt-1" aria-hidden="true">
-                    {/* Right elbow for odd rows, left elbow for even rows */}
+                  <div className="relative h-12 mt-0" aria-hidden="true">
                     {rowIdx % 2 === 0 ? (
                       /* Right-side connector: drops from right end of row 1 to start of row 2 */
                       <div
-                        className="absolute right-[10%] top-0 bottom-0 w-0.5"
-                        style={{ background: 'linear-gradient(180deg, #06b6d4 0%, #17e9b5 100%)' }}
+                        className="absolute right-[10%] top-0 bottom-0 w-[3px]"
+                        style={{ background: 'linear-gradient(180deg, #06b6d4 0%, #17e9b5 100%)', opacity: 0.7 }}
                       />
                     ) : (
                       /* Left-side connector */
                       <div
-                        className="absolute left-[10%] top-0 bottom-0 w-0.5"
-                        style={{ background: 'linear-gradient(180deg, #10b981 0%, #06b6d4 100%)' }}
+                        className="absolute left-[10%] top-0 bottom-0 w-[3px]"
+                        style={{ background: 'linear-gradient(180deg, #10b981 0%, #06b6d4 100%)', opacity: 0.7 }}
                       />
                     )}
                   </div>

@@ -110,24 +110,48 @@ function KakaoMap() {
           height: '200px',
           border: '1px solid var(--border)',
           background: 'var(--background-alt)',
+          display: mapError ? 'none' : undefined,
         }}
         aria-label="회사 위치 지도"
       />
 
-      {/* Fallback link shown BELOW the map on error (not instead of it) */}
+      {/* Styled fallback shown when map fails to load */}
       {mapError && (
-        <div className="mt-2 flex flex-col items-center gap-1">
-          <p className="text-xs font-medium text-center" style={{ color: 'var(--text-secondary)' }}>
-            남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29호
-          </p>
+        <div
+          className="w-full rounded-2xl flex flex-col items-center justify-center gap-3 py-6 px-4"
+          style={{
+            height: '200px',
+            background: 'var(--background-alt)',
+            border: '1px solid var(--border)',
+          }}
+        >
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z" stroke="var(--primary-500)" strokeWidth="1.5" fill="none" />
+            <circle cx="12" cy="9" r="2.5" fill="var(--primary-500)" />
+          </svg>
+          <div className="text-center">
+            <p className="text-sm font-bold mb-0.5" style={{ color: 'var(--text-primary)' }}>
+              남양주시 다산순환로 20
+            </p>
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+              현대프리미어캠퍼스 E동 7층 29호
+            </p>
+          </div>
           <a
             href="https://map.kakao.com/link/search/남양주시+다산순환로+20"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs underline"
-            style={{ color: 'var(--primary-500)' }}
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 hover:brightness-110"
+            style={{
+              background: 'var(--primary-500)',
+              color: '#fff',
+            }}
           >
-            카카오맵에서 보기 →
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z" stroke="currentColor" strokeWidth="2" fill="none" />
+              <circle cx="12" cy="9" r="2.5" fill="currentColor" />
+            </svg>
+            카카오맵에서 보기
           </a>
         </div>
       )}

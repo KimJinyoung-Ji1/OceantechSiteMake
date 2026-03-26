@@ -159,8 +159,8 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* RIGHT — Auto-sliding Cert Carousel (60% width) */}
-          <div className="hidden lg:block" style={{ maxWidth: '60%' }}>
+          {/* RIGHT — Auto-sliding Cert Carousel */}
+          <div className="hidden lg:block w-full">
             <div
               className="rounded-2xl overflow-hidden"
               style={{

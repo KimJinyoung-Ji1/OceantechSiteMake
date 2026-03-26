@@ -18,35 +18,37 @@ export default function CeoSection({ locale }: CeoSectionProps) {
           {t.about.ceo.title}
         </p>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* LEFT: CEO photo placeholder */}
-          <div
-            className="flex flex-col items-center justify-center rounded-2xl aspect-[3/4] max-w-sm mx-auto lg:mx-0 w-full"
-            style={{
-              background: 'var(--background-alt)',
-              border: '2px dashed var(--border)',
-            }}
-          >
-            <svg
-              width="56"
-              height="56"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="var(--text-secondary)"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* LEFT: CEO photo placeholder — compact */}
+          <div className="flex justify-center lg:justify-start">
+            <div
+              className="flex flex-col items-center justify-center rounded-2xl w-[200px] h-[200px]"
+              style={{
+                background: 'var(--background-alt)',
+                border: '2px dashed var(--border)',
+              }}
             >
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-              <circle cx="12" cy="13" r="4" />
-            </svg>
-            <p
-              className="mt-4 text-sm font-medium"
-              style={{ color: 'var(--text-secondary)' }}
-            >
-              {locale === 'en' ? 'CEO Photo' : '대표이사 사진'}
-            </p>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--text-secondary)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+              <p
+                className="mt-2 text-xs font-medium"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                {locale === 'en' ? 'CEO Photo' : '대표이사 사진'}
+              </p>
+            </div>
           </div>
 
           {/* RIGHT: CEO message */}

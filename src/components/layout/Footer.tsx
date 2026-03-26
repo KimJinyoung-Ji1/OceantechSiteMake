@@ -102,55 +102,55 @@ export default function Footer({ locale }: FooterProps) {
             </ul>
 
 
-            {/* All Green cert badges grouped together */}
-            <div className="mt-3 flex flex-col gap-1.5">
+            {/* Cert badges — horizontal row, tightly grouped */}
+            <div className="mt-3 flex flex-row flex-wrap gap-2">
               <div
-                className="flex items-center gap-2 rounded-xl px-3 py-2.5"
+                className="flex items-center gap-1.5 rounded-lg px-2.5 py-2"
                 style={{
                   background: 'rgba(23,233,181,0.08)',
                   border: '1px solid rgba(23,233,181,0.2)',
                 }}
               >
-                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
+                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
                 <div>
-                  <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                    {locale === 'en' ? 'Green Technology Cert.' : '녹색기술인증'}
+                  <p className="text-[10px] leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                    {locale === 'en' ? 'Green Tech' : '녹색기술인증'}
                   </p>
-                  <p className="text-xs font-semibold" style={{ color: '#03E9F8' }}>
+                  <p className="text-[10px] font-semibold leading-tight" style={{ color: '#03E9F8' }}>
                     {SITE_CONFIG.certifications.greenTech.number}
                   </p>
                 </div>
               </div>
               <div
-                className="flex items-center gap-2 rounded-xl px-3 py-2.5"
+                className="flex items-center gap-1.5 rounded-lg px-2.5 py-2"
                 style={{
                   background: 'rgba(23,233,181,0.07)',
                   border: '1px solid rgba(23,233,181,0.16)',
                 }}
               >
-                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
+                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
                 <div>
-                  <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  <p className="text-[10px] leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>
                     {locale === 'en' ? 'Green Product' : '녹색기술제품'}
                   </p>
-                  <p className="text-xs font-semibold" style={{ color: '#03E9F8' }}>
+                  <p className="text-[10px] font-semibold leading-tight" style={{ color: '#03E9F8' }}>
                     {SITE_CONFIG.certifications.greenProduct.number}
                   </p>
                 </div>
               </div>
               <div
-                className="flex items-center gap-2 rounded-xl px-3 py-2.5"
+                className="flex items-center gap-1.5 rounded-lg px-2.5 py-2"
                 style={{
                   background: 'rgba(2,16,151,0.08)',
                   border: '1px solid rgba(2,16,151,0.2)',
                 }}
               >
-                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#17E9B5' }} />
+                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: '#17E9B5' }} />
                 <div>
-                  <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                    {locale === 'en' ? 'Venture Company' : '벤처기업'}
+                  <p className="text-[10px] leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                    {locale === 'en' ? 'Venture' : '벤처기업'}
                   </p>
-                  <p className="text-xs font-semibold" style={{ color: '#17E9B5' }}>
+                  <p className="text-[10px] font-semibold leading-tight" style={{ color: '#17E9B5' }}>
                     {SITE_CONFIG.certifications.venture.number}
                   </p>
                 </div>
