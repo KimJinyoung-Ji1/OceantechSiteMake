@@ -180,3 +180,16 @@ body {
   color: var(--text-body);
   line-height: 1.7;
 }
+
+/* Kakao map SDK injects fixed-width SVG — clip it to container */
+.kakao-map-wrap,
+.kakao-map-wrap svg,
+.kakao-map-wrap canvas,
+.kakao-map-wrap img {
+  max-width: 100% !important;
+}
+[aria-label="회사 위치 지도"] svg,
+[aria-label="회사 위치 지도"] canvas {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}

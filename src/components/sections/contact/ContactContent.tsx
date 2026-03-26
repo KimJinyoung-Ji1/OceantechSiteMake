@@ -81,12 +81,13 @@ function KakaoMap({ tall }: { tall?: boolean }) {
   }, []);
 
   return (
-    <div className="relative overflow-hidden flex-1">
+    <div className="relative overflow-hidden flex-1 w-full" style={{ maxWidth: '100%' }}>
       <div
         ref={mapRef}
         className="w-full h-full rounded-2xl overflow-hidden"
         style={{
           minHeight: tall ? '100%' : '260px',
+          maxWidth: '100%',
           border: '1px solid var(--border)',
           background: 'var(--background-alt)',
           display: mapError ? 'none' : undefined,
@@ -282,7 +283,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
 
           {/* ── COL 3: 오시는 길 ── */}
           <div
-            className="rounded-2xl overflow-hidden flex flex-col"
+            className="rounded-2xl overflow-hidden flex flex-col min-w-0"
             style={{
               background: 'white',
               border: '1px solid var(--border)',
@@ -296,7 +297,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
               <PinIcon color="white" size={16} />
               <span className="text-sm font-bold tracking-wide">{isEn ? 'Directions' : '오시는 길'}</span>
             </div>
-            <div className="flex-1 flex flex-col p-3">
+            <div className="flex-1 flex flex-col p-3 min-w-0 overflow-hidden">
               <KakaoMap tall />
             </div>
             <div className="px-5 pb-4 pt-1 text-center">
