@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
       const inquiryType = type || '일반 문의';
 
       await resend.emails.send({
-        from: 'OceanTech Website <onboarding@resend.dev>',
+        from: '오션테크 홈페이지 <noreply@oceantechinc.com>',
         to: [NOTIFY_EMAIL],
         subject: `[오션테크 홈페이지] 새 문의 - ${inquiryType} (${name})`,
         html: `
