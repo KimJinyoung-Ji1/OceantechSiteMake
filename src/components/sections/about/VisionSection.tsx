@@ -60,11 +60,11 @@ export default function VisionSection({ locale }: VisionSectionProps) {
   return (
     <section
       id="vision"
-      className="py-20 lg:py-28 px-6 lg:px-16 text-center"
+      className="py-20 lg:py-28 px-6 lg:px-10 text-center"
       style={{ background: 'var(--background-alt)' }}
       aria-label="비전"
     >
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-[1920px] mx-auto">
         <div className="mb-14">
           <p
             className="text-lg font-bold uppercase tracking-widest mb-3"

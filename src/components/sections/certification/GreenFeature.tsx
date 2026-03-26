@@ -15,7 +15,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
       className="py-12"
       aria-label="녹색기술인증 강조"
     >
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-10">
         <div
           className="rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-8"
           style={{

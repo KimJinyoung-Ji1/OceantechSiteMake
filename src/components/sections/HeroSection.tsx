@@ -47,7 +47,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-16 max-w-[1600px] mx-auto py-16 sm:py-20 lg:py-28">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 max-w-[1920px] mx-auto py-16 sm:py-20 lg:py-28">
         <div
           className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center gap-8 lg:gap-10"
         >

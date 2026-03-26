@@ -16,6 +16,10 @@ const patentImages: Record<string, string> = {
   '10-2508401': '/documents/certs/patent-page6.png',
 };
 
+const patentDownloads: Record<string, string> = {
+  '10-2197917': '/documents/downloads/patent-10-2197917.pdf',
+};
+
 const designPatentImage = '/documents/certs/design-patents.png';
 
 export default function PatentsSection({ locale }: PatentsSectionProps) {
@@ -27,7 +31,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
 
   return (
     <section className="py-12 lg:py-16" aria-label="특허 현황">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-10">
         <div className="text-center mb-8">
           <p
             className="text-base font-bold uppercase tracking-widest mb-3"
@@ -97,6 +101,24 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </button>
+                )}
+                {patentDownloads[patent.number] && (
+                  <a
+                    href={patentDownloads[patent.number]}
+                    download
+                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold rounded-lg px-3 py-1.5 transition-colors"
+                    style={{
+                      background: 'var(--primary-50, #eff6ff)',
+                      border: '1px solid var(--primary-200, #bfdbfe)',
+                      color: 'var(--primary-600)',
+                    }}
+                    aria-label={`${isEn ? patent.titleEn : patent.titleKo} PDF 다운로드`}
+                  >
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M8 2v9M5 8l3 3 3-3M3 14h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {isEn ? 'Download PDF' : 'PDF 다운로드'}
+                  </a>
                 )}
               </article>
             );

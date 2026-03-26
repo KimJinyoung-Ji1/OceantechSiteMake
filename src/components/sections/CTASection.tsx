@@ -42,7 +42,7 @@ export default function CTASection({ locale }: CTASectionProps) {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center">
         <h2
           className="text-3xl lg:text-5xl font-extrabold mb-6 leading-tight text-white"
         >
@@ -53,7 +53,7 @@ export default function CTASection({ locale }: CTASectionProps) {
           ))}
         </h2>
         <p
-          className="text-base lg:text-lg mb-10 max-w-2xl mx-auto leading-relaxed"
+          className="text-base lg:text-lg mb-10 max-w-4xl mx-auto leading-relaxed"
           style={{ color: 'rgba(255,255,255,0.65)' }}
         >
           {t.cta.description}

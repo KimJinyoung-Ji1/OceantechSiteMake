@@ -67,11 +67,11 @@ export default function NewsBanner() {
 
   return (
     <section
-      className="py-14 lg:py-20 px-6 lg:px-16"
+      className="py-14 lg:py-20 px-6 lg:px-10"
       style={{ background: 'var(--background)' }}
       aria-label="뉴스 배너"
     >
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-[1920px] mx-auto">
         <div className="text-center mb-10">
           <p
             className="text-base font-bold uppercase tracking-widest mb-3"
@@ -101,7 +101,7 @@ export default function NewsBanner() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -40 }}
                 transition={{ duration: 0.35, ease: 'easeInOut' }}
-                className="w-full px-8 py-8 lg:px-16 lg:py-10"
+                className="w-full px-8 py-8 lg:px-10 lg:py-10"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8">
                   {/* Thumbnail */}
@@ -172,7 +172,7 @@ export default function NewsBanner() {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center justify-between px-8 pb-6 lg:px-16">
+          <div className="flex items-center justify-between px-8 pb-6 lg:px-10">
             {/* Dots */}
             <div className="flex items-center gap-2">
               {NEWS_ITEMS.map((_, i) => (

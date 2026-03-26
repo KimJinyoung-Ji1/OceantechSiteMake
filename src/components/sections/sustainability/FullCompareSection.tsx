@@ -38,7 +38,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
       style={{ background: 'var(--gray-50)' }}
       aria-label="납추 vs 아연추 비교"
     >
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-10">
         <div className="text-center mb-12">
           <p
             className="text-base font-bold uppercase tracking-widest mb-3"

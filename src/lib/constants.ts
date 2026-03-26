@@ -144,6 +144,7 @@ export const SITE_CONFIG = {
         image: '/documents/certs/green-tech-cert.png',
         number: 'GT-25-02356',
         accent: 'mint',
+        downloadUrl: '/documents/downloads/green-tech-cert.pdf',
       },
       {
         key: 'greenProduct',
@@ -152,6 +153,7 @@ export const SITE_CONFIG = {
         image: '/documents/certs/green-product-cert.png',
         number: 'GTP-25-04857',
         accent: 'mint',
+        downloadUrl: '/documents/downloads/green-product-cert.pdf',
       },
       {
         key: 'venture',
@@ -160,6 +162,7 @@ export const SITE_CONFIG = {
         image: '/documents/certs/venture-cert.png',
         number: '2023121403001',
         accent: 'blue',
+        downloadUrl: '/documents/downloads/venture-cert.pdf',
       },
       {
         key: 'researchDept',
@@ -168,6 +171,7 @@ export const SITE_CONFIG = {
         image: '/documents/certs/research-dept.png',
         number: '2023155066',
         accent: 'blue',
+        downloadUrl: '/documents/downloads/research-dept-cert.pdf',
       },
       {
         key: 'sme',
@@ -176,6 +180,7 @@ export const SITE_CONFIG = {
         image: '/documents/certs/sme-cert.png',
         number: '0010-2023-333874',
         accent: 'blue',
+        downloadUrl: '/documents/downloads/sme-cert.pdf',
       },
       {
         key: 'patentAward',
@@ -192,6 +197,7 @@ export const SITE_CONFIG = {
         image: '/documents/certs/svhc-report.png',
         number: '235종 불검출',
         accent: 'mint',
+        downloadUrl: '/documents/downloads/svhc-report.pdf',
       },
       {
         key: 'testTak',
@@ -200,6 +206,7 @@ export const SITE_CONFIG = {
         image: '/documents/certs/test-report-tak.png',
         number: 'TAK-2024-008089',
         accent: 'blue',
+        downloadUrl: '/documents/downloads/test-report-tak.pdf',
       },
       {
         key: 'testTbk',
@@ -208,6 +215,7 @@ export const SITE_CONFIG = {
         image: '/documents/certs/test-report-tbk.png',
         number: 'TBK-2024-000252',
         accent: 'blue',
+        downloadUrl: '/documents/downloads/test-report-tbk.pdf',
       },
     ],
   },

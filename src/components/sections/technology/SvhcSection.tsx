@@ -16,7 +16,7 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
 
   return (
     <section className="py-12 lg:py-16" aria-label="SVHC 불검출">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-10">
         <div
           className="rounded-3xl p-10 lg:p-14 flex flex-col lg:flex-row items-center gap-10"
           style={{
@@ -46,14 +46,32 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
             </p>
           </div>
 
-          <button
-            className="shrink-0 px-6 py-4 rounded-2xl font-bold text-base transition-all duration-200 hover:shadow-lg hover:brightness-105"
-            style={{ background: 'white', color: 'var(--primary-600)' }}
-            onClick={() => setOpen(true)}
-            aria-label={isEn ? 'View SVHC report' : 'SVHC 성적서 보기'}
-          >
-            {isEn ? 'View SVHC Report' : 'SVHC 성적서 보기'}
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            <button
+              className="px-6 py-4 rounded-2xl font-bold text-base transition-all duration-200 hover:shadow-lg hover:brightness-105"
+              style={{ background: 'white', color: 'var(--primary-600)' }}
+              onClick={() => setOpen(true)}
+              aria-label={isEn ? 'View SVHC report' : 'SVHC 성적서 보기'}
+            >
+              {isEn ? 'View Report' : '성적서 보기'}
+            </button>
+            <a
+              href="/documents/downloads/svhc-report.pdf"
+              download
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold text-base transition-all duration-200 hover:shadow-lg"
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                color: 'white',
+                border: '1px solid rgba(255,255,255,0.3)',
+              }}
+              aria-label={isEn ? 'Download SVHC report PDF' : 'SVHC 성적서 PDF 다운로드'}
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8 2v9M5 8l3 3 3-3M3 14h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {isEn ? 'Download PDF' : 'PDF 다운로드'}
+            </a>
+          </div>
         </div>
       </div>
 

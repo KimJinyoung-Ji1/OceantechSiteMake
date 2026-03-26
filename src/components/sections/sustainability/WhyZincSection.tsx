@@ -9,7 +9,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
 
   return (
     <section className="py-12 lg:py-16" aria-label="왜 아연인가">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <p

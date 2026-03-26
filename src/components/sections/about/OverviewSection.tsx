@@ -24,11 +24,11 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
 
   return (
     <section
-      className="py-20 lg:py-28 px-6 lg:px-16 text-center"
+      className="py-20 lg:py-28 px-6 lg:px-10 text-center"
       style={{ background: 'var(--background)' }}
       aria-label="회사 개요"
     >
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-[1920px] mx-auto">
         <div className="mb-12">
           <p
             className="text-lg font-bold uppercase tracking-widest mb-3"
