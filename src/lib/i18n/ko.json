@@ -151,6 +151,19 @@
     "trialMonths": "실증 기간",
     "trialMonthsUnit": "개월"
   },
+  "products": {
+    "pageTitle": "제품소개",
+    "pageSubtitle": "친환경 아연 어망추 라인업",
+    "categoryTitle": "제품 라인업",
+    "specTitle": "규격",
+    "weight": "무게",
+    "size": "호수",
+    "advantagesTitle": "왜 오션테크 제품인가?",
+    "comparisonTitle": "납추 vs 아연추 비교",
+    "lead": "기존 납추",
+    "zinc": "오션테크 아연추",
+    "inquiryButton": "제품 문의하기"
+  },
   "cta": {
     "title": "친환경 어업의 미래를\n함께 만들어 갑시다",
     "description": "수협중앙회 단가계약 제품. 납추에서 아연추로 전환하여 더 건강한 바다를 만드는 데 함께하세요.",

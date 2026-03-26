@@ -299,6 +299,44 @@ export const SITE_CONFIG = {
       image: '/images/green-cert-mark.png',
     },
   ],
+  products: {
+    categories: [
+      {
+        id: 'jungchi',
+        nameKo: '친환경 정치망 추',
+        nameEn: 'Eco-friendly Set Net Weight',
+        descriptionKo: '정치망 어업에 사용되는 대형 아연 어망추. 납추 대비 10배 이상 긴 수명과 SVHC 235종 불검출 인증.',
+        descriptionEn: 'Large zinc fishing weights for set net fishing. Over 10x longer lifespan than lead, SVHC 235 species non-detected.',
+        image: '/images/products/jungchi-1000g.png',
+        items: [
+          { model: '1,000g / 267호', weight: '1,000g', size: '267호', image: '/images/products/jungchi-1000g.png' },
+          { model: '600g / 160호', weight: '600g', size: '160호', image: '/images/products/jungchi-600g.png' },
+          { model: '550g / 147호', weight: '550g', size: '147호', image: '/images/products/jungchi-550g.png' },
+          { model: '400g / 107호', weight: '400g', size: '107호', image: '/images/products/jungchi-400g.png' },
+        ],
+      },
+      {
+        id: 'jamang',
+        nameKo: '친환경 자망 추',
+        nameEn: 'Eco-friendly Gill Net Weight',
+        descriptionKo: '자망 어업에 사용되는 소형 아연 어망추. 가벼우면서도 내구성이 뛰어나 잦은 교체 부담을 줄여줍니다.',
+        descriptionEn: 'Small zinc fishing weights for gill net fishing. Lightweight yet durable, reducing frequent replacement costs.',
+        image: '/images/products/jamang-common.png',
+        items: [
+          { model: '50g / 13호', weight: '50g', size: '13호', image: '/images/products/jamang-common.png' },
+          { model: '38g / 10호', weight: '38g', size: '10호', image: '/images/products/jamang-common.png' },
+          { model: '30g / 8호', weight: '30g', size: '8호', image: '/images/products/jamang-common.png' },
+          { model: '23g / 6호', weight: '23g', size: '6호', image: '/images/products/jamang-common.png' },
+        ],
+      },
+    ],
+    advantages: [
+      { titleKo: '10배 이상 내구성', titleEn: '10x+ Durability', descKo: '아연 합금은 해수 환경에서 납 대비 10배 이상의 수명', descEn: 'Zinc alloy lasts 10x longer than lead in seawater' },
+      { titleKo: 'SVHC 불검출', titleEn: 'SVHC Free', descKo: '235종 고위험성 물질 전량 불검출 인증', descEn: '235 SVHC substances all non-detected' },
+      { titleKo: '80% 비용 절감', titleEn: '80% Cost Saving', descKo: '긴 수명으로 교체 비용 대폭 절감', descEn: 'Long lifespan drastically reduces replacement costs' },
+      { titleKo: '녹색기술 인증', titleEn: 'Green Tech Certified', descKo: '대한민국 녹색기술인증 및 녹색기술제품 확인', descEn: 'Korea Green Technology Certification verified' },
+    ],
+  },
   ceoMessage: {
     ko: [
       '바다와 공생하는 건강한 생태계를 만드는 일은 선택이 아니라 책임입니다.',
@@ -319,6 +357,7 @@ export const SITE_CONFIG = {
 
 export const NAV_ITEMS = [
   { label: '홈', labelEn: 'Home', href: '/' },
+  { label: '제품소개', labelEn: 'Products', href: '/products' },
   {
     label: '회사소개',
     labelEn: 'About',

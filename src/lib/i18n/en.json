@@ -151,6 +151,19 @@
     "trialMonths": "Pilot Period",
     "trialMonthsUnit": "months"
   },
+  "products": {
+    "pageTitle": "Products",
+    "pageSubtitle": "Eco-friendly Zinc Fishing Weight Lineup",
+    "categoryTitle": "Product Lineup",
+    "specTitle": "Specifications",
+    "weight": "Weight",
+    "size": "Size",
+    "advantagesTitle": "Why OceanTech Products?",
+    "comparisonTitle": "Lead vs Zinc Comparison",
+    "lead": "Conventional Lead",
+    "zinc": "OceanTech Zinc",
+    "inquiryButton": "Product Inquiry"
+  },
   "cta": {
     "title": "Let's build the future\nof eco-friendly fishing together",
     "description": "Ocean Tech's zinc weights are already used in a SUHYUP unit-price contract product line. Switch from lead to zinc and help create a healthier ocean.",
