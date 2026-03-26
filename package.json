@@ -17,14 +17,20 @@
     "resend": "^6.9.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chroma-js": "^3.2.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
+    "lighthouse": "^13.0.3",
+    "pixelmatch": "^7.1.0",
     "playwright": "^1.58.2",
+    "pngjs": "^7.0.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
