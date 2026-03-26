@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import { getTranslation } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
-import Badge from '@/components/ui/Badge';
 
 interface GreenCertStripProps {
   locale: Locale;
@@ -11,48 +11,104 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
 
   return (
     <section
-      className="py-6 px-4"
-      style={{ background: 'linear-gradient(90deg, var(--primary-900) 0%, var(--primary-700) 100%)' }}
+      className="py-7 px-4"
+      style={{
+        background: '#FFFFFF',
+        borderBottom: '3px solid var(--secondary-700)',
+      }}
       aria-label="녹색인증 배너"
     >
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <Badge variant="green" className="text-xs">
-            {t.greenCert.badge}
-          </Badge>
-          <span className="text-white font-semibold text-sm sm:text-base">
-            {t.greenCert.description}
-          </span>
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-6">
+        {/* Left: cert mark image */}
+        <div className="flex items-center gap-4">
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0"
+            style={{ background: 'rgba(14,173,135,0.08)', border: '1px solid rgba(14,173,135,0.2)' }}
+          >
+            <Image
+              src="/images/green-cert-mark.png"
+              alt="녹색인증마크"
+              width={44}
+              height={44}
+              className="object-contain"
+            />
+          </div>
+          {/* Center: title + description */}
+          <div>
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-0.5"
+              style={{ color: 'var(--secondary-700)' }}
+            >
+              {t.greenCert.badge}
+            </p>
+            <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+              {t.greenCert.description}
+            </p>
+          </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-6">
-          <div className="text-center">
-            <p className="text-xs font-medium" style={{ color: 'var(--primary-300)' }}>
+        {/* Right: two pill tags */}
+        <div className="flex flex-wrap items-center gap-3">
+          <div
+            className="flex flex-col items-center px-4 py-2 rounded-full"
+            style={{
+              background: 'rgba(14,173,135,0.07)',
+              border: '1px solid rgba(14,173,135,0.2)',
+            }}
+          >
+            <span
+              className="text-xs font-medium"
+              style={{ color: 'var(--secondary-700)' }}
+            >
               {t.greenCert.techTitle}
-            </p>
-            <p className="text-sm font-bold" style={{ color: 'var(--secondary-500)' }}>
+            </span>
+            <span
+              className="text-sm font-bold font-mono"
+              style={{ color: 'var(--text-primary)' }}
+            >
               {t.greenCert.techNumber}
-            </p>
+            </span>
           </div>
           <div
-            className="w-px h-8 hidden sm:block"
-            style={{ background: 'rgba(255,255,255,0.2)' }}
-          />
-          <div className="text-center">
-            <p className="text-xs font-medium" style={{ color: 'var(--primary-300)' }}>
+            className="flex flex-col items-center px-4 py-2 rounded-full"
+            style={{
+              background: 'rgba(14,173,135,0.07)',
+              border: '1px solid rgba(14,173,135,0.2)',
+            }}
+          >
+            <span
+              className="text-xs font-medium"
+              style={{ color: 'var(--secondary-700)' }}
+            >
               {t.greenCert.productTitle}
-            </p>
-            <p className="text-sm font-bold" style={{ color: 'var(--secondary-500)' }}>
+            </span>
+            <span
+              className="text-sm font-bold font-mono"
+              style={{ color: 'var(--text-primary)' }}
+            >
               {t.greenCert.productNumber}
-            </p>
+            </span>
           </div>
           <div
-            className="w-px h-8 hidden sm:block"
-            style={{ background: 'rgba(255,255,255,0.2)' }}
-          />
-          <p className="text-xs" style={{ color: 'var(--primary-300)' }}>
-            {t.greenCert.period}
-          </p>
+            className="flex flex-col items-center px-4 py-2 rounded-full"
+            style={{
+              background: 'rgba(14,173,135,0.07)',
+              border: '1px solid rgba(14,173,135,0.2)',
+            }}
+          >
+            <span
+              className="text-xs font-medium"
+              style={{ color: 'var(--secondary-700)' }}
+            >
+              {locale === 'en' ? 'Valid Period' : '유효기간'}
+            </span>
+            <span
+              className="text-xs font-semibold"
+              style={{ color: 'var(--text-body)' }}
+            >
+              {t.greenCert.period}
+            </span>
+          </div>
         </div>
       </div>
     </section>

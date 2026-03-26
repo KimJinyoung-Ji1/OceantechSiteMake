@@ -15,6 +15,13 @@ export default function HeroSection({ locale }: HeroSectionProps) {
 
   const titleLines = t.hero.title.split('\n');
 
+  const stats = [
+    { value: `${SITE_CONFIG.stats.patents}건`, label: '특허' },
+    { value: `${SITE_CONFIG.stats.durability}년`, label: '내구성' },
+    { value: `${SITE_CONFIG.stats.svhc}종`, label: 'SVHC' },
+    { value: `${SITE_CONFIG.stats.costReduction}%`, label: '비용절감' },
+  ];
+
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden"
@@ -34,15 +41,18 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(135deg, rgba(2,16,151,0.92) 0%, rgba(1,72,200,0.80) 50%, rgba(3,233,248,0.35) 100%)',
+              'linear-gradient(125deg, rgba(2,16,151,0.93) 0%, rgba(1,72,200,0.82) 45%, rgba(3,233,248,0.28) 100%)',
           }}
         />
       </div>
 
       {/* Content */}
       <div className="relative z-10 w-full px-6 lg:px-12 max-w-[1440px] mx-auto py-28 lg:py-36">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
-          {/* Left — Text */}
+        <div
+          className="grid items-center gap-14 lg:gap-16"
+          style={{ gridTemplateColumns: '1.3fr 1fr' } as React.CSSProperties}
+        >
+          {/* LEFT — Text */}
           <div>
             <Badge variant="green" className="mb-6">
               <span
@@ -71,92 +81,158 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               {t.hero.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
                 href={localePath('/contact')}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl text-lg font-bold text-white shadow-xl hover:shadow-2xl hover:brightness-110 transition-all duration-200"
-                style={{ background: 'var(--secondary-500)', color: 'var(--primary-900)' }}
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-lg font-bold text-white shadow-xl hover:shadow-2xl hover:brightness-110 transition-all duration-200"
+                style={{
+                  background: 'linear-gradient(135deg, var(--secondary-700) 0%, var(--secondary-500) 100%)',
+                  color: 'var(--primary-900)',
+                }}
               >
                 {t.hero.ctaPrimary}
               </Link>
               <Link
                 href={localePath('/about')}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl text-lg font-medium text-white border-2 border-white/30 hover:border-white/70 hover:bg-white/10 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-lg font-medium text-white border-2 border-white/30 hover:border-white/70 hover:bg-white/10 transition-all duration-200"
               >
                 {t.hero.ctaSecondary}
               </Link>
             </div>
+
+            {/* Inline Stats Row */}
+            <div className="flex flex-wrap gap-6">
+              {stats.map((s, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <span
+                    className="text-2xl font-black"
+                    style={{ color: 'var(--secondary-500)' }}
+                  >
+                    {s.value}
+                  </span>
+                  <span className="text-sm text-white/60">{s.label}</span>
+                  {i < stats.length - 1 && (
+                    <span
+                      className="ml-2 w-px h-4 hidden sm:block"
+                      style={{ background: 'rgba(255,255,255,0.2)' }}
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right — Green Cert Card */}
-          <div className="hidden lg:flex flex-col items-end">
+          {/* RIGHT — Two Glassmorphism Cert Cards */}
+          <div className="hidden lg:flex flex-col gap-5 items-stretch">
+            {/* Card 1: 녹색기술인증서 */}
             <div
-              className="p-8 rounded-3xl backdrop-blur-md text-white w-80"
+              className="p-7 rounded-[20px] text-white"
               style={{
-                background: 'rgba(255,255,255,0.10)',
-                border: '1px solid rgba(255,255,255,0.22)',
-                boxShadow: '0 8px 40px rgba(2,16,151,0.25)',
+                background: 'rgba(255,255,255,0.08)',
+                backdropFilter: 'blur(24px)',
+                WebkitBackdropFilter: 'blur(24px)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 32px rgba(2,16,151,0.20)',
               }}
             >
-              {/* Green Cert Mark */}
-              <div className="flex items-center justify-center mb-6">
+              <div className="flex items-start gap-4 mb-5">
                 <div
-                  className="w-24 h-24 rounded-2xl flex items-center justify-center"
-                  style={{ background: 'rgba(23,233,181,0.15)', border: '2px solid rgba(23,233,181,0.4)' }}
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
+                  style={{ background: 'rgba(23,233,181,0.15)', border: '1px solid rgba(23,233,181,0.3)' }}
                 >
-                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-                    <circle cx="26" cy="26" r="23" stroke="var(--secondary-500)" strokeWidth="2.5" />
-                    <path d="M14 26 Q20 14 26 18 Q32 22 38 12" stroke="var(--secondary-500)" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-                    <path d="M18 30 Q22 24 26 27 Q30 30 34 22" stroke="#03E9F8" strokeWidth="2" strokeLinecap="round" fill="none" />
-                    <circle cx="26" cy="26" r="4" fill="var(--secondary-500)" fillOpacity="0.3" />
-                  </svg>
+                  <Image
+                    src="/images/green-cert-mark.png"
+                    alt="녹색인증마크"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <p
+                    className="text-xs font-semibold uppercase tracking-wider mb-0.5"
+                    style={{ color: 'rgba(255,255,255,0.55)' }}
+                  >
+                    {locale === 'en' ? 'Green Technology Certification' : '녹색기술인증서'}
+                  </p>
+                  <p
+                    className="text-xl font-black tracking-wide"
+                    style={{ color: '#17E9B5' }}
+                  >
+                    {SITE_CONFIG.certifications.greenTech.number}
+                  </p>
                 </div>
               </div>
-
-              <div className="text-center mb-4">
-                <p className="text-sm font-bold mb-1" style={{ color: 'var(--secondary-500)' }}>
-                  녹색기술인증
-                </p>
-                <p className="text-2xl font-black tracking-wide text-white">
-                  {SITE_CONFIG.certifications.greenTech.number}
-                </p>
+              <div className="flex items-center justify-between">
+                <span className="text-xs" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                  {locale === 'en' ? 'Valid Period' : '유효기간'}
+                </span>
+                <span className="text-xs font-semibold text-white">
+                  {SITE_CONFIG.certifications.greenTech.period}
+                </span>
               </div>
-
               <div
-                className="h-px mb-4"
-                style={{ background: 'rgba(255,255,255,0.15)' }}
-              />
-
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                    인증기관
-                  </span>
-                  <span className="text-xs font-medium text-white">환경부</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                    유효기간
-                  </span>
-                  <span className="text-xs font-medium text-white">
-                    {SITE_CONFIG.certifications.greenTech.period}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                    제품번호
-                  </span>
-                  <span className="text-xs font-medium" style={{ color: 'var(--secondary-500)' }}>
-                    {SITE_CONFIG.certifications.greenProduct.number}
-                  </span>
-                </div>
-              </div>
-
-              <div
-                className="mt-5 text-center text-xs py-2 rounded-xl font-semibold"
-                style={{ background: 'rgba(23,233,181,0.15)', color: 'var(--secondary-500)' }}
+                className="mt-4 text-center text-xs py-2 rounded-xl font-semibold"
+                style={{ background: 'rgba(23,233,181,0.12)', color: '#17E9B5' }}
               >
-                친환경 아연 어장추 · 녹색기술제품
+                {SITE_CONFIG.certifications.greenTech.issuerKo}
+              </div>
+            </div>
+
+            {/* Card 2: 녹색기술제품 확인서 */}
+            <div
+              className="p-7 rounded-[20px] text-white"
+              style={{
+                background: 'rgba(255,255,255,0.08)',
+                backdropFilter: 'blur(24px)',
+                WebkitBackdropFilter: 'blur(24px)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 32px rgba(2,16,151,0.20)',
+              }}
+            >
+              <div className="flex items-start gap-4 mb-5">
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
+                  style={{ background: 'rgba(3,233,248,0.15)', border: '1px solid rgba(3,233,248,0.3)' }}
+                >
+                  <Image
+                    src="/images/green-cert-mark.png"
+                    alt="녹색인증마크"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <p
+                    className="text-xs font-semibold uppercase tracking-wider mb-0.5"
+                    style={{ color: 'rgba(255,255,255,0.55)' }}
+                  >
+                    {locale === 'en' ? 'Green Product Verification' : '녹색기술제품 확인서'}
+                  </p>
+                  <p
+                    className="text-xl font-black tracking-wide"
+                    style={{ color: '#03E9F8' }}
+                  >
+                    {SITE_CONFIG.certifications.greenProduct.number}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                  {locale === 'en' ? 'Valid Period' : '유효기간'}
+                </span>
+                <span className="text-xs font-semibold text-white">
+                  {SITE_CONFIG.certifications.greenProduct.period}
+                </span>
+              </div>
+              <div
+                className="mt-4 text-center text-xs py-2 rounded-xl font-semibold"
+                style={{ background: 'rgba(3,233,248,0.12)', color: '#03E9F8' }}
+              >
+                {SITE_CONFIG.certifications.greenProduct.issuerKo}
               </div>
             </div>
           </div>

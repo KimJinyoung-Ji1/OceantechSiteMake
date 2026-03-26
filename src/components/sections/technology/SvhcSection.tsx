@@ -25,7 +25,7 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
         >
           <div className="text-center lg:text-left">
             <p
-              className="text-xs font-bold uppercase tracking-widest mb-3"
+              className="text-sm font-bold uppercase tracking-widest mb-3"
               style={{ color: 'rgba(255,255,255,0.7)' }}
             >
               EU REACH 기준
@@ -36,10 +36,10 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
             >
               {SITE_CONFIG.stats.svhc}
             </p>
-            <p className="text-2xl font-bold text-white mb-4">
+            <p className="text-3xl font-bold text-white mb-4">
               {isEn ? 'SVHC Substances\nNot Detected' : '종 유해물질\n미검출'}
             </p>
-            <p className="text-white/70 text-base leading-relaxed max-w-md">
+            <p className="text-white/70 text-lg leading-relaxed max-w-md">
               {isEn
                 ? 'Based on EU REACH regulations, all 235 SVHC (Substances of Very High Concern) substances were not detected, proving complete eco-friendliness.'
                 : 'EU REACH 규정 기반 고위험성 우려 물질(SVHC) 235종 전종 미검출. 완전한 친환경성이 공식 입증되었습니다.'}
@@ -47,7 +47,7 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
           </div>
 
           <button
-            className="shrink-0 px-6 py-4 rounded-2xl font-bold text-sm transition-all duration-200 hover:shadow-lg hover:brightness-105"
+            className="shrink-0 px-6 py-4 rounded-2xl font-bold text-base transition-all duration-200 hover:shadow-lg hover:brightness-105"
             style={{ background: 'white', color: 'var(--primary-600)' }}
             onClick={() => setOpen(true)}
             aria-label={isEn ? 'View SVHC report' : 'SVHC 성적서 보기'}

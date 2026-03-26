@@ -30,6 +30,8 @@ export const SITE_CONFIG = {
       period: '2025.07.24 ~ 2029.07.23',
       issuerKo: '환경부',
       issuerEn: 'Ministry of Environment',
+      techNameKo: '친환경 어장추 제조방법',
+      techNameEn: 'Eco-friendly fishing weight manufacturing method',
     },
     greenProduct: {
       nameKo: '녹색기술제품확인',
@@ -38,6 +40,11 @@ export const SITE_CONFIG = {
       period: '2025.07.24 ~ 2029.07.23',
       issuerKo: '한국환경산업기술원',
       issuerEn: 'KEITI',
+      techNameKo: '아연합금 기반 유해물질 배출 절감 그물추 제조기술',
+      techNameEn: 'Zinc alloy-based eco-friendly fishing weight manufacturing technology',
+      basisKo: '탄소중립기본법 제60조',
+      basisEn: 'Framework Act on Carbon Neutrality, Article 60',
+      confirmationNumber: 'GTP-25-04857',
     },
     venture: {
       nameKo: '벤처기업 확인',

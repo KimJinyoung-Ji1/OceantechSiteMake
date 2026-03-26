@@ -1,106 +1,74 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
 import { getTranslation } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
+import Modal from '@/components/ui/Modal';
 
 interface CertCardsProps {
   locale: Locale;
 }
 
-const LeafIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-    <path d="M6 22 Q10 8 22 6 Q22 18 10 22 Z" stroke="var(--secondary-700)" strokeWidth="2" strokeLinejoin="round" fill="rgba(23,233,181,0.12)" />
-    <path d="M6 22 L14 14" stroke="var(--secondary-700)" strokeWidth="2" strokeLinecap="round" />
-  </svg>
-);
-
-const RecycleIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-    <path d="M14 4 L20 9 L17 9 Q19 14 16 18" stroke="var(--secondary-700)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M14 24 L8 19 L11 19 Q9 14 12 10" stroke="var(--secondary-700)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M20 14 Q22 18 19 22 L16 22" stroke="var(--secondary-700)" strokeWidth="2" strokeLinecap="round" fill="none" />
-  </svg>
-);
-
-const RocketIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-    <path d="M14 4 Q22 4 22 12 L22 18 L16 24 L16 19 L12 19 L12 24 L6 18 L6 12 Q6 4 14 4 Z" stroke="var(--primary-500)" strokeWidth="1.8" strokeLinejoin="round" fill="rgba(1,104,239,0.08)" />
-    <circle cx="14" cy="12" r="2.5" stroke="var(--primary-500)" strokeWidth="1.8" fill="none" />
-    <path d="M8 20 L5 23" stroke="var(--primary-500)" strokeWidth="1.8" strokeLinecap="round" />
-    <path d="M20 20 L23 23" stroke="var(--primary-500)" strokeWidth="1.8" strokeLinecap="round" />
-  </svg>
-);
-
-const TrophyIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-    <path d="M9 4 H19 V15 Q19 21 14 21 Q9 21 9 15 Z" stroke="#D97706" strokeWidth="2" strokeLinejoin="round" fill="rgba(217,119,6,0.08)" />
-    <path d="M5 6 H9 Q8 13 9 15" stroke="#D97706" strokeWidth="2" strokeLinecap="round" fill="none" />
-    <path d="M19 15 Q20 13 19 6 H23" stroke="#D97706" strokeWidth="2" strokeLinecap="round" fill="none" />
-    <path d="M11 21 L11 24 H17 L17 21" stroke="#D97706" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M9 24 H19" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
-  </svg>
-);
-
 const certItems = [
   {
     key: 'greenTech',
-    icon: <LeafIcon />,
-    title: '녹색기술인증',
-    titleEn: 'Green Technology Certification',
+    titleKo: '녹색기술인증서',
+    titleEn: 'Green Technology Certificate',
+    image: '/documents/certs/green-tech-cert.png',
     number: SITE_CONFIG.certifications.greenTech.number,
     period: SITE_CONFIG.certifications.greenTech.period,
-    color: {
-      bg: 'linear-gradient(135deg, #F0FFF9 0%, #E0FFF5 100%)',
-      border: 'rgba(23, 233, 181, 0.3)',
-      accent: 'var(--secondary-700)',
-      iconBg: 'rgba(23,233,181,0.12)',
-    },
-  },
-  {
-    key: 'greenProduct',
-    icon: <RecycleIcon />,
-    title: '녹색기술제품 확인',
-    titleEn: 'Green Product Verification',
-    number: SITE_CONFIG.certifications.greenProduct.number,
-    period: SITE_CONFIG.certifications.greenProduct.period,
-    color: {
-      bg: 'linear-gradient(135deg, #F0FFF9 0%, #E0FFF5 100%)',
-      border: 'rgba(23, 233, 181, 0.3)',
-      accent: 'var(--secondary-700)',
-      iconBg: 'rgba(23,233,181,0.12)',
-    },
+    issuer: SITE_CONFIG.certifications.greenTech.issuerKo,
+    accent: 'var(--secondary-700)',
+    accentLight: 'rgba(14,173,135,0.08)',
+    accentBorder: 'rgba(14,173,135,0.25)',
+    featured: true,
   },
   {
     key: 'venture',
-    icon: <RocketIcon />,
-    title: '벤처기업 인증',
-    titleEn: 'Venture Company Certification',
+    titleKo: '벤처기업 확인서',
+    titleEn: 'Venture Company Certificate',
+    image: '/documents/certs/venture-cert.png',
     number: SITE_CONFIG.certifications.venture.number,
     period: SITE_CONFIG.certifications.venture.period,
-    color: {
-      bg: 'linear-gradient(135deg, #F0F4FF 0%, #E8EFFF 100%)',
-      border: 'rgba(1, 104, 239, 0.25)',
-      accent: 'var(--primary-500)',
-      iconBg: 'rgba(1,104,239,0.08)',
-    },
+    issuer: SITE_CONFIG.certifications.venture.issuerKo,
+    accent: 'var(--primary-500)',
+    accentLight: 'rgba(1,104,239,0.06)',
+    accentBorder: 'rgba(1,104,239,0.20)',
+    featured: false,
   },
   {
     key: 'patentAward',
-    icon: <TrophyIcon />,
-    title: '우수특허 대상 수상',
+    titleKo: '우수특허 대상',
     titleEn: 'Excellence Patent Award',
+    image: '/documents/certs/patent-award-2023.png',
     number: SITE_CONFIG.certifications.patentAward.number,
     period: SITE_CONFIG.certifications.patentAward.date,
-    color: {
-      bg: 'linear-gradient(135deg, #FFFBF0 0%, #FFF6E0 100%)',
-      border: 'rgba(217, 119, 6, 0.25)',
-      accent: '#D97706',
-      iconBg: 'rgba(217,119,6,0.08)',
-    },
+    issuer: SITE_CONFIG.certifications.patentAward.issuerKo,
+    accent: '#D97706',
+    accentLight: 'rgba(217,119,6,0.06)',
+    accentBorder: 'rgba(217,119,6,0.20)',
+    featured: false,
+  },
+  {
+    key: 'researchDept',
+    titleKo: '기업부설연구소 인정서',
+    titleEn: 'Corporate R&D Center Recognition',
+    image: '/documents/certs/research-dept.png',
+    number: SITE_CONFIG.certifications.researchDept.number,
+    period: SITE_CONFIG.certifications.researchDept.date,
+    issuer: SITE_CONFIG.certifications.researchDept.issuerKo,
+    accent: 'var(--primary-500)',
+    accentLight: 'rgba(1,104,239,0.06)',
+    accentBorder: 'rgba(1,104,239,0.20)',
+    featured: false,
   },
 ];
 
 export default function CertCards({ locale }: CertCardsProps) {
   const t = getTranslation(locale);
+  const [selectedCert, setSelectedCert] = useState<(typeof certItems)[number] | null>(null);
 
   return (
     <section
@@ -128,39 +96,109 @@ export default function CertCards({ locale }: CertCardsProps) {
           {certItems.map((cert) => (
             <article
               key={cert.key}
-              className="group p-7 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer bg-white relative"
               style={{
-                background: cert.color.bg,
-                border: `1px solid ${cert.color.border}`,
+                border: `1px solid ${cert.accentBorder}`,
               }}
+              onClick={() => setSelectedCert(cert)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && setSelectedCert(cert)}
+              aria-label={`${locale === 'en' ? cert.titleEn : cert.titleKo} 상세보기`}
             >
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
-                style={{ background: cert.color.iconBg }}
-              >
-                {cert.icon}
-              </div>
-              <h3
-                className="font-bold text-base mb-2"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                {locale === 'en' ? cert.titleEn : cert.title}
-              </h3>
-              <p
-                className="text-sm font-mono font-semibold mb-1 break-all"
-                style={{ color: cert.color.accent }}
-              >
-                {cert.number}
-              </p>
-              {cert.period && (
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  {cert.period}
-                </p>
+              {/* Featured badge */}
+              {cert.featured && (
+                <div
+                  className="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-xs font-bold text-white"
+                  style={{ background: cert.accent }}
+                >
+                  {locale === 'en' ? 'Core' : '핵심 인증'}
+                </div>
               )}
+
+              {/* Cert thumbnail */}
+              <div
+                className="relative w-full aspect-[3/4] overflow-hidden"
+                style={{ background: cert.accentLight }}
+              >
+                <Image
+                  src={cert.image}
+                  alt={locale === 'en' ? cert.titleEn : cert.titleKo}
+                  fill
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+
+              {/* Info */}
+              <div className="p-5">
+                <h3
+                  className="font-bold text-sm mb-1.5"
+                  style={{ color: 'var(--text-primary)' }}
+                >
+                  {locale === 'en' ? cert.titleEn : cert.titleKo}
+                </h3>
+                <p
+                  className="text-xs font-mono font-semibold mb-1 break-all"
+                  style={{ color: cert.accent }}
+                >
+                  {cert.number}
+                </p>
+                {cert.period && (
+                  <p className="text-xs" style={{ color: 'var(--text-body)', opacity: 0.7 }}>
+                    {cert.period}
+                  </p>
+                )}
+
+                {/* Click hint */}
+                <div
+                  className="mt-3 flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ color: cert.accent }}
+                >
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                  {locale === 'en' ? 'View full' : '전체보기'}
+                </div>
+              </div>
             </article>
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal
+        open={selectedCert !== null}
+        onClose={() => setSelectedCert(null)}
+        title={selectedCert ? (locale === 'en' ? selectedCert.titleEn : selectedCert.titleKo) : undefined}
+      >
+        {selectedCert && (
+          <div className="flex flex-col items-center gap-4">
+            <div className="relative w-full max-h-[60vh] flex items-center justify-center">
+              <Image
+                src={selectedCert.image}
+                alt={locale === 'en' ? selectedCert.titleEn : selectedCert.titleKo}
+                width={600}
+                height={800}
+                className="object-contain max-h-[60vh] w-auto"
+              />
+            </div>
+            <div className="w-full border-t pt-4" style={{ borderColor: 'var(--gray-100)' }}>
+              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--text-primary)' }}>
+                {locale === 'en' ? selectedCert.titleEn : selectedCert.titleKo}
+              </p>
+              <p className="text-xs font-mono" style={{ color: selectedCert.accent }}>
+                {selectedCert.number}
+              </p>
+              {selectedCert.period && (
+                <p className="text-xs mt-1" style={{ color: 'var(--text-body)', opacity: 0.7 }}>
+                  {selectedCert.period}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
+      </Modal>
     </section>
   );
 }

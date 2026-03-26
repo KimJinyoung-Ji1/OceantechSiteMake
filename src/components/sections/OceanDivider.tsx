@@ -24,6 +24,20 @@ export default function OceanDivider({ variant = 1, height = 220 }: OceanDivider
       style={{ height: `${height}px` }}
       aria-hidden="true"
     >
+      {/* SVG wave clip — top edge */}
+      <svg
+        className="absolute top-0 left-0 w-full z-20"
+        style={{ height: '60px', display: 'block' }}
+        viewBox="0 0 1440 60"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,0 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 Z"
+          fill="var(--background)"
+        />
+      </svg>
+
       <Image
         src={OCEAN_IMAGES[variant]}
         alt={OCEAN_ALTS[variant]}
@@ -31,21 +45,26 @@ export default function OceanDivider({ variant = 1, height = 220 }: OceanDivider
         className="object-cover object-center"
         sizes="100vw"
       />
-      {/* Top fade */}
-      <div
-        className="absolute inset-x-0 top-0 h-20 z-10"
-        style={{ background: 'linear-gradient(to bottom, var(--background), transparent)' }}
-      />
-      {/* Bottom fade */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-20 z-10"
-        style={{ background: 'linear-gradient(to top, var(--background), transparent)' }}
-      />
+
       {/* Dark overlay for depth */}
       <div
         className="absolute inset-0 z-0"
-        style={{ background: 'rgba(2,16,151,0.18)' }}
+        style={{ background: 'rgba(2,16,151,0.22)' }}
       />
+
+      {/* SVG wave clip — bottom edge */}
+      <svg
+        className="absolute bottom-0 left-0 w-full z-20"
+        style={{ height: '60px', display: 'block' }}
+        viewBox="0 0 1440 60"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,60 C240,0 480,60 720,30 C960,0 1200,60 1440,30 L1440,60 Z"
+          fill="var(--background)"
+        />
+      </svg>
     </div>
   );
 }

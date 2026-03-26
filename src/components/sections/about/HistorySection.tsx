@@ -15,13 +15,13 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
       <div className="max-w-4xl mx-auto">
         <div className="mb-14">
           <p
-            className="text-base font-bold uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.about.history.title}
           </p>
           <h2
-            className="text-4xl lg:text-5xl font-black"
+            className="text-5xl lg:text-6xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             {locale === 'en' ? 'Our Journey' : '오션테크의 발자취'}
@@ -61,12 +61,12 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
                       }}
                     >
                       <p
-                        className="text-base font-black mb-1"
+                        className="text-lg font-black mb-1"
                         style={{ color: 'var(--primary-500)' }}
                       >
                         {item.year}
                       </p>
-                      <p className="text-base font-medium" style={{ color: 'var(--text-body)' }}>
+                      <p className="text-lg font-medium" style={{ color: 'var(--text-body)' }}>
                         {locale === 'en' ? item.eventEn : item.eventKo}
                       </p>
                     </div>

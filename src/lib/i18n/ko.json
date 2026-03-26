@@ -120,9 +120,16 @@
       }
     ]
   },
+  "certCard": {
+    "confirmationNo": "확인번호",
+    "certNo": "인증번호",
+    "validPeriod": "유효기간",
+    "technology": "기술명",
+    "legalBasis": "확인근거"
+  },
   "compare": {
     "title": "아연추와 납추의 차이",
-    "zinc": "친환경 아연추",
+    "zinc": "아연추 (오션테크)",
     "lead": "기존 납추",
     "rows": [
       { "label": "환경 안전성", "zinc": "유해물질 검출 없음", "lead": "중금속 오염 우려" },

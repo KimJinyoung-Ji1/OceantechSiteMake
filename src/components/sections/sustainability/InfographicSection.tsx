@@ -56,12 +56,12 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p
-            className="text-sm font-bold uppercase tracking-widest mb-3"
+            className="text-base font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--secondary-700,#047857)' }}
           >
             {isEn ? 'ENVIRONMENTAL IMPACT' : '환경 영향'}
           </p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-4xl lg:text-5xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Why It Matters' : '아연추가 만드는 변화'}
           </h2>
         </div>
@@ -83,7 +83,7 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
               >
                 {item.icon}
               </div>
-              <p className="text-sm font-semibold leading-snug" style={{ color: 'var(--gray-700)' }}>
+              <p className="text-base font-semibold leading-snug" style={{ color: 'var(--gray-700)' }}>
                 {isEn ? item.en : item.ko}
               </p>
             </div>

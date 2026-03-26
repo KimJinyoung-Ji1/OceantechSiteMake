@@ -6,7 +6,7 @@
   --primary-700: #0148C8;
   --primary-500: #0168EF;
   --primary-300: #03E9F8;
-  --primary-100: #E0F7FF;
+  --primary-100: #DBEAFE;
 
   /* Secondary — Eco Green */
   --secondary-500: #17E9B5;
@@ -23,13 +23,14 @@
 
   /* Design system */
   --background: #FFFFFF;
-  --background-alt: #F0F8FF;
-  --card-bg: #F0F8FF;
-  --border: #D0E4F5;
-  --text-primary: #021097;
-  --text-body: #1A3A6E;
-  --text-secondary: #4A7AB5;
-  --foreground: #1A3A6E;
+  --background-alt: #F8FAFC;
+  --card-bg: #FFFFFF;
+  --border: #E2E8F0;
+  --text-primary: #0F172A;
+  --text-body: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --foreground: #0F172A;
 }
 
 html {
@@ -39,7 +40,7 @@ html {
 body {
   font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
     system-ui, Roboto, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   color: var(--foreground);
   background: var(--background);
 }

@@ -31,13 +31,13 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
           <p
-            className="text-base font-bold uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'Company Overview' : '회사 개요'}
           </p>
           <h2
-            className="text-4xl lg:text-5xl font-black"
+            className="text-5xl lg:text-6xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             {isEn ? '(주)오션테크 / Ocean Tech Inc.' : '(주)오션테크'}
@@ -58,7 +58,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
               }}
             >
               <div
-                className="px-6 py-4 text-base font-semibold text-left"
+                className="px-6 py-4 text-lg font-semibold text-left"
                 style={{
                   color: 'var(--text-secondary)',
                   background: i % 2 === 0 ? 'var(--background-alt)' : '#E8F0FA',
@@ -66,7 +66,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
               >
                 {row.label}
               </div>
-              <div className="px-6 py-4 text-base text-left" style={{ color: 'var(--text-body)' }}>
+              <div className="px-6 py-4 text-lg text-left" style={{ color: 'var(--text-body)' }}>
                 {row.value}
               </div>
             </div>

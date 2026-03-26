@@ -18,7 +18,7 @@ export default function SvhcHighlight({ locale }: SvhcHighlightProps) {
           }}
         >
           <p
-            className="text-xs font-bold uppercase tracking-widest mb-4"
+            className="text-sm font-bold uppercase tracking-widest mb-4"
             style={{ color: 'rgba(255,255,255,0.6)' }}
           >
             EU REACH Regulation · {isEn ? 'Officially Verified' : '공식 검증'}
@@ -34,10 +34,10 @@ export default function SvhcHighlight({ locale }: SvhcHighlightProps) {
               {isEn ? 'types' : '종'}
             </span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">
             {isEn ? 'SVHC Substances Not Detected' : 'SVHC 유해물질 미검출'}
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto text-base leading-relaxed">
+          <p className="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
             {isEn
               ? 'Substances of Very High Concern (SVHC) are chemicals subject to regulation under EU REACH regulations. All 235 substances listed were not detected in Ocean Tech\'s zinc weights, proving complete eco-friendliness.'
               : 'SVHC(고위험 우려물질)는 EU REACH 규정에 따라 관리되는 화학물질입니다. 오션테크 아연추에서는 목록에 등재된 235종 전종이 미검출되어 완전한 친환경성이 입증되었습니다.'}

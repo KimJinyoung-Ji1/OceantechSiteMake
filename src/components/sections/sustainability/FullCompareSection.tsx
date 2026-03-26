@@ -27,12 +27,12 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <p
-            className="text-sm font-bold uppercase tracking-widest mb-3"
+            className="text-base font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'COMPARISON' : '상세 비교'}
           </p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-4xl lg:text-5xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Zinc Weight vs Lead Weight' : '아연추 vs 납추'}
           </h2>
         </div>
@@ -45,16 +45,16 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
           <div className="grid grid-cols-3">
             <div className="px-6 py-5" style={{ background: 'var(--gray-100)' }} />
             <div className="px-6 py-5 text-center" style={{ background: 'var(--primary-500)' }}>
-              <p className="text-white font-bold text-sm">
+              <p className="text-white font-bold text-base">
                 {isEn ? 'Zinc Weight' : '아연추'}
               </p>
-              <p className="text-white/70 text-xs mt-0.5">(주)오션테크</p>
+              <p className="text-white/70 text-sm mt-0.5">(주)오션테크</p>
             </div>
             <div className="px-6 py-5 text-center" style={{ background: '#374151' }}>
-              <p className="text-white font-bold text-sm">
+              <p className="text-white font-bold text-base">
                 {isEn ? 'Lead Weight' : '납추'}
               </p>
-              <p className="text-white/70 text-xs mt-0.5">{isEn ? 'Conventional' : '기존 제품'}</p>
+              <p className="text-white/70 text-sm mt-0.5">{isEn ? 'Conventional' : '기존 제품'}</p>
             </div>
           </div>
 
@@ -65,11 +65,11 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
               className="grid grid-cols-3 border-t"
               style={{ borderColor: 'var(--gray-200)', background: i % 2 === 0 ? 'white' : 'var(--gray-50)' }}
             >
-              <div className="px-6 py-4 font-semibold text-sm" style={{ color: 'var(--gray-700)' }}>
+              <div className="px-6 py-4 font-semibold text-base" style={{ color: 'var(--gray-700)' }}>
                 {isEn ? row.labelEn : row.labelKo}
               </div>
               <div
-                className="px-6 py-4 text-center text-sm font-semibold border-x"
+                className="px-6 py-4 text-center text-base font-semibold border-x"
                 style={{ borderColor: 'var(--gray-200)', color: 'var(--secondary-700,#047857)' }}
               >
                 <span className="flex items-center justify-center gap-1.5">
@@ -84,7 +84,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                 </span>
               </div>
               <div
-                className="px-6 py-4 text-center text-sm"
+                className="px-6 py-4 text-center text-base"
                 style={{ color: 'var(--gray-500)' }}
               >
                 {row.lead}

@@ -37,14 +37,14 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
           <div className="flex-1 text-center lg:text-left">
             <div className="flex flex-wrap gap-2 mb-3 justify-center lg:justify-start">
               <span
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-bold"
                 style={{ background: 'rgba(23,233,181,0.15)', color: 'var(--secondary-700,#047857)' }}
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--secondary-500)' }} />
                 {isEn ? 'Green Technology Certification' : '녹색기술인증'}
               </span>
               <span
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-bold"
                 style={{ background: 'rgba(23,233,181,0.15)', color: 'var(--secondary-700,#047857)' }}
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--secondary-500)' }} />
@@ -53,7 +53,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
             </div>
 
             <h2
-              className="text-2xl lg:text-3xl font-extrabold mb-2"
+              className="text-3xl lg:text-4xl font-extrabold mb-2 text-center lg:text-left"
               style={{ color: 'var(--gray-900)' }}
             >
               {isEn
@@ -63,26 +63,26 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
 
             <div className="flex flex-wrap gap-4 mt-4 justify-center lg:justify-start">
               <div>
-                <p className="text-xs" style={{ color: 'var(--gray-500)' }}>
+                <p className="text-sm" style={{ color: 'var(--gray-500)' }}>
                   {isEn ? 'Green Tech No.' : '녹색기술인증 번호'}
                 </p>
-                <p className="text-base font-bold" style={{ color: 'var(--primary-600)' }}>
+                <p className="text-lg font-bold" style={{ color: 'var(--primary-600)' }}>
                   {cert.greenTech.number}
                 </p>
               </div>
               <div>
-                <p className="text-xs" style={{ color: 'var(--gray-500)' }}>
+                <p className="text-sm" style={{ color: 'var(--gray-500)' }}>
                   {isEn ? 'Green Product No.' : '녹색기술제품 번호'}
                 </p>
-                <p className="text-base font-bold" style={{ color: 'var(--primary-600)' }}>
+                <p className="text-lg font-bold" style={{ color: 'var(--primary-600)' }}>
                   {cert.greenProduct.number}
                 </p>
               </div>
               <div>
-                <p className="text-xs" style={{ color: 'var(--gray-500)' }}>
+                <p className="text-sm" style={{ color: 'var(--gray-500)' }}>
                   {isEn ? 'Valid Period' : '유효기간'}
                 </p>
-                <p className="text-base font-bold" style={{ color: 'var(--gray-700)' }}>
+                <p className="text-lg font-bold" style={{ color: 'var(--gray-700)' }}>
                   {cert.greenTech.period}
                 </p>
               </div>

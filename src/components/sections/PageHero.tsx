@@ -34,7 +34,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-white/60 mb-6" aria-label="브레드크럼">
+        <nav className="flex items-center gap-2 text-base text-white/60 mb-6" aria-label="브레드크럼">
           {breadcrumb.map((item, i) => (
             <span key={i} className="flex items-center gap-2">
               {i > 0 && <span aria-hidden="true">›</span>}
@@ -52,9 +52,9 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
           ))}
         </nav>
 
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-3">{title}</h1>
+        <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-3">{title}</h1>
         {subtitle && (
-          <p className="text-lg text-white/70 max-w-xl leading-relaxed">{subtitle}</p>
+          <p className="text-xl text-white/70 max-w-xl leading-relaxed">{subtitle}</p>
         )}
       </div>
     </section>

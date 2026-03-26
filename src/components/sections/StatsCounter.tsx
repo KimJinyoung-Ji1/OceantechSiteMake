@@ -27,19 +27,19 @@ function StatItem({ target, unit, label, highlight }: StatItemProps) {
     >
       <div className="flex items-end justify-center gap-1 mb-2">
         <span
-          className="text-4xl lg:text-5xl font-extrabold tabular-nums"
+          className="text-5xl lg:text-6xl font-extrabold tabular-nums"
           style={{ color: highlight ? 'var(--secondary-500)' : 'var(--primary-300)' }}
         >
           {count}
         </span>
         <span
-          className="text-xl font-bold mb-1"
+          className="text-2xl font-bold mb-1"
           style={{ color: highlight ? 'var(--secondary-500)' : 'var(--primary-300)' }}
         >
           {unit}
         </span>
       </div>
-      <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
+      <p className="text-base font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
         {label}
       </p>
     </div>
@@ -90,7 +90,7 @@ export default function StatsCounter({ locale }: StatsCounterProps) {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-white">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-white">
             {t.stats.title}
           </h2>
         </div>

@@ -37,12 +37,12 @@ export default function TestReportsSection({ locale }: TestReportsSectionProps) 
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p
-            className="text-sm font-bold uppercase tracking-widest mb-3"
+            className="text-base font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'TEST REPORTS' : '시험성적서'}
           </p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-4xl lg:text-5xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Official Test Reports' : '공인 시험성적서'}
           </h2>
         </div>
@@ -69,10 +69,10 @@ export default function TestReportsSection({ locale }: TestReportsSectionProps) 
                   <path d="M7 7h6M7 10h6M7 13h4" stroke="var(--primary-400)" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
               </div>
-              <p className="text-base font-semibold mb-2" style={{ color: 'var(--gray-800)' }}>
+              <p className="text-lg font-semibold mb-2" style={{ color: 'var(--gray-800)' }}>
                 {isEn ? report.titleEn : report.titleKo}
               </p>
-              <p className="text-xs font-medium" style={{ color: 'var(--primary-400)' }}>
+              <p className="text-sm font-medium" style={{ color: 'var(--primary-400)' }}>
                 {isEn ? 'View document →' : '문서 보기 →'}
               </p>
             </button>

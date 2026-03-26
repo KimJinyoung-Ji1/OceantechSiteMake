@@ -24,15 +24,15 @@ export default function TrialSection({ locale }: TrialSectionProps) {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p
-            className="text-sm font-bold uppercase tracking-widest mb-3"
+            className="text-base font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'PILOT PROGRAM' : '시범사업 결과'}
           </p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-4xl lg:text-5xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Goseong County, Gangwon' : '강원도 고성군 시범사업'}
           </h2>
-          <p className="mt-3 text-base" style={{ color: 'var(--gray-500)' }}>
+          <p className="mt-3 text-lg" style={{ color: 'var(--gray-500)' }}>
             {isEn
               ? 'Real-world pilot completed with fishing boats in Goseong County, Gangwon Province.'
               : '강원도 고성군 수협 소속 어선과 함께 31개월 실증 시범사업을 완료했습니다.'}
@@ -51,12 +51,12 @@ export default function TrialSection({ locale }: TrialSectionProps) {
               }}
             >
               <p
-                className="text-4xl font-extrabold mb-2"
+                className="text-5xl font-extrabold mb-2"
                 style={{ color: 'var(--primary-500)' }}
               >
                 {s.value}
               </p>
-              <p className="text-sm font-medium" style={{ color: 'var(--gray-500)' }}>
+              <p className="text-base font-medium" style={{ color: 'var(--gray-500)' }}>
                 {isEn ? s.labelEn : s.labelKo}
               </p>
             </div>

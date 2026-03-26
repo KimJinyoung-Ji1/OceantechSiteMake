@@ -30,136 +30,242 @@ export default function Header({ locale }: HeaderProps) {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/12 bg-[rgba(2,16,151,0.82)] backdrop-blur-xl">
-        <div className="border-b border-white/10">
-          <div className="mx-auto flex h-10 w-full max-w-[1600px] items-center justify-between px-4 lg:px-8">
-            <div className="hidden items-center gap-4 text-[13px] text-white/70 lg:flex">
-              <span>{SITE_CONFIG.company.slogan}</span>
-              <span className="h-3 w-px bg-white/20" />
-              <span>{SITE_CONFIG.contact.tel}</span>
-              <span className="h-3 w-px bg-white/20" />
-              <span>{SITE_CONFIG.contact.email}</span>
-            </div>
-            <div className="ml-auto flex items-center gap-2 text-[13px]">
-              <Link
-                href={locale === 'ko' ? '/en' : '/ko'}
-                className="rounded-full border border-white/15 px-3 py-1 text-white/80 transition hover:border-white/35 hover:text-white"
-                aria-label="언어 전환"
-              >
-                {locale === 'ko' ? 'EN' : 'KR'}
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="relative"
-          onMouseLeave={() => setOpenMenu(null)}
+      {/* Floating header — floats above content with top-4 offset */}
+      <div
+        className="fixed z-50"
+        style={{ top: '1rem', left: '1rem', right: '1rem' }}
+        onMouseLeave={() => setOpenMenu(null)}
+      >
+        <header
+          className="rounded-2xl border"
+          style={{
+            background: 'rgba(2,16,151,0.88)',
+            backdropFilter: 'blur(28px) saturate(180%)',
+            WebkitBackdropFilter: 'blur(28px) saturate(180%)',
+            borderColor: 'rgba(255,255,255,0.06)',
+            boxShadow: '0 12px 48px rgba(0,0,0,0.12)',
+          }}
         >
-          <div className="mx-auto flex h-[84px] w-full max-w-[1600px] items-center justify-between px-4 lg:px-8">
-            <Link href={localePath('/')} className="flex min-w-[220px] items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10">
-                <span className="text-sm font-black tracking-[0.24em] text-white">OC</span>
+          <div className="mx-auto flex h-[72px] w-full max-w-[1360px] items-center justify-between px-6 lg:px-8">
+            {/* Logo */}
+            <Link href={localePath('/')} className="flex items-center gap-3 shrink-0">
+              <div
+                className="flex h-10 w-10 items-center justify-center rounded-full border"
+                style={{ borderColor: 'rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.1)' }}
+              >
+                <span className="text-[11px] font-black tracking-[0.2em] text-white">OT</span>
               </div>
-              <div>
-                <p className="text-[28px] font-black tracking-[0.16em] text-white">OCEANTECH</p>
-                <p className="text-[12px] text-white/60">{SITE_CONFIG.company.name}</p>
+              <div className="hidden sm:block">
+                <p className="text-[20px] font-black tracking-[0.14em] text-white leading-none">OCEANTECH</p>
+                <p className="text-[11px] mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                  {SITE_CONFIG.company.name}
+                </p>
               </div>
             </Link>
 
-            <nav className="hidden flex-1 items-center justify-center gap-8 xl:flex" aria-label="주요 메뉴">
+            {/* Center nav — spread wide */}
+            <nav className="hidden flex-1 items-center justify-center gap-6 xl:flex" aria-label="주요 메뉴">
               {items.map((item) => (
                 <div
                   key={item.href}
-                  className="relative flex h-full items-center"
+                  className="relative flex items-center"
                   onMouseEnter={() => setOpenMenu(item.href)}
                 >
                   <Link
                     href={localePath(item.href)}
-                    className="group flex items-center gap-2 py-3 text-[17px] font-semibold text-white/88 transition hover:text-white"
+                    className="group relative flex items-center gap-1.5 py-2 text-[16px] font-semibold transition-colors duration-150"
+                    style={{ color: openMenu === item.href ? '#17E9B5' : 'rgba(255,255,255,0.82)' }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLAnchorElement).style.color =
+                        openMenu === item.href ? '#17E9B5' : 'rgba(255,255,255,0.82)';
+                    }}
                   >
                     <span>{label(item)}</span>
                     {item.badge ? (
-                      <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary-500)]" aria-hidden="true" />
+                      <span className="h-2 w-2 rounded-full" style={{ background: '#17E9B5' }} aria-hidden="true" />
                     ) : null}
-                    <span className="absolute inset-x-0 bottom-0 h-[2px] origin-left scale-x-0 bg-[var(--secondary-500)] transition-transform duration-200 group-hover:scale-x-100" />
+                    {/* Mint underline indicator for active */}
+                    <span
+                      className="absolute inset-x-0 -bottom-1 h-[2px] rounded-full transition-transform duration-200 origin-left"
+                      style={{
+                        background: '#17E9B5',
+                        transform: openMenu === item.href ? 'scaleX(1)' : 'scaleX(0)',
+                      }}
+                    />
                   </Link>
                 </div>
               ))}
             </nav>
 
-            <div className="hidden min-w-[220px] items-center justify-end gap-3 xl:flex">
+            {/* Right: CTA + Lang */}
+            <div className="hidden items-center gap-3 xl:flex shrink-0">
               <Link
                 href={localePath('/certification')}
-                className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white/85 transition hover:border-white/35 hover:bg-white/8"
+                className="rounded-xl border px-4 py-2 text-[14px] font-semibold transition-colors duration-150"
+                style={{
+                  borderColor: 'rgba(255,255,255,0.18)',
+                  color: 'rgba(255,255,255,0.8)',
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.borderColor = 'rgba(255,255,255,0.4)';
+                  el.style.color = '#ffffff';
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.borderColor = 'rgba(255,255,255,0.18)';
+                  el.style.color = 'rgba(255,255,255,0.8)';
+                }}
               >
-                인증현황
+                {locale === 'en' ? 'Certification' : '인증현황'}
               </Link>
               <Link
                 href={localePath('/contact')}
-                className="rounded-full bg-[var(--secondary-500)] px-5 py-2.5 text-sm font-black text-[var(--primary-900)] shadow-[0_10px_24px_rgba(23,233,181,0.28)] transition hover:brightness-105"
+                className="rounded-xl px-5 py-2 text-[14px] font-black text-[#021097] transition-all duration-150"
+                style={{
+                  background: 'linear-gradient(135deg, #03E9F8 0%, #17E9B5 100%)',
+                  boxShadow: '0 6px 20px rgba(23,233,181,0.32)',
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.filter = 'brightness(1.08)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.filter = 'brightness(1)';
+                }}
               >
-                문의하기
+                {locale === 'en' ? 'Contact' : '문의하기'}
+              </Link>
+              <Link
+                href={locale === 'ko' ? '/en' : '/ko'}
+                className="rounded-lg border px-3 py-1.5 text-[13px] font-semibold transition-colors duration-150"
+                style={{
+                  borderColor: 'rgba(255,255,255,0.18)',
+                  color: 'rgba(255,255,255,0.7)',
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.borderColor = 'rgba(255,255,255,0.38)';
+                  el.style.color = '#ffffff';
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.borderColor = 'rgba(255,255,255,0.18)';
+                  el.style.color = 'rgba(255,255,255,0.7)';
+                }}
+                aria-label="언어 전환"
+              >
+                {locale === 'ko' ? 'EN' : 'KR'}
               </Link>
             </div>
 
-            <button
-              className="rounded-xl p-2 text-white transition hover:bg-white/10 xl:hidden"
-              onClick={() => setDrawerOpen(true)}
-              aria-label="메뉴 열기"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 7H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <path d="M4 12H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <path d="M4 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
-
-          <AnimatePresence>
-            {activeMenu ? (
-              <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.18 }}
-                className="absolute inset-x-0 top-full border-t border-white/10 bg-[rgba(6,21,116,0.94)] backdrop-blur-xl"
+            {/* Mobile: lang + hamburger */}
+            <div className="flex items-center gap-2 xl:hidden">
+              <Link
+                href={locale === 'ko' ? '/en' : '/ko'}
+                className="rounded-lg border px-3 py-1.5 text-[13px] font-semibold"
+                style={{ borderColor: 'rgba(255,255,255,0.18)', color: 'rgba(255,255,255,0.7)' }}
+                aria-label="언어 전환"
               >
-                <div className="mx-auto grid max-w-[1600px] grid-cols-[1.2fr_1.8fr] gap-8 px-8 py-8">
-                  <div className="rounded-[28px] border border-white/10 bg-white/6 p-8">
-                    <p className="mb-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--secondary-500)]">
-                      {locale === 'en' ? 'Section' : '섹션'}
-                    </p>
-                    <h2 className="mb-3 text-3xl font-black text-white">{label(activeMenu)}</h2>
-                    <p className="max-w-md text-[15px] leading-7 text-white/68">
-                      {locale === 'en'
-                        ? 'Browse the main contents prepared for this section in a wider, more editorial layout.'
-                        : '이 섹션에 연결된 주요 콘텐츠를 넓고 읽기 쉬운 카드형 구조로 바로 탐색할 수 있습니다.'}
-                    </p>
-                  </div>
+                {locale === 'ko' ? 'EN' : 'KR'}
+              </Link>
+              <button
+                className="rounded-xl p-2 text-white transition"
+                style={{ background: 'rgba(255,255,255,0)' }}
+                onClick={() => setDrawerOpen(true)}
+                aria-label="메뉴 열기"
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.10)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0)';
+                }}
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 7H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M4 12H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M4 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </header>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    {activeMenu.children?.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={localePath(child.href)}
-                        className="group rounded-[28px] border border-white/10 bg-white/7 p-6 transition hover:-translate-y-1 hover:border-[var(--secondary-500)]/50 hover:bg-white/12"
-                      >
-                        <p className="mb-2 text-lg font-black text-white">{label(child)}</p>
-                        <p className="text-sm leading-6 text-white/62">
-                          {locale === 'en'
-                            ? 'Open the subsection and review related company, technology, or certification details.'
-                            : '회사 정보, 기술 설명, 인증 자료 등 관련 내용을 자세히 확인할 수 있습니다.'}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
+        {/* Mega dropdown — attaches below the floating header card */}
+        <AnimatePresence>
+          {activeMenu ? (
+            <motion.div
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.16 }}
+              className="mt-2 rounded-2xl border overflow-hidden"
+              style={{
+                background: 'rgba(6,21,116,0.96)',
+                backdropFilter: 'blur(28px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(28px) saturate(180%)',
+                borderColor: 'rgba(255,255,255,0.08)',
+                boxShadow: '0 16px 48px rgba(0,0,0,0.18)',
+              }}
+            >
+              <div className="mx-auto grid max-w-[1360px] grid-cols-[1.2fr_1.8fr] gap-8 px-8 py-8">
+                <div
+                  className="rounded-[20px] border p-8"
+                  style={{
+                    background: 'rgba(255,255,255,0.05)',
+                    borderColor: 'rgba(255,255,255,0.09)',
+                  }}
+                >
+                  <p className="mb-3 text-xs font-black uppercase tracking-[0.28em]" style={{ color: '#17E9B5' }}>
+                    {locale === 'en' ? 'Section' : '섹션'}
+                  </p>
+                  <h2 className="mb-3 text-3xl font-black text-white">{label(activeMenu)}</h2>
+                  <p className="max-w-md text-[15px] leading-7" style={{ color: 'rgba(255,255,255,0.62)' }}>
+                    {locale === 'en'
+                      ? 'Browse the main contents prepared for this section.'
+                      : '이 섹션에 연결된 주요 콘텐츠를 바로 탐색할 수 있습니다.'}
+                  </p>
                 </div>
-              </motion.div>
-            ) : null}
-          </AnimatePresence>
-        </div>
-      </header>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {activeMenu.children?.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={localePath(child.href)}
+                      className="group rounded-[20px] border p-6 transition-all duration-150"
+                      style={{
+                        background: 'rgba(255,255,255,0.06)',
+                        borderColor: 'rgba(255,255,255,0.09)',
+                      }}
+                      onMouseEnter={(e) => {
+                        const el = e.currentTarget as HTMLAnchorElement;
+                        el.style.background = 'rgba(255,255,255,0.11)';
+                        el.style.borderColor = 'rgba(23,233,181,0.45)';
+                        el.style.transform = 'translateY(-2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        const el = e.currentTarget as HTMLAnchorElement;
+                        el.style.background = 'rgba(255,255,255,0.06)';
+                        el.style.borderColor = 'rgba(255,255,255,0.09)';
+                        el.style.transform = 'translateY(0)';
+                      }}
+                    >
+                      <p className="mb-2 text-lg font-black text-white">{label(child)}</p>
+                      <p className="text-sm leading-6" style={{ color: 'rgba(255,255,255,0.58)' }}>
+                        {locale === 'en'
+                          ? 'View details for this section.'
+                          : '관련 내용을 자세히 확인할 수 있습니다.'}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </div>
 
       <MobileDrawer locale={locale} open={drawerOpen} onClose={() => setDrawerOpen(false)} />
     </>

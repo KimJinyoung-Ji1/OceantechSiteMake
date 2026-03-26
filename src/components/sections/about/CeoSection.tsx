@@ -27,7 +27,7 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
                 <circle cx="32" cy="24" r="14" fill="var(--primary-300, #93c5fd)" />
                 <ellipse cx="32" cy="52" rx="22" ry="12" fill="var(--primary-200, #bfdbfe)" />
               </svg>
-              <p className="text-sm font-semibold" style={{ color: 'var(--primary-600, #2563eb)' }}>
+              <p className="text-base font-semibold" style={{ color: 'var(--primary-600, #2563eb)' }}>
                 {t.about.ceo.name} {t.about.ceo.position}
               </p>
             </div>
@@ -36,7 +36,7 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
           {/* Right — message */}
           <div>
             <p
-              className="text-sm font-bold uppercase tracking-widest mb-3"
+              className="text-base font-bold uppercase tracking-widest mb-3"
               style={{ color: 'var(--primary-500, #3b82f6)' }}
             >
               {t.about.ceo.title}
@@ -48,7 +48,7 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
                   return (
                     <p
                       key={i}
-                      className="text-xl lg:text-2xl font-bold leading-snug"
+                      className="text-2xl lg:text-3xl font-bold leading-snug"
                       style={{ color: 'var(--primary-700, #1d4ed8)' }}
                     >
                       {line}
@@ -59,7 +59,7 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
                   return (
                     <p
                       key={i}
-                      className="text-base font-semibold pt-4 border-t"
+                      className="text-lg font-semibold pt-4 border-t"
                       style={{ color: 'var(--gray-700, #374151)', borderColor: 'var(--gray-200, #e5e7eb)' }}
                     >
                       {line}
@@ -69,7 +69,7 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
                 return (
                   <p
                     key={i}
-                    className="text-base leading-relaxed"
+                    className="text-lg leading-relaxed"
                     style={{ color: 'var(--gray-600, #4b5563)' }}
                   >
                     {line}

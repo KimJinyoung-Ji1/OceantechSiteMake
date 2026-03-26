@@ -120,9 +120,16 @@
       }
     ]
   },
+  "certCard": {
+    "confirmationNo": "Confirmation No.",
+    "certNo": "Certification No.",
+    "validPeriod": "Valid Period",
+    "technology": "Technology",
+    "legalBasis": "Legal Basis"
+  },
   "compare": {
     "title": "How Zinc Weights Differ from Lead Weights",
-    "zinc": "Eco-friendly Zinc Weight",
+    "zinc": "Zinc Weight (OceanTech)",
     "lead": "Conventional Lead Weight",
     "rows": [
       { "label": "Environmental Safety", "zinc": "No hazardous substances detected", "lead": "Risk of heavy metal pollution" },

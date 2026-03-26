@@ -30,12 +30,12 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p
-            className="text-sm font-bold uppercase tracking-widest mb-3"
+            className="text-base font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'PATENTS' : '특허 현황'}
           </p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-4xl lg:text-5xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
             {isEn ? `${patents.length} Patents · ${designPatents.reduce((a, d) => a + d.count, 0)} Design Patents` : `특허 ${patents.length}건 · 디자인특허 ${designPatents.reduce((a, d) => a + d.count, 0)}건`}
           </h2>
         </div>
@@ -66,19 +66,19 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                     <path d="M10 2L12.5 7.5L18 8.5L14 12.5L15 18L10 15.5L5 18L6 12.5L2 8.5L7.5 7.5L10 2Z" stroke="var(--primary-500)" strokeWidth="1.5" fill="none" />
                   </svg>
                 </div>
-                <p className="text-xs font-mono font-bold mb-2" style={{ color: 'var(--primary-500)' }}>
+                <p className="text-sm font-mono font-bold mb-2" style={{ color: 'var(--primary-500)' }}>
                   {patent.number}
                 </p>
-                <p className="text-sm font-semibold leading-snug" style={{ color: 'var(--gray-800)' }}>
+                <p className="text-base font-semibold leading-snug" style={{ color: 'var(--gray-800)' }}>
                   {isEn ? patent.titleEn : patent.titleKo}
                 </p>
                 {patent.date && (
-                  <p className="text-xs mt-2" style={{ color: 'var(--gray-400)' }}>
+                  <p className="text-sm mt-2" style={{ color: 'var(--gray-400)' }}>
                     {patent.date}
                   </p>
                 )}
                 {imgSrc && (
-                  <p className="text-xs mt-3 font-medium" style={{ color: 'var(--primary-400)' }}>
+                  <p className="text-sm mt-3 font-medium" style={{ color: 'var(--primary-400)' }}>
                     {isEn ? 'View certificate →' : '등록증 보기 →'}
                   </p>
                 )}
@@ -109,17 +109,17 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                 <path d="M7 10h6M10 7v6" stroke="var(--secondary-600)" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </div>
-            <p className="text-xs font-bold mb-2" style={{ color: 'var(--secondary-700,#047857)' }}>
+            <p className="text-sm font-bold mb-2" style={{ color: 'var(--secondary-700,#047857)' }}>
               {isEn ? 'DESIGN PATENT' : '디자인 특허'}
             </p>
             <div className="space-y-1">
               {designPatents.map((dp, i) => (
-                <p key={i} className="text-sm font-medium" style={{ color: 'var(--gray-700)' }}>
+                <p key={i} className="text-base font-medium" style={{ color: 'var(--gray-700)' }}>
                   {isEn ? dp.titleEn : dp.titleKo} × {dp.count}
                 </p>
               ))}
             </div>
-            <p className="text-xs mt-3 font-medium" style={{ color: 'var(--secondary-600)' }}>
+            <p className="text-sm mt-3 font-medium" style={{ color: 'var(--secondary-600)' }}>
               {isEn ? 'View certificates →' : '등록증 보기 →'}
             </p>
           </article>

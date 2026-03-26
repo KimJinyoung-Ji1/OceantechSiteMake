@@ -106,14 +106,14 @@ export default function CertGrid({ locale }: CertGridProps) {
                 />
               </div>
 
-              <p className="text-sm font-bold mb-1" style={{ color: 'var(--gray-900)' }}>
+              <p className="text-base font-bold mb-1" style={{ color: 'var(--gray-900)' }}>
                 {isEn ? item.titleEn : item.titleKo}
               </p>
-              <p className="text-xs font-mono" style={{ color: item.accentColor }}>
+              <p className="text-sm font-mono" style={{ color: item.accentColor }}>
                 {item.numberKo}
               </p>
               <p
-                className="text-xs mt-3 font-medium"
+                className="text-sm mt-3 font-medium"
                 style={{ color: item.accentColor }}
               >
                 {isEn ? 'View original →' : '원본 보기 →'}
