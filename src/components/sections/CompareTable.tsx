@@ -40,7 +40,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
 
         <div className="overflow-x-auto">
         <div
-          className="rounded-2xl overflow-hidden shadow-lg min-w-[480px]"
+          className="rounded-2xl overflow-hidden shadow-lg min-w-[320px] lg:min-w-[480px]"
           style={{ border: '1px solid rgba(14,173,135,0.20)' }}
         >
           {/* Column headers */}

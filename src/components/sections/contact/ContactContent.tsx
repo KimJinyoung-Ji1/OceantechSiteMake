@@ -101,7 +101,7 @@ function KakaoMap() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       {/* Map div — always rendered so Kakao SDK can attach to it */}
       <div
         ref={mapRef}

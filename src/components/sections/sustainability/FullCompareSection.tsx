@@ -50,7 +50,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
 
         <div className="overflow-x-auto">
         <div
-          className="rounded-2xl overflow-hidden max-w-3xl mx-auto min-w-[400px]"
+          className="rounded-2xl overflow-hidden max-w-3xl mx-auto min-w-0 lg:min-w-[400px]"
           style={{
             border: '1px solid rgba(2,16,151,0.18)',
             boxShadow: '0 8px 40px rgba(2,16,151,0.10), 0 2px 8px rgba(0,0,0,0.06)',

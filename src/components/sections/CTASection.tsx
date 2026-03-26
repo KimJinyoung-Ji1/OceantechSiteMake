@@ -32,7 +32,7 @@ export default function CTASection({ locale }: CTASectionProps) {
 
       {/* Decorative gradient circles */}
       <div
-        className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-20 z-0"
+        className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-20 z-0 pointer-events-none"
         style={{ background: 'var(--secondary-500)', filter: 'blur(100px)' }}
         aria-hidden="true"
       />
