@@ -159,8 +159,8 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* RIGHT — Auto-sliding Cert Carousel (뉴스 배너 스타일) */}
-          <div className="hidden lg:block">
+          {/* RIGHT — Auto-sliding Cert Carousel (60% width) */}
+          <div className="hidden lg:block" style={{ maxWidth: '60%' }}>
             <div
               className="rounded-2xl overflow-hidden"
               style={{
@@ -195,7 +195,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                     </div>
                     {/* Cert info */}
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--primary-300)' }}>
+                      <p className="text-base font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--primary-300)' }}>
                         {locale === 'en' ? slide.labelEn : slide.labelKo}
                       </p>
                       <p className="text-2xl font-black text-white leading-tight mb-3">
@@ -203,7 +203,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                       </p>
                       <div className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full" style={{ background: 'var(--secondary-500)' }} />
-                        <span className="text-sm text-white/60">
+                        <span className="text-base text-white/60">
                           {locale === 'en' ? 'Certified & Verified' : '국가공인 인증'}
                         </span>
                       </div>
