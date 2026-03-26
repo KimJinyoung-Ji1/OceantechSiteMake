@@ -50,6 +50,17 @@ export default function ContactForm({ locale, onSuccess }: ContactFormProps) {
     setLoading(true);
     setError(null);
 
+    if (!values.name.trim() || !values.email.trim() || !values.message.trim()) {
+      setError(isEn ? 'Please fill in all required fields.' : '필수 항목을 모두 입력해주세요.');
+      setLoading(false);
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+      setError(isEn ? 'Please enter a valid email address.' : '올바른 이메일 주소를 입력해주세요.');
+      setLoading(false);
+      return;
+    }
+
     const client = getSupabaseClient();
     if (!client) {
       setError('서비스 연결에 실패했습니다. 잠시 후 다시 시도해주세요.');
@@ -85,7 +96,6 @@ export default function ContactForm({ locale, onSuccess }: ContactFormProps) {
       onSubmit={handleSubmit}
       className="space-y-5"
       aria-label={isEn ? 'Contact Form' : '문의 폼'}
-      noValidate
     >
       <h3 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
         {isEn ? 'Send an Inquiry' : '문의 보내기'}

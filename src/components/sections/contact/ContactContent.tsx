@@ -42,6 +42,7 @@ function KakaoMap() {
           initMap();
         }
       }, 100);
+      return () => clearInterval(interval);
     }
 
     function initMap() {
