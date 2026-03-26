@@ -72,7 +72,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
 
           <div className="flex flex-wrap gap-6 justify-center">
             <div className="text-center">
-              <p className="text-sm" style={{ color: 'var(--gray-500)' }}>
+              <p className="text-sm" style={{ color: 'var(--gray-700)' }}>
                 {isEn ? 'Green Tech No.' : '녹색기술인증 번호'}
               </p>
               <p className="text-lg font-bold" style={{ color: 'var(--primary-600)' }}>
@@ -80,7 +80,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
               </p>
             </div>
             <div className="text-center">
-              <p className="text-sm" style={{ color: 'var(--gray-500)' }}>
+              <p className="text-sm" style={{ color: 'var(--gray-700)' }}>
                 {isEn ? 'Green Product No.' : '녹색기술제품 번호'}
               </p>
               <p className="text-lg font-bold" style={{ color: 'var(--primary-600)' }}>
@@ -88,7 +88,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
               </p>
             </div>
             <div className="text-center">
-              <p className="text-sm" style={{ color: 'var(--gray-500)' }}>
+              <p className="text-sm" style={{ color: 'var(--gray-700)' }}>
                 {isEn ? 'Valid Period' : '유효기간'}
               </p>
               <p className="text-lg font-bold" style={{ color: 'var(--gray-700)' }}>

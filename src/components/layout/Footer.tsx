@@ -171,7 +171,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-sm transition-colors hover:text-[#03E9F8]"
+                    className="text-sm transition-colors hover:text-[#03E9F8] min-h-[44px] inline-flex items-center"
                     style={{ color: 'rgba(255,255,255,0.5)' }}
                   >
                     {link.label}
@@ -194,7 +194,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-sm transition-colors hover:text-[#03E9F8]"
+                    className="text-sm transition-colors hover:text-[#03E9F8] min-h-[44px] inline-flex items-center"
                     style={{ color: 'rgba(255,255,255,0.5)' }}
                   >
                     {link.label}
@@ -217,7 +217,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-sm transition-colors hover:text-[#03E9F8]"
+                    className="text-sm transition-colors hover:text-[#03E9F8] min-h-[44px] inline-flex items-center"
                     style={{ color: 'rgba(255,255,255,0.5)' }}
                   >
                     {link.label}
@@ -241,7 +241,7 @@ export default function Footer({ locale }: FooterProps) {
             <div className="flex items-center gap-5 text-base" style={{ color: 'rgba(255,255,255,0.3)' }}>
               <Link
                 href={localePath('/privacy')}
-                className="transition-colors hover:text-white"
+                className="transition-colors hover:text-white min-h-[44px] inline-flex items-center"
               >
                 {locale === 'en' ? 'Privacy Policy' : '개인정보처리방침'}
               </Link>

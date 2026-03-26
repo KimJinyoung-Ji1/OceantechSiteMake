@@ -100,7 +100,7 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
                           key={child.href}
                           href={localePath(child.href)}
                           onClick={onClose}
-                          className="block py-2.5 text-base transition-colors"
+                          className="flex items-center py-2.5 min-h-[44px] text-base transition-colors"
                           style={{ color: 'rgba(2,16,151,0.7)' }}
                         >
                           {locale === 'en' ? child.labelEn : child.label}
@@ -118,7 +118,7 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
                 <Link
                   href={locale === 'ko' ? '/en' : '/ko'}
                   onClick={onClose}
-                  className="text-sm font-medium transition-colors"
+                  className="text-sm font-medium transition-colors min-h-[44px] inline-flex items-center"
                   style={{ color: '#021097' }}
                 >
                   {locale === 'ko' ? 'English' : '한국어'}
@@ -126,7 +126,7 @@ export default function MobileDrawer({ locale, open, onClose }: MobileDrawerProp
                 <Link
                   href={localePath('/contact')}
                   onClick={onClose}
-                  className="px-4 py-2 rounded-full text-sm font-bold text-white transition-colors"
+                  className="px-4 py-2 min-h-[44px] inline-flex items-center rounded-full text-sm font-bold text-white transition-colors"
                   style={{ background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)' }}
                 >
                   문의하기

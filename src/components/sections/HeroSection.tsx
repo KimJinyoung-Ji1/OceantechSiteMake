@@ -195,7 +195,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                     </div>
                     {/* Cert info */}
                     <div className="flex-1 min-w-0">
-                      <p className="text-base font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--primary-300)' }}>
+                      <p className="text-base font-bold uppercase tracking-wider mb-2" style={{ color: 'rgba(255,255,255,0.92)' }}>
                         {locale === 'en' ? slide.labelEn : slide.labelKo}
                       </p>
                       <p className="text-2xl font-black text-white leading-tight mb-3">

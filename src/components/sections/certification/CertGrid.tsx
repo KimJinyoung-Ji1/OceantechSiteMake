@@ -150,7 +150,7 @@ export default function CertGrid({ locale }: CertGridProps) {
                   >
                     {isEn ? item.titleEn : item.titleKo}
                   </span>
-                  <span className="text-xs font-mono" style={{ color: item.accentColor }}>
+                  <span className="text-xs font-mono" style={{ color: 'var(--gray-700)' }}>
                     {item.numberKo}
                   </span>
                 </div>

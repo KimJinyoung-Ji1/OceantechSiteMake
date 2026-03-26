@@ -133,7 +133,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
               {/* Lead — icon+text grouped and centered */}
               <div className="px-3 py-2.5 flex items-center justify-center gap-1.5">
                 <XIcon />
-                <span className="text-sm" style={{ color: '#6B7280' }}>
+                <span className="text-sm" style={{ color: 'var(--gray-700)' }}>
                   {row.lead}
                 </span>
               </div>

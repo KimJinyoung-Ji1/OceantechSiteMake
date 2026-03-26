@@ -204,7 +204,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                       ? (isEn ? 'DESIGN' : '디자인특허')
                       : (isEn ? 'PATENT' : '특허')}
                   </span>
-                  <span className="text-xs font-mono" style={{ color: 'var(--gray-400)' }}>
+                  <span className="text-xs font-mono" style={{ color: 'var(--gray-700)' }}>
                     {item.number}
                   </span>
                 </div>
@@ -214,7 +214,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                 </h3>
 
                 {item.date && (
-                  <p className="text-xs" style={{ color: 'var(--gray-400)' }}>{item.date}</p>
+                  <p className="text-xs" style={{ color: 'var(--gray-700)' }}>{item.date}</p>
                 )}
 
                 {item.downloadUrl && (
