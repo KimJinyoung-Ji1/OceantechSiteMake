@@ -34,14 +34,11 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
     <section id="history" className="py-16 lg:py-20 px-6 lg:px-24 overflow-hidden" style={{ background: 'var(--background)' }} aria-label="연혁">
       <div className="max-w-[1920px] mx-auto">
         <div className="mb-12 text-center">
-          <p
-            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
-            style={{ color: 'var(--primary-500)' }}
-          >
+          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.about.history.title}
           </p>
           <h2
-            className="text-2xl sm:text-3xl lg:text-5xl font-black"
+            className="section-title"
             style={{ color: 'var(--text-primary)' }}
           >
             {locale === 'en' ? 'Our Journey' : '오션테크의 발자취'}

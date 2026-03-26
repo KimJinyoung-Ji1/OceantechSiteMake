@@ -127,14 +127,11 @@ export default function VisionSection({ locale }: VisionSectionProps) {
     >
       <div className="max-w-[1920px] mx-auto">
         <div className="mb-12">
-          <p
-            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
-            style={{ color: 'var(--primary-500)' }}
-          >
+          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.about.vision.title}
           </p>
           <h2
-            className="text-2xl sm:text-3xl lg:text-5xl font-black"
+            className="section-title"
             style={{ color: 'var(--text-primary)' }}
           >
             {t.about.vision.subtitle}
@@ -158,10 +155,10 @@ export default function VisionSection({ locale }: VisionSectionProps) {
               >
                 {card.icon}
               </div>
-              <h3 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="card-title" style={{ color: 'var(--text-primary)' }}>
                 {locale === 'en' ? card.labelEn : card.labelKo}
               </h3>
-              <p className="text-lg leading-relaxed" style={{ color: 'var(--text-body)' }}>
+              <p className="section-subtitle" style={{ color: 'var(--text-body)' }}>
                 {locale === 'en' ? card.descEn : card.descKo}
               </p>
             </article>

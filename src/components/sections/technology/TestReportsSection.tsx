@@ -42,13 +42,10 @@ export default function TestReportsSection({ locale }: TestReportsSectionProps) 
     >
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-10">
-          <p
-            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
-            style={{ color: 'var(--primary-500)' }}
-          >
+          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'TEST REPORTS' : '시험성적서'}
           </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="section-title" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Official Test Reports' : '공인 시험성적서'}
           </h2>
         </div>
@@ -78,12 +75,12 @@ export default function TestReportsSection({ locale }: TestReportsSectionProps) 
                       <path d="M13 15l1.5 1.5 2.5-2.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <p className="text-lg font-bold" style={{ color: 'var(--gray-800)' }}>
+                  <p className="card-title" style={{ color: 'var(--gray-800)' }}>
                     {isEn ? report.titleEn : report.titleKo}
                   </p>
                 </div>
 
-                <p className="text-base leading-relaxed" style={{ color: 'var(--gray-600)' }}>
+                <p className="card-body" style={{ color: 'var(--gray-600)' }}>
                   {isEn ? report.descEn : report.descKo}
                 </p>
 

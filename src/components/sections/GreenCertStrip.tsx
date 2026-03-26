@@ -37,7 +37,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
           {/* Center: title + description */}
           <div>
             <p
-              className="text-lg font-bold uppercase tracking-widest mb-1"
+              className="section-eyebrow"
               style={{ color: 'var(--secondary-700)' }}
             >
               {t.greenCert.badge}

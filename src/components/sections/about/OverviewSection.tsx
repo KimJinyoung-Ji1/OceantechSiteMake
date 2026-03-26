@@ -34,14 +34,11 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
     >
       <div className="max-w-[1920px] mx-auto">
         <div className="mb-12">
-          <p
-            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
-            style={{ color: 'var(--primary-500)' }}
-          >
+          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'Company Overview' : '회사 개요'}
           </p>
           <h2
-            className="text-2xl sm:text-3xl lg:text-5xl font-black"
+            className="section-title"
             style={{ color: 'var(--text-primary)' }}
           >
             {isEn ? '(주)오션테크 / Ocean Tech Inc.' : '(주)오션테크'}

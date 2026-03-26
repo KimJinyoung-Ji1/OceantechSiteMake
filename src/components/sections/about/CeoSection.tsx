@@ -1,27 +1,56 @@
 import type { Locale } from '@/lib/i18n';
 import { getTranslation } from '@/lib/i18n';
+import { SITE_CONFIG } from '@/lib/constants';
 
 interface CeoSectionProps {
   locale: Locale;
   ceoMessage: string;
 }
 
-export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
+export default function CeoSection({ locale }: CeoSectionProps) {
   const t = getTranslation(locale);
-  const lines = ceoMessage.split('\n');
+  const lines = SITE_CONFIG.ceoMessage[locale];
 
   return (
     <section id="ceo" className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="CEO 인사말">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="flex flex-col items-start text-left max-w-3xl">
-          <p
-            className="text-lg font-bold uppercase tracking-widest mb-6"
-            style={{ color: 'var(--primary-500, #3b82f6)' }}
-          >
-            {t.about.ceo.title}
-          </p>
+        <p className="section-eyebrow mb-6" style={{ color: 'var(--primary-500)' }}>
+          {t.about.ceo.title}
+        </p>
 
-          <div className="space-y-5 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          {/* LEFT: CEO photo placeholder */}
+          <div
+            className="flex flex-col items-center justify-center rounded-2xl aspect-[3/4] max-w-sm mx-auto lg:mx-0 w-full"
+            style={{
+              background: 'var(--background-alt)',
+              border: '2px dashed var(--border)',
+            }}
+          >
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--text-secondary)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+              <circle cx="12" cy="13" r="4" />
+            </svg>
+            <p
+              className="mt-4 text-sm font-medium"
+              style={{ color: 'var(--text-secondary)' }}
+            >
+              {locale === 'en' ? 'CEO Photo' : '대표이사 사진'}
+            </p>
+          </div>
+
+          {/* RIGHT: CEO message */}
+          <div className="flex flex-col justify-center space-y-5">
             {lines.map((line, i) => {
               if (!line.trim()) return null;
               if (i === 0) {
@@ -35,7 +64,7 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
                   </p>
                 );
               }
-              if (line.startsWith('(주)오션테크 대표이사')) {
+              if (line.startsWith('(주)오션테크') || line.startsWith('Lee Woo-chul')) {
                 return (
                   <p
                     key={i}
@@ -49,7 +78,7 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
               return (
                 <p
                   key={i}
-                  className="text-lg leading-relaxed"
+                  className="section-subtitle"
                   style={{ color: 'var(--gray-600, #4b5563)' }}
                 >
                   {line}

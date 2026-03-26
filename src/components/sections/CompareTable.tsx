@@ -7,7 +7,7 @@ interface CompareTableProps {
 
 const CheckIcon = () => (
   <svg width="28" height="28" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-    <circle cx="11" cy="11" r="11" fill="#021097" />
+    <circle cx="11" cy="11" r="11" fill="var(--primary-900,#021097)" />
     <path d="M6.5 11.5l3 3 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
@@ -30,13 +30,10 @@ export default function CompareTable({ locale }: CompareTableProps) {
     >
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
         <div className="text-center mb-10">
-          <p
-            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
-            style={{ color: 'var(--primary-500)' }}
-          >
+          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {locale === 'en' ? 'COMPARISON' : '성능 비교'}
           </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="section-title" style={{ color: 'var(--text-primary)' }}>
             {t.compare.title}
           </h2>
         </div>
@@ -106,7 +103,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
                 <span className="shrink-0"><CheckIcon /></span>
                 <span
                   className="text-xl font-bold"
-                  style={{ color: '#021097' }}
+                  style={{ color: 'var(--primary-900,#021097)' }}
                 >
                   {row.zinc}
                 </span>

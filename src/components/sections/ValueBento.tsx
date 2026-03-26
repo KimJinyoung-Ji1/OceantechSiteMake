@@ -61,13 +61,10 @@ export default function ValueBento({ locale }: ValueBentoProps) {
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p
-            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
-            style={{ color: 'var(--primary-500)' }}
-          >
+          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.valueSection.title}
           </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="section-title" style={{ color: 'var(--text-primary)' }}>
             {t.valueSection.subtitle}
           </h2>
         </div>
@@ -99,12 +96,12 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                 </div>
 
                 <h3
-                  className="text-xl font-bold mb-4"
+                  className="card-title mb-4"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                <p className="card-body" style={{ color: 'var(--text-body)' }}>
                   {item.description}
                 </p>
 

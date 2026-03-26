@@ -53,7 +53,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
           </div>
 
           <h2
-            className="text-2xl sm:text-3xl lg:text-5xl font-black"
+            className="section-title"
             style={{ color: 'var(--gray-900)' }}
           >
             {isEn
@@ -62,7 +62,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
           </h2>
 
           <p
-            className="text-base leading-relaxed max-w-2xl"
+            className="section-subtitle max-w-2xl"
             style={{ color: 'var(--gray-600)' }}
           >
             {isEn

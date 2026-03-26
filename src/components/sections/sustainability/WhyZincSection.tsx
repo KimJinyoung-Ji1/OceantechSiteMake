@@ -13,30 +13,27 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
-            <p
-              className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
-              style={{ color: 'var(--secondary-700,#047857)' }}
-            >
+            <p className="section-eyebrow" style={{ color: 'var(--secondary-700,#047857)' }}>
               {isEn ? 'WHY ZINC?' : '왜 아연인가?'}
             </p>
             <h2
-              className="text-2xl sm:text-3xl lg:text-5xl font-black mb-6 leading-tight"
+              className="section-title mb-6"
               style={{ color: 'var(--gray-900)' }}
             >
               {isEn ? 'Lead is Poisoning\nOur Ocean' : '납이 바다를\n오염시키고 있습니다'}
             </h2>
             <div className="space-y-4" style={{ color: 'var(--gray-600)' }}>
-              <p className="text-lg leading-relaxed">
+              <p className="section-subtitle">
                 {isEn
                   ? 'Lead weights used in fishing nets gradually dissolve in seawater, releasing toxic heavy metals that accumulate in marine organisms and eventually enter the human food chain.'
                   : '그물에 사용되는 납 어장추는 해수에서 서서히 용해되어 독성 중금속을 방출합니다. 이는 해양 생물에 축적되고, 결국 인간의 식탁까지 위협합니다.'}
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="section-subtitle">
                 {isEn
                   ? 'Lead is classified as a Group 2A carcinogen by the International Agency for Research on Cancer (IARC). Continued use of lead weights is now recognized globally as a serious marine pollution issue.'
                   : '납은 국제암연구소(IARC)가 지정한 2A군 발암물질입니다. 납추의 지속 사용은 이미 국제적으로 심각한 해양 오염 문제로 인식되고 있습니다.'}
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="section-subtitle">
                 {isEn
                   ? "Ocean Tech's zinc weights are a completely eco-friendly alternative — zinc is an essential mineral naturally found in seawater with zero toxicity."
                   : '오션테크의 아연추는 완전한 친환경 대안입니다. 아연은 해수 중에 자연적으로 존재하는 필수 미네랄로, 독성이 없습니다.'}

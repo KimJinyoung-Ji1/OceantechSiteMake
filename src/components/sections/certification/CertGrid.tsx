@@ -154,7 +154,7 @@ export default function CertGrid({ locale }: CertGridProps) {
                     {item.numberKo}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold" style={{ color: 'var(--gray-900)' }}>
+                <h3 className="card-title" style={{ color: 'var(--gray-900)' }}>
                   {isEn ? item.titleEn : item.titleKo}
                 </h3>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)' }}>

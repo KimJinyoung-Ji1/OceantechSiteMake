@@ -78,14 +78,11 @@ export default function CertCards({ locale }: CertCardsProps) {
     >
       <div className="max-w-[1920px] mx-auto">
         <div className="text-center mb-10">
-          <p
-            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
-            style={{ color: 'var(--primary-500)' }}
-          >
+          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.certification.title}
           </p>
           <h2
-            className="text-2xl sm:text-3xl lg:text-5xl font-black"
+            className="section-title"
             style={{ color: 'var(--text-primary)' }}
           >
             {t.certification.subtitle}

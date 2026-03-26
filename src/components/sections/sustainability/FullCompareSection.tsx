@@ -17,7 +17,7 @@ const compareRows = [
 
 const CheckIcon = () => (
   <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-    <circle cx="10" cy="10" r="10" fill="#021097" />
+    <circle cx="10" cy="10" r="10" fill="var(--primary-900,#021097)" />
     <path d="M5.5 10.5l3 3 6-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
@@ -40,13 +40,10 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
     >
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-10">
-          <p
-            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
-            style={{ color: 'var(--primary-500)' }}
-          >
+          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'COMPARISON' : '상세 비교'}
           </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="section-title" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Zinc Weight vs Lead Weight' : '아연추 vs 납추'}
           </h2>
         </div>
@@ -68,7 +65,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                 borderRight: '1px solid rgba(2,16,151,0.15)',
               }}
             >
-              <p className="text-sm font-bold uppercase tracking-wider text-center" style={{ color: '#021097' }}>
+              <p className="text-sm font-bold uppercase tracking-wider text-center" style={{ color: 'var(--primary-900,#021097)' }}>
                 {isEn ? 'Category' : '항목'}
               </p>
             </div>
@@ -128,7 +125,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                 style={{ borderColor: 'rgba(2,16,151,0.10)', background: 'rgba(1,72,200,0.04)' }}
               >
                 <CheckIcon />
-                <span className="text-sm font-semibold" style={{ color: '#021097' }}>
+                <span className="text-sm font-semibold" style={{ color: 'var(--primary-900,#021097)' }}>
                   {row.zinc}
                 </span>
               </div>
