@@ -45,3 +45,5 @@ public/documents/originals/
 docs/pdf_renders/
 
 .vercel
+
+.env*.local

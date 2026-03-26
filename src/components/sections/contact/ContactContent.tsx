@@ -24,7 +24,8 @@ function KakaoMap() {
   const [mapError, setMapError] = useState(false);
 
   useEffect(() => {
-    const apiKey = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY;
+    // 카카오맵 JS키는 브라우저용 공개키 (도메인 제한으로 보호)
+    const apiKey = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY || 'f61f53eda89c8d4e2692fe91b4eefabe';
     if (!apiKey) {
       setMapError(true);
       return;
