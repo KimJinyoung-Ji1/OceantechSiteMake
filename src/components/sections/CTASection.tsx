@@ -21,7 +21,7 @@ export default function CTASection({ locale }: CTASectionProps) {
       {/* Ocean background image with low opacity */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1920&q=60"
+          src="/images/ocean-beach.jpg"
           alt=""
           fill
           className="object-cover object-center opacity-10"

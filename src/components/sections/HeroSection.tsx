@@ -30,7 +30,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1920&q=80"
+          src="/images/ocean-aerial.jpg"
           alt="바다 배경"
           fill
           priority
@@ -41,7 +41,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(125deg, rgba(2,16,151,0.93) 0%, rgba(1,72,200,0.82) 45%, rgba(3,233,248,0.28) 100%)',
+              'linear-gradient(125deg, rgba(12,114,135,0.90) 0%, rgba(17,168,143,0.75) 45%, rgba(52,217,181,0.35) 100%)',
           }}
         />
       </div>
@@ -126,95 +126,63 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           <div className="hidden lg:flex flex-col gap-5 items-stretch">
             {/* Card 1: 녹색기술인증서 */}
             <div
-              className="p-8 rounded-[24px]"
+              className="rounded-[24px] overflow-hidden"
               style={{
-                background: 'rgba(255,255,255,0.88)',
+                background: 'rgba(255,255,255,0.90)',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 border: '1px solid rgba(255,255,255,0.95)',
-                borderRadius: '24px',
                 boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
               }}
             >
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border" style={{ borderColor: '#E2E8F0' }}>
-                  <Image
-                    src="/documents/certs/green-tech-cert.png"
-                    alt="녹색기술인증서"
-                    width={64}
-                    height={64}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-bold mb-1" style={{ color: '#0EAD87' }}>
-                    {locale === 'en' ? 'Green Technology Certification' : '녹색기술인증서'}
-                  </p>
-                  <p className="text-2xl font-black tracking-wide" style={{ color: '#0EAD87' }}>
-                    {SITE_CONFIG.certifications.greenTech.number}
-                  </p>
-                </div>
+              {/* Cert image — full width, 160px tall */}
+              <div className="relative w-full" style={{ height: '160px' }}>
+                <Image
+                  src="/documents/certs/green-tech-cert.png"
+                  alt="녹색기술인증서"
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
-              <div className="flex items-center justify-between py-2 px-1">
-                <span className="text-sm font-medium" style={{ color: '#475569' }}>
-                  {locale === 'en' ? 'Valid Period' : '유효기간'}
-                </span>
-                <span className="text-sm font-bold" style={{ color: '#1E293B' }}>
-                  {SITE_CONFIG.certifications.greenTech.period}
-                </span>
-              </div>
-              <div
-                className="mt-3 text-center text-sm py-2.5 rounded-xl font-bold"
-                style={{ background: 'rgba(14,173,135,0.08)', color: '#0EAD87' }}
-              >
-                {locale === 'en' ? SITE_CONFIG.certifications.greenTech.issuerEn : SITE_CONFIG.certifications.greenTech.issuerKo}
+              {/* Cert info */}
+              <div className="px-6 py-4">
+                <p className="text-base font-bold mb-1" style={{ color: '#11A88F' }}>
+                  {locale === 'en' ? 'Green Technology Certification' : '녹색기술인증서'}
+                </p>
+                <p className="text-2xl font-black tracking-wide" style={{ color: '#0C7287' }}>
+                  {SITE_CONFIG.certifications.greenTech.number}
+                </p>
               </div>
             </div>
 
             {/* Card 2: 녹색기술제품 확인서 */}
             <div
-              className="p-8 rounded-[24px]"
+              className="rounded-[24px] overflow-hidden"
               style={{
-                background: 'rgba(255,255,255,0.88)',
+                background: 'rgba(255,255,255,0.90)',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 border: '1px solid rgba(255,255,255,0.95)',
-                borderRadius: '24px',
                 boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
               }}
             >
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border" style={{ borderColor: '#E2E8F0' }}>
-                  <Image
-                    src="/documents/certs/green-product-cert.png"
-                    alt="녹색기술제품확인서"
-                    width={64}
-                    height={64}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-bold mb-1" style={{ color: '#0168EF' }}>
-                    {locale === 'en' ? 'Green Product Verification' : '녹색기술제품 확인서'}
-                  </p>
-                  <p className="text-2xl font-black tracking-wide" style={{ color: '#0168EF' }}>
-                    {SITE_CONFIG.certifications.greenProduct.number}
-                  </p>
-                </div>
+              {/* Cert image — full width, 160px tall */}
+              <div className="relative w-full" style={{ height: '160px' }}>
+                <Image
+                  src="/documents/certs/green-product-cert.png"
+                  alt="녹색기술제품확인서"
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
-              <div className="flex items-center justify-between py-2 px-1">
-                <span className="text-sm font-medium" style={{ color: '#475569' }}>
-                  {locale === 'en' ? 'Valid Period' : '유효기간'}
-                </span>
-                <span className="text-sm font-bold" style={{ color: '#1E293B' }}>
-                  {SITE_CONFIG.certifications.greenProduct.period}
-                </span>
-              </div>
-              <div
-                className="mt-3 text-center text-sm py-2.5 rounded-xl font-bold"
-                style={{ background: 'rgba(1,104,239,0.08)', color: '#0168EF' }}
-              >
-                {locale === 'en' ? SITE_CONFIG.certifications.greenProduct.issuerEn : SITE_CONFIG.certifications.greenProduct.issuerKo}
+              {/* Cert info */}
+              <div className="px-6 py-4">
+                <p className="text-base font-bold mb-1" style={{ color: '#11A88F' }}>
+                  {locale === 'en' ? 'Green Product Verification' : '녹색기술제품 확인서'}
+                </p>
+                <p className="text-2xl font-black tracking-wide" style={{ color: '#0C7287' }}>
+                  {SITE_CONFIG.certifications.greenProduct.number}
+                </p>
               </div>
             </div>
           </div>

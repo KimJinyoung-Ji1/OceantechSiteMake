@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary — Ocean Blue */
-  --primary-900: #021097;
-  --primary-700: #0148C8;
-  --primary-500: #0168EF;
-  --primary-300: #03E9F8;
-  --primary-100: #DBEAFE;
+  /* Primary — Teal/Ocean */
+  --primary-900: #0C7287;
+  --primary-700: #0E8A94;
+  --primary-500: #11A88F;
+  --primary-300: #34D9B5;
+  --primary-100: #E0FFF5;
 
-  /* Secondary — Eco Green */
-  --secondary-500: #17E9B5;
-  --secondary-700: #0EAD87;
+  /* Secondary — Mint */
+  --secondary-500: #7AEDC8;
+  --secondary-700: #11A88F;
 
   /* Neutral */
   --gray-900: #0F172A;

@@ -6,9 +6,9 @@ interface OceanDividerProps {
 }
 
 const OCEAN_IMAGES = {
-  1: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80',
-  2: 'https://images.unsplash.com/photo-1439405326854-014607f694d7?w=1920&q=80',
-  3: 'https://images.unsplash.com/photo-1484291470158-b8f8d608850d?w=1920&q=80',
+  1: '/images/ocean-waves.jpg',
+  2: '/images/ocean-beach.jpg',
+  3: '/images/ocean-aerial.jpg',
 } as const;
 
 const OCEAN_ALTS = {
@@ -49,7 +49,7 @@ export default function OceanDivider({ variant = 1, height = 220 }: OceanDivider
       {/* Dark overlay for depth */}
       <div
         className="absolute inset-0 z-0"
-        style={{ background: 'rgba(2,16,151,0.22)' }}
+        style={{ background: 'rgba(12,114,135,0.22)' }}
       />
 
       {/* SVG wave clip — bottom edge */}
