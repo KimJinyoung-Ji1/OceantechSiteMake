@@ -72,20 +72,20 @@ export default function CertCards({ locale }: CertCardsProps) {
 
   return (
     <section
-      className="py-12 lg:py-16 px-6 lg:px-10"
+      className="py-8 lg:py-12 px-8 lg:px-24"
       style={{ background: 'var(--background-alt)' }}
       aria-label="인증 및 수상"
     >
       <div className="max-w-[1920px] mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <p
-            className="text-base font-bold uppercase tracking-widest mb-3"
+            className="text-2xl font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.certification.title}
           </p>
           <h2
-            className="text-4xl lg:text-5xl font-black"
+            className="text-5xl lg:text-7xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             {t.certification.subtitle}
@@ -116,37 +116,37 @@ export default function CertCards({ locale }: CertCardsProps) {
                 </div>
               )}
 
-              {/* Cert image — large, readable, white bg */}
+              {/* Cert image — bigger */}
               <div
                 className="w-full bg-white flex items-center justify-center overflow-hidden"
-                style={{ height: 160, borderBottom: `1px solid ${cert.accentBorder}` }}
+                style={{ height: 220, borderBottom: `1px solid ${cert.accentBorder}` }}
               >
                 <Image
                   src={cert.image}
                   alt={locale === 'en' ? cert.titleEn : cert.titleKo}
-                  width={280}
-                  height={200}
-                  className="object-contain w-full h-full p-4 group-hover:scale-105 transition-transform duration-300"
+                  width={320}
+                  height={240}
+                  className="object-contain w-full h-full p-2 group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
 
-              {/* Info — centered */}
-              <div className="p-3 text-center w-full">
+              {/* Info — centered, reduced padding */}
+              <div className="p-2 text-center w-full">
                 <h3
-                  className="font-bold text-base mb-1.5"
+                  className="font-bold text-base mb-1"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {locale === 'en' ? cert.titleEn : cert.titleKo}
                 </h3>
                 <p
-                  className="text-xs font-mono font-semibold mb-1 break-all"
+                  className="text-sm font-mono font-semibold mb-0.5 break-all"
                   style={{ color: cert.accent }}
                 >
                   {cert.number}
                 </p>
                 {cert.period && (
-                  <p className="text-xs" style={{ color: 'var(--text-body)', opacity: 0.7 }}>
+                  <p className="text-sm" style={{ color: 'var(--text-body)', opacity: 0.7 }}>
                     {cert.period}
                   </p>
                 )}

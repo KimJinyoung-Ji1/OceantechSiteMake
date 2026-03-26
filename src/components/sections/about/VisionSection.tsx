@@ -14,13 +14,16 @@ const visionCards = [
     descEn: 'Building a sustainable ocean environment through coexistence with the sea.',
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-        <circle cx="18" cy="18" r="15" stroke="var(--primary-300)" strokeWidth="2.5" />
-        <path d="M9 22 Q18 9 27 22" stroke="var(--secondary-500)" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+        {/* Eye / vision icon */}
+        <ellipse cx="18" cy="18" rx="14" ry="10" stroke="var(--primary-400)" strokeWidth="2" fill="none" />
+        <circle cx="18" cy="18" r="5" fill="var(--primary-300)" />
+        <circle cx="18" cy="18" r="2.5" fill="var(--primary-600)" />
+        <path d="M18 6v3M18 27v3M6 18H3M33 18h-3" stroke="var(--secondary-400)" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    gradBg: 'linear-gradient(135deg, #F0F8FF 0%, #E8F4FF 100%)',
-    iconBg: 'rgba(3,233,248,0.1)',
-    border: '#D0E4F5',
+    gradBg: 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)',
+    iconBg: 'rgba(59,130,246,0.1)',
+    border: '#BFDBFE',
   },
   {
     key: 'mission',
@@ -30,10 +33,14 @@ const visionCards = [
     descEn: "Replace lead with eco-friendly zinc fishing weights to improve marine ecosystems and fishers' lives.",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-        <path d="M18 4 L32 32 L18 24 L4 32 Z" stroke="var(--primary-500)" strokeWidth="2.5" strokeLinejoin="round" fill="rgba(1,104,239,0.07)" />
+        {/* Target / mission icon */}
+        <circle cx="18" cy="18" r="14" stroke="var(--primary-400)" strokeWidth="2" fill="none" />
+        <circle cx="18" cy="18" r="9" stroke="var(--primary-500)" strokeWidth="1.5" fill="none" />
+        <circle cx="18" cy="18" r="4" fill="var(--primary-500)" />
+        <path d="M18 4v5M18 27v5M4 18h5M27 18h5" stroke="var(--primary-300)" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    gradBg: 'linear-gradient(135deg, #F0F4FF 0%, #E8EFFF 100%)',
+    gradBg: 'linear-gradient(135deg, #F0F4FF 0%, #E0EAFF 100%)',
     iconBg: 'rgba(1,104,239,0.08)',
     border: 'rgba(1,104,239,0.2)',
   },
@@ -45,12 +52,16 @@ const visionCards = [
     descEn: 'Healthy ocean · Happy fishers · Sustainable innovation. Three values that guide Ocean Tech.',
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-        <polygon points="18,3 22,14 33,15 25,23 28,33 18,27 8,33 11,23 3,15 14,14" stroke="var(--secondary-500)" strokeWidth="2.5" fill="rgba(23,233,181,0.08)" />
+        {/* Diamond / gem icon */}
+        <path d="M18 4 L30 14 L18 32 L6 14 Z" stroke="var(--secondary-500)" strokeWidth="2" fill="rgba(23,233,181,0.1)" strokeLinejoin="round" />
+        <path d="M6 14 L18 14 L30 14" stroke="var(--secondary-400)" strokeWidth="1.5" />
+        <path d="M11 14 L18 4 M25 14 L18 4" stroke="var(--secondary-300)" strokeWidth="1" />
+        <path d="M11 14 L18 32 M25 14 L18 32" stroke="var(--secondary-300)" strokeWidth="1" />
       </svg>
     ),
-    gradBg: 'linear-gradient(135deg, #F0FFF9 0%, #E0FFF5 100%)',
+    gradBg: 'linear-gradient(135deg, #F0FFF9 0%, #DCFCE7 100%)',
     iconBg: 'rgba(23,233,181,0.1)',
-    border: 'rgba(23,233,181,0.25)',
+    border: 'rgba(23,233,181,0.3)',
   },
 ];
 
@@ -60,7 +71,7 @@ export default function VisionSection({ locale }: VisionSectionProps) {
   return (
     <section
       id="vision"
-      className="py-20 lg:py-28 px-6 lg:px-10 text-center"
+      className="py-20 lg:py-28 px-6 lg:px-24 text-center"
       style={{ background: 'var(--background-alt)' }}
       aria-label="비전"
     >
@@ -92,8 +103,8 @@ export default function VisionSection({ locale }: VisionSectionProps) {
               }}
             >
               <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                style={{ background: card.iconBg }}
+                className="w-18 h-18 rounded-2xl flex items-center justify-center"
+                style={{ background: card.iconBg, width: '72px', height: '72px' }}
               >
                 {card.icon}
               </div>

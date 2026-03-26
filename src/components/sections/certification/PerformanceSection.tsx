@@ -15,7 +15,7 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
       style={{ background: 'var(--gray-50)' }}
       aria-label="실적"
     >
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-12">
           <p
             className="text-base font-bold uppercase tracking-widest mb-3"
@@ -28,7 +28,7 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
           </h2>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-5 max-w-3xl mx-auto">
           {performance.map((p) => (
             <article
               key={p.year}

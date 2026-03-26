@@ -47,7 +47,7 @@ export default function Header({ locale }: HeaderProps) {
             boxShadow: '0 12px 48px rgba(2,16,151,0.18)',
           }}
         >
-          <div className="mx-auto flex h-14 lg:h-[72px] w-full max-w-[1920px] items-center justify-between px-4 lg:px-10">
+          <div className="mx-auto flex h-14 lg:h-[72px] w-full max-w-[1920px] items-center justify-between px-4 lg:px-24">
             {/* Logo */}
             <Link href={localePath('/')} className="flex items-center gap-3 shrink-0">
               <Image
@@ -61,7 +61,7 @@ export default function Header({ locale }: HeaderProps) {
             </Link>
 
             {/* Center nav — spread wide */}
-            <nav className="hidden flex-1 items-center justify-center gap-10 xl:flex" aria-label="주요 메뉴">
+            <nav className="hidden flex-1 items-center justify-center gap-14 xl:flex" aria-label="주요 메뉴">
               {items.map((item) => (
                 <div
                   key={item.href}
@@ -208,7 +208,7 @@ export default function Header({ locale }: HeaderProps) {
                 boxShadow: '0 16px 48px rgba(0,0,0,0.18)',
               }}
             >
-              <div className="mx-auto grid max-w-[1920px] grid-cols-[1.2fr_1.8fr] gap-8 px-10 py-6">
+              <div className="mx-auto grid max-w-[1920px] grid-cols-[1.2fr_1.8fr] gap-8 px-24 py-6">
                 <div
                   className="rounded-[20px] border p-8"
                   style={{

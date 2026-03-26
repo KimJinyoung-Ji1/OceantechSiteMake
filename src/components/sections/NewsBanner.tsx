@@ -67,14 +67,14 @@ export default function NewsBanner() {
 
   return (
     <section
-      className="py-14 lg:py-20 px-6 lg:px-10"
+      className="py-10 lg:py-14 px-8 lg:px-24"
       style={{ background: 'var(--background)' }}
       aria-label="뉴스 배너"
     >
       <div className="max-w-[1920px] mx-auto">
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <p
-            className="text-base font-bold uppercase tracking-widest mb-3"
+            className="text-2xl font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             NEWS
@@ -93,7 +93,7 @@ export default function NewsBanner() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="relative min-h-[200px] flex items-center">
+          <div className="relative min-h-[180px] flex items-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -101,26 +101,26 @@ export default function NewsBanner() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -40 }}
                 transition={{ duration: 0.35, ease: 'easeInOut' }}
-                className="w-full px-8 py-8 lg:px-10 lg:py-10"
+                className="w-full px-6 py-5 lg:px-8 lg:py-6"
               >
-                <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8">
+                <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
                   {/* Thumbnail */}
                   {item.image && (
                     <div
                       className="shrink-0 rounded-xl overflow-hidden"
-                      style={{ width: 140, height: 96, background: '#F1F5F9' }}
+                      style={{ width: 160, height: 110, background: '#F1F5F9' }}
                     >
                       <Image
                         src={item.image}
                         alt={item.title}
-                        width={140}
-                        height={96}
+                        width={160}
+                        height={110}
                         className="w-full h-full object-cover"
                       />
                     </div>
                   )}
 
-                  {/* Badge */}
+                  {/* Badge mobile */}
                   <div className="flex items-center gap-3 shrink-0 lg:hidden">
                     <span
                       className="px-3 py-1 rounded-full text-sm font-bold"
@@ -154,17 +154,36 @@ export default function NewsBanner() {
                       </span>
                     </div>
                     <h3
-                      className="text-xl lg:text-2xl font-bold mb-2 leading-snug"
+                      className="text-lg lg:text-xl font-bold mb-1.5 leading-snug"
                       style={{ color: 'var(--text-primary)' }}
                     >
                       {item.title}
                     </h3>
                     <p
-                      className="text-base leading-relaxed"
+                      className="text-sm leading-relaxed"
                       style={{ color: 'var(--text-body)' }}
                     >
                       {item.summary}
                     </p>
+                  </div>
+
+                  {/* Right: all news items list for context */}
+                  <div className="hidden xl:flex flex-col gap-2 shrink-0 w-56">
+                    {NEWS_ITEMS.map((n, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setCurrent(i)}
+                        className="text-left px-3 py-2 rounded-xl transition-all duration-200 truncate text-sm"
+                        style={{
+                          background: i === current ? 'rgba(2,16,151,0.08)' : 'transparent',
+                          color: i === current ? 'var(--primary-500)' : 'var(--text-secondary)',
+                          fontWeight: i === current ? 700 : 400,
+                          border: i === current ? '1px solid rgba(2,16,151,0.18)' : '1px solid transparent',
+                        }}
+                      >
+                        {n.title}
+                      </button>
+                    ))}
                   </div>
                 </div>
               </motion.div>
@@ -172,7 +191,7 @@ export default function NewsBanner() {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center justify-between px-8 pb-6 lg:px-10">
+          <div className="flex items-center justify-between px-6 pb-4 lg:px-8">
             {/* Dots */}
             <div className="flex items-center gap-2">
               {NEWS_ITEMS.map((_, i) => (
@@ -194,7 +213,7 @@ export default function NewsBanner() {
             <div className="flex items-center gap-2">
               <button
                 onClick={prev}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:brightness-90"
+                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:brightness-90"
                 style={{ background: 'var(--border)' }}
                 aria-label="이전 뉴스"
               >
@@ -204,7 +223,7 @@ export default function NewsBanner() {
               </button>
               <button
                 onClick={next}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:brightness-90"
+                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:brightness-90"
                 style={{ background: 'var(--border)' }}
                 aria-label="다음 뉴스"
               >

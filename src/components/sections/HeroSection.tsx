@@ -41,18 +41,18 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(125deg, rgba(2,20,40,0.85) 0%, rgba(2,16,151,0.70) 45%, rgba(2,20,40,0.60) 100%)',
+              'linear-gradient(125deg, rgba(2,16,151,0.55) 0%, rgba(1,72,200,0.40) 50%, rgba(3,233,248,0.20) 100%)',
           }}
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 max-w-[1920px] mx-auto py-16 sm:py-20 lg:py-28">
+      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-24 max-w-[1920px] mx-auto py-16 sm:py-20 lg:py-28">
         <div
           className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center gap-8 lg:gap-10"
         >
           {/* LEFT — Text */}
-          <div>
+          <div className="pl-0 lg:pl-20">
             <Badge variant="green" className="mb-6">
               <span
                 className="w-1.5 h-1.5 rounded-full"
@@ -121,119 +121,89 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* RIGHT — Premium Cert Cards */}
-          <div className="hidden lg:flex flex-col gap-3 items-stretch">
+          {/* RIGHT — Cert Cards (horizontal layout: image left, text right) */}
+          <div className="hidden lg:flex flex-col gap-4 items-stretch">
             {/* Card 1: 녹색기술인증서 */}
             <div
-              className="group rounded-[24px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              className="group rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-row items-center"
               style={{
-                background: 'rgba(255,255,255,0.96)',
-                backdropFilter: 'blur(24px)',
-                WebkitBackdropFilter: 'blur(24px)',
+                background: 'rgba(255,255,255,0.25)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
                 border: '1.5px solid rgba(3,233,248,0.40)',
-                boxShadow: '0 8px 32px rgba(2,16,151,0.18), 0 0 0 1px rgba(255,255,255,0.6)',
+                boxShadow: '0 8px 32px rgba(2,16,151,0.18)',
               }}
             >
-              {/* Top accent bar */}
+              {/* Left — Cert image */}
               <div
-                className="h-1 w-full"
-                style={{ background: 'linear-gradient(90deg, #021097, #0168EF, #03E9F8)' }}
-              />
-              {/* Cert image area */}
-              <div className="relative w-full bg-white" style={{ height: '140px' }}>
+                className="relative shrink-0 bg-white/80 flex items-center justify-center overflow-hidden"
+                style={{ width: '120px', height: '90px' }}
+              >
                 <Image
                   src="/documents/certs/green-tech-cert.png"
                   alt="녹색기술인증서"
                   fill
-                  className="object-contain object-center p-3 group-hover:scale-[1.03] transition-transform duration-300"
-                />
-                {/* Gradient overlay at bottom */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-10"
-                  style={{ background: 'linear-gradient(to top, rgba(255,255,255,0.9), transparent)' }}
+                  className="object-contain p-2 group-hover:scale-[1.04] transition-transform duration-300"
                 />
               </div>
-              {/* Divider */}
-              <div className="mx-5" style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(3,233,248,0.35), transparent)' }} />
-              {/* Cert info */}
-              <div className="px-4 py-3 flex items-start gap-3">
-                <div
-                  className="mt-0.5 w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
-                  style={{ background: 'rgba(3,233,248,0.12)', border: '1px solid rgba(3,233,248,0.3)' }}
+              {/* Vertical divider */}
+              <div className="w-px self-stretch" style={{ background: 'rgba(3,233,248,0.30)' }} />
+              {/* Right — Cert info */}
+              <div className="flex-1 px-4 py-3">
+                <p
+                  className="text-[10px] font-black uppercase tracking-[0.18em] mb-1"
+                  style={{ color: '#03E9F8' }}
                 >
-                  <Image src="/images/green-cert-mark.png" alt="" width={20} height={20} className="object-contain" />
-                </div>
-                <div className="min-w-0">
-                  <p
-                    className="text-[10px] font-black uppercase tracking-[0.18em] mb-0.5"
-                    style={{ color: '#0168EF' }}
-                  >
-                    {locale === 'en' ? 'Green Technology Cert.' : '녹색기술인증서'}
-                  </p>
-                  <p className="text-lg font-black tracking-wider leading-tight" style={{ color: '#021097' }}>
-                    {SITE_CONFIG.certifications.greenTech.number}
-                  </p>
-                  <p className="text-[10px] mt-0.5 font-medium" style={{ color: 'rgba(2,16,151,0.5)' }}>
-                    {locale === 'en' ? 'Ministry of Science & ICT' : '과학기술정보통신부'}
-                  </p>
-                </div>
+                  {locale === 'en' ? 'Green Technology Cert.' : '녹색기술인증서'}
+                </p>
+                <p className="text-base font-black tracking-wider leading-tight text-white">
+                  {SITE_CONFIG.certifications.greenTech.number}
+                </p>
+                <p className="text-[10px] mt-1 font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                  {locale === 'en' ? 'Ministry of Science & ICT' : '과학기술정보통신부'}
+                </p>
               </div>
             </div>
 
             {/* Card 2: 녹색기술제품 확인서 */}
             <div
-              className="group rounded-[24px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              className="group rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-row items-center"
               style={{
-                background: 'rgba(255,255,255,0.96)',
-                backdropFilter: 'blur(24px)',
-                WebkitBackdropFilter: 'blur(24px)',
+                background: 'rgba(255,255,255,0.25)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
                 border: '1.5px solid rgba(3,233,248,0.40)',
-                boxShadow: '0 8px 32px rgba(2,16,151,0.18), 0 0 0 1px rgba(255,255,255,0.6)',
+                boxShadow: '0 8px 32px rgba(2,16,151,0.18)',
               }}
             >
-              {/* Top accent bar */}
+              {/* Left — Cert image */}
               <div
-                className="h-1 w-full"
-                style={{ background: 'linear-gradient(90deg, #021097, #0168EF, #03E9F8)' }}
-              />
-              {/* Cert image area */}
-              <div className="relative w-full bg-white" style={{ height: '140px' }}>
+                className="relative shrink-0 bg-white/80 flex items-center justify-center overflow-hidden"
+                style={{ width: '120px', height: '90px' }}
+              >
                 <Image
                   src="/documents/certs/green-product-cert.png"
                   alt="녹색기술제품확인서"
                   fill
-                  className="object-contain object-center p-3 group-hover:scale-[1.03] transition-transform duration-300"
-                />
-                {/* Gradient overlay at bottom */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-10"
-                  style={{ background: 'linear-gradient(to top, rgba(255,255,255,0.9), transparent)' }}
+                  className="object-contain p-2 group-hover:scale-[1.04] transition-transform duration-300"
                 />
               </div>
-              {/* Divider */}
-              <div className="mx-5" style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(3,233,248,0.35), transparent)' }} />
-              {/* Cert info */}
-              <div className="px-4 py-3 flex items-start gap-3">
-                <div
-                  className="mt-0.5 w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
-                  style={{ background: 'rgba(3,233,248,0.12)', border: '1px solid rgba(3,233,248,0.3)' }}
+              {/* Vertical divider */}
+              <div className="w-px self-stretch" style={{ background: 'rgba(3,233,248,0.30)' }} />
+              {/* Right — Cert info */}
+              <div className="flex-1 px-4 py-3">
+                <p
+                  className="text-[10px] font-black uppercase tracking-[0.18em] mb-1"
+                  style={{ color: '#03E9F8' }}
                 >
-                  <Image src="/images/green-cert-mark.png" alt="" width={20} height={20} className="object-contain" />
-                </div>
-                <div className="min-w-0">
-                  <p
-                    className="text-[10px] font-black uppercase tracking-[0.18em] mb-0.5"
-                    style={{ color: '#0168EF' }}
-                  >
-                    {locale === 'en' ? 'Green Product Verification' : '녹색기술제품 확인서'}
-                  </p>
-                  <p className="text-lg font-black tracking-wider leading-tight" style={{ color: '#021097' }}>
-                    {SITE_CONFIG.certifications.greenProduct.number}
-                  </p>
-                  <p className="text-[10px] mt-0.5 font-medium" style={{ color: 'rgba(2,16,151,0.5)' }}>
-                    {locale === 'en' ? 'Ministry of Environment' : '환경부'}
-                  </p>
-                </div>
+                  {locale === 'en' ? 'Green Product Verification' : '녹색기술제품 확인서'}
+                </p>
+                <p className="text-base font-black tracking-wider leading-tight text-white">
+                  {SITE_CONFIG.certifications.greenProduct.number}
+                </p>
+                <p className="text-[10px] mt-1 font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                  {locale === 'en' ? 'Ministry of Environment' : '환경부'}
+                </p>
               </div>
             </div>
           </div>

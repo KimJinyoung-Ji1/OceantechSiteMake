@@ -7,13 +7,22 @@ interface HistorySectionProps {
   history: typeof SITE_CONFIG.history;
 }
 
+const yearGradients = [
+  'linear-gradient(135deg, #021297 0%, #0148c8 100%)',
+  'linear-gradient(135deg, #0148c8 0%, #2563eb 100%)',
+  'linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)',
+  'linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)',
+  'linear-gradient(135deg, #06b6d4 0%, #17e9b5 100%)',
+  'linear-gradient(135deg, #17e9b5 0%, #10b981 100%)',
+];
+
 export default function HistorySection({ locale, history }: HistorySectionProps) {
   const t = getTranslation(locale);
 
   return (
-    <section id="history" className="py-20 lg:py-28 px-6 lg:px-10 text-center" aria-label="연혁">
+    <section id="history" className="py-20 lg:py-28 px-6 lg:px-24 overflow-hidden" aria-label="연혁">
       <div className="max-w-[1920px] mx-auto">
-        <div className="mb-14">
+        <div className="mb-14 text-center">
           <p
             className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
@@ -28,59 +37,53 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
           </h2>
         </div>
 
-        {/* Timeline */}
+        {/* Horizontal Timeline */}
         <div className="relative">
-          {/* Center line */}
+          {/* Horizontal connecting line */}
           <div
-            className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden md:block"
-            style={{ background: 'var(--border)' }}
+            className="hidden lg:block absolute top-[52px] left-0 right-0 h-0.5 z-0"
+            style={{
+              background: 'linear-gradient(90deg, #021297 0%, #0148c8 30%, #2563eb 60%, #17e9b5 100%)',
+            }}
             aria-hidden="true"
           />
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-4">
             {history.map((item, i) => {
-              const isLeft = i % 2 === 0;
+              const grad = yearGradients[i % yearGradients.length];
               return (
                 <div
                   key={i}
-                  className={`relative flex items-center gap-4 md:gap-0 ${
-                    isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                  className="relative flex flex-col items-center text-center"
                 >
-                  {/* Content card */}
+                  {/* Year badge (dot on timeline) */}
                   <div
-                    className={`flex-1 md:max-w-[calc(50%-2rem)] ${
-                      isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8 text-left'
-                    }`}
+                    className="relative z-10 w-[104px] h-[104px] rounded-full flex flex-col items-center justify-center mb-4 shrink-0 shadow-lg"
+                    style={{
+                      background: grad,
+                      boxShadow: '0 4px 20px rgba(2,18,151,0.25)',
+                    }}
                   >
-                    <div
-                      className="inline-block p-5 rounded-2xl hover:shadow-lg transition-shadow duration-200"
-                      style={{
-                        background: 'var(--background-alt)',
-                        border: '1px solid var(--border)',
-                      }}
+                    <span
+                      className="text-2xl font-black text-white leading-tight"
                     >
-                      <p
-                        className="text-lg font-black mb-1"
-                        style={{ color: 'var(--primary-500)' }}
-                      >
-                        {item.year}
-                      </p>
-                      <p className="text-lg font-medium" style={{ color: 'var(--text-body)' }}>
-                        {locale === 'en' ? item.eventEn : item.eventKo}
-                      </p>
-                    </div>
+                      {item.year}
+                    </span>
                   </div>
 
-                  {/* Center dot */}
+                  {/* Card */}
                   <div
-                    className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-white z-10 shrink-0"
-                    style={{ background: 'var(--primary-500)' }}
-                    aria-hidden="true"
-                  />
-
-                  {/* Spacer for opposite side */}
-                  <div className="hidden md:block flex-1" />
+                    className="w-full p-4 rounded-2xl text-left"
+                    style={{
+                      background: 'var(--background-alt)',
+                      border: '1px solid var(--border)',
+                      boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
+                    }}
+                  >
+                    <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                      {locale === 'en' ? item.eventEn : item.eventKo}
+                    </p>
+                  </div>
                 </div>
               );
             })}

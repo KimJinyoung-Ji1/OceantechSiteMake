@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
 import { getTranslation } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
@@ -38,28 +39,24 @@ export default function Footer({ locale }: FooterProps) {
       style={{ background: '#0F172A' }}
       aria-label="푸터"
     >
-      <div className="mx-auto w-full max-w-[1920px] px-6 lg:px-10 py-16 lg:py-20">
+      <div className="mx-auto w-full max-w-[1920px] px-8 lg:px-24 py-16 lg:py-20">
         {/* 4-column grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10 lg:gap-12">
 
           {/* Column 1 — Company Info */}
           <div>
-            {/* Logo + name */}
-            <div className="mb-5 flex items-center gap-3">
-              <div
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border"
-                style={{ borderColor: 'rgba(255,255,255,0.18)', background: 'rgba(255,255,255,0.07)' }}
-              >
-                <span className="text-[11px] font-black tracking-[0.2em] text-white">OT</span>
-              </div>
-              <div>
-                <p className="text-xl font-black tracking-[0.1em]" style={{ color: '#17E9B5' }}>
-                  OCEANTECH
-                </p>
-                <p className="text-sm mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                  {SITE_CONFIG.company.name}
-                </p>
-              </div>
+            {/* Logo image */}
+            <div className="mb-6">
+              <Image
+                src="/images/logo-brand.png"
+                alt="오션테크 로고"
+                width={160}
+                height={40}
+                className="h-10 w-auto object-contain brightness-0 invert"
+              />
+              <p className="text-sm mt-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                {SITE_CONFIG.company.name}
+              </p>
             </div>
 
             {/* Slogan */}
@@ -103,22 +100,59 @@ export default function Footer({ locale }: FooterProps) {
               </li>
             </ul>
 
-            {/* Green cert badge */}
-            <div
-              className="mt-6 inline-flex items-center gap-2 rounded-xl px-4 py-2.5"
-              style={{
-                background: 'rgba(23,233,181,0.08)',
-                border: '1px solid rgba(23,233,181,0.2)',
-              }}
-            >
-              <span className="h-2.5 w-2.5 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
-              <div>
-                <p className="text-sm font-semibold" style={{ color: '#03E9F8' }}>
-                  {locale === 'en' ? 'Green Technology Certified' : '녹색기술인증'}
-                </p>
-                <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                  {SITE_CONFIG.certifications.greenTech.number}
-                </p>
+
+            {/* All Green cert badges grouped together */}
+            <div className="mt-6 flex flex-col gap-2">
+              <div
+                className="flex items-center gap-2 rounded-xl px-3 py-2.5"
+                style={{
+                  background: 'rgba(23,233,181,0.08)',
+                  border: '1px solid rgba(23,233,181,0.2)',
+                }}
+              >
+                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
+                <div>
+                  <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                    {locale === 'en' ? 'Green Technology Cert.' : '녹색기술인증'}
+                  </p>
+                  <p className="text-xs font-semibold" style={{ color: '#03E9F8' }}>
+                    {SITE_CONFIG.certifications.greenTech.number}
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex items-center gap-2 rounded-xl px-3 py-2.5"
+                style={{
+                  background: 'rgba(23,233,181,0.07)',
+                  border: '1px solid rgba(23,233,181,0.16)',
+                }}
+              >
+                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
+                <div>
+                  <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                    {locale === 'en' ? 'Green Product' : '녹색기술제품'}
+                  </p>
+                  <p className="text-xs font-semibold" style={{ color: '#03E9F8' }}>
+                    {SITE_CONFIG.certifications.greenProduct.number}
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex items-center gap-2 rounded-xl px-3 py-2.5"
+                style={{
+                  background: 'rgba(2,16,151,0.08)',
+                  border: '1px solid rgba(2,16,151,0.2)',
+                }}
+              >
+                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#17E9B5' }} />
+                <div>
+                  <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                    {locale === 'en' ? 'Venture Company' : '벤처기업'}
+                  </p>
+                  <p className="text-xs font-semibold" style={{ color: '#17E9B5' }}>
+                    {SITE_CONFIG.certifications.venture.number}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -191,43 +225,6 @@ export default function Footer({ locale }: FooterProps) {
               ))}
             </ul>
 
-            {/* Additional cert badges */}
-            <div className="mt-8 space-y-3">
-              <div
-                className="flex items-center gap-2 rounded-xl px-3 py-2.5"
-                style={{
-                  background: 'rgba(23,233,181,0.07)',
-                  border: '1px solid rgba(23,233,181,0.16)',
-                }}
-              >
-                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
-                <div>
-                  <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                    {locale === 'en' ? 'Green Product' : '녹색기술제품'}
-                  </p>
-                  <p className="text-sm font-semibold" style={{ color: '#03E9F8' }}>
-                    {SITE_CONFIG.certifications.greenProduct.number}
-                  </p>
-                </div>
-              </div>
-              <div
-                className="flex items-center gap-2 rounded-xl px-3 py-2.5"
-                style={{
-                  background: 'rgba(2,16,151,0.08)',
-                  border: '1px solid rgba(2,16,151,0.2)',
-                }}
-              >
-                <span className="h-2 w-2 rounded-full shrink-0" style={{ background: '#17E9B5' }} />
-                <div>
-                  <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                    {locale === 'en' ? 'Venture Company' : '벤처기업'}
-                  </p>
-                  <p className="text-sm font-semibold" style={{ color: '#17E9B5' }}>
-                    {SITE_CONFIG.certifications.venture.number}
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

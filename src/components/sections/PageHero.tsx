@@ -13,7 +13,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
 
   return (
     <section
-      className="relative pt-32 pb-16 px-6 lg:px-10 overflow-hidden"
+      className="relative pt-16 pb-8 px-6 lg:px-24 overflow-hidden"
       aria-label="페이지 히어로"
       style={{
         background:
@@ -22,19 +22,19 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
     >
       {/* Decorative circles */}
       <div
-        className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-10"
+        className="absolute -top-16 -right-16 w-64 h-64 rounded-full opacity-10"
         style={{ background: 'var(--secondary-500, #17e9b5)' }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full opacity-5"
+        className="absolute bottom-0 left-1/4 w-40 h-40 rounded-full opacity-5"
         style={{ background: 'white' }}
         aria-hidden="true"
       />
 
       <div className="relative z-10 max-w-[1920px] mx-auto">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-base text-white/60 mb-6" aria-label="브레드크럼">
+        <nav className="flex items-center gap-2 text-sm text-white/60 mb-3" aria-label="브레드크럼">
           {breadcrumb.map((item, i) => (
             <span key={i} className="flex items-center gap-2">
               {i > 0 && <span aria-hidden="true">›</span>}
@@ -52,9 +52,9 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
           ))}
         </nav>
 
-        <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-3">{title}</h1>
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-1">{title}</h1>
         {subtitle && (
-          <p className="text-xl text-white/70 max-w-xl leading-relaxed">{subtitle}</p>
+          <p className="text-base text-white/70 max-w-xl leading-relaxed">{subtitle}</p>
         )}
       </div>
     </section>

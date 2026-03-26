@@ -59,16 +59,16 @@ export default function ValueBento({ locale }: ValueBentoProps) {
       style={{ background: 'var(--background-alt)' }}
       aria-label="오션테크를 선택하는 이유"
     >
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1920px] mx-auto px-8 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-14">
           <p
-            className="text-sm font-bold uppercase tracking-widest mb-3"
+            className="text-2xl font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.valueSection.title}
           </p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-5xl lg:text-7xl font-extrabold" style={{ color: 'var(--text-primary)' }}>
             {t.valueSection.subtitle}
           </h2>
         </div>
@@ -100,12 +100,12 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                 </div>
 
                 <h3
-                  className="text-xl font-bold mb-3"
+                  className="text-xl font-bold mb-3 text-center"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                <p className="text-base leading-relaxed text-center" style={{ color: 'var(--text-body)' }}>
                   {item.description}
                 </p>
 

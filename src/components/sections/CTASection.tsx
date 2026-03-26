@@ -16,7 +16,7 @@ export default function CTASection({ locale }: CTASectionProps) {
     <section
       className="py-24 px-4 relative overflow-hidden"
       aria-label="문의 유도 섹션"
-      style={{ background: 'var(--gray-900)' }}
+      style={{ background: 'linear-gradient(135deg, rgba(2,16,151,0.92) 0%, rgba(1,72,200,0.88) 50%, rgba(3,233,248,0.90) 100%)' }}
     >
       {/* Ocean background image with low opacity */}
       <div className="absolute inset-0 z-0">

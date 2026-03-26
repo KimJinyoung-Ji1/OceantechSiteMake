@@ -16,14 +16,14 @@ const compareRows = [
 ];
 
 const CheckIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
     <circle cx="10" cy="10" r="10" fill="#021097" />
     <path d="M5.5 10.5l3 3 6-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const XIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
     <circle cx="10" cy="10" r="10" fill="#FEE2E2" />
     <path d="M6.5 6.5l7 7M13.5 6.5l-7 7" stroke="#DC2626" strokeWidth="1.8" strokeLinecap="round" />
   </svg>
@@ -38,10 +38,10 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
       style={{ background: 'var(--gray-50)' }}
       aria-label="납추 vs 아연추 비교"
     >
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-10">
-        <div className="text-center mb-12">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
+        <div className="text-center mb-10">
           <p
-            className="text-base font-bold uppercase tracking-widest mb-3"
+            className="text-2xl font-black uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'COMPARISON' : '상세 비교'}
@@ -61,7 +61,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
           {/* Header */}
           <div className="grid grid-cols-3">
             <div
-              className="px-6 py-6"
+              className="px-4 py-4"
               style={{
                 background: '#F0FDF9',
                 borderRight: '1px solid rgba(2,16,151,0.15)',
@@ -72,31 +72,31 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
               </p>
             </div>
             <div
-              className="px-6 py-6 text-center"
+              className="px-4 py-4 text-center"
               style={{
                 background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
                 borderRight: '1px solid rgba(255,255,255,0.15)',
               }}
             >
-              <div className="flex items-center justify-center gap-2 mb-1">
+              <div className="flex items-center justify-center gap-2 mb-0.5">
                 <CheckIcon />
-                <p className="text-white font-bold text-lg leading-tight">
+                <p className="text-white font-bold text-base leading-tight">
                   {isEn ? 'Zinc Weight' : '아연추'}
                 </p>
               </div>
-              <p className="text-white/75 text-sm mt-0.5">(주)오션테크</p>
+              <p className="text-white/75 text-xs">(주)오션테크</p>
             </div>
             <div
-              className="px-6 py-6 text-center"
+              className="px-4 py-4 text-center"
               style={{ background: 'linear-gradient(135deg, #374151 0%, #4B5563 100%)' }}
             >
-              <div className="flex items-center justify-center gap-2 mb-1">
+              <div className="flex items-center justify-center gap-2 mb-0.5">
                 <XIcon />
-                <p className="text-white font-bold text-lg leading-tight">
+                <p className="text-white font-bold text-base leading-tight">
                   {isEn ? 'Lead Weight' : '납추'}
                 </p>
               </div>
-              <p className="text-white/75 text-sm mt-0.5">{isEn ? 'Conventional' : '기존 제품'}</p>
+              <p className="text-white/75 text-xs">{isEn ? 'Conventional' : '기존 제품'}</p>
             </div>
           </div>
 
@@ -112,7 +112,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
             >
               {/* Label */}
               <div
-                className="px-6 py-5 font-semibold text-base flex items-center"
+                className="px-4 py-3 font-semibold text-sm flex items-center"
                 style={{
                   color: 'var(--gray-700)',
                   borderRight: '1px solid rgba(2,16,151,0.10)',
@@ -123,19 +123,19 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
 
               {/* Zinc */}
               <div
-                className="px-6 py-5 flex items-center justify-center gap-2 border-r"
+                className="px-4 py-3 flex items-center justify-start gap-2 border-r"
                 style={{ borderColor: 'rgba(2,16,151,0.10)', background: 'rgba(1,72,200,0.04)' }}
               >
                 <CheckIcon />
-                <span className="text-base font-semibold" style={{ color: '#021097' }}>
+                <span className="text-sm font-semibold" style={{ color: '#021097' }}>
                   {row.zinc}
                 </span>
               </div>
 
               {/* Lead */}
-              <div className="px-6 py-5 flex items-center justify-center gap-2">
+              <div className="px-4 py-3 flex items-center justify-start gap-2">
                 <XIcon />
-                <span className="text-base" style={{ color: '#6B7280' }}>
+                <span className="text-sm" style={{ color: '#6B7280' }}>
                   {row.lead}
                 </span>
               </div>

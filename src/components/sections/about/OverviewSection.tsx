@@ -24,7 +24,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
 
   return (
     <section
-      className="py-20 lg:py-28 px-6 lg:px-10 text-center"
+      className="py-20 lg:py-28 px-6 lg:px-24 text-center"
       style={{ background: 'var(--background)' }}
       aria-label="회사 개요"
     >
@@ -45,28 +45,30 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
         </div>
 
         <div
-          className="rounded-3xl overflow-hidden shadow-sm mx-auto"
-          style={{ border: '1px solid var(--border)' }}
+          className="rounded-3xl overflow-hidden shadow-sm"
+          style={{ border: '1px solid var(--border)', maxWidth: '860px', margin: '0 auto' }}
         >
           {rows.map((row, i) => (
             <div
               key={i}
-              className="grid grid-cols-[160px_1fr] sm:grid-cols-[200px_1fr] border-t first:border-t-0"
+              className="grid border-t first:border-t-0"
               style={{
+                gridTemplateColumns: '180px 1fr',
                 borderColor: 'var(--border)',
                 background: i % 2 === 0 ? 'white' : 'var(--background-alt)',
               }}
             >
               <div
-                className="px-6 py-4 text-lg font-semibold text-left"
+                className="px-5 py-3 text-base font-semibold text-left"
                 style={{
                   color: 'var(--text-secondary)',
                   background: i % 2 === 0 ? 'var(--background-alt)' : '#E8F0FA',
+                  borderRight: '1px solid var(--border)',
                 }}
               >
                 {row.label}
               </div>
-              <div className="px-6 py-4 text-lg text-left" style={{ color: 'var(--text-body)' }}>
+              <div className="px-5 py-3 text-base text-left" style={{ color: 'var(--text-body)' }}>
                 {row.value}
               </div>
             </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Locale } from '@/lib/i18n';
 
 interface WhyZincSectionProps {
@@ -9,8 +10,8 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
 
   return (
     <section className="py-12 lg:py-16" aria-label="왜 아연인가">
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <p
               className="text-base font-bold uppercase tracking-widest mb-3"
@@ -37,60 +38,84 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
               </p>
               <p className="text-lg leading-relaxed">
                 {isEn
-                  ? 'Ocean Tech\'s zinc weights are a completely eco-friendly alternative — zinc is an essential mineral naturally found in seawater with zero toxicity.'
+                  ? "Ocean Tech's zinc weights are a completely eco-friendly alternative — zinc is an essential mineral naturally found in seawater with zero toxicity."
                   : '오션테크의 아연추는 완전한 친환경 대안입니다. 아연은 해수 중에 자연적으로 존재하는 필수 미네랄로, 독성이 없습니다.'}
               </p>
             </div>
           </div>
 
-          {/* Visual comparison */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Product photo comparison */}
+          <div className="grid grid-cols-2 gap-5">
+            {/* Lead weight */}
             <div
-              className="p-6 rounded-2xl flex flex-col items-center text-center gap-3"
-              style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.2)' }}
+              className="rounded-2xl overflow-hidden flex flex-col"
+              style={{ border: '2px solid rgba(239,68,68,0.25)', background: 'rgba(239,68,68,0.04)' }}
             >
-              <div
-                className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(239,68,68,0.12)' }}
-              >
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                  <circle cx="14" cy="14" r="12" stroke="#EF4444" strokeWidth="2" />
-                  <path d="M9 9l10 10M19 9L9 19" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
-                </svg>
+              <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
+                <Image
+                  src="/images/products/product-page9.png"
+                  alt={isEn ? 'Lead fishing weight' : '납추'}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 45vw, 300px"
+                />
+                <div
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{ background: 'rgba(239,68,68,0.12)' }}
+                >
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                    <circle cx="18" cy="18" r="15" fill="rgba(239,68,68,0.8)" />
+                    <path d="M11 11l14 14M25 11L11 25" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                  </svg>
+                </div>
               </div>
-              <p className="font-bold text-lg" style={{ color: '#DC2626' }}>
-                {isEn ? 'Lead Weight' : '납추'}
-              </p>
-              <ul className="text-sm space-y-1.5 text-left w-full" style={{ color: 'var(--gray-600)' }}>
-                <li>• {isEn ? 'Toxic heavy metal' : '독성 중금속'}</li>
-                <li>• {isEn ? '1~2 yr lifespan' : '1~2년 수명'}</li>
-                <li>• {isEn ? 'Frequent replacement' : '잦은 교체'}</li>
-                <li>• {isEn ? 'IARC 2A carcinogen' : 'IARC 2A 발암물질'}</li>
-              </ul>
+              <div className="p-4">
+                <p className="font-bold text-base mb-2" style={{ color: '#DC2626' }}>
+                  {isEn ? 'Lead Weight' : '납추'}
+                </p>
+                <ul className="text-sm space-y-1" style={{ color: 'var(--gray-600)' }}>
+                  <li>• {isEn ? 'Toxic heavy metal' : '독성 중금속'}</li>
+                  <li>• {isEn ? '1~2 yr lifespan' : '1~2년 수명'}</li>
+                  <li>• {isEn ? 'Frequent replacement' : '잦은 교체'}</li>
+                  <li>• {isEn ? 'IARC 2A carcinogen' : 'IARC 2A 발암물질'}</li>
+                </ul>
+              </div>
             </div>
 
+            {/* Zinc weight */}
             <div
-              className="p-6 rounded-2xl flex flex-col items-center text-center gap-3"
-              style={{ background: 'rgba(23,233,181,0.10)', border: '1px solid rgba(23,233,181,0.35)' }}
+              className="rounded-2xl overflow-hidden flex flex-col"
+              style={{ border: '2px solid rgba(23,233,181,0.35)', background: 'rgba(23,233,181,0.05)' }}
             >
-              <div
-                className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(23,233,181,0.18)' }}
-              >
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                  <circle cx="14" cy="14" r="12" stroke="var(--secondary-500,#17E9B5)" strokeWidth="2" />
-                  <path d="M8 14l4 4 8-8" stroke="var(--secondary-500)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
+                <Image
+                  src="/images/products/product-page8.png"
+                  alt={isEn ? 'Zinc fishing weight' : '아연추'}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 45vw, 300px"
+                />
+                <div
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{ background: 'rgba(23,233,181,0.10)' }}
+                >
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                    <circle cx="18" cy="18" r="15" fill="rgba(23,233,181,0.85)" />
+                    <path d="M10 18l5.5 5.5 11-11" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </div>
-              <p className="font-bold text-lg" style={{ color: 'var(--secondary-700,#047857)' }}>
-                {isEn ? 'Zinc Weight' : '아연추'}
-              </p>
-              <ul className="text-sm space-y-1.5 text-left w-full" style={{ color: 'var(--gray-600)' }}>
-                <li>• {isEn ? 'Zero toxicity' : '독성 없음'}</li>
-                <li>• {isEn ? '10+ yr lifespan' : '10년 이상 수명'}</li>
-                <li>• {isEn ? '80% cost savings' : '비용 80% 절감'}</li>
-                <li>• {isEn ? 'SVHC 235 free' : 'SVHC 235종 미검출'}</li>
-              </ul>
+              <div className="p-4">
+                <p className="font-bold text-base mb-2" style={{ color: 'var(--secondary-700,#047857)' }}>
+                  {isEn ? 'Zinc Weight' : '아연추'}
+                </p>
+                <ul className="text-sm space-y-1" style={{ color: 'var(--gray-600)' }}>
+                  <li>• {isEn ? 'Zero toxicity' : '독성 없음'}</li>
+                  <li>• {isEn ? '10+ yr lifespan' : '10년 이상 수명'}</li>
+                  <li>• {isEn ? '80% cost savings' : '비용 80% 절감'}</li>
+                  <li>• {isEn ? 'SVHC 235 free' : 'SVHC 235종 미검출'}</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
