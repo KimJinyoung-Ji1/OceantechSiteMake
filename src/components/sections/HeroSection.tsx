@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Badge from '@/components/ui/Badge';
@@ -9,7 +12,42 @@ interface HeroSectionProps {
   locale: Locale;
 }
 
+const CERT_SLIDES = [
+  {
+    image: '/documents/certs/green-tech-cert.png',
+    labelKo: '녹색기술인증서',
+    labelEn: 'Green Technology Certification',
+    number: SITE_CONFIG.certifications.greenTech.number,
+  },
+  {
+    image: '/documents/certs/green-product-cert.png',
+    labelKo: '녹색기술제품확인서',
+    labelEn: 'Green Product Verification',
+    number: SITE_CONFIG.certifications.greenProduct.number,
+  },
+  {
+    image: '/documents/certs/venture-cert.png',
+    labelKo: '벤처기업 확인서',
+    labelEn: 'Venture Company Certificate',
+    number: SITE_CONFIG.certifications.venture.number,
+  },
+  {
+    image: '/documents/certs/patent-award-2023.png',
+    labelKo: '우수특허대상',
+    labelEn: 'Patent Excellence Award',
+    number: '제17회 기계/해양',
+  },
+];
+
 export default function HeroSection({ locale }: HeroSectionProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % CERT_SLIDES.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
   const t = getTranslation(locale);
   const localePath = (href: string) => `/${locale}${href}`;
 
@@ -121,63 +159,74 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* RIGHT — Auto-sliding Cert Carousel */}
+          {/* RIGHT — Auto-sliding Cert Carousel (뉴스 배너 스타일) */}
           <div className="hidden lg:block">
             <div
               className="rounded-2xl overflow-hidden"
               style={{
-                background: 'rgba(255,255,255,0.12)',
+                background: 'rgba(255,255,255,0.10)',
                 backdropFilter: 'blur(16px)',
                 WebkitBackdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255,255,255,0.20)',
-                boxShadow: '0 8px 32px rgba(2,16,151,0.15)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                boxShadow: '0 8px 32px rgba(2,16,151,0.12)',
               }}
             >
-              {/* 1행 2열 그리드 */}
-              <div className="grid grid-cols-2">
-                {/* Card 1 */}
-                <div className="p-5 flex flex-col items-center text-center border-r" style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
-                  <div className="relative w-full bg-white/90 rounded-xl overflow-hidden mb-3" style={{ height: '160px' }}>
-                    <Image
-                      src="/documents/certs/green-tech-cert.png"
-                      alt="녹색기술인증서"
-                      fill
-                      className="object-contain p-3"
-                      sizes="240px"
-                    />
+              {/* Slide area */}
+              <div className="relative" style={{ height: '280px' }}>
+                {CERT_SLIDES.map((slide, i) => (
+                  <div
+                    key={i}
+                    className="absolute inset-0 flex items-center gap-6 px-6 transition-all duration-700"
+                    style={{
+                      opacity: currentSlide === i ? 1 : 0,
+                      transform: currentSlide === i ? 'translateX(0)' : 'translateX(40px)',
+                      pointerEvents: currentSlide === i ? 'auto' : 'none',
+                    }}
+                  >
+                    {/* Cert image */}
+                    <div className="relative w-[180px] h-[220px] bg-white/90 rounded-xl overflow-hidden flex-shrink-0">
+                      <Image
+                        src={slide.image}
+                        alt={slide.labelKo}
+                        fill
+                        className="object-contain p-3"
+                        sizes="180px"
+                      />
+                    </div>
+                    {/* Cert info */}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--primary-300)' }}>
+                        {locale === 'en' ? slide.labelEn : slide.labelKo}
+                      </p>
+                      <p className="text-2xl font-black text-white leading-tight mb-3">
+                        {slide.number}
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full" style={{ background: 'var(--secondary-500)' }} />
+                        <span className="text-sm text-white/60">
+                          {locale === 'en' ? 'Certified & Verified' : '국가공인 인증'}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--primary-300)' }}>
-                    {locale === 'en' ? 'Green Tech Cert.' : '녹색기술인증서'}
-                  </p>
-                  <p className="text-lg font-black text-white">
-                    {SITE_CONFIG.certifications.greenTech.number}
-                  </p>
-                </div>
-                {/* Card 2 */}
-                <div className="p-5 flex flex-col items-center text-center">
-                  <div className="relative w-full bg-white/90 rounded-xl overflow-hidden mb-3" style={{ height: '160px' }}>
-                    <Image
-                      src="/documents/certs/green-product-cert.png"
-                      alt="녹색기술제품확인서"
-                      fill
-                      className="object-contain p-3"
-                      sizes="240px"
-                    />
-                  </div>
-                  <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--primary-300)' }}>
-                    {locale === 'en' ? 'Green Product Cert.' : '녹색기술제품확인서'}
-                  </p>
-                  <p className="text-lg font-black text-white">
-                    {SITE_CONFIG.certifications.greenProduct.number}
-                  </p>
-                </div>
+                ))}
               </div>
-              {/* Bottom strip */}
-              <div
-                className="px-5 py-3 text-center text-xs font-medium"
-                style={{ color: 'rgba(255,255,255,0.6)', borderTop: '1px solid rgba(255,255,255,0.10)' }}
-              >
-                {locale === 'en' ? 'Certified 2025.07 — Valid until 2029.07' : '2025.07 인증 — 2029.07까지 유효'}
+
+              {/* Dot indicators */}
+              <div className="flex items-center justify-center gap-2 pb-4">
+                {CERT_SLIDES.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentSlide(i)}
+                    className="rounded-full transition-all duration-300"
+                    style={{
+                      width: currentSlide === i ? '24px' : '8px',
+                      height: '8px',
+                      background: currentSlide === i ? 'var(--primary-300)' : 'rgba(255,255,255,0.3)',
+                    }}
+                    aria-label={`슬라이드 ${i + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
