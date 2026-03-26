@@ -12,33 +12,33 @@ interface ProductShowcaseProps {
   locale: Locale;
 }
 
-// SVG icons for advantages (no emojis)
+// SVG icons for advantages — 44px stroke style, brand blue
 const ShieldIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <path d="M16 3L4 8v8c0 7.18 5.15 13.88 12 15.5C22.85 29.88 28 23.18 28 16V8L16 3z" fill="var(--primary-100)" stroke="var(--primary-500)" strokeWidth="1.5" />
-    <path d="M11 16l3 3 7-7" stroke="var(--primary-600)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+    <path d="M22 4L6 11v11c0 9.9 7.1 19.1 16 21.3C31 41.1 38 31.9 38 22V11L22 4z" stroke="#0168EF" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M15 22l5 5 9-9" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const WaterDropIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <path d="M16 4C16 4 6 14 6 20a10 10 0 0020 0c0-6-10-16-10-16z" fill="rgba(23,233,181,0.15)" stroke="var(--secondary-500)" strokeWidth="1.5" />
-    <path d="M10 22a6 6 0 008-4" stroke="var(--secondary-700)" strokeWidth="1.5" strokeLinecap="round" />
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+    <path d="M22 5C22 5 8 19 8 28a14 14 0 0028 0C36 19 22 5 22 5z" stroke="#0168EF" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M14 30a8 8 0 0011-5" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 const CoinIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <circle cx="16" cy="16" r="12" fill="rgba(234,179,8,0.12)" stroke="rgba(234,179,8,0.7)" strokeWidth="1.5" />
-    <path d="M16 9v14M13 11.5h4.5a2.5 2.5 0 010 5H13m0 0h4.5a2.5 2.5 0 010 5H13" stroke="rgba(161,122,0,1)" strokeWidth="1.5" strokeLinecap="round" />
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+    <circle cx="22" cy="22" r="16" stroke="#0168EF" strokeWidth="2" />
+    <path d="M22 12v20M18 15.5h6a3.5 3.5 0 010 7H18m0 0h6a3.5 3.5 0 010 7H18" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 const TrophyIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <path d="M10 5h12v10a6 6 0 01-12 0V5z" fill="rgba(23,233,181,0.12)" stroke="var(--secondary-500)" strokeWidth="1.5" />
-    <path d="M7 7H5a2 2 0 000 4h2M25 7h2a2 2 0 010 4h-2" stroke="var(--secondary-500)" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M16 21v4M11 25h10" stroke="var(--secondary-700)" strokeWidth="1.5" strokeLinecap="round" />
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+    <path d="M14 7h16v14a8 8 0 01-16 0V7z" stroke="#0168EF" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M10 10H7a3 3 0 000 6h3M34 10h3a3 3 0 010 6h-3" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" />
+    <path d="M22 29v6M16 35h12" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
@@ -102,7 +102,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                   <div
                     className="rounded-2xl overflow-hidden"
                     style={{
-                      background: 'var(--gray-50)',
+                      background: '#f5f5f5',
                       border: '1px solid var(--gray-200)',
                       aspectRatio: '4/3',
                       position: 'relative',
@@ -133,31 +133,34 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                   <h3 className="section-title mb-3" style={{ color: 'var(--gray-900)' }}>
                     {isEn ? category.nameEn : category.nameKo}
                   </h3>
-                  <p className="section-subtitle mb-8 max-w-lg">
+                  <p className="section-subtitle mb-8 max-w-lg" style={{ fontSize: '1.125rem', textAlign: 'center' }}>
                     {isEn ? category.descriptionEn : category.descriptionKo}
                   </p>
 
                   {/* Product variant grid */}
                   <div>
-                    <p className="section-eyebrow mb-4" style={{ color: 'var(--gray-500)' }}>
+                    <p className="mb-4 font-bold uppercase tracking-wider" style={{ color: 'var(--gray-500)', fontSize: '1rem' }}>
                       {t.products.specTitle}
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
                       {category.items.map((item) => (
                         <motion.div
                           key={item.model}
-                          className="rounded-xl overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+                          className="rounded-xl overflow-hidden flex flex-col"
                           style={{
                             background: 'white',
                             border: '1px solid var(--gray-200)',
+                            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                            borderRadius: '12px',
+                            transition: 'all 0.3s ease',
                           }}
-                          whileHover={{ y: -2 }}
-                          transition={{ duration: 0.2 }}
+                          whileHover={{ y: -4, boxShadow: '0 8px 24px rgba(0,0,0,0.14)' }}
+                          transition={{ duration: 0.3 }}
                         >
                           {/* Product image */}
                           <div
                             className="relative w-full"
-                            style={{ aspectRatio: '1/1', background: 'var(--gray-50)' }}
+                            style={{ aspectRatio: '1/1', background: '#f5f5f5' }}
                           >
                             <Image
                               src={item.image}
@@ -168,14 +171,14 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                             />
                           </div>
                           {/* Spec info */}
-                          <div className="p-3 border-t" style={{ borderColor: 'var(--gray-100)' }}>
-                            <p className="text-xs font-bold mb-1" style={{ color: 'var(--gray-900)' }}>
+                          <div className="p-3 border-t text-center" style={{ borderColor: 'var(--gray-100)' }}>
+                            <p className="text-xs font-bold mb-1.5" style={{ color: '#0168EF' }}>
                               {item.model}
                             </p>
-                            <div className="flex gap-2 text-xs" style={{ color: 'var(--gray-500)' }}>
-                              <span>{t.products.weight}: {item.weight}</span>
+                            <div className="flex justify-center gap-2 text-sm" style={{ color: 'var(--gray-500)' }}>
+                              <span style={{ fontSize: '0.8rem' }}>{t.products.weight}: {item.weight}</span>
                               <span style={{ color: 'var(--gray-300)' }}>·</span>
-                              <span>{t.products.size}: {item.size}</span>
+                              <span style={{ fontSize: '0.8rem' }}>{t.products.size}: {item.size}</span>
                             </div>
                           </div>
                         </motion.div>
@@ -225,27 +228,29 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
               return (
                 <motion.div
                   key={adv.titleEn}
-                  className="rounded-2xl p-6 flex flex-col gap-4"
+                  className="rounded-2xl p-6 flex flex-col items-center gap-4 text-center"
                   style={{
                     background: 'white',
                     border: '1px solid var(--gray-200)',
-                    boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
+                    boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                    borderRadius: '12px',
+                    transition: 'all 0.3s ease',
                   }}
                   variants={fadeInUp}
-                  whileHover={{ y: -4, boxShadow: '0 8px 32px rgba(0,0,0,0.1)' }}
-                  transition={{ duration: 0.2 }}
+                  whileHover={{ y: -4, boxShadow: '0 8px 32px rgba(0,0,0,0.12)' }}
+                  transition={{ duration: 0.3 }}
                 >
                   <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center"
-                    style={{ background: 'var(--gray-50)', border: '1px solid var(--gray-100)' }}
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                    style={{ background: 'rgba(1,104,239,0.06)', border: '1px solid rgba(1,104,239,0.15)' }}
                   >
                     <Icon />
                   </div>
                   <div>
-                    <h3 className="card-title mb-1" style={{ color: 'var(--gray-900)' }}>
+                    <h3 className="card-title mb-1" style={{ color: 'var(--gray-900)', textAlign: 'center' }}>
                       {isEn ? adv.titleEn : adv.titleKo}
                     </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)' }}>
+                    <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)', textAlign: 'center' }}>
                       {isEn ? adv.descEn : adv.descKo}
                     </p>
                   </div>
@@ -294,13 +299,14 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
               }}
               variants={fadeInUp}
             >
-              <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+              <div className="relative w-full" style={{ aspectRatio: '4/3', background: '#FEF2F2', padding: '16px' }}>
                 <Image
                   src="/images/products/lead-weight.png"
                   alt={isEn ? 'Conventional lead fishing weight' : '기존 납추'}
                   fill
                   className="object-contain p-8"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
               <div
@@ -346,13 +352,14 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
               }}
               variants={fadeInUp}
             >
-              <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+              <div className="relative w-full" style={{ aspectRatio: '4/3', background: '#E8F5F1', padding: '16px' }}>
                 <Image
                   src="/images/products/zinc-weight.png"
                   alt={isEn ? 'OceanTech zinc fishing weight' : '오션테크 아연추'}
                   fill
                   className="object-contain p-8"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
               <div

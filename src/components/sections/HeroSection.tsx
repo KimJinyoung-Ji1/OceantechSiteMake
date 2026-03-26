@@ -173,9 +173,9 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           </div>
 
           {/* RIGHT — Auto-sliding Cert Carousel */}
-          <div className="hidden lg:block w-full">
+          <div className="hidden lg:block w-full pr-0">
             <div
-              className="rounded-2xl overflow-hidden"
+              className="rounded-2xl overflow-hidden w-full"
               style={{
                 background: 'rgba(255,255,255,0.10)',
                 backdropFilter: 'blur(16px)',
@@ -189,10 +189,13 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 {CERT_SLIDES.map((slide, i) => (
                   <div
                     key={i}
-                    className="absolute inset-0 flex items-center gap-6 px-6 transition-all duration-700"
+                    className="absolute inset-0 flex items-center gap-6 px-6"
                     style={{
                       opacity: currentSlide === i ? 1 : 0,
-                      transform: currentSlide === i ? 'translateX(0)' : 'translateX(40px)',
+                      transform: currentSlide === i ? 'scale(1)' : 'scale(0.95)',
+                      transition: currentSlide === i
+                        ? 'opacity 0.5s ease-in, transform 0.5s ease-in'
+                        : 'opacity 0.5s ease-out, transform 0.5s ease-out',
                       pointerEvents: currentSlide === i ? 'auto' : 'none',
                     }}
                   >
@@ -231,11 +234,12 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                   <button
                     key={i}
                     onClick={() => setCurrentSlide(i)}
-                    className="rounded-full transition-all duration-300"
+                    className="rounded-full"
                     style={{
                       width: currentSlide === i ? '24px' : '8px',
                       height: '8px',
                       background: currentSlide === i ? 'var(--primary-300)' : 'rgba(255,255,255,0.3)',
+                      transition: 'width 0.3s ease, background 0.3s ease',
                     }}
                     aria-label={`슬라이드 ${i + 1}`}
                   />

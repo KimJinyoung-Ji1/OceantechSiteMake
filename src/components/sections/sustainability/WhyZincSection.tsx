@@ -48,13 +48,14 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
               className="rounded-2xl overflow-hidden flex flex-col"
               style={{ border: '2px solid rgba(239,68,68,0.25)', background: 'rgba(239,68,68,0.04)' }}
             >
-              <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
+              <div className="relative w-full" style={{ aspectRatio: '1/1', background: '#FEF2F2' }}>
                 <Image
                   src="/images/products/lead-weight.png"
                   alt={isEn ? 'Lead fishing weight' : '납추'}
                   fill
-                  className="object-cover"
+                  className="object-contain p-4"
                   sizes="(max-width: 768px) 45vw, 300px"
+                  style={{ objectFit: 'contain' }}
                 />
                 <div
                   className="absolute inset-0 flex items-center justify-center"
@@ -84,13 +85,14 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
               className="rounded-2xl overflow-hidden flex flex-col"
               style={{ border: '2px solid rgba(23,233,181,0.35)', background: 'rgba(23,233,181,0.05)' }}
             >
-              <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
+              <div className="relative w-full" style={{ aspectRatio: '1/1', background: '#E8F5F1' }}>
                 <Image
                   src="/images/products/zinc-weight.png"
                   alt={isEn ? 'Zinc fishing weight' : '아연추'}
                   fill
-                  className="object-cover"
+                  className="object-contain p-4"
                   sizes="(max-width: 768px) 45vw, 300px"
+                  style={{ objectFit: 'contain' }}
                 />
                 <div
                   className="absolute inset-0 flex items-center justify-center"
