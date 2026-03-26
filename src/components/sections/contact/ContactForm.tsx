@@ -6,6 +6,7 @@ import { getTranslation } from '@/lib/i18n';
 interface ContactFormProps {
   locale: Locale;
   onSuccess: () => void;
+  compact?: boolean;
 }
 
 interface FormValues {
@@ -23,7 +24,7 @@ const inquiryTypes = [
   { valueKo: '기타', valueEn: 'Other' },
 ];
 
-export default function ContactForm({ locale, onSuccess }: ContactFormProps) {
+export default function ContactForm({ locale, onSuccess, compact }: ContactFormProps) {
   const t = getTranslation(locale);
   const isEn = locale === 'en';
 

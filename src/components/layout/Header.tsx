@@ -36,46 +36,35 @@ export default function Header({ locale }: HeaderProps) {
             backdropFilter: 'blur(28px) saturate(180%)',
             WebkitBackdropFilter: 'blur(28px) saturate(180%)',
             borderColor: 'rgba(255,255,255,0.20)',
-            boxShadow: '0 12px 48px rgba(2,16,151,0.18)',
+            boxShadow: '0 2px 8px rgba(2,16,151,0.15)',
           }}
         >
-          <div className="mx-auto flex h-16 lg:h-[88px] w-full max-w-[1920px] items-center justify-between px-4 lg:px-24">
+          <div className="mx-auto flex h-16 lg:h-[88px] w-full max-w-[1920px] items-center justify-between px-2 xl:px-8 2xl:px-24">
             {/* Logo */}
-            <Link href={localePath('/')} className="flex items-center gap-3 shrink-0">
+            <Link href={localePath('/')} className="flex items-center gap-3 shrink-0 mr-4 lg:mr-6">
               <Image
                 src="/images/logo-brand.png"
                 alt="오션테크 로고"
-                width={250}
+                width={300}
                 height={62}
-                className="h-[56px] w-auto object-contain brightness-0 invert"
-                sizes="250px"
+                className="h-[36px] sm:h-[42px] xl:h-[62px] w-auto object-contain brightness-0 invert"
+                sizes="(max-width: 1280px) 180px, 300px"
                 priority
               />
             </Link>
 
             {/* Center nav — spread wide */}
-            <nav className="hidden flex-1 items-stretch justify-evenly xl:flex h-full" aria-label="주요 메뉴">
+            <nav className="hidden items-stretch justify-center gap-0 xl:flex h-full" aria-label="주요 메뉴">
               {items.map((item) => (
                 <div
                   key={item.href}
-                  className="relative flex flex-1 items-stretch"
+                  className="relative flex items-stretch"
                 >
                   <Link
                     href={localePath(item.href)}
-                    className="group relative flex flex-1 items-center justify-center gap-1.5 h-full text-[22px] font-semibold transition-all duration-200"
-                    style={{ color: 'rgba(255,255,255,0.82)', background: 'transparent' }}
-                    onMouseEnter={(e) => {
-                      const el = e.currentTarget as HTMLAnchorElement;
-                      el.style.color = '#ffffff';
-                      el.style.background = 'rgba(255,255,255,0.12)';
-                    }}
-                    onMouseLeave={(e) => {
-                      const el = e.currentTarget as HTMLAnchorElement;
-                      el.style.color = 'rgba(255,255,255,0.82)';
-                      el.style.background = 'transparent';
-                    }}
+                    className="nav-link relative flex items-center justify-center gap-1.5 xl:px-6 2xl:px-[58px] h-full text-[22px] font-semibold"
                   >
-                    <span>{label(item)}</span>
+                    <span className="relative z-10">{label(item)}</span>
                     {item.badge ? (
                       <span className="h-2 w-2 rounded-full" style={{ background: '#03E9F8' }} aria-hidden="true" />
                     ) : null}

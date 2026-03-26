@@ -64,6 +64,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
     <section
       className="relative min-h-screen flex items-center overflow-hidden"
       aria-label="히어로 섹션"
+      style={{ marginTop: '-88px', paddingTop: '88px' }}
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -85,9 +86,9 @@ export default function HeroSection({ locale }: HeroSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-24 max-w-[1920px] mx-auto py-16 sm:py-20 lg:py-28">
+      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-24 max-w-[1920px] mx-auto py-4 sm:py-6 lg:py-8">
         <div
-          className="grid grid-cols-1 lg:grid-cols-[6fr_1.6fr] items-center gap-8"
+          className="flex flex-col"
         >
           {/* LEFT — Text */}
           <div className="pl-0 lg:pl-20">
@@ -110,7 +111,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </div>
 
             <h1
-              className="text-2xl sm:text-4xl lg:text-7xl font-extrabold text-white leading-tight mb-5"
+              className="text-xl sm:text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-5"
               style={{ textShadow: '0 2px 16px rgba(0,0,0,0.3)' }}
             >
               {titleLines.map((line, i) => (
@@ -121,130 +122,165 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </h1>
 
             <p
-              className="text-lg sm:text-2xl font-medium mb-6"
-              style={{ color: '#17E9B5' }}
+              className="text-lg sm:text-2xl font-bold mb-6"
+              style={{ color: '#ffffff', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}
             >
-              {t.hero.subtitle}
+              <span style={{ color: '#5EEAD4' }}>{t.hero.subtitle}</span>
             </p>
 
-            <p className="text-white/80 text-base lg:text-lg leading-relaxed mb-10 max-w-xl">
-              {t.hero.description}
-            </p>
+            <div
+              className="mb-10 max-w-2xl"
+              style={{
+                background: 'rgba(0,0,0,0.25)',
+                padding: '20px 24px',
+                borderRadius: '16px',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255,255,255,0.08)',
+              }}
+            >
+              <div className="flex flex-col sm:flex-row gap-5 items-center">
+                {/* LEFT — cert carousel */}
+                <div className="shrink-0 flex flex-col items-center gap-3" style={{ width: '144px' }}>
+                  {/* Image — no border, 3D floating feel */}
+                  <div className="relative" style={{ width: '144px', height: '186px', perspective: '600px' }}>
+                    {CERT_SLIDES.map((slide, i) => (
+                      <div
+                        key={i}
+                        className="absolute inset-0"
+                        style={{
+                          opacity: currentSlide === i ? 1 : 0,
+                          transition: 'opacity 0.6s ease',
+                          transform: 'rotateY(-4deg) rotateX(2deg)',
+                          filter: 'drop-shadow(0 12px 32px rgba(0,0,0,0.35)) drop-shadow(0 4px 8px rgba(0,0,0,0.15))',
+                        }}
+                      >
+                        <Image
+                          src={slide.image}
+                          alt={slide.labelKo}
+                          fill
+                          className="object-contain"
+                          sizes="144px"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  {/* Cert name + number — fixed height to prevent layout shift */}
+                  <div className="text-center relative" style={{ width: '144px', height: '36px' }}>
+                    {CERT_SLIDES.map((slide, i) => (
+                      <div
+                        key={i}
+                        className="absolute inset-0 flex flex-col justify-center"
+                        style={{
+                          opacity: currentSlide === i ? 1 : 0,
+                          transition: 'opacity 0.5s ease',
+                        }}
+                      >
+                        <p className="text-[10px] font-bold truncate" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                          {locale === 'en' ? slide.labelEn : slide.labelKo}
+                        </p>
+                        <p className="text-xs font-black text-white truncate">{slide.number}</p>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Dots */}
+                  <div className="flex gap-1.5">
+                    {CERT_SLIDES.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setCurrentSlide(i)}
+                        className="rounded-full transition-all duration-300"
+                        style={{
+                          width: currentSlide === i ? '14px' : '5px',
+                          height: '5px',
+                          background: currentSlide === i ? 'white' : 'rgba(255,255,255,0.3)',
+                        }}
+                        aria-label={`슬라이드 ${i + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="hidden sm:block w-px self-stretch" style={{ background: 'rgba(255,255,255,0.12)' }} />
+
+                {/* RIGHT — stats + description stacked */}
+                <div className="flex-1 flex flex-col justify-between">
+                  {/* Stats row — 4 inline with 3D feel */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" style={{ perspective: '600px' }}>
+                    {stats.map((s, i) => (
+                      <div
+                        key={i}
+                        className="group rounded-xl px-2 py-3 text-center transition-all duration-500 cursor-default whitespace-nowrap"
+                        style={{
+                          background: 'rgba(255,255,255,0.08)',
+                          border: '1px solid rgba(255,255,255,0.12)',
+                          transform: `rotateY(${i % 2 === 0 ? '-2' : '2'}deg)`,
+                          boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'rotateY(0deg) translateY(-3px)';
+                          e.currentTarget.style.background = 'rgba(255,255,255,0.15)';
+                          e.currentTarget.style.boxShadow = '0 8px 28px rgba(0,0,0,0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = `rotateY(${i % 2 === 0 ? '-2' : '2'}deg)`;
+                          e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+                          e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.1)';
+                        }}
+                      >
+                        <p className="text-lg sm:text-xl font-black leading-none" style={{ color: 'var(--secondary-400, #34d399)' }}>{s.value}</p>
+                        <p className="text-[10px] sm:text-xs font-semibold mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.6)' }}>{s.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Divider */}
+                  <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', margin: '40px 0' }} />
+
+                  {/* Description — pushed to bottom */}
+                  <p
+                    className="text-sm lg:text-base font-medium leading-relaxed mt-auto"
+                    style={{ color: 'rgba(255,255,255,0.8)', textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
+                  >
+                    {t.hero.description}
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
                 href={localePath('/contact')}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-lg font-bold text-white shadow-xl hover:shadow-2xl hover:brightness-110 transition-all duration-200"
+                className="hero-btn-primary inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-lg font-bold"
                 style={{
-                  background: 'linear-gradient(135deg, var(--secondary-700) 0%, var(--secondary-500) 100%)',
-                  color: 'var(--primary-900)',
+                  background: 'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
+                  color: 'white',
+                  boxShadow: '0 4px 16px rgba(14,173,135,0.3)',
+                  textShadow: '0 1px 2px rgba(0,0,0,0.2)',
                 }}
               >
                 {t.hero.ctaPrimary}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
               </Link>
               <Link
                 href={localePath('/about')}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-lg font-medium text-white border-2 border-white/30 hover:border-white/70 hover:bg-white/10 transition-all duration-200"
+                className="hero-btn-secondary inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-lg font-semibold"
+                style={{
+                  color: 'white',
+                  border: '2px solid rgba(255,255,255,0.4)',
+                  backdropFilter: 'blur(8px)',
+                  background: 'rgba(255,255,255,0.08)',
+                  textShadow: '0 1px 4px rgba(0,0,0,0.3)',
+                }}
               >
                 {t.hero.ctaSecondary}
               </Link>
             </div>
 
-            {/* Inline Stats Row */}
-            <div className="flex flex-wrap gap-6">
-              {stats.map((s, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <span
-                    className="text-2xl font-black"
-                    style={{ color: 'var(--secondary-500)' }}
-                  >
-                    {s.value}
-                  </span>
-                  <span className="text-sm text-white/60">{s.label}</span>
-                  {i < stats.length - 1 && (
-                    <span
-                      className="ml-2 w-px h-4 hidden sm:block"
-                      style={{ background: 'rgba(255,255,255,0.2)' }}
-                    />
-                  )}
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* RIGHT — Auto-sliding Cert Carousel */}
-          <div className="hidden lg:block w-full">
-            <div
-              className="rounded-2xl overflow-hidden w-full"
-              style={{
-                background: 'rgba(255,255,255,0.10)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255,255,255,0.15)',
-                boxShadow: '0 8px 32px rgba(2,16,151,0.12)',
-              }}
-            >
-              {/* Slide area — vertical layout for narrow column */}
-              <div className="relative" style={{ height: '420px' }}>
-                {CERT_SLIDES.map((slide, i) => (
-                  <div
-                    key={i}
-                    className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 py-5"
-                    style={{
-                      opacity: currentSlide === i ? 1 : 0,
-                      transform: currentSlide === i ? 'scale(1)' : 'scale(0.95)',
-                      transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-                      pointerEvents: currentSlide === i ? 'auto' : 'none',
-                    }}
-                  >
-                    {/* Cert image */}
-                    <div className="relative w-[160px] h-[220px] bg-white/90 rounded-xl overflow-hidden flex-shrink-0">
-                      <Image
-                        src={slide.image}
-                        alt={slide.labelKo}
-                        fill
-                        className="object-contain p-2"
-                        sizes="140px"
-                      />
-                    </div>
-                    {/* Cert info — centered */}
-                    <div className="text-center min-w-0">
-                      <p className="text-sm font-bold uppercase tracking-wider mb-1" style={{ color: 'rgba(255,255,255,0.92)' }}>
-                        {locale === 'en' ? slide.labelEn : slide.labelKo}
-                      </p>
-                      <p className="text-xl font-black text-white leading-tight mb-2">
-                        {slide.number}
-                      </p>
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="w-2 h-2 rounded-full" style={{ background: 'var(--secondary-500)' }} />
-                        <span className="text-sm text-white/60">
-                          {locale === 'en' ? 'Certified & Verified' : '국가공인 인증'}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Dot indicators */}
-              <div className="flex items-center justify-center gap-2 pb-4">
-                {CERT_SLIDES.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentSlide(i)}
-                    className="rounded-full"
-                    style={{
-                      width: currentSlide === i ? '24px' : '8px',
-                      height: '8px',
-                      background: currentSlide === i ? 'var(--primary-300)' : 'rgba(255,255,255,0.3)',
-                      transition: 'width 0.3s ease, background 0.3s ease',
-                    }}
-                    aria-label={`슬라이드 ${i + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 

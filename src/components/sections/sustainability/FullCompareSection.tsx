@@ -1,33 +1,21 @@
+'use client';
+
 import type { Locale } from '@/lib/i18n';
 
 interface FullCompareSectionProps {
   locale: Locale;
 }
 
-const compareRows = [
-  { labelKo: '재질', labelEn: 'Material', zinc: '아연(Zn)', lead: '납(Pb)', zincGood: true },
-  { labelKo: '독성', labelEn: 'Toxicity', zinc: '없음', lead: '있음 (IARC 2A)', zincGood: true },
-  { labelKo: '내구성', labelEn: 'Durability', zinc: '약 10년', lead: '평균 2년', zincGood: true },
-  { labelKo: '무게변화', labelEn: 'Weight Change', zinc: '30개월 1g 손실', lead: '연 15~20% 감소', zincGood: true },
-  { labelKo: '형상유지', labelEn: 'Shape Retention', zinc: '밟혀도 원형 유지', lead: '충격에 취약', zincGood: true },
-  { labelKo: '그물손상', labelEn: 'Net Damage', zinc: '없음', lead: '파편으로 훼손', zincGood: true },
-  { labelKo: '관리비용', labelEn: 'Maintenance Cost', zinc: '80% 이상 절감', lead: '교체비 지속 발생', zincGood: true },
-  { labelKo: '정부인증', labelEn: 'Gov. Certification', zinc: '녹색기술인증', lead: '없음', zincGood: true },
+const rows = [
+  { ko: '재질', en: 'Material', good: '아연(Zn)', goodEn: 'Zinc(Zn)', bad: '납(Pb)', badEn: 'Lead(Pb)' },
+  { ko: '독성', en: 'Toxicity', good: '무독성', goodEn: 'Non-toxic', bad: 'IARC 2A', badEn: 'IARC 2A' },
+  { ko: '내구성', en: 'Durability', good: '약 10년', goodEn: '~10 years', bad: '1~2년', badEn: '1–2 years' },
+  { ko: '무게변화', en: 'Weight', good: '30개월 1g', goodEn: '1g / 30mo', bad: '연 15~20%', badEn: '15–20%/yr' },
+  { ko: '형상유지', en: 'Shape', good: '원형 유지', goodEn: 'Intact', bad: '충격 취약', badEn: 'Fragile' },
+  { ko: '그물손상', en: 'Net', good: '없음', goodEn: 'None', bad: '파편 훼손', badEn: 'Damage' },
+  { ko: '비용', en: 'Cost', good: '80% 절감', goodEn: '80% less', bad: '지속 발생', badEn: 'Recurring' },
+  { ko: '인증', en: 'Cert', good: '녹색기술', goodEn: 'Green Tech', bad: '없음', badEn: 'None' },
 ];
-
-const CheckIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-    <circle cx="10" cy="10" r="10" fill="var(--primary-900,#021097)" />
-    <path d="M5.5 10.5l3 3 6-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-    <circle cx="10" cy="10" r="10" fill="#FEE2E2" />
-    <path d="M6.5 6.5l7 7M13.5 6.5l-7 7" stroke="#DC2626" strokeWidth="1.8" strokeLinecap="round" />
-  </svg>
-);
 
 export default function FullCompareSection({ locale }: FullCompareSectionProps) {
   const isEn = locale === 'en';
@@ -35,111 +23,105 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
   return (
     <section
       className="py-16 lg:py-20"
-      style={{ background: 'var(--background-alt)' }}
+      style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)' }}
       aria-label="납추 vs 아연추 비교"
     >
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="text-center mb-10">
-          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
-            {isEn ? 'COMPARISON' : '상세 비교'}
+        <div className="text-center mb-14">
+          <p className="section-eyebrow" style={{ color: '#C2410C' }}>
+            {isEn ? 'DETAILED COMPARISON' : '상세 비교'}
           </p>
-          <h2 className="section-title" style={{ color: 'var(--gray-900)' }}>
-            {isEn ? 'Zinc Weight vs Lead Weight' : '아연추 vs 납추'}
+          <h2 className="section-title" style={{ color: 'var(--text-primary)' }}>
+            {isEn ? 'Zinc vs Lead' : '아연추 vs 납추'}
           </h2>
         </div>
 
-        <div className="overflow-x-auto">
-        <div
-          className="rounded-2xl overflow-hidden max-w-3xl mx-auto min-w-0 lg:min-w-[400px]"
-          style={{
-            border: '1px solid rgba(2,16,151,0.18)',
-            boxShadow: '0 8px 40px rgba(2,16,151,0.10), 0 2px 8px rgba(0,0,0,0.06)',
-          }}
-        >
-          {/* Header */}
-          <div className="grid grid-cols-3">
-            <div
-              className="px-3 py-3 flex items-center justify-center"
-              style={{
-                background: '#F0FDF9',
-                borderRight: '1px solid rgba(2,16,151,0.15)',
-              }}
-            >
-              <p className="text-sm font-bold uppercase tracking-wider text-center" style={{ color: 'var(--primary-900,#021097)' }}>
-                {isEn ? 'Category' : '항목'}
-              </p>
+        <div className="max-w-3xl mx-auto">
+          {/* Header bar */}
+          <div
+            className="grid grid-cols-[1fr_1px_1fr] items-center rounded-t-2xl overflow-hidden"
+            style={{ background: 'linear-gradient(135deg, var(--primary-900,#021097) 0%, var(--primary-700,#0148C8) 100%)' }}
+          >
+            <div className="px-6 py-4 flex items-center justify-center gap-2">
+              <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#F97316' }} />
+              <span className="text-sm font-bold text-white tracking-wide">
+                {isEn ? 'OceanTech Zinc' : '오션테크 아연추'}
+              </span>
             </div>
-            <div
-              className="px-3 py-3 text-center"
-              style={{
-                background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
-                borderRight: '1px solid rgba(255,255,255,0.15)',
-              }}
-            >
-              <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                <CheckIcon />
-                <p className="text-white font-bold text-sm leading-tight">
-                  {isEn ? 'Zinc Weight' : '아연추'}
-                </p>
-              </div>
-              <p className="text-white/75 text-xs">(주)오션테크</p>
-            </div>
-            <div
-              className="px-3 py-3 text-center"
-              style={{ background: 'linear-gradient(135deg, #374151 0%, #4B5563 100%)' }}
-            >
-              <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                <XIcon />
-                <p className="text-white font-bold text-sm leading-tight">
-                  {isEn ? 'Lead Weight' : '납추'}
-                </p>
-              </div>
-              <p className="text-white/75 text-xs">{isEn ? 'Conventional' : '기존 제품'}</p>
+            <div style={{ background: 'rgba(255,255,255,0.1)', width: '1px', alignSelf: 'stretch' }} />
+            <div className="px-6 py-4 flex items-center justify-center gap-2">
+              <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#64748B' }} />
+              <span className="text-sm font-bold tracking-wide" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                {isEn ? 'Lead Weight' : '기존 납추'}
+              </span>
             </div>
           </div>
 
           {/* Rows */}
-          {compareRows.map((row, i) => (
-            <div
-              key={i}
-              className="grid grid-cols-3 border-t"
-              style={{
-                borderColor: 'rgba(2,16,151,0.10)',
-                background: i % 2 === 0 ? '#FFFFFF' : '#F0FDF9',
-              }}
-            >
-              {/* Label — center aligned */}
+          <div
+            className="rounded-b-2xl overflow-hidden"
+            style={{ border: '1px solid var(--gray-200)', borderTop: 'none' }}
+          >
+            {rows.map((row, i) => (
               <div
-                className="px-3 py-2.5 font-semibold text-sm flex items-center justify-center text-center"
+                key={i}
+                className="group grid grid-cols-[1fr_auto_1fr] items-center transition-all duration-400 cursor-default"
                 style={{
-                  color: 'var(--gray-700)',
-                  borderRight: '1px solid rgba(2,16,151,0.10)',
+                  borderTop: i > 0 ? '1px solid var(--gray-100)' : 'none',
+                  background: 'white',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(90deg, rgba(249,115,22,0.03) 0%, white 30%, white 70%, rgba(148,163,184,0.03) 100%)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'white';
                 }}
               >
-                {isEn ? row.labelEn : row.labelKo}
-              </div>
+                {/* Zinc */}
+                <div className="px-6 py-4 flex items-center gap-3 justify-center">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <path d="M2 8l4.5 4.5L14 5" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span
+                    className="text-base font-semibold transition-all duration-300 group-hover:tracking-wide"
+                    style={{ color: '#EA580C' }}
+                  >
+                    {isEn ? row.goodEn : row.good}
+                  </span>
+                </div>
 
-              {/* Zinc — icon+text grouped and centered */}
-              <div
-                className="px-3 py-2.5 flex items-center justify-center gap-1.5 border-r"
-                style={{ borderColor: 'rgba(2,16,151,0.10)', background: 'rgba(1,72,200,0.04)' }}
-              >
-                <CheckIcon />
-                <span className="text-sm font-semibold" style={{ color: 'var(--primary-900,#021097)' }}>
-                  {row.zinc}
-                </span>
-              </div>
+                {/* Label */}
+                <div
+                  className="w-px self-stretch transition-all duration-300"
+                  style={{ background: 'var(--gray-100)', position: 'relative' }}
+                >
+                  <span
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-bold px-4 py-1.5 rounded-full transition-all duration-300 group-hover:shadow-sm"
+                    style={{
+                      background: 'var(--primary-50)',
+                      color: 'var(--primary-700)',
+                      border: '1px solid var(--primary-100)',
+                    }}
+                  >
+                    {isEn ? row.en : row.ko}
+                  </span>
+                </div>
 
-              {/* Lead — icon+text grouped and centered */}
-              <div className="px-3 py-2.5 flex items-center justify-center gap-1.5">
-                <XIcon />
-                <span className="text-sm" style={{ color: 'var(--gray-700)' }}>
-                  {row.lead}
-                </span>
+                {/* Lead */}
+                <div className="px-6 py-4 flex items-center gap-3 justify-center">
+                  <span
+                    className="text-base transition-all duration-300"
+                    style={{ color: 'var(--gray-500)' }}
+                  >
+                    {isEn ? row.badEn : row.bad}
+                  </span>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <path d="M3 3l8 8M11 3l-8 8" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

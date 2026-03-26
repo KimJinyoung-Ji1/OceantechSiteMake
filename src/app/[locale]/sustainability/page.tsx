@@ -27,7 +27,6 @@ export default async function SustainabilityPage(props: PageProps<'/[locale]/sus
       />
       <SustainWhyZincSection locale={l} />
       <SustainCompareSection locale={l} />
-      <SustainSvhcSection locale={l} />
       <SustainTrialSection locale={l} />
       <SustainInfographicSection locale={l} />
     </>

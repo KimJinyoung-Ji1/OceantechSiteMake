@@ -13,50 +13,60 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
 
   return (
     <section
-      className="relative pt-[88px] pb-2 px-6 lg:px-24 overflow-hidden"
+      className="relative px-6 lg:px-24 overflow-hidden"
       aria-label="페이지 히어로"
       style={{
-        background:
-          'linear-gradient(135deg, var(--primary-800, #021297) 0%, var(--primary-600, #0148c8) 60%, var(--primary-400, #2563eb) 100%)',
+        paddingTop: '20px',
+        paddingBottom: '20px',
+        background: 'linear-gradient(180deg, rgba(1,72,200,0.06) 0%, transparent 100%)',
       }}
     >
-      {/* Decorative circles — scaled down 50% */}
+      {/* 상단 글래스 라인 */}
       <div
-        className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-10"
-        style={{ background: 'var(--secondary-500, #17e9b5)' }}
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-1/4 w-20 h-20 rounded-full opacity-5"
-        style={{ background: 'white' }}
-        aria-hidden="true"
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: 'linear-gradient(90deg, transparent 10%, var(--primary-500) 50%, transparent 90%)', opacity: 0.2 }}
       />
 
       <div className="relative z-10 max-w-[1920px] mx-auto">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-white/60 mb-1" aria-label="브레드크럼">
+        <nav className="flex items-center gap-2 text-sm mb-2" style={{ color: 'var(--text-secondary)' }} aria-label="브레드크럼">
           {breadcrumb.map((item, i) => (
             <span key={i} className="flex items-center gap-2">
-              {i > 0 && <span aria-hidden="true">›</span>}
+              {i > 0 && <span aria-hidden="true" style={{ color: 'var(--gray-400)' }}>›</span>}
               {item.href ? (
-                <Link
-                  href={localePath(item.href)}
-                  className="hover:text-white/90 transition-colors"
-                >
+                <Link href={localePath(item.href)} className="hover:underline transition-colors" style={{ color: 'var(--text-secondary)' }}>
                   {item.label}
                 </Link>
               ) : (
-                <span className="text-white font-medium">{item.label}</span>
+                <span className="font-semibold" style={{ color: 'var(--primary-500)' }}>{item.label}</span>
               )}
             </span>
           ))}
         </nav>
 
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white mb-0">{title}</h1>
-        {subtitle && (
-          <p className="text-sm text-white/70 max-w-xl leading-tight">{subtitle}</p>
-        )}
+        <div className="flex items-end gap-4">
+          {/* 왼쪽 accent bar */}
+          <div
+            className="hidden sm:block w-1 rounded-full shrink-0"
+            style={{
+              height: '36px',
+              background: 'linear-gradient(180deg, var(--primary-500), var(--primary-300, #03E9F8))',
+            }}
+          />
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-extrabold" style={{ color: 'var(--text-primary)' }}>{title}</h1>
+            {subtitle && (
+              <p className="text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>{subtitle}</p>
+            )}
+          </div>
+        </div>
       </div>
+
+      {/* 하단 fade out */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px"
+        style={{ background: 'var(--border)' }}
+      />
     </section>
   );
 }

@@ -217,178 +217,6 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
         </div>
       </section>
 
-      {/* ── Lead vs Zinc Comparison ── */}
-      <section
-        className="py-16 lg:py-24"
-        style={{
-          background: 'linear-gradient(180deg, var(--background) 0%, #F0F7FF 50%, var(--background) 100%)',
-        }}
-        aria-label={t.products.comparisonTitle}
-      >
-        <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-          <motion.div
-            className="text-center mb-14"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
-              {isEn ? 'COMPARISON' : '비교'}
-            </p>
-            <h2 className="section-title mb-2" style={{ color: 'var(--primary-500)' }}>
-              {t.products.comparisonTitle}
-            </h2>
-            <p className="text-base" style={{ color: 'var(--text-secondary)' }}>
-              {isEn ? 'See why zinc outperforms lead in every way' : '아연추가 납추보다 우수한 이유를 확인하세요'}
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-0 lg:gap-0 max-w-5xl mx-auto items-stretch"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={stagger}
-          >
-            {/* Lead weight card */}
-            <motion.div
-              className="rounded-2xl lg:rounded-r-none overflow-hidden flex flex-col"
-              style={{
-                border: '2px solid rgba(239,68,68,0.25)',
-                background: 'white',
-                boxShadow: '0 8px 32px rgba(239,68,68,0.08)',
-              }}
-              variants={fadeInUp}
-            >
-              <div
-                className="relative w-full"
-                style={{
-                  aspectRatio: '4/3',
-                  background: 'linear-gradient(135deg, #FEF2F2 0%, #FECACA40 100%)',
-                }}
-              >
-                <Image
-                  src="/images/products/lead-weight.png"
-                  alt={isEn ? 'Conventional lead fishing weight' : '기존 납추'}
-                  fill
-                  className="object-contain p-6"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  unoptimized
-                />
-                <div className="absolute top-4 left-4">
-                  <span
-                    className="text-sm font-bold px-4 py-1.5 rounded-full"
-                    style={{ background: 'rgba(239,68,68,0.9)', color: 'white' }}
-                  >
-                    {isEn ? 'CONVENTIONAL' : '기존 납추'}
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 flex-1 flex flex-col items-center justify-center" style={{ background: 'rgba(239,68,68,0.03)' }}>
-                <h3 className="text-xl font-bold mb-4" style={{ color: '#DC2626' }}>
-                  {t.products.lead}
-                </h3>
-                <ul className="space-y-3 inline-block">
-                  {[
-                    isEn ? 'Heavy metal contamination risk' : '중금속 오염 위험',
-                    isEn ? 'Short lifespan (1–2 years)' : '짧은 수명 (1~2년)',
-                    isEn ? 'High replacement frequency' : '높은 교체 빈도',
-                    isEn ? 'No eco-certification' : '친환경 인증 없음',
-                  ].map((text) => (
-                    <li key={text} className="flex items-center gap-3 text-base" style={{ color: 'var(--text-body)' }}>
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="shrink-0">
-                        <circle cx="10" cy="10" r="9" fill="#FEE2E2" stroke="#DC2626" strokeWidth="1.5" />
-                        <path d="M7 10h6" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
-                      </svg>
-                      {text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-
-            {/* VS divider */}
-            <div className="hidden lg:flex flex-col items-center justify-center px-2" style={{ zIndex: 10 }}>
-              <div
-                className="w-14 h-14 rounded-full flex items-center justify-center font-black text-lg"
-                style={{
-                  background: 'linear-gradient(135deg, var(--primary-500), var(--primary-700))',
-                  color: 'white',
-                  boxShadow: '0 4px 20px rgba(1,104,239,0.35)',
-                }}
-              >
-                VS
-              </div>
-            </div>
-            <div className="flex lg:hidden items-center justify-center py-4">
-              <div
-                className="w-12 h-12 rounded-full flex items-center justify-center font-black text-base"
-                style={{ background: 'var(--primary-500)', color: 'white' }}
-              >
-                VS
-              </div>
-            </div>
-
-            {/* Zinc weight card */}
-            <motion.div
-              className="rounded-2xl lg:rounded-l-none overflow-hidden flex flex-col"
-              style={{
-                border: '2px solid rgba(23,233,181,0.4)',
-                background: 'white',
-                boxShadow: '0 8px 32px rgba(23,233,181,0.10)',
-              }}
-              variants={fadeInUp}
-            >
-              <div
-                className="relative w-full"
-                style={{
-                  aspectRatio: '4/3',
-                  background: 'linear-gradient(135deg, #ECFDF5 0%, #D1FAE540 100%)',
-                }}
-              >
-                <Image
-                  src="/images/products/zinc-weight.png"
-                  alt={isEn ? 'OceanTech zinc fishing weight' : '오션테크 아연추'}
-                  fill
-                  className="object-contain p-6"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
-                <div className="absolute top-4 left-4">
-                  <span
-                    className="text-sm font-bold px-4 py-1.5 rounded-full"
-                    style={{ background: 'rgba(14,173,135,0.9)', color: 'white' }}
-                  >
-                    {isEn ? 'OCEANTECH' : '오션테크 아연추'}
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 flex-1 flex flex-col items-center justify-center" style={{ background: 'rgba(23,233,181,0.03)' }}>
-                <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--secondary-700)' }}>
-                  {t.products.zinc}
-                </h3>
-                <ul className="space-y-3 inline-block">
-                  {[
-                    isEn ? 'SVHC 235 substances non-detected' : 'SVHC 235종 불검출 인증',
-                    isEn ? '10x longer lifespan' : '납추 대비 10배 이상 수명',
-                    isEn ? '80% lower replacement cost' : '교체 비용 80% 절감',
-                    isEn ? 'Green Technology certified' : '녹색기술 공식 인증',
-                  ].map((text) => (
-                    <li key={text} className="flex items-center gap-3 text-base" style={{ color: 'var(--text-body)' }}>
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="shrink-0">
-                        <circle cx="10" cy="10" r="9" fill="#D1FAE5" stroke="var(--secondary-700)" strokeWidth="1.5" />
-                        <path d="M6 10l3 3 5-5" stroke="var(--secondary-700)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      {text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ── CTA ── */}
       <section
         className="py-16 lg:py-20"
@@ -413,15 +241,16 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                 ? 'Ready to switch to\neco-friendly zinc weights?'
                 : '친환경 아연추로\n전환을 고려하시나요?'}
             </h2>
-            <p className="section-subtitle mb-8 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.65)' }}>
+            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.2rem' }}>
               {isEn
                 ? 'Contact us for product specifications, pricing, and consultation on switching from lead to zinc fishing weights.'
                 : '제품 규격, 납품 가격, 납추에서 아연추로의 전환 상담을 원하시면 언제든지 연락주세요.'}
             </p>
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-sm transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold transition-all"
               style={{
+                fontSize: '1.2rem',
                 background: 'var(--secondary-500)',
                 color: 'var(--gray-900)',
               }}

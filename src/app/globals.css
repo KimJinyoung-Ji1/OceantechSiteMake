@@ -1,5 +1,92 @@
 @import "tailwindcss";
 
+/* Header nav link hover animation */
+.nav-link {
+  position: relative;
+  color: rgba(255,255,255,0.72);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #03E9F8, #ffffff);
+  border-radius: 3px 3px 0 0;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(3,233,248,0.5);
+  transition: width 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.nav-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(3,233,248,0.12) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.nav-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(3,233,248,0.5);
+}
+.nav-link:hover::after {
+  width: 80%;
+}
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+/* Hero CTA button animations */
+.hero-btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.3s ease;
+}
+.hero-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+.hero-btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(14,173,135,0.4) !important;
+}
+.hero-btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.hero-btn-secondary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.hero-btn-secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(3,233,248,0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.hero-btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.8) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2), inset 0 0 20px rgba(3,233,248,0.1);
+}
+.hero-btn-secondary:hover::before {
+  opacity: 1;
+}
+
 :root {
   /* Primary — Fresh Ocean Blue (시안.html 기반, 시원한 블루) */
   --primary-900: #021097;

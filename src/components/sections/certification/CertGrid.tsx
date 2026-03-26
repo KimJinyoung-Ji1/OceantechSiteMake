@@ -15,85 +15,56 @@ const certItems = [
     key: 'greenTech',
     titleKo: '녹색기술인증서',
     titleEn: 'Green Technology Certificate',
-    descKo: '환경부로부터 받은 녹색기술인증으로, 아연합금 기반 친환경 어망추 제조방법의 탄소중립 및 환경보호 기여를 공식 인정받았습니다.',
-    descEn: 'Ministry of Environment green technology certification officially recognizing the carbon neutrality and environmental protection contribution of our zinc alloy-based eco-friendly fishing weight manufacturing method.',
     src: '/documents/certs/green-tech-cert.png',
     numberKo: SITE_CONFIG.certifications.greenTech.number,
-    accentColor: 'var(--secondary-700,#047857)',
-    bgColor: 'rgba(23,233,181,0.07)',
-    borderColor: 'rgba(23,233,181,0.25)',
-    labelColor: 'rgba(23,233,181,0.15)',
-    labelText: 'var(--secondary-700,#047857)',
+    isGreen: true,
+    badgeLabel: { ko: '녹색기술', en: 'GREEN TECH' },
   },
   {
     key: 'greenProduct',
     titleKo: '녹색기술제품확인서',
     titleEn: 'Green Product Certificate',
-    descKo: '한국환경산업기술원에서 발급한 녹색기술제품 확인서. 탄소중립기본법 제60조에 근거하여 제품의 친환경성이 공식 확인되었습니다.',
-    descEn: 'Green product certificate issued by KEITI. Eco-friendliness officially confirmed based on Article 60 of the Framework Act on Carbon Neutrality.',
     src: '/documents/certs/green-product-cert.png',
     numberKo: SITE_CONFIG.certifications.greenProduct.number,
-    accentColor: 'var(--secondary-700,#047857)',
-    bgColor: 'rgba(23,233,181,0.07)',
-    borderColor: 'rgba(23,233,181,0.25)',
-    labelColor: 'rgba(23,233,181,0.15)',
-    labelText: 'var(--secondary-700,#047857)',
+    isGreen: true,
+    badgeLabel: { ko: '녹색제품', en: 'GREEN PRODUCT' },
   },
   {
     key: 'venture',
     titleKo: '벤처기업확인서',
     titleEn: 'Venture Company Certificate',
-    descKo: '벤처기업확인기관으로부터 받은 공식 벤처기업 확인서. 기술 혁신성과 성장 가능성을 인정받아 각종 정책 지원 및 공공조달 혜택을 받을 수 있습니다.',
-    descEn: 'Official venture company certificate from the authorized certification body. Recognized for technological innovation and growth potential, enabling access to policy support and public procurement benefits.',
     src: '/documents/certs/venture-cert.png',
     numberKo: SITE_CONFIG.certifications.venture.number,
-    accentColor: 'var(--primary-500)',
-    bgColor: 'rgba(1,104,239,0.05)',
-    borderColor: 'rgba(1,104,239,0.18)',
-    labelColor: 'rgba(1,104,239,0.1)',
-    labelText: 'var(--primary-600)',
+    isGreen: false,
+    badgeLabel: { ko: '벤처기업', en: 'VENTURE' },
   },
   {
     key: 'patentAward',
     titleKo: '우수특허대상',
     titleEn: 'Excellence Patent Award',
-    descKo: '한국일보 주관 제17회 대한민국 우수특허대상 수상. 친환경 어망추 관련 특허의 기술적 완성도와 사업 가치를 공식 인정받았습니다.',
-    descEn: 'Winner of the 17th Korea Excellence Patent Award hosted by Hankook Ilbo. Officially recognized for the technical completeness and business value of eco-friendly fishing weight patents.',
     src: '/documents/certs/patent-award-2023.png',
     numberKo: SITE_CONFIG.certifications.patentAward.date,
-    accentColor: '#D97706',
-    bgColor: 'rgba(245,158,11,0.05)',
-    borderColor: 'rgba(245,158,11,0.2)',
-    labelColor: 'rgba(245,158,11,0.12)',
-    labelText: '#B45309',
+    isGreen: false,
+    isAward: true,
+    badgeLabel: { ko: '수상', en: 'AWARD' },
   },
   {
     key: 'researchDept',
     titleKo: '연구전담부서 인정서',
     titleEn: 'R&D Department Recognition',
-    descKo: 'KOITA(한국산업기술진흥협회)로부터 공식 인정받은 기업부설연구소. 제품 품질 향상 및 신기술 개발을 위한 자체 R&D 역량을 공식 인정받았습니다.',
-    descEn: 'Corporate R&D center officially recognized by KOITA. Certifies in-house R&D capabilities for product quality improvement and new technology development.',
     src: '/documents/certs/research-dept.png',
     numberKo: SITE_CONFIG.certifications.researchDept.number,
-    accentColor: 'var(--primary-500)',
-    bgColor: 'rgba(1,104,239,0.05)',
-    borderColor: 'rgba(1,104,239,0.18)',
-    labelColor: 'rgba(1,104,239,0.1)',
-    labelText: 'var(--primary-600)',
+    isGreen: false,
+    badgeLabel: { ko: '연구소', en: 'R&D' },
   },
   {
     key: 'sme',
     titleKo: '중소기업확인서',
     titleEn: 'SME Certificate',
-    descKo: '중소벤처기업부에서 발급한 중소기업 확인서. 중소기업 지원 정책 및 공공조달 참여 자격을 공식 인증하는 서류입니다.',
-    descEn: 'SME certificate issued by the Ministry of SMEs and Startups. Official document certifying eligibility for SME support policies and public procurement participation.',
     src: '/documents/certs/sme-cert.png',
     numberKo: SITE_CONFIG.certifications.sme.number,
-    accentColor: 'var(--gray-600)',
-    bgColor: 'rgba(107,114,128,0.05)',
-    borderColor: 'rgba(107,114,128,0.18)',
-    labelColor: 'rgba(107,114,128,0.1)',
-    labelText: 'var(--gray-600)',
+    isGreen: false,
+    badgeLabel: { ko: '중소기업', en: 'SME' },
   },
 ];
 
@@ -102,75 +73,107 @@ export default function CertGrid({ locale }: CertGridProps) {
   const [modal, setModal] = useState<{ src: string; title: string } | null>(null);
 
   return (
-    <section className="py-16 lg:py-20" style={{ background: 'var(--background-alt)' }} aria-label="인증서 목록">
+    <section className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="인증서 목록">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="flex flex-col gap-5">
+        <div className="text-center mb-12">
+          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
+            {isEn ? 'CERTIFICATIONS' : '인증 현황'}
+          </p>
+          <h2 className="section-title" style={{ color: 'var(--gray-900)' }}>
+            {isEn ? `${certItems.length} Official Certifications` : `공식 인증 ${certItems.length}건`}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {certItems.map((item) => (
-            <div
+            <article
               key={item.key}
-              className="rounded-2xl overflow-hidden flex flex-col sm:flex-row"
+              className="rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               style={{
                 background: 'white',
-                border: `1px solid ${item.borderColor}`,
+                border: item.isGreen
+                  ? '1px solid rgba(23,233,181,0.3)'
+                  : (item as Record<string, unknown>).isAward
+                  ? '1px solid rgba(245,158,11,0.3)'
+                  : '1px solid var(--gray-200)',
                 boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
               }}
             >
-              {/* LEFT: Cert image */}
+              {/* Image area */}
               <button
-                className="relative cursor-pointer hover:opacity-90 transition-opacity flex items-center justify-center shrink-0"
+                className="relative cursor-pointer transition-opacity flex items-center justify-center w-full overflow-hidden"
                 style={{
-                  minWidth: '220px',
-                  width: '220px',
-                  minHeight: '220px',
-                  background: item.bgColor,
-                  borderRight: `1px solid ${item.borderColor}`,
+                  aspectRatio: '4/3',
+                  background: item.isGreen
+                    ? 'rgba(23,233,181,0.04)'
+                    : 'linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%)',
+                  borderBottom: '1px solid var(--gray-100)',
                 }}
                 onClick={() => setModal({ src: item.src, title: isEn ? item.titleEn : item.titleKo })}
-                aria-label={`${isEn ? item.titleEn : item.titleKo} 원본 보기`}
+                aria-label={`${isEn ? item.titleEn : item.titleKo} 크게 보기`}
               >
+                {/* Shadow behind image */}
+                <div
+                  className="absolute inset-x-6 bottom-3 h-10 rounded-full pointer-events-none"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, transparent 70%)',
+                    filter: 'blur(10px)',
+                  }}
+                />
                 <Image
                   src={item.src}
                   alt={isEn ? item.titleEn : item.titleKo}
                   fill
-                  className="object-contain p-4"
-                  sizes="(max-width: 640px) 100vw, 280px"
+                  className="object-contain p-5 group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  style={{ filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.2))' }}
+                />
+                {/* Reflection */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(to top, rgba(238,242,247,0.95) 0%, rgba(248,250,252,0.6) 40%, transparent 100%)',
+                  }}
                 />
                 <div
-                  className="absolute bottom-2 right-2 px-2 py-0.5 rounded text-xs font-medium"
-                  style={{ background: 'rgba(0,0,0,0.45)', color: 'white' }}
+                  className="absolute bottom-2 right-2 px-2 py-0.5 rounded text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                  style={{ background: 'rgba(0,0,0,0.55)', color: 'white' }}
                 >
                   {isEn ? 'Click to enlarge' : '클릭하여 확대'}
                 </div>
               </button>
 
-              {/* RIGHT: Description */}
-              <div className="p-5 flex flex-col gap-3 flex-1 justify-center">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span
-                    className="inline-flex px-2.5 py-0.5 rounded-full text-xs font-bold"
-                    style={{ background: item.labelColor, color: item.labelText }}
-                  >
-                    {isEn ? item.titleEn : item.titleKo}
-                  </span>
-                  <span className="text-xs font-mono" style={{ color: 'var(--gray-700)' }}>
-                    {item.numberKo}
-                  </span>
-                </div>
-                <h3 className="card-title" style={{ color: 'var(--gray-900)' }}>
+              {/* Info area — centered */}
+              <div className="p-5 flex flex-col gap-3 flex-1 items-center text-center">
+                <span
+                  className="text-sm font-black px-4 py-1.5 rounded-full tracking-wide"
+                  style={
+                    item.isGreen
+                      ? { background: 'rgba(23,233,181,0.2)', color: 'var(--secondary-700,#047857)', border: '1px solid rgba(23,233,181,0.4)' }
+                      : (item as Record<string, unknown>).isAward
+                      ? { background: 'rgba(245,158,11,0.15)', color: '#B45309', border: '1px solid rgba(245,158,11,0.35)' }
+                      : { background: 'var(--primary-500)', color: 'white' }
+                  }
+                >
+                  {isEn ? item.badgeLabel.en : item.badgeLabel.ko}
+                </span>
+
+                <h3 className="text-lg font-bold leading-snug" style={{ color: 'var(--gray-900)' }}>
                   {isEn ? item.titleEn : item.titleKo}
                 </h3>
-                <p className="text-base leading-relaxed" style={{ color: 'var(--gray-600)' }}>
-                  {isEn ? item.descEn : item.descKo}
+
+                <p className="text-sm font-mono font-semibold" style={{ color: 'var(--primary-500)' }}>
+                  {item.numberKo}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
 
       <Modal open={!!modal} onClose={() => setModal(null)} title={modal?.title}>
         {modal && (
-          <div className="relative w-full" style={{ minHeight: '400px' }}>
+          <div className="relative w-full" style={{ minHeight: '70vh' }}>
             <Image
               src={modal.src}
               alt={modal.title}
