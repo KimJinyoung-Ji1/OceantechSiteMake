@@ -50,10 +50,14 @@ function KakaoMap() {
       window.kakao.maps.load(() => {
         if (!mapRef.current) return;
         const container = mapRef.current;
-        const position = new window.kakao.maps.LatLng(37.6326, 127.2149);
-        const options = { center: position, level: 4 };
+        const position = new window.kakao.maps.LatLng(37.6265, 127.1472);
+        const options = { center: position, level: 3 };
         const map = new window.kakao.maps.Map(container, options);
-        new window.kakao.maps.Marker({ position, map });
+        const marker = new window.kakao.maps.Marker({ position, map });
+        const infowindow = new window.kakao.maps.InfoWindow({
+          content: '<div style="padding:8px 12px;font-size:13px;font-weight:700;white-space:nowrap;">(주)오션테크<br><span style="font-weight:400;font-size:11px;color:#666;">현대프리미어캠퍼스 E동 7층</span></div>',
+        });
+        infowindow.open(map, marker);
       });
     }
   }, []);
@@ -61,7 +65,7 @@ function KakaoMap() {
   return (
     <div
       ref={mapRef}
-      className="w-full h-64 rounded-2xl overflow-hidden"
+      className="w-full h-80 rounded-2xl overflow-hidden"
       style={{ border: '1px solid var(--border)' }}
       aria-label="회사 위치 지도"
     />
@@ -182,8 +186,21 @@ export default function ContactContent({ locale }: ContactContentProps) {
               </dl>
             </div>
 
-            {/* Kakao Map */}
-            <KakaoMap />
+            {/* 오시는 길 */}
+            <div>
+              <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+                {isEn ? 'Directions' : '오시는 길'}
+              </h3>
+              <KakaoMap />
+              <div className="mt-3 space-y-1">
+                <p className="text-sm font-medium" style={{ color: 'var(--text-body)' }}>
+                  {SITE_CONFIG.address.main}
+                </p>
+                <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                  {isEn ? 'Hyundai Premier Campus Bldg. E, 7F #29-30' : '현대프리미어캠퍼스 E동 7층 29-30호'}
+                </p>
+              </div>
+            </div>
 
             {/* Manager info */}
             <div

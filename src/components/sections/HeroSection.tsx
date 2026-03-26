@@ -122,117 +122,99 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* RIGHT — Two Glassmorphism Cert Cards */}
+          {/* RIGHT — Two White Semi-transparent Cert Cards */}
           <div className="hidden lg:flex flex-col gap-5 items-stretch">
             {/* Card 1: 녹색기술인증서 */}
             <div
-              className="p-7 rounded-[20px] text-white"
+              className="p-8 rounded-[24px]"
               style={{
-                background: 'rgba(255,255,255,0.08)',
-                backdropFilter: 'blur(24px)',
-                WebkitBackdropFilter: 'blur(24px)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                borderRadius: '20px',
-                boxShadow: '0 8px 32px rgba(2,16,151,0.20)',
+                background: 'rgba(255,255,255,0.88)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.95)',
+                borderRadius: '24px',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
               }}
             >
-              <div className="flex items-start gap-4 mb-5">
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
-                  style={{ background: 'rgba(23,233,181,0.15)', border: '1px solid rgba(23,233,181,0.3)' }}
-                >
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border" style={{ borderColor: '#E2E8F0' }}>
                   <Image
-                    src="/images/green-cert-mark.png"
-                    alt="녹색인증마크"
-                    width={40}
-                    height={40}
-                    className="object-contain"
+                    src="/documents/certs/green-tech-cert.png"
+                    alt="녹색기술인증서"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
                   />
                 </div>
                 <div>
-                  <p
-                    className="text-xs font-semibold uppercase tracking-wider mb-0.5"
-                    style={{ color: 'rgba(255,255,255,0.55)' }}
-                  >
+                  <p className="text-sm font-bold mb-1" style={{ color: '#0EAD87' }}>
                     {locale === 'en' ? 'Green Technology Certification' : '녹색기술인증서'}
                   </p>
-                  <p
-                    className="text-xl font-black tracking-wide"
-                    style={{ color: '#17E9B5' }}
-                  >
+                  <p className="text-2xl font-black tracking-wide" style={{ color: '#0EAD87' }}>
                     {SITE_CONFIG.certifications.greenTech.number}
                   </p>
                 </div>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-xs" style={{ color: 'rgba(255,255,255,0.50)' }}>
+              <div className="flex items-center justify-between py-2 px-1">
+                <span className="text-sm font-medium" style={{ color: '#475569' }}>
                   {locale === 'en' ? 'Valid Period' : '유효기간'}
                 </span>
-                <span className="text-xs font-semibold text-white">
+                <span className="text-sm font-bold" style={{ color: '#1E293B' }}>
                   {SITE_CONFIG.certifications.greenTech.period}
                 </span>
               </div>
               <div
-                className="mt-4 text-center text-xs py-2 rounded-xl font-semibold"
-                style={{ background: 'rgba(23,233,181,0.12)', color: '#17E9B5' }}
+                className="mt-3 text-center text-sm py-2.5 rounded-xl font-bold"
+                style={{ background: 'rgba(14,173,135,0.08)', color: '#0EAD87' }}
               >
-                {SITE_CONFIG.certifications.greenTech.issuerKo}
+                {locale === 'en' ? SITE_CONFIG.certifications.greenTech.issuerEn : SITE_CONFIG.certifications.greenTech.issuerKo}
               </div>
             </div>
 
             {/* Card 2: 녹색기술제품 확인서 */}
             <div
-              className="p-7 rounded-[20px] text-white"
+              className="p-8 rounded-[24px]"
               style={{
-                background: 'rgba(255,255,255,0.08)',
-                backdropFilter: 'blur(24px)',
-                WebkitBackdropFilter: 'blur(24px)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                borderRadius: '20px',
-                boxShadow: '0 8px 32px rgba(2,16,151,0.20)',
+                background: 'rgba(255,255,255,0.88)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.95)',
+                borderRadius: '24px',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
               }}
             >
-              <div className="flex items-start gap-4 mb-5">
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
-                  style={{ background: 'rgba(3,233,248,0.15)', border: '1px solid rgba(3,233,248,0.3)' }}
-                >
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border" style={{ borderColor: '#E2E8F0' }}>
                   <Image
-                    src="/images/green-cert-mark.png"
-                    alt="녹색인증마크"
-                    width={40}
-                    height={40}
-                    className="object-contain"
+                    src="/documents/certs/green-product-cert.png"
+                    alt="녹색기술제품확인서"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
                   />
                 </div>
                 <div>
-                  <p
-                    className="text-xs font-semibold uppercase tracking-wider mb-0.5"
-                    style={{ color: 'rgba(255,255,255,0.55)' }}
-                  >
+                  <p className="text-sm font-bold mb-1" style={{ color: '#0168EF' }}>
                     {locale === 'en' ? 'Green Product Verification' : '녹색기술제품 확인서'}
                   </p>
-                  <p
-                    className="text-xl font-black tracking-wide"
-                    style={{ color: '#03E9F8' }}
-                  >
+                  <p className="text-2xl font-black tracking-wide" style={{ color: '#0168EF' }}>
                     {SITE_CONFIG.certifications.greenProduct.number}
                   </p>
                 </div>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-xs" style={{ color: 'rgba(255,255,255,0.50)' }}>
+              <div className="flex items-center justify-between py-2 px-1">
+                <span className="text-sm font-medium" style={{ color: '#475569' }}>
                   {locale === 'en' ? 'Valid Period' : '유효기간'}
                 </span>
-                <span className="text-xs font-semibold text-white">
+                <span className="text-sm font-bold" style={{ color: '#1E293B' }}>
                   {SITE_CONFIG.certifications.greenProduct.period}
                 </span>
               </div>
               <div
-                className="mt-4 text-center text-xs py-2 rounded-xl font-semibold"
-                style={{ background: 'rgba(3,233,248,0.12)', color: '#03E9F8' }}
+                className="mt-3 text-center text-sm py-2.5 rounded-xl font-bold"
+                style={{ background: 'rgba(1,104,239,0.08)', color: '#0168EF' }}
               >
-                {SITE_CONFIG.certifications.greenProduct.issuerKo}
+                {locale === 'en' ? SITE_CONFIG.certifications.greenProduct.issuerEn : SITE_CONFIG.certifications.greenProduct.issuerKo}
               </div>
             </div>
           </div>

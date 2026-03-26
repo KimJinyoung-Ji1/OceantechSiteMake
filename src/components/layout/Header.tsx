@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { NAV_ITEMS, SITE_CONFIG } from '@/lib/constants';
@@ -30,37 +31,33 @@ export default function Header({ locale }: HeaderProps) {
 
   return (
     <>
-      {/* Floating header — floats above content with top-4 offset */}
+      {/* Header — integrated with hero, no gap */}
       <div
         className="fixed z-50"
-        style={{ top: '1rem', left: '1rem', right: '1rem' }}
+        style={{ top: '0', left: '0', right: '0' }}
         onMouseLeave={() => setOpenMenu(null)}
       >
         <header
-          className="rounded-2xl border"
+          className="border-b"
           style={{
-            background: 'rgba(2,16,151,0.88)',
+            background: 'linear-gradient(135deg, rgba(14,173,135,0.92) 0%, rgba(3,233,248,0.85) 50%, rgba(23,233,181,0.90) 100%)',
             backdropFilter: 'blur(28px) saturate(180%)',
             WebkitBackdropFilter: 'blur(28px) saturate(180%)',
-            borderColor: 'rgba(255,255,255,0.06)',
-            boxShadow: '0 12px 48px rgba(0,0,0,0.12)',
+            borderColor: 'rgba(255,255,255,0.20)',
+            boxShadow: '0 12px 48px rgba(14,173,135,0.18)',
           }}
         >
           <div className="mx-auto flex h-[72px] w-full max-w-[1360px] items-center justify-between px-6 lg:px-8">
             {/* Logo */}
             <Link href={localePath('/')} className="flex items-center gap-3 shrink-0">
-              <div
-                className="flex h-10 w-10 items-center justify-center rounded-full border"
-                style={{ borderColor: 'rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.1)' }}
-              >
-                <span className="text-[11px] font-black tracking-[0.2em] text-white">OT</span>
-              </div>
-              <div className="hidden sm:block">
-                <p className="text-[20px] font-black tracking-[0.14em] text-white leading-none">OCEANTECH</p>
-                <p className="text-[11px] mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                  {SITE_CONFIG.company.name}
-                </p>
-              </div>
+              <Image
+                src="/images/logo-brand.png"
+                alt="오션테크 로고"
+                width={160}
+                height={40}
+                className="h-9 w-auto object-contain brightness-0 invert"
+                priority
+              />
             </Link>
 
             {/* Center nav — spread wide */}
@@ -124,10 +121,11 @@ export default function Header({ locale }: HeaderProps) {
               </Link>
               <Link
                 href={localePath('/contact')}
-                className="rounded-xl px-5 py-2 text-[14px] font-black text-[#021097] transition-all duration-150"
+                className="rounded-xl px-5 py-2 text-[14px] font-black transition-all duration-150"
                 style={{
-                  background: 'linear-gradient(135deg, #03E9F8 0%, #17E9B5 100%)',
-                  boxShadow: '0 6px 20px rgba(23,233,181,0.32)',
+                  background: 'rgba(255,255,255,0.95)',
+                  color: '#0EAD87',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.filter = 'brightness(1.08)';
@@ -201,7 +199,7 @@ export default function Header({ locale }: HeaderProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.16 }}
-              className="mt-2 rounded-2xl border overflow-hidden"
+              className="border-b overflow-hidden"
               style={{
                 background: 'rgba(6,21,116,0.96)',
                 backdropFilter: 'blur(28px) saturate(180%)',
