@@ -15,30 +15,30 @@ interface ProductShowcaseProps {
 // SVG icons for advantages — 44px stroke style, brand blue
 const ShieldIcon = () => (
   <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-    <path d="M22 4L6 11v11c0 9.9 7.1 19.1 16 21.3C31 41.1 38 31.9 38 22V11L22 4z" stroke="#0168EF" strokeWidth="2" strokeLinejoin="round" />
-    <path d="M15 22l5 5 9-9" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M22 4L6 11v11c0 9.9 7.1 19.1 16 21.3C31 41.1 38 31.9 38 22V11L22 4z" stroke="var(--primary-500)" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M15 22l5 5 9-9" stroke="var(--primary-500)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const WaterDropIcon = () => (
   <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-    <path d="M22 5C22 5 8 19 8 28a14 14 0 0028 0C36 19 22 5 22 5z" stroke="#0168EF" strokeWidth="2" strokeLinejoin="round" />
-    <path d="M14 30a8 8 0 0011-5" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" />
+    <path d="M22 5C22 5 8 19 8 28a14 14 0 0028 0C36 19 22 5 22 5z" stroke="var(--primary-500)" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M14 30a8 8 0 0011-5" stroke="var(--primary-500)" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 const CoinIcon = () => (
   <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-    <circle cx="22" cy="22" r="16" stroke="#0168EF" strokeWidth="2" />
-    <path d="M22 12v20M18 15.5h6a3.5 3.5 0 010 7H18m0 0h6a3.5 3.5 0 010 7H18" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="22" cy="22" r="16" stroke="var(--primary-500)" strokeWidth="2" />
+    <path d="M22 12v20M18 15.5h6a3.5 3.5 0 010 7H18m0 0h6a3.5 3.5 0 010 7H18" stroke="var(--primary-500)" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 const TrophyIcon = () => (
   <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-    <path d="M14 7h16v14a8 8 0 01-16 0V7z" stroke="#0168EF" strokeWidth="2" strokeLinejoin="round" />
-    <path d="M10 10H7a3 3 0 000 6h3M34 10h3a3 3 0 010 6h-3" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" />
-    <path d="M22 29v6M16 35h12" stroke="#0168EF" strokeWidth="2" strokeLinecap="round" />
+    <path d="M14 7h16v14a8 8 0 01-16 0V7z" stroke="var(--primary-500)" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M10 10H7a3 3 0 000 6h3M34 10h3a3 3 0 010 6h-3" stroke="var(--primary-500)" strokeWidth="2" strokeLinecap="round" />
+    <path d="M22 29v6M16 35h12" stroke="var(--primary-500)" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
@@ -129,7 +129,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                         </div>
                       </div>
                       <div className="p-4 border-t text-center" style={{ borderColor: 'var(--gray-100)' }}>
-                        <p className="text-lg font-bold mb-1" style={{ color: '#0168EF' }}>
+                        <p className="text-lg font-bold mb-1" style={{ color: 'var(--primary-500)' }}>
                           {item.model}
                         </p>
                         <div className="flex justify-center gap-2 text-lg" style={{ color: 'var(--text-secondary)' }}>

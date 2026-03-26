@@ -36,7 +36,7 @@ export default function Footer({ locale }: FooterProps) {
   return (
     <footer
       className="text-white"
-      style={{ background: '#0F172A' }}
+      style={{ background: 'var(--gray-900)' }}
       aria-label="푸터"
     >
       <div className="mx-auto w-full max-w-[1920px] px-8 lg:px-24 py-8 lg:py-10">
@@ -111,12 +111,12 @@ export default function Footer({ locale }: FooterProps) {
                   border: '1px solid rgba(23,233,181,0.2)',
                 }}
               >
-                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
+                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: 'var(--primary-300)' }} />
                 <div>
                   <p className="text-[10px] leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>
                     {locale === 'en' ? 'Green Tech' : '녹색기술인증'}
                   </p>
-                  <p className="text-[10px] font-semibold leading-tight" style={{ color: '#03E9F8' }}>
+                  <p className="text-[10px] font-semibold leading-tight" style={{ color: 'var(--primary-300)' }}>
                     {SITE_CONFIG.certifications.greenTech.number}
                   </p>
                 </div>
@@ -128,12 +128,12 @@ export default function Footer({ locale }: FooterProps) {
                   border: '1px solid rgba(23,233,181,0.16)',
                 }}
               >
-                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: '#03E9F8' }} />
+                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: 'var(--primary-300)' }} />
                 <div>
                   <p className="text-[10px] leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>
                     {locale === 'en' ? 'Green Product' : '녹색기술제품'}
                   </p>
-                  <p className="text-[10px] font-semibold leading-tight" style={{ color: '#03E9F8' }}>
+                  <p className="text-[10px] font-semibold leading-tight" style={{ color: 'var(--primary-300)' }}>
                     {SITE_CONFIG.certifications.greenProduct.number}
                   </p>
                 </div>
@@ -145,12 +145,12 @@ export default function Footer({ locale }: FooterProps) {
                   border: '1px solid rgba(2,16,151,0.2)',
                 }}
               >
-                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: '#17E9B5' }} />
+                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: 'var(--secondary-500)' }} />
                 <div>
                   <p className="text-[10px] leading-tight" style={{ color: 'rgba(255,255,255,0.4)' }}>
                     {locale === 'en' ? 'Venture' : '벤처기업'}
                   </p>
-                  <p className="text-[10px] font-semibold leading-tight" style={{ color: '#17E9B5' }}>
+                  <p className="text-[10px] font-semibold leading-tight" style={{ color: 'var(--secondary-500)' }}>
                     {SITE_CONFIG.certifications.venture.number}
                   </p>
                 </div>

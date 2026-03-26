@@ -66,7 +66,7 @@ export default function Header({ locale }: HeaderProps) {
                   >
                     <span className="relative z-10">{label(item)}</span>
                     {item.badge ? (
-                      <span className="h-2 w-2 rounded-full" style={{ background: '#03E9F8' }} aria-hidden="true" />
+                      <span className="h-2 w-2 rounded-full" style={{ background: 'var(--primary-300)' }} aria-hidden="true" />
                     ) : null}
                   </Link>
                 </div>

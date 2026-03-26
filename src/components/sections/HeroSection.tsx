@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Badge from '@/components/ui/Badge';
 import { getTranslation } from '@/lib/i18n';
 import { SITE_CONFIG } from '@/lib/constants';
 import type { Locale } from '@/lib/i18n';

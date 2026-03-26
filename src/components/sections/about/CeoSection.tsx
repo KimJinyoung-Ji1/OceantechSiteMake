@@ -4,7 +4,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 
 interface CeoSectionProps {
   locale: Locale;
-  ceoMessage: string;
+  ceoMessage?: string;
 }
 
 export default function CeoSection({ locale }: CeoSectionProps) {

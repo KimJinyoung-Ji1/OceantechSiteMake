@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useCallback, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import type { Locale } from '@/lib/i18n';
 import { getTranslation } from '@/lib/i18n';
 import { SITE_CONFIG } from '@/lib/constants';
