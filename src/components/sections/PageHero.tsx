@@ -13,7 +13,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
 
   return (
     <section
-      className="relative pt-16 pb-8 px-6 lg:px-24 overflow-hidden"
+      className="relative pt-[72px] pb-3 px-6 lg:px-24 overflow-hidden"
       aria-label="페이지 히어로"
       style={{
         background:
@@ -52,9 +52,9 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
           ))}
         </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-1">{title}</h1>
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-white mb-1">{title}</h1>
         {subtitle && (
-          <p className="text-base text-white/70 max-w-xl leading-relaxed">{subtitle}</p>
+          <p className="text-sm text-white/70 max-w-xl leading-relaxed">{subtitle}</p>
         )}
       </div>
     </section>

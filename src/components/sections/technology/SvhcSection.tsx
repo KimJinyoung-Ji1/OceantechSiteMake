@@ -45,6 +45,14 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
                   ? 'Based on EU REACH regulations, all 235 SVHC (Substances of Very High Concern) substances were not detected, proving complete eco-friendliness.'
                   : 'EU REACH 규정 기반 고위험성 우려 물질(SVHC) 235종 전종 미검출. 완전한 친환경성이 공식 입증되었습니다.'}
               </p>
+              <p
+                className="text-sm leading-relaxed mt-2"
+                style={{ color: 'rgba(255,255,255,0.5)' }}
+              >
+                {isEn
+                  ? '* SVHC (Substances of Very High Concern) are hazardous chemicals designated under EU REACH regulations as harmful to human health and the environment. Non-detection of all 235 substances means the product\'s safety has been fully verified to international standards.'
+                  : '* SVHC(고위험성 우려물질)란 EU REACH 규정에서 지정한 인체·환경에 유해한 화학물질을 뜻합니다. 이 235종이 모두 불검출되었다는 것은 오션테크 제품의 안전성이 국제 기준으로 완벽히 검증되었음을 의미합니다.'}
+              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">

@@ -204,7 +204,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
   return (
     <section className="py-6 lg:py-8 px-6 lg:px-24" aria-label="문의하기">
       <div className="max-w-[1920px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-5 lg:gap-8">
+        <div className="grid lg:grid-cols-2 gap-5 lg:gap-8 items-stretch">
           {/* Left — Form */}
           <ContactForm locale={locale} onSuccess={handleSuccess} />
 

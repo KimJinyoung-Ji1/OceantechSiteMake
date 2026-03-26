@@ -20,6 +20,10 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
     { label: isEn ? 'Address (main)' : '본사주소', value: SITE_CONFIG.address.main },
     { label: isEn ? 'Business' : '사업분야', value: isEn ? 'Eco-Friendly Fishing Weights, R&D' : '친환경 어장추 제조 · 연구개발' },
     { label: isEn ? 'Website' : '도메인', value: 'oceantechinc.com' },
+    { label: isEn ? 'Green Tech Cert.' : '녹색기술인증', value: `${SITE_CONFIG.certifications.greenTech.number} (${SITE_CONFIG.certifications.greenTech.period})` },
+    { label: isEn ? 'Venture Cert.' : '벤처기업확인', value: `${SITE_CONFIG.certifications.venture.number} (${SITE_CONFIG.certifications.venture.period})` },
+    { label: isEn ? 'R&D Dept.' : '기업부설연구소', value: `KOITA ${SITE_CONFIG.certifications.researchDept.number}` },
+    { label: isEn ? 'Patent Award' : '우수특허대상', value: isEn ? '17th Korea Excellence Patent Award (2023)' : '제17회 대한민국 우수특허대상 (2023)' },
   ];
 
   return (
@@ -59,7 +63,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
               }}
             >
               <div
-                className="px-5 py-3 text-base font-semibold text-left"
+                className="px-5 py-3 text-base font-semibold text-center"
                 style={{
                   color: 'var(--text-secondary)',
                   background: i % 2 === 0 ? 'var(--background-alt)' : '#E8F0FA',

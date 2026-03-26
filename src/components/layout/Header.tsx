@@ -61,7 +61,7 @@ export default function Header({ locale }: HeaderProps) {
             </Link>
 
             {/* Center nav — spread wide */}
-            <nav className="hidden flex-1 items-center justify-center gap-14 xl:flex" aria-label="주요 메뉴">
+            <nav className="hidden flex-1 items-center justify-evenly xl:flex" aria-label="주요 메뉴">
               {items.map((item) => (
                 <div
                   key={item.href}

@@ -18,7 +18,7 @@ interface StatItemProps {
 }
 
 function StatItem({ target, unit, label, highlight }: StatItemProps) {
-  const { count, ref } = useCountUp({ target, duration: 2000 });
+  const { count, ref } = useCountUp({ target, duration: 2000, retrigger: true });
 
   return (
     <div

@@ -93,7 +93,7 @@ export default function NewsBanner() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="relative min-h-[180px] flex items-center">
+          <div className="relative flex items-stretch">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -101,87 +101,76 @@ export default function NewsBanner() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -40 }}
                 transition={{ duration: 0.35, ease: 'easeInOut' }}
-                className="w-full px-6 py-5 lg:px-8 lg:py-6"
+                className="w-full"
               >
-                <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
-                  {/* Thumbnail */}
+                <div className="flex flex-col lg:flex-row">
+                  {/* Thumbnail — bigger */}
                   {item.image && (
                     <div
-                      className="shrink-0 rounded-xl overflow-hidden"
-                      style={{ width: 160, height: 110, background: '#F1F5F9' }}
+                      className="shrink-0 overflow-hidden lg:rounded-none rounded-t-2xl"
+                      style={{ width: '100%', maxWidth: 280, minHeight: 200 }}
                     >
                       <Image
                         src={item.image}
                         alt={item.title}
-                        width={160}
-                        height={110}
+                        width={280}
+                        height={200}
                         className="w-full h-full object-cover"
+                        style={{ minHeight: 200 }}
                       />
                     </div>
                   )}
 
-                  {/* Badge mobile */}
-                  <div className="flex items-center gap-3 shrink-0 lg:hidden">
-                    <span
-                      className="px-3 py-1 rounded-full text-sm font-bold"
-                      style={{ background: 'rgba(2,16,151,0.08)', color: 'var(--primary-500)' }}
-                    >
-                      {item.source}
-                    </span>
-                    <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      {item.date}
-                    </span>
-                  </div>
-
-                  {/* Divider (desktop) */}
-                  <div
-                    className="hidden lg:block w-px h-16 shrink-0"
-                    style={{ background: 'var(--border)' }}
-                  />
-
                   {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    {/* Badge desktop */}
-                    <div className="hidden lg:flex items-center gap-3 mb-2">
+                  <div className="flex-1 min-w-0 px-6 py-6 lg:px-8 lg:py-6">
+                    {/* Badge */}
+                    <div className="flex items-center gap-3 mb-3">
                       <span
-                        className="px-3 py-1 rounded-full text-sm font-bold"
+                        className="px-4 py-1.5 rounded-full text-base font-bold"
                         style={{ background: 'rgba(2,16,151,0.08)', color: 'var(--primary-500)' }}
                       >
                         {item.source}
                       </span>
-                      <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                      <span className="text-base font-medium" style={{ color: 'var(--text-secondary)' }}>
                         {item.date}
                       </span>
                     </div>
                     <h3
-                      className="text-lg lg:text-xl font-bold mb-1.5 leading-snug"
+                      className="text-xl lg:text-2xl font-bold mb-3 leading-snug"
                       style={{ color: 'var(--text-primary)' }}
                     >
                       {item.title}
                     </h3>
                     <p
-                      className="text-sm leading-relaxed"
+                      className="text-base leading-relaxed"
                       style={{ color: 'var(--text-body)' }}
                     >
                       {item.summary}
                     </p>
                   </div>
 
-                  {/* Right: all news items list for context */}
-                  <div className="hidden xl:flex flex-col gap-2 shrink-0 w-56">
-                    {NEWS_ITEMS.map((n, i) => (
+                  {/* Right: news selection — moved toward center, more detailed */}
+                  <div className="hidden xl:flex flex-col shrink-0 border-l" style={{ width: 300, borderColor: 'var(--border)' }}>
+                    {NEWS_ITEMS.map((n, idx) => (
                       <button
-                        key={i}
-                        onClick={() => setCurrent(i)}
-                        className="text-left px-3 py-2 rounded-xl transition-all duration-200 truncate text-sm"
+                        key={idx}
+                        onClick={() => setCurrent(idx)}
+                        className="text-left px-5 py-4 transition-all duration-200 border-b last:border-b-0"
                         style={{
-                          background: i === current ? 'rgba(2,16,151,0.08)' : 'transparent',
-                          color: i === current ? 'var(--primary-500)' : 'var(--text-secondary)',
-                          fontWeight: i === current ? 700 : 400,
-                          border: i === current ? '1px solid rgba(2,16,151,0.18)' : '1px solid transparent',
+                          background: idx === current ? 'rgba(2,16,151,0.06)' : 'transparent',
+                          borderColor: 'var(--border)',
+                          borderLeft: idx === current ? '3px solid var(--primary-500)' : '3px solid transparent',
                         }}
                       >
-                        {n.title}
+                        <p
+                          className="text-sm font-bold mb-1 leading-snug line-clamp-2"
+                          style={{ color: idx === current ? 'var(--primary-500)' : 'var(--text-primary)' }}
+                        >
+                          {n.title}
+                        </p>
+                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                          {n.source} · {n.date}
+                        </p>
                       </button>
                     ))}
                   </div>

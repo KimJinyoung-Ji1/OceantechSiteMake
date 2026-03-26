@@ -39,14 +39,14 @@ export default function Footer({ locale }: FooterProps) {
       style={{ background: '#0F172A' }}
       aria-label="푸터"
     >
-      <div className="mx-auto w-full max-w-[1920px] px-8 lg:px-24 py-16 lg:py-20">
+      <div className="mx-auto w-full max-w-[1920px] px-8 lg:px-24 py-8 lg:py-10">
         {/* 4-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-6 lg:gap-8">
 
           {/* Column 1 — Company Info */}
           <div>
             {/* Logo image */}
-            <div className="mb-6">
+            <div className="mb-3">
               <Image
                 src="/images/logo-brand.png"
                 alt="오션테크 로고"
@@ -60,21 +60,21 @@ export default function Footer({ locale }: FooterProps) {
             </div>
 
             {/* Slogan */}
-            <p className="text-base mb-6 leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <p className="text-sm mb-3 leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
               {SITE_CONFIG.company.slogan}
             </p>
 
             {/* Company details */}
-            <ul className="space-y-2.5" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              <li className="flex gap-2 text-base">
+            <ul className="space-y-1.5" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              <li className="flex gap-2 text-sm">
                 <span className="shrink-0" style={{ color: 'rgba(255,255,255,0.3)' }}>{t.footer.ceo}:</span>
                 <span>{SITE_CONFIG.company.ceo}</span>
               </li>
-              <li className="flex gap-2 text-base">
+              <li className="flex gap-2 text-sm">
                 <span className="shrink-0" style={{ color: 'rgba(255,255,255,0.3)' }}>{t.footer.bizNo}:</span>
                 <span>{SITE_CONFIG.company.bizNo}</span>
               </li>
-              <li className="flex gap-2 text-base">
+              <li className="flex gap-2 text-sm">
                 <span className="shrink-0" style={{ color: 'rgba(255,255,255,0.3)' }}>{t.footer.tel}:</span>
                 <a
                   href={`tel:${SITE_CONFIG.contact.tel}`}
@@ -83,7 +83,7 @@ export default function Footer({ locale }: FooterProps) {
                   {SITE_CONFIG.contact.tel}
                 </a>
               </li>
-              <li className="flex gap-2 text-base">
+              <li className="flex gap-2 text-sm">
                 <span className="shrink-0" style={{ color: 'rgba(255,255,255,0.3)' }}>{t.footer.email}:</span>
                 <a
                   href={`mailto:${SITE_CONFIG.contact.email}`}
@@ -92,7 +92,7 @@ export default function Footer({ locale }: FooterProps) {
                   {SITE_CONFIG.contact.email}
                 </a>
               </li>
-              <li className="flex gap-2 text-base">
+              <li className="flex gap-2 text-sm">
                 <span className="shrink-0" style={{ color: 'rgba(255,255,255,0.3)' }}>
                   {locale === 'en' ? 'Address:' : '주소:'}
                 </span>
@@ -102,7 +102,7 @@ export default function Footer({ locale }: FooterProps) {
 
 
             {/* All Green cert badges grouped together */}
-            <div className="mt-6 flex flex-col gap-2">
+            <div className="mt-3 flex flex-col gap-1.5">
               <div
                 className="flex items-center gap-2 rounded-xl px-3 py-2.5"
                 style={{
@@ -160,17 +160,17 @@ export default function Footer({ locale }: FooterProps) {
           {/* Column 2 — Company links */}
           <div>
             <h3
-              className="text-sm font-black uppercase tracking-[0.22em] mb-6"
+              className="text-xs font-black uppercase tracking-[0.22em] mb-3"
               style={{ color: 'rgba(255,255,255,0.35)' }}
             >
               {t.footer.links}
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-base transition-colors hover:text-[#03E9F8]"
+                    className="text-sm transition-colors hover:text-[#03E9F8]"
                     style={{ color: 'rgba(255,255,255,0.5)' }}
                   >
                     {link.label}
@@ -183,17 +183,17 @@ export default function Footer({ locale }: FooterProps) {
           {/* Column 3 — Technology links */}
           <div>
             <h3
-              className="text-sm font-black uppercase tracking-[0.22em] mb-6"
+              className="text-xs font-black uppercase tracking-[0.22em] mb-3"
               style={{ color: 'rgba(255,255,255,0.35)' }}
             >
               {t.footer.technology}
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               {techLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-base transition-colors hover:text-[#03E9F8]"
+                    className="text-sm transition-colors hover:text-[#03E9F8]"
                     style={{ color: 'rgba(255,255,255,0.5)' }}
                   >
                     {link.label}
@@ -206,17 +206,17 @@ export default function Footer({ locale }: FooterProps) {
           {/* Column 4 — Support links */}
           <div>
             <h3
-              className="text-sm font-black uppercase tracking-[0.22em] mb-6"
+              className="text-xs font-black uppercase tracking-[0.22em] mb-3"
               style={{ color: 'rgba(255,255,255,0.35)' }}
             >
               {locale === 'en' ? 'Support' : '고객지원'}
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               {supportLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-base transition-colors hover:text-[#03E9F8]"
+                    className="text-sm transition-colors hover:text-[#03E9F8]"
                     style={{ color: 'rgba(255,255,255,0.5)' }}
                   >
                     {link.label}
@@ -230,7 +230,7 @@ export default function Footer({ locale }: FooterProps) {
 
         {/* Bottom bar */}
         <div
-          className="mt-14 pt-8 border-t"
+          className="mt-6 pt-5 border-t"
           style={{ borderColor: 'rgba(255,255,255,0.08)' }}
         >
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

@@ -52,7 +52,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
         </div>
 
         <div
-          className="rounded-3xl overflow-hidden"
+          className="rounded-3xl overflow-hidden max-w-3xl mx-auto"
           style={{
             border: '1px solid rgba(2,16,151,0.18)',
             boxShadow: '0 8px 40px rgba(2,16,151,0.10), 0 2px 8px rgba(0,0,0,0.06)',
@@ -61,38 +61,38 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
           {/* Header */}
           <div className="grid grid-cols-3">
             <div
-              className="px-4 py-4"
+              className="px-3 py-3 flex items-center justify-center"
               style={{
                 background: '#F0FDF9',
                 borderRight: '1px solid rgba(2,16,151,0.15)',
               }}
             >
-              <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#021097' }}>
+              <p className="text-sm font-bold uppercase tracking-wider text-center" style={{ color: '#021097' }}>
                 {isEn ? 'Category' : '항목'}
               </p>
             </div>
             <div
-              className="px-4 py-4 text-center"
+              className="px-3 py-3 text-center"
               style={{
                 background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
                 borderRight: '1px solid rgba(255,255,255,0.15)',
               }}
             >
-              <div className="flex items-center justify-center gap-2 mb-0.5">
+              <div className="flex items-center justify-center gap-1.5 mb-0.5">
                 <CheckIcon />
-                <p className="text-white font-bold text-base leading-tight">
+                <p className="text-white font-bold text-sm leading-tight">
                   {isEn ? 'Zinc Weight' : '아연추'}
                 </p>
               </div>
               <p className="text-white/75 text-xs">(주)오션테크</p>
             </div>
             <div
-              className="px-4 py-4 text-center"
+              className="px-3 py-3 text-center"
               style={{ background: 'linear-gradient(135deg, #374151 0%, #4B5563 100%)' }}
             >
-              <div className="flex items-center justify-center gap-2 mb-0.5">
+              <div className="flex items-center justify-center gap-1.5 mb-0.5">
                 <XIcon />
-                <p className="text-white font-bold text-base leading-tight">
+                <p className="text-white font-bold text-sm leading-tight">
                   {isEn ? 'Lead Weight' : '납추'}
                 </p>
               </div>
@@ -110,9 +110,9 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                 background: i % 2 === 0 ? '#FFFFFF' : '#F0FDF9',
               }}
             >
-              {/* Label */}
+              {/* Label — center aligned */}
               <div
-                className="px-4 py-3 font-semibold text-sm flex items-center"
+                className="px-3 py-2.5 font-semibold text-sm flex items-center justify-center text-center"
                 style={{
                   color: 'var(--gray-700)',
                   borderRight: '1px solid rgba(2,16,151,0.10)',
@@ -121,9 +121,9 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                 {isEn ? row.labelEn : row.labelKo}
               </div>
 
-              {/* Zinc */}
+              {/* Zinc — icon+text grouped and centered */}
               <div
-                className="px-4 py-3 flex items-center justify-start gap-2 border-r"
+                className="px-3 py-2.5 flex items-center justify-center gap-1.5 border-r"
                 style={{ borderColor: 'rgba(2,16,151,0.10)', background: 'rgba(1,72,200,0.04)' }}
               >
                 <CheckIcon />
@@ -132,8 +132,8 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                 </span>
               </div>
 
-              {/* Lead */}
-              <div className="px-4 py-3 flex items-center justify-start gap-2">
+              {/* Lead — icon+text grouped and centered */}
+              <div className="px-3 py-2.5 flex items-center justify-center gap-1.5">
                 <XIcon />
                 <span className="text-sm" style={{ color: '#6B7280' }}>
                   {row.lead}

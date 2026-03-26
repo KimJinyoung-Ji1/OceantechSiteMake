@@ -45,21 +45,21 @@ export default function OceanDivider({
         style={{ background: 'rgba(3,233,248,0.15)' }}
       />
 
-      {/* Fade from top section color into photo */}
+      {/* Fade from top section color into photo — longer, smoother */}
       <div
         className="absolute top-0 left-0 right-0 z-10"
         style={{
-          height: '45%',
-          background: `linear-gradient(to bottom, ${topColor}, transparent)`,
+          height: '55%',
+          background: `linear-gradient(to bottom, ${topColor} 0%, ${topColor}CC 15%, ${topColor}66 30%, transparent 55%)`,
         }}
       />
 
-      {/* Fade from photo into bottom section color */}
+      {/* Fade from photo into bottom section color — longer, smoother */}
       <div
         className="absolute bottom-0 left-0 right-0 z-10"
         style={{
-          height: '45%',
-          background: `linear-gradient(to top, ${bottomColor}, transparent)`,
+          height: '55%',
+          background: `linear-gradient(to top, ${bottomColor} 0%, ${bottomColor}CC 15%, ${bottomColor}66 30%, transparent 55%)`,
         }}
       />
     </div>

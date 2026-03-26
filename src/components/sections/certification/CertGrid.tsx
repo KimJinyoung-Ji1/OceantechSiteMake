@@ -104,23 +104,24 @@ export default function CertGrid({ locale }: CertGridProps) {
   return (
     <section className="py-16" aria-label="인증서 목록">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {certItems.map((item) => (
             <div
               key={item.key}
-              className="rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-[240px_1fr]"
+              className="rounded-2xl overflow-hidden flex flex-col"
               style={{
-                background: item.bgColor,
+                background: 'white',
                 border: `1px solid ${item.borderColor}`,
+                boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
               }}
             >
-              {/* Left: Large cert image */}
+              {/* Top: Cert image */}
               <button
                 className="relative cursor-pointer hover:opacity-90 transition-opacity"
                 style={{
                   minHeight: '200px',
-                  background: 'rgba(255,255,255,0.7)',
-                  borderRight: `1px solid ${item.borderColor}`,
+                  background: item.bgColor,
+                  borderBottom: `1px solid ${item.borderColor}`,
                 }}
                 onClick={() => setModal({ src: item.src, title: isEn ? item.titleEn : item.titleKo })}
                 aria-label={`${isEn ? item.titleEn : item.titleKo} 원본 보기`}
@@ -130,18 +131,18 @@ export default function CertGrid({ locale }: CertGridProps) {
                   alt={isEn ? item.titleEn : item.titleKo}
                   fill
                   className="object-contain p-4"
-                  sizes="(max-width: 1024px) 100vw, 240px"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div
-                  className="absolute bottom-2 right-2 px-2 py-1 rounded-md text-xs font-medium"
+                  className="absolute bottom-2 right-2 px-2 py-0.5 rounded text-xs font-medium"
                   style={{ background: 'rgba(0,0,0,0.45)', color: 'white' }}
                 >
                   {isEn ? 'Click to enlarge' : '클릭하여 확대'}
                 </div>
               </button>
 
-              {/* Right: Description */}
-              <div className="p-6 flex flex-col justify-center gap-3">
+              {/* Bottom: Description */}
+              <div className="p-5 flex flex-col gap-2 flex-1">
                 <div className="flex items-center gap-2 flex-wrap">
                   <span
                     className="inline-flex px-2.5 py-0.5 rounded-full text-xs font-bold"
@@ -149,14 +150,14 @@ export default function CertGrid({ locale }: CertGridProps) {
                   >
                     {isEn ? item.titleEn : item.titleKo}
                   </span>
-                  <span className="text-sm font-mono" style={{ color: item.accentColor }}>
+                  <span className="text-xs font-mono" style={{ color: item.accentColor }}>
                     {item.numberKo}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold" style={{ color: 'var(--gray-900)' }}>
+                <h3 className="text-lg font-bold" style={{ color: 'var(--gray-900)' }}>
                   {isEn ? item.titleEn : item.titleKo}
                 </h3>
-                <p className="text-base leading-relaxed" style={{ color: 'var(--gray-600)' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)' }}>
                   {isEn ? item.descEn : item.descKo}
                 </p>
               </div>

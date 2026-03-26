@@ -14,9 +14,9 @@ export default function CTASection({ locale }: CTASectionProps) {
 
   return (
     <section
-      className="py-24 px-4 relative overflow-hidden"
+      className="pt-0 pb-24 px-4 relative overflow-hidden"
       aria-label="문의 유도 섹션"
-      style={{ background: 'linear-gradient(135deg, rgba(2,16,151,0.92) 0%, rgba(1,72,200,0.88) 50%, rgba(3,233,248,0.90) 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #ffffff 0%, rgba(2,16,151,0.92) 12%, rgba(1,72,200,0.88) 55%, rgba(3,233,248,0.90) 100%)' }}
     >
       {/* Ocean background image with low opacity */}
       <div className="absolute inset-0 z-0">
@@ -42,7 +42,7 @@ export default function CTASection({ locale }: CTASectionProps) {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center pt-16">
         <h2
           className="text-3xl lg:text-5xl font-extrabold mb-6 leading-tight text-white"
         >

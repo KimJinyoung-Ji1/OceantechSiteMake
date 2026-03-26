@@ -13,29 +13,15 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
   return (
     <section id="ceo" className="py-20 lg:py-28" aria-label="CEO 인사말">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="flex flex-col items-center text-center">
-          {/* CEO Avatar */}
-          <div
-            className="w-24 h-24 rounded-full flex flex-col items-center justify-center mb-6 shrink-0"
-            style={{
-              background: 'linear-gradient(135deg, var(--primary-100, #dbeafe) 0%, var(--primary-200, #bfdbfe) 100%)',
-              border: '3px solid var(--primary-300, #93c5fd)',
-            }}
-          >
-            <svg width="40" height="40" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-              <circle cx="32" cy="24" r="14" fill="var(--primary-300, #93c5fd)" />
-              <ellipse cx="32" cy="52" rx="22" ry="12" fill="var(--primary-200, #bfdbfe)" />
-            </svg>
-          </div>
-
+        <div className="flex flex-col items-start text-left max-w-3xl">
           <p
-            className="text-base font-bold uppercase tracking-widest mb-2"
+            className="text-base font-bold uppercase tracking-widest mb-6"
             style={{ color: 'var(--primary-500, #3b82f6)' }}
           >
             {t.about.ceo.title}
           </p>
 
-          <div className="max-w-3xl space-y-5">
+          <div className="space-y-5 w-full">
             {lines.map((line, i) => {
               if (!line.trim()) return null;
               if (i === 0) {

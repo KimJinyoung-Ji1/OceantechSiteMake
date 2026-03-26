@@ -3,7 +3,6 @@ import { isValidLocale, getTranslation } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 import PageHero from '@/components/sections/PageHero';
 import TechPatentsSection from '@/components/sections/technology/PatentsSection';
-import TechTestReportsSection from '@/components/sections/technology/TestReportsSection';
 import TechSvhcSection from '@/components/sections/technology/SvhcSection';
 
 export const metadata = { title: '기술력' };
@@ -25,7 +24,6 @@ export default async function TechnologyPage(props: PageProps<'/[locale]/technol
       />
       <TechSvhcSection locale={l} />
       <TechPatentsSection locale={l} />
-      <TechTestReportsSection locale={l} />
     </>
   );
 }
