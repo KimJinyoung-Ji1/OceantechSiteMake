@@ -3,8 +3,6 @@
 import { useState } from 'react';
 import type { Locale } from '@/lib/i18n';
 import { getTranslation } from '@/lib/i18n';
-import { getSupabaseClient } from '@/lib/supabase';
-
 interface ContactFormProps {
   locale: Locale;
   onSuccess: () => void;
@@ -61,26 +59,21 @@ export default function ContactForm({ locale, onSuccess }: ContactFormProps) {
       return;
     }
 
-    const client = getSupabaseClient();
-    if (!client) {
-      setError('서비스 연결에 실패했습니다. 잠시 후 다시 시도해주세요.');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) throw new Error('fail');
+    } catch {
+      setError(isEn ? 'Failed to send. Please try again.' : '전송에 실패했습니다. 다시 시도해 주세요.');
       setLoading(false);
       return;
     }
-    const { error: sbError } = await client.from('inquiries').insert({
-      name: values.name,
-      email: values.email,
-      phone: values.phone || null,
-      inquiry_type: values.type || null,
-      content: values.message,
-    });
 
     setLoading(false);
-
-    if (sbError) {
-      setError(isEn ? 'Failed to send. Please try again.' : '전송에 실패했습니다. 다시 시도해 주세요.');
-      return;
-    }
 
     setValues({ name: '', email: '', phone: '', type: '', message: '' });
     onSuccess();
