@@ -23,9 +23,9 @@ export default async function TechnologyPage(props: PageProps<'/[locale]/technol
         subtitle={t.technology.subtitle}
         breadcrumb={[{ label: '홈', href: '/' }, { label: t.technology.title }]}
       />
+      <TechSvhcSection locale={l} />
       <TechPatentsSection locale={l} />
       <TechTestReportsSection locale={l} />
-      <TechSvhcSection locale={l} />
     </>
   );
 }

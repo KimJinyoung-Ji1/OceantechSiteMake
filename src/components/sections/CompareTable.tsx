@@ -24,7 +24,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
 
   return (
     <section
-      className="py-20 lg:py-28"
+      className="py-14 lg:py-20"
       style={{ background: 'var(--background)' }}
       aria-label="아연추 vs 납추 비교"
     >
@@ -88,7 +88,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
             >
               {/* Label */}
               <div
-                className="px-6 py-5 font-semibold text-base flex items-center"
+                className="px-6 py-3 font-semibold text-base flex items-center"
                 style={{
                   color: 'var(--text-primary)',
                   borderRight: '1px solid rgba(14,173,135,0.12)',
@@ -99,7 +99,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
 
               {/* Zinc value */}
               <div
-                className="px-6 py-5 flex items-center justify-center gap-2 border-r"
+                className="px-6 py-3 flex items-center justify-center gap-2 border-r"
                 style={{ borderColor: 'rgba(14,173,135,0.12)' }}
               >
                 <CheckIcon />
@@ -112,7 +112,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
               </div>
 
               {/* Lead value */}
-              <div className="px-6 py-5 flex items-center justify-center gap-2">
+              <div className="px-6 py-3 flex items-center justify-center gap-2">
                 <XIcon />
                 <span
                   className="text-lg font-bold"

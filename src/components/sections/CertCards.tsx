@@ -72,12 +72,12 @@ export default function CertCards({ locale }: CertCardsProps) {
 
   return (
     <section
-      className="py-20 lg:py-28 px-6 lg:px-16"
+      className="py-12 lg:py-16 px-6 lg:px-16"
       style={{ background: 'var(--background-alt)' }}
       aria-label="인증 및 수상"
     >
       <div className="max-w-[1600px] mx-auto">
-        <div className="text-center mb-14">
+        <div className="text-center mb-8">
           <p
             className="text-base font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
@@ -92,7 +92,7 @@ export default function CertCards({ locale }: CertCardsProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {certItems.map((cert) => (
             <article
               key={cert.key}
@@ -119,7 +119,7 @@ export default function CertCards({ locale }: CertCardsProps) {
               {/* Cert image — large, readable, white bg */}
               <div
                 className="w-full bg-white flex items-center justify-center overflow-hidden"
-                style={{ height: 220, borderBottom: `1px solid ${cert.accentBorder}` }}
+                style={{ height: 160, borderBottom: `1px solid ${cert.accentBorder}` }}
               >
                 <Image
                   src={cert.image}
@@ -132,7 +132,7 @@ export default function CertCards({ locale }: CertCardsProps) {
               </div>
 
               {/* Info — centered */}
-              <div className="p-5 text-center w-full">
+              <div className="p-3 text-center w-full">
                 <h3
                   className="font-bold text-base mb-1.5"
                   style={{ color: 'var(--text-primary)' }}

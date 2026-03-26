@@ -8,7 +8,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
   const isEn = locale === 'en';
 
   return (
-    <section className="py-20 lg:py-28" aria-label="왜 아연인가">
+    <section className="py-12 lg:py-16" aria-label="왜 아연인가">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
@@ -71,14 +71,14 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
 
             <div
               className="p-6 rounded-2xl flex flex-col items-center text-center gap-3"
-              style={{ background: 'rgba(23,233,181,0.08)', border: '1px solid rgba(23,233,181,0.3)' }}
+              style={{ background: 'rgba(122,237,200,0.10)', border: '1px solid rgba(122,237,200,0.35)' }}
             >
               <div
                 className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(23,233,181,0.15)' }}
+                style={{ background: 'rgba(122,237,200,0.18)' }}
               >
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                  <circle cx="14" cy="14" r="12" stroke="var(--secondary-500,#17e9b5)" strokeWidth="2" />
+                  <circle cx="14" cy="14" r="12" stroke="var(--secondary-500,#7AEDC8)" strokeWidth="2" />
                   <path d="M8 14l4 4 8-8" stroke="var(--secondary-500)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>

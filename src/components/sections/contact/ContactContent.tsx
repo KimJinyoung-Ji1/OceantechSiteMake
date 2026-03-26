@@ -72,7 +72,7 @@ function KakaoMap() {
       setTimeout(() => {
         clearInterval(interval);
         if (!cancelled && !window.kakao?.maps) setMapError(true);
-      }, 10000);
+      }, 15000);
     }
 
     const scriptId = 'kakao-map-sdk';
@@ -80,7 +80,7 @@ function KakaoMap() {
     if (!existing) {
       const script = document.createElement('script');
       script.id = scriptId;
-      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&autoload=false`;
+      script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&autoload=false`;
       script.async = true;
       script.onload = () => waitForKakaoAndInit();
       script.onerror = () => {
@@ -194,9 +194,9 @@ export default function ContactContent({ locale }: ContactContentProps) {
   ];
 
   return (
-    <section className="py-12 lg:py-16 px-6 lg:px-16" aria-label="문의하기">
+    <section className="py-8 lg:py-12 px-6 lg:px-16" aria-label="문의하기">
       <div className="max-w-[1600px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10">
           {/* Left — Form */}
           <ContactForm locale={locale} onSuccess={handleSuccess} />
 
@@ -208,7 +208,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
               style={{
                 background: 'var(--background-alt)',
                 border: '1px solid var(--border)',
-                boxShadow: '0 2px 12px rgba(2,16,151,0.04)',
+                boxShadow: '0 2px 12px rgba(12,114,135,0.05)',
               }}
             >
               <h3 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>

@@ -41,15 +41,15 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(125deg, rgba(12,114,135,0.90) 0%, rgba(17,168,143,0.75) 45%, rgba(52,217,181,0.35) 100%)',
+              'linear-gradient(125deg, rgba(2,20,40,0.85) 0%, rgba(12,114,135,0.70) 45%, rgba(2,20,40,0.60) 100%)',
           }}
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-16 max-w-[1600px] mx-auto py-16 sm:py-24 lg:py-36">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-16 max-w-[1600px] mx-auto py-16 sm:py-20 lg:py-28">
         <div
-          className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center gap-14 lg:gap-16"
+          className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center gap-8 lg:gap-10"
         >
           {/* LEFT — Text */}
           <div>
@@ -71,7 +71,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
 
             <p
               className="text-2xl font-medium mb-6"
-              style={{ color: 'var(--primary-300)' }}
+              style={{ color: '#7AEDC8' }}
             >
               {t.hero.subtitle}
             </p>
@@ -122,7 +122,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           </div>
 
           {/* RIGHT — Premium Cert Cards */}
-          <div className="hidden lg:flex flex-col gap-5 items-stretch">
+          <div className="hidden lg:flex flex-col gap-3 items-stretch">
             {/* Card 1: 녹색기술인증서 */}
             <div
               className="group rounded-[24px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
@@ -140,7 +140,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 style={{ background: 'linear-gradient(90deg, #0C7287, #11A88F, #34D9B5)' }}
               />
               {/* Cert image area */}
-              <div className="relative w-full bg-white" style={{ height: '180px' }}>
+              <div className="relative w-full bg-white" style={{ height: '140px' }}>
                 <Image
                   src="/documents/certs/green-tech-cert.png"
                   alt="녹색기술인증서"
@@ -156,7 +156,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               {/* Divider */}
               <div className="mx-5" style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(52,217,181,0.35), transparent)' }} />
               {/* Cert info */}
-              <div className="px-6 py-4 flex items-start gap-3">
+              <div className="px-4 py-3 flex items-start gap-3">
                 <div
                   className="mt-0.5 w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
                   style={{ background: 'rgba(52,217,181,0.12)', border: '1px solid rgba(52,217,181,0.3)' }}
@@ -197,7 +197,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 style={{ background: 'linear-gradient(90deg, #0C7287, #11A88F, #34D9B5)' }}
               />
               {/* Cert image area */}
-              <div className="relative w-full bg-white" style={{ height: '180px' }}>
+              <div className="relative w-full bg-white" style={{ height: '140px' }}>
                 <Image
                   src="/documents/certs/green-product-cert.png"
                   alt="녹색기술제품확인서"
@@ -213,7 +213,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               {/* Divider */}
               <div className="mx-5" style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(52,217,181,0.35), transparent)' }} />
               {/* Cert info */}
-              <div className="px-6 py-4 flex items-start gap-3">
+              <div className="px-4 py-3 flex items-start gap-3">
                 <div
                   className="mt-0.5 w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
                   style={{ background: 'rgba(52,217,181,0.12)', border: '1px solid rgba(52,217,181,0.3)' }}

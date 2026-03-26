@@ -34,7 +34,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
 
   return (
     <section
-      className="py-20 lg:py-28"
+      className="py-12 lg:py-16"
       style={{ background: 'var(--gray-50)' }}
       aria-label="납추 vs 아연추 비교"
     >

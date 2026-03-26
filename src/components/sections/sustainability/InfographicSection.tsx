@@ -52,7 +52,7 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
   const isEn = locale === 'en';
 
   return (
-    <section className="py-20 lg:py-28" aria-label="환경 영향">
+    <section className="py-12 lg:py-16" aria-label="환경 영향">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div className="text-center mb-12">
           <p
@@ -79,7 +79,7 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
             >
               <div
                 className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                style={{ background: 'rgba(23,233,181,0.08)' }}
+                style={{ background: 'rgba(122,237,200,0.10)' }}
               >
                 {item.icon}
               </div>

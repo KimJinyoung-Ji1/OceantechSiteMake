@@ -9,7 +9,7 @@ export default function SvhcHighlight({ locale }: SvhcHighlightProps) {
   const isEn = locale === 'en';
 
   return (
-    <section className="py-20 lg:py-28" aria-label="SVHC 235종 불검출">
+    <section className="py-12 lg:py-16" aria-label="SVHC 235종 불검출">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div
           className="rounded-3xl p-10 lg:p-16 text-center"

@@ -30,7 +30,7 @@ export default function TestReportsSection({ locale }: TestReportsSectionProps) 
 
   return (
     <section
-      className="py-20 lg:py-28"
+      className="py-12 lg:py-16"
       style={{ background: 'var(--gray-50)' }}
       aria-label="시험성적서"
     >
