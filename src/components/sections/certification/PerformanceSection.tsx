@@ -27,19 +27,19 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
 
   return (
     <section
-      className="py-20 lg:py-28"
-      style={{ background: 'var(--gray-50)' }}
+      className="py-16 lg:py-20"
+      style={{ background: 'var(--background-alt)' }}
       aria-label="실적"
     >
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="text-center mb-14">
+        <div className="text-center mb-12">
           <p
-            className="text-base font-bold uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'PERFORMANCE' : '주요 실적'}
           </p>
-          <h2 className="text-6xl lg:text-7xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Contract & Delivery Record' : '납품 계약 실적'}
           </h2>
         </div>

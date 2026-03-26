@@ -125,7 +125,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           <div className="hidden lg:flex flex-col gap-5 items-center">
             {/* Card 1: 녹색기술인증서 */}
             <div
-              className="group rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col items-center"
+              className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col items-center"
               style={{
                 background: 'rgba(255,255,255,0.15)',
                 backdropFilter: 'blur(16px)',
@@ -145,6 +145,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                   alt="녹색기술인증서"
                   fill
                   className="object-contain p-4 group-hover:scale-[1.04] transition-transform duration-300"
+                  sizes="260px"
                 />
               </div>
               {/* Horizontal divider */}
@@ -168,7 +169,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
 
             {/* Card 2: 녹색기술제품 확인서 */}
             <div
-              className="group rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col items-center"
+              className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col items-center"
               style={{
                 background: 'rgba(255,255,255,0.15)',
                 backdropFilter: 'blur(16px)',
@@ -188,6 +189,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                   alt="녹색기술제품확인서"
                   fill
                   className="object-contain p-4 group-hover:scale-[1.04] transition-transform duration-300"
+                  sizes="260px"
                 />
               </div>
               {/* Horizontal divider */}

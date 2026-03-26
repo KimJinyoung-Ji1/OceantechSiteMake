@@ -53,6 +53,7 @@ export default function Footer({ locale }: FooterProps) {
                 width={160}
                 height={40}
                 className="h-10 w-auto object-contain brightness-0 invert"
+                sizes="160px"
               />
               <p className="text-sm mt-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
                 {SITE_CONFIG.company.name}

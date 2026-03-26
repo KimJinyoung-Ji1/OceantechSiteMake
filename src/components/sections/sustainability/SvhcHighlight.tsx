@@ -9,10 +9,10 @@ export default function SvhcHighlight({ locale }: SvhcHighlightProps) {
   const isEn = locale === 'en';
 
   return (
-    <section className="py-12 lg:py-16" aria-label="SVHC 235종 불검출">
+    <section className="py-16 lg:py-20" aria-label="SVHC 235종 불검출">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div
-          className="rounded-3xl p-10 lg:p-16 text-center"
+          className="rounded-2xl p-10 lg:p-16 text-center"
           style={{
             background: 'linear-gradient(135deg, var(--secondary-900,#064e3b) 0%, var(--secondary-700,#047857) 100%)',
           }}
@@ -34,7 +34,7 @@ export default function SvhcHighlight({ locale }: SvhcHighlightProps) {
               {isEn ? 'types' : '종'}
             </span>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">
+          <h2 className="text-4xl lg:text-5xl font-black text-white mb-4">
             {isEn ? 'SVHC Substances Not Detected' : 'SVHC 유해물질 미검출'}
           </h2>
           <p className="text-white/70 max-w-4xl mx-auto text-lg leading-relaxed">

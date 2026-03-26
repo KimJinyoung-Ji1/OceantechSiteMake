@@ -121,12 +121,12 @@ export default function VisionSection({ locale }: VisionSectionProps) {
   return (
     <section
       id="vision"
-      className="py-20 lg:py-28 px-6 lg:px-24 text-center"
+      className="py-16 lg:py-20 px-6 lg:px-24 text-center"
       style={{ background: 'var(--background-alt)' }}
       aria-label="비전"
     >
       <div className="max-w-[1920px] mx-auto">
-        <div className="mb-14">
+        <div className="mb-12">
           <p
             className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
@@ -134,7 +134,7 @@ export default function VisionSection({ locale }: VisionSectionProps) {
             {t.about.vision.title}
           </p>
           <h2
-            className="text-5xl lg:text-6xl font-black"
+            className="text-4xl lg:text-5xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             {t.about.vision.subtitle}
@@ -145,7 +145,7 @@ export default function VisionSection({ locale }: VisionSectionProps) {
           {visionCards.map((card) => (
             <article
               key={card.key}
-              className="p-10 rounded-3xl flex flex-col items-center gap-5 hover:-translate-y-2 transition-transform duration-300"
+              className="p-10 rounded-2xl flex flex-col items-center gap-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
               style={{
                 background: card.gradBg,
                 border: `1px solid ${card.border}`,
@@ -158,7 +158,7 @@ export default function VisionSection({ locale }: VisionSectionProps) {
               >
                 {card.icon}
               </div>
-              <h3 className="text-3xl font-black" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 {locale === 'en' ? card.labelEn : card.labelKo}
               </h3>
               <p className="text-lg leading-relaxed" style={{ color: 'var(--text-body)' }}>

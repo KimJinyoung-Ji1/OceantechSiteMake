@@ -34,25 +34,26 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
 
   return (
     <section
-      className="py-12 lg:py-16"
-      style={{ background: 'var(--gray-50)' }}
+      className="py-16 lg:py-20"
+      style={{ background: 'var(--background-alt)' }}
       aria-label="납추 vs 아연추 비교"
     >
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-10">
           <p
-            className="text-2xl font-black uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'COMPARISON' : '상세 비교'}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Zinc Weight vs Lead Weight' : '아연추 vs 납추'}
           </h2>
         </div>
 
+        <div className="overflow-x-auto">
         <div
-          className="rounded-3xl overflow-hidden max-w-3xl mx-auto"
+          className="rounded-2xl overflow-hidden max-w-3xl mx-auto min-w-[400px]"
           style={{
             border: '1px solid rgba(2,16,151,0.18)',
             boxShadow: '0 8px 40px rgba(2,16,151,0.10), 0 2px 8px rgba(0,0,0,0.06)',
@@ -141,6 +142,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

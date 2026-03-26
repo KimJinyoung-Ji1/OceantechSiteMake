@@ -116,23 +116,23 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
   ];
 
   return (
-    <section className="py-12 lg:py-16" aria-label="특허현황 및 시험성적서">
+    <section className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="특허현황 및 시험성적서">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-12">
           <p
-            className="text-base font-bold uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'PATENTS & TEST REPORTS' : '특허현황 및 시험성적서'}
           </p>
-          <h2 className="text-5xl lg:text-6xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn
               ? `${patents.length} Patents · ${designPatents.reduce((a, d) => a + d.count, 0)} Design Patents · 2 Test Reports`
               : `특허 ${patents.length}건 · 디자인특허 ${designPatents.reduce((a, d) => a + d.count, 0)}건 · 시험성적서 2건`}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {gridItems.map((item) => (
             <article
               key={item.key}

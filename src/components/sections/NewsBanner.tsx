@@ -74,7 +74,7 @@ export default function NewsBanner() {
       <div className="max-w-[1920px] mx-auto">
         <div className="text-center mb-6">
           <p
-            className="text-2xl font-bold uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             NEWS
@@ -88,7 +88,7 @@ export default function NewsBanner() {
         </div>
 
         <div
-          className="relative rounded-3xl overflow-hidden"
+          className="relative rounded-2xl overflow-hidden"
           style={{ background: 'var(--background-alt)', border: '1px solid var(--border)' }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -117,6 +117,7 @@ export default function NewsBanner() {
                         height={200}
                         className="w-full h-full object-cover"
                         style={{ minHeight: 200 }}
+                        sizes="(max-width: 1024px) 100vw, 280px"
                       />
                     </div>
                   )}

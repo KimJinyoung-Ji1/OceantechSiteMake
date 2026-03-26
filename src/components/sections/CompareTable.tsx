@@ -24,25 +24,26 @@ export default function CompareTable({ locale }: CompareTableProps) {
 
   return (
     <section
-      className="py-14 lg:py-20"
+      className="py-16 lg:py-20"
       style={{ background: 'var(--background)' }}
       aria-label="아연추 vs 납추 비교"
     >
       <div className="max-w-[1920px] mx-auto px-8 lg:px-24">
         <div className="text-center mb-10">
           <p
-            className="text-3xl font-bold uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {locale === 'en' ? 'COMPARISON' : '성능 비교'}
           </p>
-          <h2 className="text-6xl lg:text-8xl font-extrabold" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
             {t.compare.title}
           </h2>
         </div>
 
+        <div className="overflow-x-auto">
         <div
-          className="rounded-3xl overflow-hidden shadow-xl"
+          className="rounded-2xl overflow-hidden shadow-lg min-w-[480px]"
           style={{ border: '1px solid rgba(14,173,135,0.20)' }}
         >
           {/* Column headers */}
@@ -123,6 +124,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

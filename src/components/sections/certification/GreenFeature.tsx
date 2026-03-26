@@ -12,12 +12,13 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
 
   return (
     <section
-      className="py-12"
+      className="py-16 lg:py-20"
+      style={{ background: 'var(--background)' }}
       aria-label="녹색기술인증 강조"
     >
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div
-          className="rounded-3xl p-8 lg:p-12 flex flex-col items-center text-center gap-6"
+          className="rounded-2xl p-8 lg:p-12 flex flex-col items-center text-center gap-6"
           style={{
             background: 'linear-gradient(135deg, rgba(2,16,151,0.06) 0%, rgba(23,233,181,0.08) 100%)',
             border: '2px solid rgba(23,233,181,0.3)',
@@ -52,7 +53,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
           </div>
 
           <h2
-            className="text-3xl lg:text-4xl font-extrabold"
+            className="text-4xl lg:text-5xl font-black"
             style={{ color: 'var(--gray-900)' }}
           >
             {isEn

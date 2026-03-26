@@ -28,7 +28,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
 
   return (
     <section
-      className="py-20 lg:py-28 px-6 lg:px-24 text-center"
+      className="py-16 lg:py-20 px-6 lg:px-24 text-center"
       style={{ background: 'var(--background)' }}
       aria-label="회사 개요"
     >
@@ -41,7 +41,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
             {isEn ? 'Company Overview' : '회사 개요'}
           </p>
           <h2
-            className="text-5xl lg:text-6xl font-black"
+            className="text-4xl lg:text-5xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             {isEn ? '(주)오션테크 / Ocean Tech Inc.' : '(주)오션테크'}
@@ -49,7 +49,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
         </div>
 
         <div
-          className="rounded-3xl overflow-hidden shadow-sm"
+          className="rounded-2xl overflow-hidden shadow-sm"
           style={{ border: '1px solid var(--border)', maxWidth: '860px', margin: '0 auto' }}
         >
           {rows.map((row, i) => (

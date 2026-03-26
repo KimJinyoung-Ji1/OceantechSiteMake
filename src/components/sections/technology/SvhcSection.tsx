@@ -15,10 +15,10 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="py-12 lg:py-16" aria-label="SVHC 불검출">
+    <section className="py-16 lg:py-20" aria-label="SVHC 불검출">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div
-          className="rounded-3xl p-10 lg:p-14 max-w-4xl mx-auto"
+          className="rounded-2xl p-10 lg:p-14 max-w-4xl mx-auto"
           style={{
             background: 'linear-gradient(135deg, var(--primary-700,#1d4ed8) 0%, var(--primary-500,#3b82f6) 100%)',
           }}

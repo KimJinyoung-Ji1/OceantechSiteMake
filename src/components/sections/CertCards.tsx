@@ -72,31 +72,31 @@ export default function CertCards({ locale }: CertCardsProps) {
 
   return (
     <section
-      className="py-8 lg:py-12 px-8 lg:px-24"
+      className="py-16 lg:py-20 px-8 lg:px-24"
       style={{ background: 'var(--background-alt)' }}
       aria-label="인증 및 수상"
     >
       <div className="max-w-[1920px] mx-auto">
-        <div className="text-center mb-6">
+        <div className="text-center mb-10">
           <p
-            className="text-2xl font-bold uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.certification.title}
           </p>
           <h2
-            className="text-5xl lg:text-7xl font-black"
+            className="text-4xl lg:text-5xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             {t.certification.subtitle}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {certItems.map((cert) => (
             <article
               key={cert.key}
-              className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer bg-white relative flex flex-col items-center"
+              className="group rounded-2xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer bg-white relative flex flex-col items-center"
               style={{
                 border: `1px solid ${cert.accentBorder}`,
               }}

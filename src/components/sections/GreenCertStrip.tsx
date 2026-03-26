@@ -31,12 +31,13 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
               width={64}
               height={64}
               className="object-contain"
+              sizes="64px"
             />
           </div>
           {/* Center: title + description */}
           <div>
             <p
-              className="text-base font-bold uppercase tracking-widest mb-1"
+              className="text-lg font-bold uppercase tracking-widest mb-1"
               style={{ color: 'var(--secondary-700)' }}
             >
               {t.greenCert.badge}

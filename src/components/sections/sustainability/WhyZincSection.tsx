@@ -9,18 +9,18 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
   const isEn = locale === 'en';
 
   return (
-    <section className="py-10 lg:py-14" aria-label="왜 아연인가">
+    <section className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="왜 아연인가">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
             <p
-              className="text-base font-bold uppercase tracking-widest mb-3"
+              className="text-lg font-bold uppercase tracking-widest mb-3"
               style={{ color: 'var(--secondary-700,#047857)' }}
             >
               {isEn ? 'WHY ZINC?' : '왜 아연인가?'}
             </p>
             <h2
-              className="text-6xl lg:text-7xl font-black mb-6 leading-tight"
+              className="text-4xl lg:text-5xl font-black mb-6 leading-tight"
               style={{ color: 'var(--gray-900)' }}
             >
               {isEn ? 'Lead is Poisoning\nOur Ocean' : '납이 바다를\n오염시키고 있습니다'}

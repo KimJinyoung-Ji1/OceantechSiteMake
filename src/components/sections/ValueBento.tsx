@@ -54,20 +54,20 @@ export default function ValueBento({ locale }: ValueBentoProps) {
 
   return (
     <section
-      className="py-20 lg:py-28"
+      className="py-16 lg:py-20"
       style={{ background: 'var(--background-alt)' }}
       aria-label="오션테크를 선택하는 이유"
     >
       <div className="max-w-[1920px] mx-auto px-8 lg:px-24">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-12">
           <p
-            className="text-2xl font-bold uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.valueSection.title}
           </p>
-          <h2 className="text-5xl lg:text-7xl font-extrabold" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
             {t.valueSection.subtitle}
           </h2>
         </div>
@@ -80,7 +80,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
             return (
               <article
                 key={i}
-                className="group relative p-8 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden flex flex-col items-center text-center"
+                className="group relative p-8 rounded-2xl bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg overflow-hidden flex flex-col items-center text-center"
                 style={{ border: `1px solid ${color.border}` }}
               >
                 {/* Large number */}
@@ -99,12 +99,12 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                 </div>
 
                 <h3
-                  className="text-2xl font-bold mb-4"
+                  className="text-xl font-bold mb-4"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-xl leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
                   {item.description}
                 </p>
 

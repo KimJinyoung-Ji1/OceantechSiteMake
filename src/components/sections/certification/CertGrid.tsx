@@ -102,9 +102,9 @@ export default function CertGrid({ locale }: CertGridProps) {
   const [modal, setModal] = useState<{ src: string; title: string } | null>(null);
 
   return (
-    <section className="py-16" aria-label="인증서 목록">
+    <section className="py-16 lg:py-20" style={{ background: 'var(--background-alt)' }} aria-label="인증서 목록">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {certItems.map((item) => (
             <div
               key={item.key}
@@ -154,7 +154,7 @@ export default function CertGrid({ locale }: CertGridProps) {
                     {item.numberKo}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold" style={{ color: 'var(--gray-900)' }}>
+                <h3 className="text-xl font-bold" style={{ color: 'var(--gray-900)' }}>
                   {isEn ? item.titleEn : item.titleKo}
                 </h3>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)' }}>

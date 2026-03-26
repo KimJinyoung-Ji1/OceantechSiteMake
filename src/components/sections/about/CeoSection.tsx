@@ -11,11 +11,11 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
   const lines = ceoMessage.split('\n');
 
   return (
-    <section id="ceo" className="py-20 lg:py-28" aria-label="CEO 인사말">
+    <section id="ceo" className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="CEO 인사말">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="flex flex-col items-start text-left max-w-3xl">
           <p
-            className="text-base font-bold uppercase tracking-widest mb-6"
+            className="text-lg font-bold uppercase tracking-widest mb-6"
             style={{ color: 'var(--primary-500, #3b82f6)' }}
           >
             {t.about.ceo.title}

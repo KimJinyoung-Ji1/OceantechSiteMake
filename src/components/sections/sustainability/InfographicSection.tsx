@@ -69,21 +69,21 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
   const isEn = locale === 'en';
 
   return (
-    <section className="py-12 lg:py-16" aria-label="환경 영향">
+    <section className="py-16 lg:py-20" style={{ background: 'var(--background-alt)' }} aria-label="환경 영향">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-10">
           <p
-            className="text-2xl font-black uppercase tracking-widest mb-3"
+            className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--secondary-700,#047857)' }}
           >
             {isEn ? 'ENVIRONMENTAL IMPACT' : '환경 영향'}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-extrabold" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Why It Matters' : '아연추가 만드는 변화'}
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((item, i) => (
             <div
               key={i}

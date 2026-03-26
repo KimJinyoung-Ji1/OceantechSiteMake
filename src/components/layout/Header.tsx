@@ -56,6 +56,7 @@ export default function Header({ locale }: HeaderProps) {
                 width={160}
                 height={40}
                 className="h-9 w-auto object-contain brightness-0 invert"
+                sizes="160px"
                 priority
               />
             </Link>
@@ -210,7 +211,7 @@ export default function Header({ locale }: HeaderProps) {
             >
               <div className="mx-auto grid max-w-[1920px] grid-cols-[1.2fr_1.8fr] gap-8 px-24 py-6">
                 <div
-                  className="rounded-[20px] border p-8"
+                  className="rounded-2xl border p-8"
                   style={{
                     background: 'rgba(255,255,255,0.05)',
                     borderColor: 'rgba(255,255,255,0.09)',
@@ -232,7 +233,7 @@ export default function Header({ locale }: HeaderProps) {
                     <Link
                       key={child.href}
                       href={localePath(child.href)}
-                      className="group rounded-[20px] border p-6 transition-all duration-150"
+                      className="group rounded-2xl border p-6 transition-all duration-150"
                       style={{
                         background: 'rgba(255,255,255,0.06)',
                         borderColor: 'rgba(255,255,255,0.09)',

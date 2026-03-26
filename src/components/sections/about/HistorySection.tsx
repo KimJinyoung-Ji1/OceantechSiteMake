@@ -31,9 +31,9 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
   const rows = splitRows(history, COLS);
 
   return (
-    <section id="history" className="py-20 lg:py-28 px-6 lg:px-24 overflow-hidden" aria-label="연혁">
+    <section id="history" className="py-16 lg:py-20 px-6 lg:px-24 overflow-hidden" style={{ background: 'var(--background)' }} aria-label="연혁">
       <div className="max-w-[1920px] mx-auto">
-        <div className="mb-14 text-center">
+        <div className="mb-12 text-center">
           <p
             className="text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
@@ -41,7 +41,7 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
             {t.about.history.title}
           </p>
           <h2
-            className="text-5xl lg:text-6xl font-black"
+            className="text-4xl lg:text-5xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             {locale === 'en' ? 'Our Journey' : '오션테크의 발자취'}

@@ -90,7 +90,7 @@ export default function StatsCounter({ locale }: StatsCounterProps) {
     >
       <div className="max-w-[1920px] mx-auto px-8 lg:px-24">
         <div className="text-center mb-7">
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-white">
+          <h2 className="text-4xl lg:text-5xl font-black text-white">
             {t.stats.title}
           </h2>
         </div>
