@@ -41,12 +41,12 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-10">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'COMPARISON' : '상세 비교'}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Zinc Weight vs Lead Weight' : '아연추 vs 납추'}
           </h2>
         </div>

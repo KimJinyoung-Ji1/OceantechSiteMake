@@ -27,7 +27,7 @@ function StatItem({ target, unit, label, highlight }: StatItemProps) {
     >
       <div className="flex items-end justify-center gap-1 mb-2">
         <span
-          className="text-5xl lg:text-6xl font-extrabold tabular-nums"
+          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tabular-nums"
           style={{ color: highlight ? 'var(--secondary-500)' : 'var(--primary-300)' }}
         >
           {count}
@@ -88,9 +88,9 @@ export default function StatsCounter({ locale }: StatsCounterProps) {
       style={{ background: 'linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700) 100%)' }}
       aria-label="오션테크 수치 통계"
     >
-      <div className="max-w-[1920px] mx-auto px-8 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
         <div className="text-center mb-7">
-          <h2 className="text-4xl lg:text-5xl font-black text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white">
             {t.stats.title}
           </h2>
         </div>

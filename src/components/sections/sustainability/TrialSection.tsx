@@ -48,12 +48,12 @@ export default function TrialSection({ locale }: TrialSectionProps) {
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-10">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'PILOT PROGRAM' : '시범사업 결과'}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Goseong County, Gangwon' : '강원도 고성군 시범사업'}
           </h2>
           <p className="mt-3 text-lg" style={{ color: 'var(--gray-500)' }}>
@@ -77,7 +77,7 @@ export default function TrialSection({ locale }: TrialSectionProps) {
               {/* Stat header */}
               <div className="p-6 text-center">
                 <p
-                  className="text-5xl font-extrabold mb-1"
+                  className="text-3xl sm:text-5xl font-extrabold mb-1"
                   style={{ color: 'var(--primary-500)' }}
                 >
                   {s.value}

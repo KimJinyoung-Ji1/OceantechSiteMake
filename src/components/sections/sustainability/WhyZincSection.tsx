@@ -14,13 +14,13 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
             <p
-              className="text-lg font-bold uppercase tracking-widest mb-3"
+              className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
               style={{ color: 'var(--secondary-700,#047857)' }}
             >
               {isEn ? 'WHY ZINC?' : '왜 아연인가?'}
             </p>
             <h2
-              className="text-4xl lg:text-5xl font-black mb-6 leading-tight"
+              className="text-2xl sm:text-3xl lg:text-5xl font-black mb-6 leading-tight"
               style={{ color: 'var(--gray-900)' }}
             >
               {isEn ? 'Lead is Poisoning\nOur Ocean' : '납이 바다를\n오염시키고 있습니다'}

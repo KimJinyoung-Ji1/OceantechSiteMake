@@ -28,15 +28,15 @@ export default function CompareTable({ locale }: CompareTableProps) {
       style={{ background: 'var(--background)' }}
       aria-label="아연추 vs 납추 비교"
     >
-      <div className="max-w-[1920px] mx-auto px-8 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
         <div className="text-center mb-10">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {locale === 'en' ? 'COMPARISON' : '성능 비교'}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
             {t.compare.title}
           </h2>
         </div>

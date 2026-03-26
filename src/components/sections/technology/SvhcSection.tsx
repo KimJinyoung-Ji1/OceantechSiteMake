@@ -32,12 +32,12 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
                 EU REACH 기준
               </p>
               <p
-                className="text-7xl lg:text-8xl font-black mb-2"
+                className="text-5xl sm:text-7xl lg:text-8xl font-black mb-2"
                 style={{ color: 'var(--secondary-400, #34d399)' }}
               >
                 {SITE_CONFIG.stats.svhc}
               </p>
-              <p className="text-3xl font-bold text-white mb-4">
+              <p className="text-xl sm:text-3xl font-bold text-white mb-4">
                 {isEn ? 'SVHC Substances\nNot Detected' : '종 유해물질\n미검출'}
               </p>
               <p className="text-white/70 text-lg leading-relaxed">

@@ -25,16 +25,16 @@ export default function SvhcHighlight({ locale }: SvhcHighlightProps) {
           </p>
           <div className="flex items-baseline justify-center gap-3 mb-3">
             <span
-              className="text-8xl lg:text-9xl font-black"
+              className="text-6xl sm:text-8xl lg:text-9xl font-black"
               style={{ color: 'var(--secondary-300, #6ee7b7)' }}
             >
               {SITE_CONFIG.stats.svhc}
             </span>
-            <span className="text-3xl font-bold text-white">
+            <span className="text-xl sm:text-3xl font-bold text-white">
               {isEn ? 'types' : '종'}
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-black text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-4">
             {isEn ? 'SVHC Substances Not Detected' : 'SVHC 유해물질 미검출'}
           </h2>
           <p className="text-white/70 max-w-4xl mx-auto text-lg leading-relaxed">

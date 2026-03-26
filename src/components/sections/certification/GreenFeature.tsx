@@ -53,7 +53,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
           </div>
 
           <h2
-            className="text-4xl lg:text-5xl font-black"
+            className="text-2xl sm:text-3xl lg:text-5xl font-black"
             style={{ color: 'var(--gray-900)' }}
           >
             {isEn

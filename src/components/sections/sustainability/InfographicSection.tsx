@@ -73,12 +73,12 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-10">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--secondary-700,#047857)' }}
           >
             {isEn ? 'ENVIRONMENTAL IMPACT' : '환경 영향'}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Why It Matters' : '아연추가 만드는 변화'}
           </h2>
         </div>

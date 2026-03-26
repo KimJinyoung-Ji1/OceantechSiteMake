@@ -61,7 +61,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               {t.hero.badge}
             </Badge>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-7xl font-extrabold text-white leading-tight mb-5">
+            <h1 className="text-2xl sm:text-4xl lg:text-7xl font-extrabold text-white leading-tight mb-5">
               {titleLines.map((line, i) => (
                 <span key={i} className="block">
                   {line}
@@ -70,13 +70,13 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </h1>
 
             <p
-              className="text-2xl font-medium mb-6"
+              className="text-lg sm:text-2xl font-medium mb-6"
               style={{ color: '#17E9B5' }}
             >
               {t.hero.subtitle}
             </p>
 
-            <p className="text-white/80 text-lg leading-relaxed mb-10 max-w-xl">
+            <p className="text-white/80 text-base lg:text-lg leading-relaxed mb-10 max-w-xl">
               {t.hero.description}
             </p>
 

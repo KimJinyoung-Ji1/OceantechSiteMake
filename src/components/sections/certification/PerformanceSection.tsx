@@ -34,12 +34,12 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-12">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'PERFORMANCE' : '주요 실적'}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Contract & Delivery Record' : '납품 계약 실적'}
           </h2>
         </div>
@@ -60,7 +60,7 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
                 {/* Left: year + bullet items */}
                 <div className="p-6">
                   <p
-                    className="text-4xl font-extrabold mb-4"
+                    className="text-3xl sm:text-4xl font-extrabold mb-4"
                     style={{ color: 'var(--primary-500)' }}
                   >
                     {p.year}

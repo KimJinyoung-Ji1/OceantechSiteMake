@@ -43,12 +43,12 @@ export default function TestReportsSection({ locale }: TestReportsSectionProps) 
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-10">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'TEST REPORTS' : '시험성적서'}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn ? 'Official Test Reports' : '공인 시험성적서'}
           </h2>
         </div>

@@ -128,13 +128,13 @@ export default function VisionSection({ locale }: VisionSectionProps) {
       <div className="max-w-[1920px] mx-auto">
         <div className="mb-12">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.about.vision.title}
           </p>
           <h2
-            className="text-4xl lg:text-5xl font-black"
+            className="text-2xl sm:text-3xl lg:text-5xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             {t.about.vision.subtitle}

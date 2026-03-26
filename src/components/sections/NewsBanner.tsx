@@ -67,20 +67,20 @@ export default function NewsBanner() {
 
   return (
     <section
-      className="py-10 lg:py-14 px-8 lg:px-24"
+      className="py-10 lg:py-14 px-4 sm:px-6 lg:px-24"
       style={{ background: 'var(--background)' }}
       aria-label="뉴스 배너"
     >
       <div className="max-w-[1920px] mx-auto">
         <div className="text-center mb-6">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             NEWS
           </p>
           <h2
-            className="text-4xl lg:text-5xl font-black"
+            className="text-2xl sm:text-3xl lg:text-5xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             오션테크 뉴스

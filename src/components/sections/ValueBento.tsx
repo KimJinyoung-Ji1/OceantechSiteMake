@@ -58,16 +58,16 @@ export default function ValueBento({ locale }: ValueBentoProps) {
       style={{ background: 'var(--background-alt)' }}
       aria-label="오션테크를 선택하는 이유"
     >
-      <div className="max-w-[1920px] mx-auto px-8 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-12">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.valueSection.title}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
             {t.valueSection.subtitle}
           </h2>
         </div>
@@ -134,7 +134,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
               >
                 {locale === 'en' ? 'FIELD PROVEN' : '현장 실증 완료'}
               </p>
-              <h3 className="text-2xl lg:text-3xl font-black text-white mb-3">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-3">
                 {locale === 'en'
                   ? '31-Month Real-World Pilot in Goseong, Gangwon'
                   : '강원 고성군 31개월 실증사업 완료'}
@@ -148,7 +148,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
             <div className="flex flex-wrap justify-center gap-10 lg:gap-16">
               {pilotStats.map((s, i) => (
                 <div key={i} className="text-center">
-                  <p className="text-5xl font-black" style={{ color: 'var(--secondary-500)' }}>
+                  <p className="text-3xl sm:text-5xl font-black" style={{ color: 'var(--secondary-500)' }}>
                     {s.value}
                     <span className="text-2xl font-semibold ml-1" style={{ color: 'var(--primary-300)' }}>
                       {s.unit}

@@ -72,20 +72,20 @@ export default function CertCards({ locale }: CertCardsProps) {
 
   return (
     <section
-      className="py-16 lg:py-20 px-8 lg:px-24"
+      className="py-16 lg:py-20 px-4 sm:px-6 lg:px-24"
       style={{ background: 'var(--background-alt)' }}
       aria-label="인증 및 수상"
     >
       <div className="max-w-[1920px] mx-auto">
         <div className="text-center mb-10">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {t.certification.title}
           </p>
           <h2
-            className="text-4xl lg:text-5xl font-black"
+            className="text-2xl sm:text-3xl lg:text-5xl font-black"
             style={{ color: 'var(--text-primary)' }}
           >
             {t.certification.subtitle}

@@ -101,30 +101,22 @@ function KakaoMap() {
 
   return (
     <div className="relative">
-      {/* Map div always rendered */}
+      {/* Map div — always rendered so Kakao SDK can attach to it */}
       <div
         ref={mapRef}
         className="w-full rounded-2xl overflow-hidden"
         style={{
           height: '200px',
           border: '1px solid var(--border)',
-          display: mapError ? 'none' : 'block',
+          background: 'var(--background-alt)',
         }}
         aria-label="회사 위치 지도"
       />
 
-      {/* Fallback shown below map if error */}
+      {/* Fallback link shown BELOW the map on error (not instead of it) */}
       {mapError && (
-        <div
-          className="w-full rounded-2xl flex flex-col items-center justify-center gap-2 py-6"
-          style={{ background: 'var(--background-alt)', border: '1px solid var(--border)', height: '200px' }}
-          aria-label="회사 위치 지도"
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z" stroke="var(--primary-500)" strokeWidth="1.5" fill="none" />
-            <circle cx="12" cy="9" r="2.5" fill="var(--primary-500)" />
-          </svg>
-          <p className="text-xs font-medium text-center px-4" style={{ color: 'var(--text-secondary)' }}>
+        <div className="mt-2 flex flex-col items-center gap-1">
+          <p className="text-xs font-medium text-center" style={{ color: 'var(--text-secondary)' }}>
             남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29-30호
           </p>
           <a
@@ -134,7 +126,7 @@ function KakaoMap() {
             className="text-xs underline"
             style={{ color: 'var(--primary-500)' }}
           >
-            카카오맵에서 보기
+            카카오맵에서 보기 →
           </a>
         </div>
       )}

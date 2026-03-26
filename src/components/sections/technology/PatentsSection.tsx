@@ -120,12 +120,12 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
       <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
         <div className="text-center mb-12">
           <p
-            className="text-lg font-bold uppercase tracking-widest mb-3"
+            className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-widest mb-3"
             style={{ color: 'var(--primary-500)' }}
           >
             {isEn ? 'PATENTS & TEST REPORTS' : '특허현황 및 시험성적서'}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
+          <h2 className="text-xl sm:text-2xl lg:text-5xl font-black" style={{ color: 'var(--gray-900)' }}>
             {isEn
               ? `${patents.length} Patents · ${designPatents.reduce((a, d) => a + d.count, 0)} Design Patents · 2 Test Reports`
               : `특허 ${patents.length}건 · 디자인특허 ${designPatents.reduce((a, d) => a + d.count, 0)}건 · 시험성적서 2건`}
