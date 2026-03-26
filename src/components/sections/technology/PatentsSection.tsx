@@ -14,6 +14,8 @@ const patentImages: Record<string, string> = {
   '10-2197917': '/documents/certs/patent-2197917.png',
   '10-1887767': '/documents/certs/patent-page5.png',
   '10-2508401': '/documents/certs/patent-page6.png',
+  '10-1895932': '/documents/certs/patent-award-certificate.png',
+  '10-1802799': '/documents/certs/breaking-test.png',
 };
 
 const patentDownloads: Record<string, string> = {
