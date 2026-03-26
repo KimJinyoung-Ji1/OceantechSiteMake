@@ -8,8 +8,8 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
   const isEn = locale === 'en';
 
   return (
-    <section className="py-20 lg:py-28 px-4" aria-label="왜 아연인가">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 lg:py-28" aria-label="왜 아연인가">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <p

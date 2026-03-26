@@ -78,8 +78,8 @@ export default function CertGrid({ locale }: CertGridProps) {
   const [modal, setModal] = useState<{ src: string; title: string } | null>(null);
 
   return (
-    <section className="py-16 px-4" aria-label="인증서 목록">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16" aria-label="인증서 목록">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {certItems.map((item) => (
             <button

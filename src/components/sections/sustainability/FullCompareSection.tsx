@@ -15,16 +15,30 @@ const compareRows = [
   { labelKo: '정부인증', labelEn: 'Gov. Certification', zinc: '녹색기술인증', lead: '없음', zincGood: true },
 ];
 
+const CheckIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+    <circle cx="10" cy="10" r="10" fill="#0C7287" />
+    <path d="M5.5 10.5l3 3 6-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const XIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+    <circle cx="10" cy="10" r="10" fill="#FEE2E2" />
+    <path d="M6.5 6.5l7 7M13.5 6.5l-7 7" stroke="#DC2626" strokeWidth="1.8" strokeLinecap="round" />
+  </svg>
+);
+
 export default function FullCompareSection({ locale }: FullCompareSectionProps) {
   const isEn = locale === 'en';
 
   return (
     <section
-      className="py-20 lg:py-28 px-4"
+      className="py-20 lg:py-28"
       style={{ background: 'var(--gray-50)' }}
       aria-label="납추 vs 아연추 비교"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div className="text-center mb-12">
           <p
             className="text-base font-bold uppercase tracking-widest mb-3"
@@ -38,23 +52,51 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
         </div>
 
         <div
-          className="rounded-3xl overflow-hidden shadow-xl"
-          style={{ border: '1px solid var(--gray-200)' }}
+          className="rounded-3xl overflow-hidden"
+          style={{
+            border: '1px solid rgba(12,114,135,0.18)',
+            boxShadow: '0 8px 40px rgba(12,114,135,0.10), 0 2px 8px rgba(0,0,0,0.06)',
+          }}
         >
           {/* Header */}
           <div className="grid grid-cols-3">
-            <div className="px-6 py-5" style={{ background: 'var(--gray-100)' }} />
-            <div className="px-6 py-5 text-center" style={{ background: 'var(--primary-500)' }}>
-              <p className="text-white font-bold text-base">
-                {isEn ? 'Zinc Weight' : '아연추'}
+            <div
+              className="px-6 py-6"
+              style={{
+                background: '#F0FDF9',
+                borderRight: '1px solid rgba(12,114,135,0.15)',
+              }}
+            >
+              <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#0C7287' }}>
+                {isEn ? 'Category' : '항목'}
               </p>
-              <p className="text-white/70 text-sm mt-0.5">(주)오션테크</p>
             </div>
-            <div className="px-6 py-5 text-center" style={{ background: '#374151' }}>
-              <p className="text-white font-bold text-base">
-                {isEn ? 'Lead Weight' : '납추'}
-              </p>
-              <p className="text-white/70 text-sm mt-0.5">{isEn ? 'Conventional' : '기존 제품'}</p>
+            <div
+              className="px-6 py-6 text-center"
+              style={{
+                background: 'linear-gradient(135deg, #0C7287 0%, #11A88F 100%)',
+                borderRight: '1px solid rgba(255,255,255,0.15)',
+              }}
+            >
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <CheckIcon />
+                <p className="text-white font-bold text-lg leading-tight">
+                  {isEn ? 'Zinc Weight' : '아연추'}
+                </p>
+              </div>
+              <p className="text-white/75 text-sm mt-0.5">(주)오션테크</p>
+            </div>
+            <div
+              className="px-6 py-6 text-center"
+              style={{ background: 'linear-gradient(135deg, #374151 0%, #4B5563 100%)' }}
+            >
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <XIcon />
+                <p className="text-white font-bold text-lg leading-tight">
+                  {isEn ? 'Lead Weight' : '납추'}
+                </p>
+              </div>
+              <p className="text-white/75 text-sm mt-0.5">{isEn ? 'Conventional' : '기존 제품'}</p>
             </div>
           </div>
 
@@ -63,31 +105,39 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
             <div
               key={i}
               className="grid grid-cols-3 border-t"
-              style={{ borderColor: 'var(--gray-200)', background: i % 2 === 0 ? 'white' : 'var(--gray-50)' }}
+              style={{
+                borderColor: 'rgba(12,114,135,0.10)',
+                background: i % 2 === 0 ? '#FFFFFF' : '#F0FDF9',
+              }}
             >
-              <div className="px-6 py-4 font-semibold text-base" style={{ color: 'var(--gray-700)' }}>
+              {/* Label */}
+              <div
+                className="px-6 py-5 font-semibold text-base flex items-center"
+                style={{
+                  color: 'var(--gray-700)',
+                  borderRight: '1px solid rgba(12,114,135,0.10)',
+                }}
+              >
                 {isEn ? row.labelEn : row.labelKo}
               </div>
+
+              {/* Zinc */}
               <div
-                className="px-6 py-4 text-center text-base font-semibold border-x"
-                style={{ borderColor: 'var(--gray-200)', color: 'var(--secondary-700,#047857)' }}
+                className="px-6 py-5 flex items-center justify-center gap-2 border-r"
+                style={{ borderColor: 'rgba(12,114,135,0.10)', background: 'rgba(17,168,143,0.04)' }}
               >
-                <span className="flex items-center justify-center gap-1.5">
-                  <span
-                    className="w-4 h-4 rounded-full flex items-center justify-center text-white text-xs shrink-0"
-                    style={{ background: 'var(--secondary-500)' }}
-                    aria-hidden="true"
-                  >
-                    ✓
-                  </span>
+                <CheckIcon />
+                <span className="text-base font-semibold" style={{ color: '#0C7287' }}>
                   {row.zinc}
                 </span>
               </div>
-              <div
-                className="px-6 py-4 text-center text-base"
-                style={{ color: 'var(--gray-500)' }}
-              >
-                {row.lead}
+
+              {/* Lead */}
+              <div className="px-6 py-5 flex items-center justify-center gap-2">
+                <XIcon />
+                <span className="text-base" style={{ color: '#6B7280' }}>
+                  {row.lead}
+                </span>
               </div>
             </div>
           ))}

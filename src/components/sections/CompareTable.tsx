@@ -5,16 +5,30 @@ interface CompareTableProps {
   locale: Locale;
 }
 
+const CheckIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+    <circle cx="11" cy="11" r="11" fill="#0C7287" />
+    <path d="M6.5 11.5l3 3 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const XIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+    <circle cx="11" cy="11" r="11" fill="#DC2626" opacity="0.15" />
+    <path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
 export default function CompareTable({ locale }: CompareTableProps) {
   const t = getTranslation(locale);
 
   return (
     <section
-      className="py-20 lg:py-28 px-4"
+      className="py-20 lg:py-28"
       style={{ background: 'var(--background)' }}
       aria-label="아연추 vs 납추 비교"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div className="text-center mb-14">
           <p
             className="text-sm font-bold uppercase tracking-widest mb-3"
@@ -27,112 +41,88 @@ export default function CompareTable({ locale }: CompareTableProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* LEFT — Zinc (Ocean Tech) */}
-          <div
-            className="rounded-2xl overflow-hidden shadow-lg"
-            style={{ border: '1.5px solid rgba(14,173,135,0.30)' }}
-          >
-            {/* Header */}
+        <div
+          className="rounded-3xl overflow-hidden shadow-xl"
+          style={{ border: '1px solid rgba(14,173,135,0.20)' }}
+        >
+          {/* Column headers */}
+          <div className="grid grid-cols-3">
             <div
-              className="px-8 py-5 flex items-center gap-3"
+              className="px-6 py-5"
+              style={{ background: '#F8FFFE', borderRight: '1px solid rgba(14,173,135,0.15)' }}
+            />
+            <div
+              className="px-6 py-5 text-center"
               style={{
-                background: 'linear-gradient(135deg, var(--secondary-700) 0%, var(--secondary-500) 100%)',
+                background: 'linear-gradient(135deg, #0C7287 0%, #11A88F 100%)',
+                borderRight: '1px solid rgba(255,255,255,0.15)',
               }}
             >
-              <span className="text-2xl" aria-hidden="true">✅</span>
-              <div>
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <CheckIcon />
                 <p className="text-white font-bold text-lg leading-tight">{t.compare.zinc}</p>
-                <p className="text-white/75 text-xs">(주)오션테크</p>
               </div>
+              <p className="text-white/75 text-sm">(주)오션테크</p>
             </div>
-
-            {/* Rows */}
-            <div style={{ background: '#FFFFFF' }}>
-              {t.compare.rows.map((row, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 px-8 py-4 border-b last:border-b-0"
-                  style={{ borderColor: 'rgba(14,173,135,0.10)' }}
-                >
-                  <span
-                    className="w-5 h-5 rounded-full flex items-center justify-center text-white text-xs flex-shrink-0 mt-0.5"
-                    style={{ background: 'var(--secondary-700)' }}
-                    aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  <div>
-                    <p
-                      className="text-xs font-semibold mb-0.5"
-                      style={{ color: 'var(--secondary-700)' }}
-                    >
-                      {row.label}
-                    </p>
-                    <p
-                      className="text-sm font-medium"
-                      style={{ color: 'var(--text-primary)' }}
-                    >
-                      {row.zinc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div
+              className="px-6 py-5 text-center"
+              style={{ background: 'linear-gradient(135deg, #374151 0%, #4B5563 100%)' }}
+            >
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <XIcon />
+                <p className="text-white font-bold text-lg leading-tight">{t.compare.lead}</p>
+              </div>
+              <p className="text-white/75 text-sm">{locale === 'en' ? 'Conventional Product' : '기존 제품'}</p>
             </div>
           </div>
 
-          {/* RIGHT — Lead (Legacy) */}
-          <div
-            className="rounded-2xl overflow-hidden shadow-lg"
-            style={{ border: '1.5px solid rgba(161,130,0,0.22)' }}
-          >
-            {/* Header */}
+          {/* Rows */}
+          {t.compare.rows.map((row, i) => (
             <div
-              className="px-8 py-5 flex items-center gap-3"
+              key={i}
+              className="grid grid-cols-3 border-t"
               style={{
-                background: 'linear-gradient(135deg, #64748B 0%, #94A3B8 100%)',
+                borderColor: 'rgba(14,173,135,0.12)',
+                background: i % 2 === 0 ? '#FFFFFF' : '#F8FFFE',
               }}
             >
-              <span className="text-2xl" aria-hidden="true">❌</span>
-              <div>
-                <p className="text-white font-bold text-lg leading-tight">{t.compare.lead}</p>
-                <p className="text-white/75 text-xs">{locale === 'en' ? 'Conventional Product' : '기존 제품'}</p>
+              {/* Label */}
+              <div
+                className="px-6 py-5 font-semibold text-base flex items-center"
+                style={{
+                  color: 'var(--text-primary)',
+                  borderRight: '1px solid rgba(14,173,135,0.12)',
+                }}
+              >
+                {row.label}
+              </div>
+
+              {/* Zinc value */}
+              <div
+                className="px-6 py-5 flex items-center justify-center gap-2 border-r"
+                style={{ borderColor: 'rgba(14,173,135,0.12)' }}
+              >
+                <CheckIcon />
+                <span
+                  className="text-lg font-bold"
+                  style={{ color: '#0C7287' }}
+                >
+                  {row.zinc}
+                </span>
+              </div>
+
+              {/* Lead value */}
+              <div className="px-6 py-5 flex items-center justify-center gap-2">
+                <XIcon />
+                <span
+                  className="text-lg font-bold"
+                  style={{ color: '#9CA3AF' }}
+                >
+                  {row.lead}
+                </span>
               </div>
             </div>
-
-            {/* Rows */}
-            <div style={{ background: '#FAFAFA' }}>
-              {t.compare.rows.map((row, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 px-8 py-4 border-b last:border-b-0"
-                  style={{ borderColor: 'rgba(148,163,184,0.15)' }}
-                >
-                  <span
-                    className="w-5 h-5 rounded-full flex items-center justify-center text-white text-xs flex-shrink-0 mt-0.5"
-                    style={{ background: '#94A3B8' }}
-                    aria-hidden="true"
-                  >
-                    ✕
-                  </span>
-                  <div>
-                    <p
-                      className="text-xs font-semibold mb-0.5"
-                      style={{ color: '#64748B' }}
-                    >
-                      {row.label}
-                    </p>
-                    <p
-                      className="text-sm"
-                      style={{ color: '#64748B' }}
-                    >
-                      {row.lead}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

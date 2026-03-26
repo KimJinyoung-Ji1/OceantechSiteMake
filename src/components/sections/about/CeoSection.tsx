@@ -11,8 +11,8 @@ export default function CeoSection({ locale, ceoMessage }: CeoSectionProps) {
   const lines = ceoMessage.split('\n');
 
   return (
-    <section id="ceo" className="py-20 lg:py-28 px-4" aria-label="CEO 인사말">
-      <div className="max-w-7xl mx-auto">
+    <section id="ceo" className="py-20 lg:py-28" aria-label="CEO 인사말">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left — placeholder image */}
           <div className="flex justify-center lg:justify-end">

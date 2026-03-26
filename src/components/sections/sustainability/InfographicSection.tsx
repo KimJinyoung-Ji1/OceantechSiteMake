@@ -52,8 +52,8 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
   const isEn = locale === 'en';
 
   return (
-    <section className="py-20 lg:py-28 px-4" aria-label="환경 영향">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 lg:py-28" aria-label="환경 영향">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div className="text-center mb-12">
           <p
             className="text-base font-bold uppercase tracking-widest mb-3"

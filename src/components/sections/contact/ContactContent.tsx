@@ -20,52 +20,114 @@ declare global {
 
 function KakaoMap() {
   const mapRef = useRef<HTMLDivElement>(null);
+  const [mapError, setMapError] = useState(false);
 
   useEffect(() => {
     const apiKey = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY;
-    if (!apiKey || !mapRef.current) return;
+    if (!apiKey) {
+      setMapError(true);
+      return;
+    }
 
-    const scriptId = 'kakao-map-sdk';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&autoload=false`;
-      script.async = true;
-      script.onload = () => initMap();
-      document.head.appendChild(script);
-    } else if (window.kakao?.maps) {
-      initMap();
-    } else {
+    let cancelled = false;
+
+    function initMap() {
+      if (cancelled || !mapRef.current || !window.kakao?.maps) return;
+      window.kakao.maps.load(() => {
+        if (cancelled || !mapRef.current) return;
+        try {
+          const container = mapRef.current;
+          const position = new window.kakao.maps.LatLng(37.6265, 127.1472);
+          const options = { center: position, level: 3 };
+          const map = new window.kakao.maps.Map(container, options);
+          const marker = new window.kakao.maps.Marker({ position, map });
+          const infowindow = new window.kakao.maps.InfoWindow({
+            content:
+              '<div style="padding:8px 12px;font-size:13px;font-weight:700;white-space:nowrap;">(주)오션테크<br><span style="font-weight:400;font-size:11px;color:#666;">현대프리미어캠퍼스 E동 7층</span></div>',
+          });
+          infowindow.open(map, marker);
+        } catch {
+          if (!cancelled) setMapError(true);
+        }
+      });
+    }
+
+    function waitForKakaoAndInit() {
+      if (cancelled) return;
+      if (window.kakao?.maps) {
+        initMap();
+        return;
+      }
       const interval = setInterval(() => {
+        if (cancelled) {
+          clearInterval(interval);
+          return;
+        }
         if (window.kakao?.maps) {
           clearInterval(interval);
           initMap();
         }
       }, 100);
-      return () => clearInterval(interval);
+      // Timeout after 10s
+      setTimeout(() => {
+        clearInterval(interval);
+        if (!cancelled && !window.kakao?.maps) setMapError(true);
+      }, 10000);
     }
 
-    function initMap() {
-      if (!mapRef.current || !window.kakao?.maps) return;
-      window.kakao.maps.load(() => {
-        if (!mapRef.current) return;
-        const container = mapRef.current;
-        const position = new window.kakao.maps.LatLng(37.6265, 127.1472);
-        const options = { center: position, level: 3 };
-        const map = new window.kakao.maps.Map(container, options);
-        const marker = new window.kakao.maps.Marker({ position, map });
-        const infowindow = new window.kakao.maps.InfoWindow({
-          content: '<div style="padding:8px 12px;font-size:13px;font-weight:700;white-space:nowrap;">(주)오션테크<br><span style="font-weight:400;font-size:11px;color:#666;">현대프리미어캠퍼스 E동 7층</span></div>',
-        });
-        infowindow.open(map, marker);
-      });
+    const scriptId = 'kakao-map-sdk';
+    const existing = document.getElementById(scriptId);
+    if (!existing) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&autoload=false`;
+      script.async = true;
+      script.onload = () => waitForKakaoAndInit();
+      script.onerror = () => {
+        if (!cancelled) setMapError(true);
+      };
+      document.head.appendChild(script);
+    } else {
+      // Script tag already in DOM — may still be loading or already loaded
+      waitForKakaoAndInit();
     }
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
+
+  if (mapError) {
+    return (
+      <div
+        className="w-full h-64 rounded-2xl flex flex-col items-center justify-center gap-2"
+        style={{ background: 'var(--background-alt)', border: '1px solid var(--border)' }}
+        aria-label="회사 위치 지도"
+      >
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z" stroke="var(--primary-500)" strokeWidth="1.5" fill="none" />
+          <circle cx="12" cy="9" r="2.5" fill="var(--primary-500)" />
+        </svg>
+        <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+          남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29-30호
+        </p>
+        <a
+          href="https://map.kakao.com/link/search/남양주시+다산순환로+20"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs underline"
+          style={{ color: 'var(--primary-500)' }}
+        >
+          카카오맵에서 보기
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div
       ref={mapRef}
-      className="w-full h-80 rounded-2xl overflow-hidden"
+      className="w-full h-64 rounded-2xl overflow-hidden"
       style={{ border: '1px solid var(--border)' }}
       aria-label="회사 위치 지도"
     />
@@ -132,51 +194,51 @@ export default function ContactContent({ locale }: ContactContentProps) {
   ];
 
   return (
-    <section className="py-20 lg:py-28 px-6 lg:px-12" aria-label="문의하기">
-      <div className="max-w-[1440px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+    <section className="py-12 lg:py-16 px-6 lg:px-16" aria-label="문의하기">
+      <div className="max-w-[1600px] mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left — Form */}
           <ContactForm locale={locale} onSuccess={handleSuccess} />
 
           {/* Right — Info + Map */}
-          <div className="space-y-8">
+          <div className="space-y-5">
             {/* Contact Info */}
             <div
-              className="p-8 rounded-2xl space-y-6"
+              className="p-6 rounded-2xl space-y-4"
               style={{
                 background: 'var(--background-alt)',
                 border: '1px solid var(--border)',
                 boxShadow: '0 2px 12px rgba(2,16,151,0.04)',
               }}
             >
-              <h3 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
                 {isEn ? 'Contact Information' : '연락처 정보'}
               </h3>
-              <dl className="space-y-4">
+              <dl className="space-y-3">
                 {contactInfo.map((info, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div
-                      className="mt-0.5 w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                      className="mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                       style={{ background: 'var(--primary-100)' }}
                     >
                       {info.icon}
                     </div>
                     <div>
-                      <dt className="text-sm font-semibold mb-0.5" style={{ color: 'var(--text-secondary)' }}>
+                      <dt className="text-xs font-semibold mb-0.5" style={{ color: 'var(--text-secondary)' }}>
                         {isEn ? info.labelEn : info.labelKo}
                       </dt>
                       {info.href ? (
                         <dd>
                           <a
                             href={info.href}
-                            className="text-base font-medium hover:underline"
+                            className="text-sm font-medium hover:underline"
                             style={{ color: 'var(--text-body)' }}
                           >
                             {info.value}
                           </a>
                         </dd>
                       ) : (
-                        <dd className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                        <dd className="text-sm leading-relaxed" style={{ color: 'var(--text-body)' }}>
                           {info.value}
                         </dd>
                       )}
@@ -188,11 +250,11 @@ export default function ContactContent({ locale }: ContactContentProps) {
 
             {/* 오시는 길 */}
             <div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="text-lg font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
                 {isEn ? 'Directions' : '오시는 길'}
               </h3>
               <KakaoMap />
-              <div className="mt-3 space-y-1">
+              <div className="mt-2 space-y-0.5">
                 <p className="text-sm font-medium" style={{ color: 'var(--text-body)' }}>
                   {SITE_CONFIG.address.main}
                 </p>
@@ -204,16 +266,16 @@ export default function ContactContent({ locale }: ContactContentProps) {
 
             {/* Manager info */}
             <div
-              className="p-6 rounded-2xl"
+              className="p-4 rounded-2xl"
               style={{ background: 'var(--background-alt)', border: '1px solid var(--border)' }}
             >
-              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-xs font-semibold mb-0.5" style={{ color: 'var(--text-secondary)' }}>
                 {isEn ? 'Contact Person' : '담당자'}
               </p>
-              <p className="text-base font-bold" style={{ color: 'var(--text-primary)' }}>
+              <p className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>
                 {SITE_CONFIG.contact.manager}
               </p>
-              <p className="text-base mt-1" style={{ color: 'var(--text-body)' }}>
+              <p className="text-sm mt-0.5" style={{ color: 'var(--text-body)' }}>
                 {SITE_CONFIG.contact.mobile}
               </p>
             </div>

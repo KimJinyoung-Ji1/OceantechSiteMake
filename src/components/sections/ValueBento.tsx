@@ -55,11 +55,11 @@ export default function ValueBento({ locale }: ValueBentoProps) {
 
   return (
     <section
-      className="py-20 lg:py-28 px-4"
+      className="py-20 lg:py-28"
       style={{ background: 'var(--background-alt)' }}
       aria-label="오션테크를 선택하는 이유"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-14">
           <p
@@ -100,12 +100,12 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                 </div>
 
                 <h3
-                  className="text-lg font-bold mb-3"
+                  className="text-xl font-bold mb-3"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
                   {item.description}
                 </p>
 
@@ -127,8 +127,8 @@ export default function ValueBento({ locale }: ValueBentoProps) {
             border: '1px solid rgba(255,255,255,0.08)',
           }}
         >
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-            <div className="max-w-lg">
+          <div className="flex flex-col items-center text-center gap-8">
+            <div className="max-w-2xl">
               <p
                 className="text-xs font-bold uppercase tracking-widest mb-2"
                 style={{ color: 'var(--secondary-500)' }}
@@ -140,22 +140,22 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                   ? '31-Month Real-World Pilot in Goseong, Gangwon'
                   : '강원 고성군 31개월 실증사업 완료'}
               </h3>
-              <p className="text-sm text-white/65 leading-relaxed">
+              <p className="text-base text-white/65 leading-relaxed">
                 {locale === 'en'
                   ? 'Verified durability, cost savings, and marine safety in a real fishing environment with SUHYUP.'
                   : '수협중앙회와 함께 실제 어업 현장에서 내구성, 비용절감, 해양 안전성을 직접 검증했습니다.'}
               </p>
             </div>
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap justify-center gap-10 lg:gap-16">
               {pilotStats.map((s, i) => (
                 <div key={i} className="text-center">
-                  <p className="text-3xl font-black" style={{ color: 'var(--secondary-500)' }}>
+                  <p className="text-5xl font-black" style={{ color: 'var(--secondary-500)' }}>
                     {s.value}
-                    <span className="text-lg font-semibold ml-0.5" style={{ color: 'var(--primary-300)' }}>
+                    <span className="text-2xl font-semibold ml-1" style={{ color: 'var(--primary-300)' }}>
                       {s.unit}
                     </span>
                   </p>
-                  <p className="text-xs text-white/55 mt-1">{s.label}</p>
+                  <p className="text-base text-white/65 mt-2 font-medium">{s.label}</p>
                 </div>
               ))}
             </div>

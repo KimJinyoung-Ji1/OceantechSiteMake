@@ -13,7 +13,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
 
   return (
     <section
-      className="relative pt-32 pb-16 px-4 overflow-hidden"
+      className="relative pt-32 pb-16 px-6 lg:px-16 overflow-hidden"
       aria-label="페이지 히어로"
       style={{
         background:
@@ -32,7 +32,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
         aria-hidden="true"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-[1600px] mx-auto">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-base text-white/60 mb-6" aria-label="브레드크럼">
           {breadcrumb.map((item, i) => (

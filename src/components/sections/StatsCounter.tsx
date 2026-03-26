@@ -84,11 +84,11 @@ export default function StatsCounter({ locale }: StatsCounterProps) {
 
   return (
     <section
-      className="py-20 lg:py-28 px-4"
+      className="py-20 lg:py-28"
       style={{ background: 'linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700) 100%)' }}
       aria-label="오션테크 수치 통계"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div className="text-center mb-14">
           <h2 className="text-4xl lg:text-5xl font-extrabold text-white">
             {t.stats.title}

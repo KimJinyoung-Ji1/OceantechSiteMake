@@ -11,8 +11,8 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
   const t = getTranslation(locale);
 
   return (
-    <section id="history" className="py-20 lg:py-28 px-6 lg:px-12 text-center" aria-label="연혁">
-      <div className="max-w-4xl mx-auto">
+    <section id="history" className="py-20 lg:py-28 px-6 lg:px-16 text-center" aria-label="연혁">
+      <div className="max-w-[1600px] mx-auto">
         <div className="mb-14">
           <p
             className="text-lg font-bold uppercase tracking-widest mb-3"

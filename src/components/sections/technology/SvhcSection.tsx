@@ -15,8 +15,8 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="py-20 lg:py-28 px-4" aria-label="SVHC 불검출">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-20 lg:py-28" aria-label="SVHC 불검출">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
         <div
           className="rounded-3xl p-10 lg:p-14 flex flex-col lg:flex-row items-center gap-10"
           style={{

@@ -72,11 +72,11 @@ export default function CertCards({ locale }: CertCardsProps) {
 
   return (
     <section
-      className="py-20 lg:py-28 px-6 lg:px-12"
+      className="py-20 lg:py-28 px-6 lg:px-16"
       style={{ background: 'var(--background-alt)' }}
       aria-label="인증 및 수상"
     >
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-[1600px] mx-auto">
         <div className="text-center mb-14">
           <p
             className="text-base font-bold uppercase tracking-widest mb-3"
@@ -96,7 +96,7 @@ export default function CertCards({ locale }: CertCardsProps) {
           {certItems.map((cert) => (
             <article
               key={cert.key}
-              className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer bg-white relative"
+              className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer bg-white relative flex flex-col items-center"
               style={{
                 border: `1px solid ${cert.accentBorder}`,
               }}
@@ -116,24 +116,25 @@ export default function CertCards({ locale }: CertCardsProps) {
                 </div>
               )}
 
-              {/* Cert thumbnail */}
+              {/* Cert image — large, readable, white bg */}
               <div
-                className="relative w-full aspect-[3/4] overflow-hidden"
-                style={{ background: cert.accentLight }}
+                className="w-full bg-white flex items-center justify-center overflow-hidden"
+                style={{ height: 220, borderBottom: `1px solid ${cert.accentBorder}` }}
               >
                 <Image
                   src={cert.image}
                   alt={locale === 'en' ? cert.titleEn : cert.titleKo}
-                  fill
-                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  width={280}
+                  height={200}
+                  className="object-contain w-full h-full p-4 group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
 
-              {/* Info */}
-              <div className="p-5">
+              {/* Info — centered */}
+              <div className="p-5 text-center w-full">
                 <h3
-                  className="font-bold text-sm mb-1.5"
+                  className="font-bold text-base mb-1.5"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {locale === 'en' ? cert.titleEn : cert.titleKo}
@@ -152,7 +153,7 @@ export default function CertCards({ locale }: CertCardsProps) {
 
                 {/* Click hint */}
                 <div
-                  className="mt-3 flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="mt-3 flex items-center justify-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity"
                   style={{ color: cert.accent }}
                 >
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
