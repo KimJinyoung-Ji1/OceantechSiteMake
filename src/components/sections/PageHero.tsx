@@ -13,28 +13,28 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
 
   return (
     <section
-      className="relative pt-[88px] pb-3 px-6 lg:px-24 overflow-hidden"
+      className="relative pt-[88px] pb-2 px-6 lg:px-24 overflow-hidden"
       aria-label="페이지 히어로"
       style={{
         background:
           'linear-gradient(135deg, var(--primary-800, #021297) 0%, var(--primary-600, #0148c8) 60%, var(--primary-400, #2563eb) 100%)',
       }}
     >
-      {/* Decorative circles */}
+      {/* Decorative circles — scaled down 50% */}
       <div
-        className="absolute -top-16 -right-16 w-64 h-64 rounded-full opacity-10"
+        className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-10"
         style={{ background: 'var(--secondary-500, #17e9b5)' }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-1/4 w-40 h-40 rounded-full opacity-5"
+        className="absolute bottom-0 left-1/4 w-20 h-20 rounded-full opacity-5"
         style={{ background: 'white' }}
         aria-hidden="true"
       />
 
       <div className="relative z-10 max-w-[1920px] mx-auto">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-white/60 mb-3" aria-label="브레드크럼">
+        <nav className="flex items-center gap-2 text-sm text-white/60 mb-1" aria-label="브레드크럼">
           {breadcrumb.map((item, i) => (
             <span key={i} className="flex items-center gap-2">
               {i > 0 && <span aria-hidden="true">›</span>}
@@ -52,9 +52,9 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
           ))}
         </nav>
 
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white mb-1">{title}</h1>
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-white mb-0">{title}</h1>
         {subtitle && (
-          <p className="text-sm text-white/70 max-w-xl leading-relaxed">{subtitle}</p>
+          <p className="text-sm text-white/70 max-w-xl leading-tight">{subtitle}</p>
         )}
       </div>
     </section>

@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useMemo, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { NAV_ITEMS, SITE_CONFIG } from '@/lib/constants';
+import { useState } from 'react';
+import { NAV_ITEMS } from '@/lib/constants';
 import type { Locale } from '@/lib/i18n';
 import MobileDrawer from './MobileDrawer';
 
@@ -16,16 +15,10 @@ type ChildLink = { label: string; labelEn: string; href: string };
 type Item = (typeof NAV_ITEMS)[number] & { children?: readonly ChildLink[]; badge?: boolean };
 
 export default function Header({ locale }: HeaderProps) {
-  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const localePath = (href: string) => `/${locale}${href === '/' ? '' : href}`;
   const items = NAV_ITEMS as readonly Item[];
-
-  const activeMenu = useMemo(
-    () => items.find((item) => item.href === openMenu && item.children?.length),
-    [items, openMenu],
-  );
 
   const label = (item: { label: string; labelEn: string }) => (locale === 'en' ? item.labelEn : item.label);
 
@@ -35,7 +28,6 @@ export default function Header({ locale }: HeaderProps) {
       <div
         className="fixed z-50"
         style={{ top: '0', left: '0', right: '0' }}
-        onMouseLeave={() => setOpenMenu(null)}
       >
         <header
           className="border-b"
@@ -53,10 +45,10 @@ export default function Header({ locale }: HeaderProps) {
               <Image
                 src="/images/logo-brand.png"
                 alt="오션테크 로고"
-                width={160}
-                height={40}
-                className="h-9 w-auto object-contain brightness-0 invert"
-                sizes="160px"
+                width={320}
+                height={80}
+                className="h-[72px] w-auto object-contain brightness-0 invert"
+                sizes="320px"
                 priority
               />
             </Link>
@@ -67,32 +59,22 @@ export default function Header({ locale }: HeaderProps) {
                 <div
                   key={item.href}
                   className="relative flex items-center"
-                  onMouseEnter={() => setOpenMenu(item.href)}
                 >
                   <Link
                     href={localePath(item.href)}
                     className="group relative flex items-center gap-1.5 py-2 min-h-[44px] text-[28px] font-semibold transition-colors duration-150"
-                    style={{ color: openMenu === item.href ? '#03E9F8' : 'rgba(255,255,255,0.82)' }}
+                    style={{ color: 'rgba(255,255,255,0.82)' }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.color =
-                        openMenu === item.href ? '#03E9F8' : 'rgba(255,255,255,0.82)';
+                      (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.82)';
                     }}
                   >
                     <span>{label(item)}</span>
                     {item.badge ? (
                       <span className="h-2 w-2 rounded-full" style={{ background: '#03E9F8' }} aria-hidden="true" />
                     ) : null}
-                    {/* Mint underline indicator for active */}
-                    <span
-                      className="absolute inset-x-0 -bottom-1 h-[2px] rounded-full transition-transform duration-200 origin-left"
-                      style={{
-                        background: '#03E9F8',
-                        transform: openMenu === item.href ? 'scaleX(1)' : 'scaleX(0)',
-                      }}
-                    />
                   </Link>
                 </div>
               ))}
@@ -192,78 +174,6 @@ export default function Header({ locale }: HeaderProps) {
           </div>
         </header>
 
-        {/* Mega dropdown — attaches below the floating header card */}
-        <AnimatePresence>
-          {activeMenu ? (
-            <motion.div
-              initial={{ opacity: 0, y: -6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.16 }}
-              className="border-b overflow-hidden"
-              style={{
-                background: 'rgba(2,16,151,0.97)',
-                backdropFilter: 'blur(28px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(28px) saturate(180%)',
-                borderColor: 'rgba(255,255,255,0.08)',
-                boxShadow: '0 16px 48px rgba(0,0,0,0.18)',
-              }}
-            >
-              <div className="mx-auto grid max-w-[1920px] grid-cols-[1.2fr_1.8fr] gap-8 px-24 py-6">
-                <div
-                  className="rounded-2xl border p-8"
-                  style={{
-                    background: 'rgba(255,255,255,0.05)',
-                    borderColor: 'rgba(255,255,255,0.09)',
-                  }}
-                >
-                  <p className="mb-3 text-xs font-black uppercase tracking-[0.28em]" style={{ color: '#03E9F8' }}>
-                    {locale === 'en' ? 'Section' : '섹션'}
-                  </p>
-                  <h2 className="mb-3 text-3xl font-black text-white">{label(activeMenu)}</h2>
-                  <p className="max-w-md text-[15px] leading-7" style={{ color: 'rgba(255,255,255,0.62)' }}>
-                    {locale === 'en'
-                      ? 'Browse the main contents prepared for this section.'
-                      : '이 섹션에 연결된 주요 콘텐츠를 바로 탐색할 수 있습니다.'}
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  {activeMenu.children?.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={localePath(child.href)}
-                      className="group rounded-2xl border p-6 transition-all duration-150"
-                      style={{
-                        background: 'rgba(255,255,255,0.06)',
-                        borderColor: 'rgba(255,255,255,0.09)',
-                      }}
-                      onMouseEnter={(e) => {
-                        const el = e.currentTarget as HTMLAnchorElement;
-                        el.style.background = 'rgba(255,255,255,0.11)';
-                        el.style.borderColor = 'rgba(3,233,248,0.45)';
-                        el.style.transform = 'translateY(-2px)';
-                      }}
-                      onMouseLeave={(e) => {
-                        const el = e.currentTarget as HTMLAnchorElement;
-                        el.style.background = 'rgba(255,255,255,0.06)';
-                        el.style.borderColor = 'rgba(255,255,255,0.09)';
-                        el.style.transform = 'translateY(0)';
-                      }}
-                    >
-                      <p className="mb-2 text-lg font-black text-white">{label(child)}</p>
-                      <p className="text-sm leading-6" style={{ color: 'rgba(255,255,255,0.58)' }}>
-                        {locale === 'en'
-                          ? 'View details for this section.'
-                          : '관련 내용을 자세히 확인할 수 있습니다.'}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ) : null}
-        </AnimatePresence>
       </div>
 
       <MobileDrawer locale={locale} open={drawerOpen} onClose={() => setDrawerOpen(false)} />

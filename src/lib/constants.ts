@@ -358,17 +358,7 @@ export const SITE_CONFIG = {
 export const NAV_ITEMS = [
   { label: '홈', labelEn: 'Home', href: '/' },
   { label: '제품소개', labelEn: 'Products', href: '/products' },
-  {
-    label: '회사소개',
-    labelEn: 'About',
-    href: '/about',
-    children: [
-      { label: 'CEO 인사말', labelEn: 'CEO Message', href: '/about#ceo' },
-      { label: '비전', labelEn: 'Vision', href: '/about#vision' },
-      { label: '연혁', labelEn: 'History', href: '/about#history' },
-      { label: '회사개요', labelEn: 'Overview', href: '/about#overview' },
-    ],
-  },
+  { label: '회사소개', labelEn: 'About', href: '/about' },
   { label: '기술력', labelEn: 'Technology', href: '/technology' },
   { label: '인증현황', labelEn: 'Certification', href: '/certification', badge: true },
   { label: '친환경', labelEn: 'Sustainability', href: '/sustainability' },

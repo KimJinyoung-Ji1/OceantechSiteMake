@@ -91,15 +91,28 @@ export default function HeroSection({ locale }: HeroSectionProps) {
         >
           {/* LEFT — Text */}
           <div className="pl-0 lg:pl-20">
-            <Badge variant="green" className="mb-6">
+            <div className="mb-6">
               <span
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ background: 'var(--secondary-700)' }}
-              />
-              {t.hero.badge}
-            </Badge>
+                className="inline-flex items-center gap-1.5 text-xs font-semibold"
+                style={{
+                  background: 'rgba(0,0,0,0.5)',
+                  padding: '6px 16px',
+                  borderRadius: '20px',
+                  color: 'white',
+                }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ background: 'var(--secondary-500)' }}
+                />
+                {t.hero.badge}
+              </span>
+            </div>
 
-            <h1 className="text-2xl sm:text-4xl lg:text-7xl font-extrabold text-white leading-tight mb-5">
+            <h1
+              className="text-2xl sm:text-4xl lg:text-7xl font-extrabold text-white leading-tight mb-5"
+              style={{ textShadow: '0 2px 16px rgba(0,0,0,0.3)' }}
+            >
               {titleLines.map((line, i) => (
                 <span key={i} className="block">
                   {line}

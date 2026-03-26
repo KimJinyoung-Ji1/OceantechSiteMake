@@ -54,7 +54,7 @@ body {
 /* 모든 섹션에서 동일한 클래스 사용 → 일관성 보장 */
 
 .section-eyebrow {
-  font-size: 11px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -63,7 +63,7 @@ body {
 }
 
 .section-title {
-  font-size: 2.25rem; /* 36px — mobile */
+  font-size: 1.125rem; /* 18px — mobile */
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.2;
@@ -72,7 +72,7 @@ body {
 }
 @media (min-width: 1024px) {
   .section-title {
-    font-size: 3.25rem; /* 52px — desktop (2x of previous 28px) */
+    font-size: 1.625rem; /* 26px — desktop */
   }
 }
 
