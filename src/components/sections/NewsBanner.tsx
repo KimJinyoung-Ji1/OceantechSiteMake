@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 interface NewsItem {
@@ -90,26 +89,29 @@ export default function NewsBanner() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="relative flex items-stretch">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current}
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.35, ease: 'easeInOut' }}
-                className="w-full"
-              >
-                <div className="flex flex-col lg:flex-row">
-                  {/* Thumbnail — bigger */}
-                  {item.image && (
+          <div className="flex items-stretch">
+            {/* Left: thumbnail + content — crossfade via stacked absolutes */}
+            <div className="relative flex-1" style={{ minHeight: '220px' }}>
+              {NEWS_ITEMS.map((n, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col lg:flex-row"
+                  style={{
+                    position: idx === 0 ? 'relative' : 'absolute',
+                    inset: idx === 0 ? undefined : 0,
+                    opacity: idx === current ? 1 : 0,
+                    transition: 'opacity 0.5s ease-in-out',
+                    pointerEvents: idx === current ? 'auto' : 'none',
+                  }}
+                >
+                  {n.image && (
                     <div
                       className="shrink-0 overflow-hidden lg:rounded-none rounded-t-2xl"
                       style={{ width: '100%', maxWidth: 280, minHeight: 200 }}
                     >
                       <Image
-                        src={item.image}
-                        alt={item.title}
+                        src={n.image}
+                        alt={n.title}
                         width={280}
                         height={200}
                         className="w-full h-full object-cover"
@@ -118,63 +120,54 @@ export default function NewsBanner() {
                       />
                     </div>
                   )}
-
-                  {/* Content */}
                   <div className="flex-1 min-w-0 px-6 py-6 lg:px-8 lg:py-6">
-                    {/* Badge */}
                     <div className="flex items-center gap-3 mb-3">
                       <span
                         className="px-4 py-1.5 rounded-full text-base font-bold"
                         style={{ background: 'rgba(2,16,151,0.08)', color: 'var(--primary-500)' }}
                       >
-                        {item.source}
+                        {n.source}
                       </span>
                       <span className="text-base font-medium" style={{ color: 'var(--text-secondary)' }}>
-                        {item.date}
+                        {n.date}
                       </span>
                     </div>
-                    <h3
-                      className="text-xl lg:text-2xl font-bold mb-3 leading-snug"
-                      style={{ color: 'var(--text-primary)' }}
-                    >
-                      {item.title}
+                    <h3 className="text-xl lg:text-2xl font-bold mb-3 leading-snug" style={{ color: 'var(--text-primary)' }}>
+                      {n.title}
                     </h3>
-                    <p
-                      className="text-base leading-relaxed"
-                      style={{ color: 'var(--text-body)' }}
-                    >
-                      {item.summary}
+                    <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                      {n.summary}
                     </p>
                   </div>
-
-                  {/* Right: news selection — moved toward center, more detailed */}
-                  <div className="hidden xl:flex flex-col shrink-0 border-l" style={{ width: 300, borderColor: 'var(--border)' }}>
-                    {NEWS_ITEMS.map((n, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrent(idx)}
-                        className="text-left px-5 py-4 transition-all duration-200 border-b last:border-b-0"
-                        style={{
-                          background: idx === current ? 'rgba(2,16,151,0.06)' : 'transparent',
-                          borderColor: 'var(--border)',
-                          borderLeft: idx === current ? '3px solid var(--primary-500)' : '3px solid transparent',
-                        }}
-                      >
-                        <p
-                          className="text-sm font-bold mb-1 leading-snug line-clamp-2"
-                          style={{ color: idx === current ? 'var(--primary-500)' : 'var(--text-primary)' }}
-                        >
-                          {n.title}
-                        </p>
-                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                          {n.source} · {n.date}
-                        </p>
-                      </button>
-                    ))}
-                  </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              ))}
+            </div>
+
+            {/* Right: news selection list */}
+            <div className="hidden xl:flex flex-col shrink-0 border-l" style={{ width: 300, borderColor: 'var(--border)' }}>
+              {NEWS_ITEMS.map((n, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrent(idx)}
+                  className="text-left px-5 py-4 transition-all duration-200 border-b last:border-b-0"
+                  style={{
+                    background: idx === current ? 'rgba(2,16,151,0.06)' : 'transparent',
+                    borderColor: 'var(--border)',
+                    borderLeft: idx === current ? '3px solid var(--primary-500)' : '3px solid transparent',
+                  }}
+                >
+                  <p
+                    className="text-sm font-bold mb-1 leading-snug line-clamp-2"
+                    style={{ color: idx === current ? 'var(--primary-500)' : 'var(--text-primary)' }}
+                  >
+                    {n.title}
+                  </p>
+                  <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                    {n.source} · {n.date}
+                  </p>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Controls */}

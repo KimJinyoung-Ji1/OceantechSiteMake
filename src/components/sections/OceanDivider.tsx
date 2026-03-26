@@ -22,8 +22,6 @@ const OCEAN_ALTS = {
 export default function OceanDivider({
   variant = 1,
   height = 220,
-  topColor = 'var(--background)',
-  bottomColor = 'var(--background)',
 }: OceanDividerProps) {
   return (
     <div
@@ -42,24 +40,24 @@ export default function OceanDivider({
       {/* Light cyan tint overlay */}
       <div
         className="absolute inset-0 z-0"
-        style={{ background: 'rgba(3,233,248,0.15)' }}
+        style={{ background: 'rgba(3,233,248,0.10)' }}
       />
 
-      {/* Fade from top section color into photo — longer, smoother */}
+      {/* Strong fade from top — white to transparent */}
       <div
         className="absolute top-0 left-0 right-0 z-10"
         style={{
-          height: '55%',
-          background: `linear-gradient(to bottom, ${topColor} 0%, ${topColor}CC 15%, ${topColor}66 30%, transparent 55%)`,
+          height: '70%',
+          background: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
         }}
       />
 
-      {/* Fade from photo into bottom section color — longer, smoother */}
+      {/* Strong fade from bottom — white to transparent */}
       <div
         className="absolute bottom-0 left-0 right-0 z-10"
         style={{
-          height: '55%',
-          background: `linear-gradient(to top, ${bottomColor} 0%, ${bottomColor}CC 15%, ${bottomColor}66 30%, transparent 55%)`,
+          height: '70%',
+          background: 'linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
         }}
       />
     </div>

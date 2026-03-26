@@ -87,7 +87,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
       {/* Content */}
       <div className="relative z-10 w-full px-4 sm:px-8 lg:px-24 max-w-[1920px] mx-auto py-16 sm:py-20 lg:py-28">
         <div
-          className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] items-center gap-8 lg:gap-10"
+          className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-center gap-8"
         >
           {/* LEFT — Text */}
           <div className="pl-0 lg:pl-20">
@@ -173,7 +173,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           </div>
 
           {/* RIGHT — Auto-sliding Cert Carousel */}
-          <div className="hidden lg:block w-full pr-0">
+          <div className="hidden lg:block w-full">
             <div
               className="rounded-2xl overflow-hidden w-full"
               style={{

@@ -45,10 +45,10 @@ export default function Header({ locale }: HeaderProps) {
               <Image
                 src="/images/logo-brand.png"
                 alt="오션테크 로고"
-                width={320}
-                height={80}
-                className="h-[72px] w-auto object-contain brightness-0 invert"
-                sizes="320px"
+                width={250}
+                height={62}
+                className="h-[56px] w-auto object-contain brightness-0 invert"
+                sizes="250px"
                 priority
               />
             </Link>
