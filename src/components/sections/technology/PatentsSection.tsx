@@ -116,9 +116,9 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
   ];
 
   return (
-    <section className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="특허현황 및 시험성적서">
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="text-center mb-12">
+    <section className="py-8 md:py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="특허현황 및 시험성적서">
+      <div className="max-w-[1920px] mx-auto px-3 md:px-6 lg:px-24">
+        <div className="text-center mb-6 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'PATENTS & TEST REPORTS' : '특허현황 및 시험성적서'}
           </p>
@@ -129,7 +129,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
           {gridItems.map((item) => (
             <article
               key={item.key}
@@ -146,7 +146,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
             >
               {/* Image area */}
               <button
-                className="relative cursor-pointer transition-opacity flex items-center justify-center w-full overflow-hidden"
+                className="relative cursor-pointer transition-opacity flex items-center justify-center w-full overflow-hidden h-[180px] md:h-auto"
                 style={{
                   aspectRatio: '4/3',
                   background: item.isTestReport
@@ -201,7 +201,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
               </button>
 
               {/* Info area — centered, larger text */}
-              <div className="p-5 flex flex-col gap-3 flex-1 items-center text-center">
+              <div className="p-3 md:p-5 flex flex-col gap-2 md:gap-3 flex-1 items-center text-center">
                 <span
                   className="text-sm font-black px-4 py-1.5 rounded-full tracking-wide"
                   style={
@@ -219,11 +219,11 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                     : (isEn ? 'PATENT' : '특허')}
                 </span>
 
-                <h3 className="text-lg font-bold leading-snug" style={{ color: 'var(--gray-900)' }}>
+                <h3 className="text-base md:text-lg font-bold leading-snug" style={{ color: 'var(--gray-900)' }}>
                   {isEn ? item.titleEn : item.titleKo}
                 </h3>
 
-                <p className="text-sm font-mono font-semibold" style={{ color: 'var(--primary-500)' }}>
+                <p className="text-xs md:text-sm font-mono font-semibold" style={{ color: 'var(--primary-500)' }}>
                   {item.number}
                 </p>
               </div>

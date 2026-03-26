@@ -121,12 +121,12 @@ export default function VisionSection({ locale }: VisionSectionProps) {
   return (
     <section
       id="vision"
-      className="py-16 lg:py-20 px-6 lg:px-24 text-center"
+      className="py-8 md:py-16 lg:py-20 px-3 md:px-6 lg:px-24 text-center"
       style={{ background: 'var(--background-alt)' }}
       aria-label="비전"
     >
       <div className="max-w-[1920px] mx-auto">
-        <div className="mb-12">
+        <div className="mb-6 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.about.vision.title}
           </p>
@@ -138,11 +138,11 @@ export default function VisionSection({ locale }: VisionSectionProps) {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-3 md:gap-6">
           {visionCards.map((card) => (
             <article
               key={card.key}
-              className="p-12 rounded-2xl flex flex-col items-center gap-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+              className="p-5 md:p-12 rounded-2xl flex flex-col items-center gap-3 md:gap-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
               style={{
                 background: card.gradBg,
                 border: `1px solid ${card.border}`,
@@ -151,17 +151,17 @@ export default function VisionSection({ locale }: VisionSectionProps) {
             >
               <div
                 className="rounded-2xl flex items-center justify-center"
-                style={{ background: card.iconBg, width: '112px', height: '112px' }}
+                style={{ background: card.iconBg, width: '80px', height: '80px' }}
               >
                 {/* Icon scaled up 1.3x via transform */}
                 <span style={{ display: 'flex', transform: 'scale(1.3)', transformOrigin: 'center' }}>
                   {card.icon}
                 </span>
               </div>
-              <h3 className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="text-xl md:text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 {locale === 'en' ? card.labelEn : card.labelKo}
               </h3>
-              <p className="text-lg leading-relaxed text-center" style={{ color: 'var(--text-body)' }}>
+              <p className="text-base md:text-lg leading-relaxed text-center" style={{ color: 'var(--text-body)' }}>
                 {locale === 'en' ? card.descEn : card.descKo}
               </p>
             </article>

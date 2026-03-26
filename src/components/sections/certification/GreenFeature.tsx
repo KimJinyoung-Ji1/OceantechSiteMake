@@ -12,20 +12,20 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
 
   return (
     <section
-      className="py-16 lg:py-20"
+      className="py-8 md:py-16 lg:py-20"
       style={{ background: 'var(--background)' }}
       aria-label="녹색기술인증 강조"
     >
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-3 md:px-6 lg:px-24">
         <div
-          className="rounded-2xl p-8 lg:p-12 flex flex-col items-center text-center gap-6"
+          className="rounded-2xl p-4 md:p-8 lg:p-12 flex flex-col items-center text-center gap-4 md:gap-6"
           style={{
             background: 'linear-gradient(135deg, rgba(2,16,151,0.06) 0%, rgba(23,233,181,0.08) 100%)',
             border: '2px solid rgba(23,233,181,0.3)',
           }}
         >
           {/* Green cert mark */}
-          <div className="relative shrink-0 w-28 h-28">
+          <div className="relative shrink-0 w-20 h-20 md:w-28 md:h-28">
             <Image
               src="/images/green-cert-mark.png"
               alt="녹색기술인증 마크"
@@ -70,7 +70,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
               : '* 녹색기술인증이란 정부(환경부)가 탄소중립 및 환경보호에 기여하는 기술을 공식 인증하는 제도입니다. 이 인증 획득은 오션테크의 친환경 아연 어망추 제조기술이 국제적 녹색 기준에 부합함을 공식적으로 검증받은 것을 의미합니다.'}
           </p>
 
-          <div className="flex flex-wrap gap-6 justify-center">
+          <div className="flex flex-wrap gap-4 md:gap-6 justify-center">
             <div className="text-center">
               <p className="text-sm" style={{ color: 'var(--gray-700)' }}>
                 {isEn ? 'Green Tech No.' : '녹색기술인증 번호'}

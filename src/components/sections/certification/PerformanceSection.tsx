@@ -27,12 +27,12 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
 
   return (
     <section
-      className="py-16 lg:py-20"
+      className="py-8 md:py-16 lg:py-20"
       style={{ background: 'var(--background-alt)' }}
       aria-label="실적"
     >
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
-        <div className="text-center mb-12">
+      <div className="max-w-[1920px] mx-auto px-3 md:px-6 lg:px-24">
+        <div className="text-center mb-6 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'PERFORMANCE' : '주요 실적'}
           </p>
@@ -41,7 +41,7 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
           </h2>
         </div>
 
-        <div className="space-y-6 max-w-5xl mx-auto">
+        <div className="space-y-4 md:space-y-6 max-w-5xl mx-auto">
           {performance.map((p) => {
             const detail = yearDetails[p.year];
             return (
@@ -55,9 +55,9 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
                 }}
               >
                 {/* Left: year + bullet items */}
-                <div className="p-6">
+                <div className="p-4 md:p-6">
                   <p
-                    className="text-3xl sm:text-4xl font-extrabold mb-4"
+                    className="text-2xl sm:text-4xl font-extrabold mb-3 md:mb-4"
                     style={{ color: 'var(--primary-500)' }}
                   >
                     {p.year}
@@ -70,7 +70,7 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
                           style={{ background: 'var(--secondary-500)' }}
                           aria-hidden="true"
                         />
-                        <span className="text-base leading-relaxed" style={{ color: 'var(--gray-700)' }}>
+                        <span className="text-sm md:text-base leading-relaxed" style={{ color: 'var(--gray-700)' }}>
                           {item}
                         </span>
                       </li>
@@ -80,14 +80,14 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
 
                 {/* Right: extended description */}
                 <div
-                  className="p-6 flex items-center"
+                  className="p-4 md:p-6 flex items-center"
                   style={{
                     background: 'var(--gray-50)',
                     borderLeft: '1px solid var(--gray-200)',
                   }}
                 >
                   {detail && (
-                    <p className="text-base leading-relaxed" style={{ color: 'var(--gray-600)' }}>
+                    <p className="text-sm md:text-base leading-relaxed" style={{ color: 'var(--gray-600)' }}>
                       {isEn ? detail.en : detail.ko}
                     </p>
                   )}

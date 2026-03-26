@@ -31,9 +31,9 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
   const rows = splitRows(history, COLS);
 
   return (
-    <section id="history" className="py-16 lg:py-20 px-6 lg:px-24 overflow-hidden" style={{ background: 'var(--background)' }} aria-label="연혁">
+    <section id="history" className="py-8 md:py-16 lg:py-20 px-3 md:px-6 lg:px-24 overflow-hidden" style={{ background: 'var(--background)' }} aria-label="연혁">
       <div className="max-w-[1920px] mx-auto">
-        <div className="mb-12 text-center">
+        <div className="mb-6 md:mb-12 text-center">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.about.history.title}
           </p>
@@ -138,11 +138,11 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
         </div>
 
         {/* Mobile: simple vertical list */}
-        <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-5">
           {history.map((item, i) => {
             const grad = yearGradients[i % yearGradients.length];
             return (
-              <div key={i} className="flex gap-4 items-start">
+              <div key={i} className="flex gap-3 items-start">
                 <div
                   className="w-[72px] h-[72px] rounded-full flex items-center justify-center shrink-0"
                   style={{ background: grad, boxShadow: '0 4px 16px rgba(2,18,151,0.2)' }}

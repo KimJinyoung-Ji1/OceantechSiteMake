@@ -74,13 +74,13 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
 
   return (
     <section
-      className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8"
+      className="py-6 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8"
       style={{ background: 'linear-gradient(180deg, var(--background) 0%, #F0F5FF 100%)' }}
       aria-label="회사 개요"
     >
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 md:mb-10">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'Company Overview' : '회사 개요'}
           </p>
@@ -95,7 +95,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
         </div>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
           {groups.map((group, gi) => (
             <div
               key={gi}
@@ -123,14 +123,14 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
                 {group.rows.map((row, ri) => (
                   <div
                     key={ri}
-                    className="flex items-start gap-3 px-5 py-3 transition-colors duration-150 hover:bg-slate-50"
+                    className="flex items-start gap-2 md:gap-3 px-3 md:px-5 py-2 md:py-3 transition-colors duration-150 hover:bg-slate-50"
                   >
                     <span className="shrink-0 mt-0.5" style={{ color: 'var(--primary-500)' }}>{row.icon}</span>
                     <div className="min-w-0">
                       <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--text-secondary)' }}>
                         {row.label}
                       </p>
-                      <p className="text-base font-medium leading-snug break-words" style={{ color: 'var(--text-primary)' }}>
+                      <p className="text-sm md:text-base font-medium leading-snug break-words" style={{ color: 'var(--text-primary)' }}>
                         {row.value}
                       </p>
                     </div>
