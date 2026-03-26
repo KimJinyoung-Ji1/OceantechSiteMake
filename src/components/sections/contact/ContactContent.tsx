@@ -117,7 +117,7 @@ function KakaoMap() {
       {mapError && (
         <div className="mt-2 flex flex-col items-center gap-1">
           <p className="text-xs font-medium text-center" style={{ color: 'var(--text-secondary)' }}>
-            남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29-30호
+            남양주시 다산순환로 20 현대프리미어캠퍼스 E동 7층 29호
           </p>
           <a
             href="https://map.kakao.com/link/search/남양주시+다산순환로+20"
@@ -254,7 +254,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
               </h3>
               <KakaoMap />
               <p className="mt-1.5 text-xs" style={{ color: 'var(--text-secondary)' }}>
-                {isEn ? 'Hyundai Premier Campus Bldg. E, 7F #29-30' : '현대프리미어캠퍼스 E동 7층 29-30호'}
+                {isEn ? 'Hyundai Premier Campus Bldg. E, 7F #29' : '현대프리미어캠퍼스 E동 7층 29호'}
               </p>
             </div>
 
