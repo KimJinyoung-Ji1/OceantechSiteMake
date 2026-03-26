@@ -107,7 +107,7 @@ function KakaoMap() {
         ref={mapRef}
         className="w-full rounded-2xl overflow-hidden"
         style={{
-          height: '200px',
+          height: '260px',
           border: '1px solid var(--border)',
           background: 'var(--background-alt)',
           display: mapError ? 'none' : undefined,
@@ -120,7 +120,7 @@ function KakaoMap() {
         <div
           className="w-full rounded-2xl flex flex-col items-center justify-center gap-3 py-6 px-4"
           style={{
-            height: '200px',
+            height: '260px',
             background: 'var(--background-alt)',
             border: '1px solid var(--border)',
           }}
@@ -225,77 +225,101 @@ export default function ContactContent({ locale }: ContactContentProps) {
           {/* Left — Form */}
           <ContactForm locale={locale} onSuccess={handleSuccess} />
 
-          {/* Right — Info + Map + Manager */}
+          {/* Right — Info + Map */}
           <div className="flex flex-col gap-4">
-            {/* Contact Info */}
-            <div
-              className="p-4 rounded-2xl"
-              style={{
-                background: 'var(--background-alt)',
-                border: '1px solid var(--border)',
-              }}
-            >
-              <h3 className="text-base font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
-                {isEn ? 'Contact Information' : '연락처 정보'}
-              </h3>
-              <dl className="grid grid-cols-1 gap-2">
-                {contactInfo.map((info, i) => (
-                  <div key={i} className="flex items-start gap-2.5">
-                    <div
-                      className="mt-0.5 w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                      style={{ background: 'var(--primary-100)' }}
-                    >
-                      {info.icon}
-                    </div>
-                    <div>
-                      <dt className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>
-                        {isEn ? info.labelEn : info.labelKo}
-                      </dt>
-                      {info.href ? (
-                        <dd>
-                          <a
-                            href={info.href}
-                            className="text-sm font-medium hover:underline"
-                            style={{ color: 'var(--text-body)' }}
-                          >
+            {/* TOP: Contact info + Manager info side by side */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {/* Left sub-col: 연락처 정보 */}
+              <div
+                className="p-4 rounded-2xl"
+                style={{
+                  background: 'var(--background-alt)',
+                  border: '1px solid var(--border)',
+                }}
+              >
+                <h3 className="text-base font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
+                  {isEn ? 'Contact Information' : '연락처 정보'}
+                </h3>
+                <dl className="grid grid-cols-1 gap-2">
+                  {contactInfo.map((info, i) => (
+                    <div key={i} className="flex items-start gap-2.5">
+                      <div
+                        className="mt-0.5 w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                        style={{ background: 'var(--primary-100)' }}
+                      >
+                        {info.icon}
+                      </div>
+                      <div>
+                        <dt className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>
+                          {isEn ? info.labelEn : info.labelKo}
+                        </dt>
+                        {info.href ? (
+                          <dd>
+                            <a
+                              href={info.href}
+                              className="text-sm font-medium hover:underline"
+                              style={{ color: 'var(--text-body)' }}
+                            >
+                              {info.value}
+                            </a>
+                          </dd>
+                        ) : (
+                          <dd className="text-sm leading-snug" style={{ color: 'var(--text-body)' }}>
                             {info.value}
-                          </a>
-                        </dd>
-                      ) : (
-                        <dd className="text-sm leading-snug" style={{ color: 'var(--text-body)' }}>
-                          {info.value}
-                        </dd>
-                      )}
+                          </dd>
+                        )}
+                      </div>
                     </div>
+                  ))}
+                </dl>
+              </div>
+
+              {/* Right sub-col: 담당자 정보 */}
+              <div
+                className="p-4 rounded-2xl flex flex-col justify-center"
+                style={{
+                  background: 'var(--background-alt)',
+                  border: '1px solid var(--border)',
+                }}
+              >
+                <h3 className="text-base font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
+                  {isEn ? 'Contact Person' : '담당자 정보'}
+                </h3>
+                <div className="flex items-start gap-2.5">
+                  <div
+                    className="mt-0.5 w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                    style={{ background: 'var(--primary-100)' }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                      <circle cx="9" cy="6" r="3" stroke="var(--primary-500)" strokeWidth="1.5" fill="none" />
+                      <path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="var(--primary-500)" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                    </svg>
                   </div>
-                ))}
-              </dl>
+                  <div>
+                    <p className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>
+                      {isEn ? 'Executive Director' : '전무이사'}
+                    </p>
+                    <p className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>
+                      {SITE_CONFIG.contact.manager}
+                    </p>
+                    <p className="text-sm" style={{ color: 'var(--text-body)' }}>
+                      {SITE_CONFIG.contact.mobile}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* 오시는 길 */}
-            <div>
+            {/* BOTTOM: 오시는 길 — grows to fill remaining space */}
+            <div className="flex flex-col flex-1">
               <h3 className="text-base font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
                 {isEn ? 'Directions' : '오시는 길'}
               </h3>
-              <KakaoMap />
+              <div className="flex-1 flex flex-col">
+                <KakaoMap />
+              </div>
               <p className="mt-1.5 text-xs" style={{ color: 'var(--text-secondary)' }}>
                 {isEn ? 'Hyundai Premier Campus Bldg. E, 7F #29' : '현대프리미어캠퍼스 E동 7층 29호'}
-              </p>
-            </div>
-
-            {/* Manager info */}
-            <div
-              className="p-3 rounded-2xl"
-              style={{ background: 'var(--background-alt)', border: '1px solid var(--border)' }}
-            >
-              <p className="text-xs font-semibold mb-0.5" style={{ color: 'var(--text-secondary)' }}>
-                {isEn ? 'Contact Person' : '담당자'}
-              </p>
-              <p className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>
-                {SITE_CONFIG.contact.manager}
-              </p>
-              <p className="text-sm" style={{ color: 'var(--text-body)' }}>
-                {SITE_CONFIG.contact.mobile}
               </p>
             </div>
           </div>

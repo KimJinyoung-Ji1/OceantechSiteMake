@@ -129,11 +129,11 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex flex-col gap-5">
           {gridItems.map((item) => (
             <article
               key={item.key}
-              className="rounded-2xl overflow-hidden flex flex-col"
+              className="rounded-2xl overflow-hidden flex flex-col sm:flex-row"
               style={{
                 background: 'white',
                 border: item.isTestReport
@@ -144,15 +144,17 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                 boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
               }}
             >
-              {/* Image area */}
+              {/* LEFT: Image area */}
               <button
-                className="relative w-full cursor-pointer hover:opacity-90 transition-opacity flex items-center justify-center"
+                className="relative cursor-pointer hover:opacity-90 transition-opacity flex items-center justify-center shrink-0"
                 style={{
-                  minHeight: '180px',
+                  minWidth: '220px',
+                  width: '220px',
+                  minHeight: '220px',
                   background: item.isTestReport
                     ? 'rgba(23,233,181,0.04)'
                     : 'var(--gray-50)',
-                  borderBottom: '1px solid var(--gray-100)',
+                  borderRight: '1px solid var(--gray-100)',
                 }}
                 onClick={() =>
                   item.src
@@ -168,7 +170,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                       alt={isEn ? item.titleEn : item.titleKo}
                       fill
                       className="object-contain p-4"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, 280px"
                     />
                     <div
                       className="absolute bottom-2 right-2 px-2 py-0.5 rounded text-xs font-medium"
@@ -184,8 +186,8 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                 )}
               </button>
 
-              {/* Info area */}
-              <div className="p-4 flex flex-col gap-2 flex-1">
+              {/* RIGHT: Info area */}
+              <div className="p-5 flex flex-col gap-3 flex-1 justify-center">
                 {/* Badge */}
                 <div className="flex items-center gap-1.5 flex-wrap">
                   <span

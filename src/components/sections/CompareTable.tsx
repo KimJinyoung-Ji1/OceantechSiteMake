@@ -6,14 +6,14 @@ interface CompareTableProps {
 }
 
 const CheckIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+  <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
     <circle cx="11" cy="11" r="11" fill="var(--primary-900,#021097)" />
     <path d="M6.5 11.5l3 3 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const XIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+  <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
     <circle cx="11" cy="11" r="11" fill="#DC2626" opacity="0.15" />
     <path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
   </svg>
@@ -95,29 +95,33 @@ export default function CompareTable({ locale }: CompareTableProps) {
                 {row.label}
               </div>
 
-              {/* Zinc value — icon left-aligned in a fixed slot */}
+              {/* Zinc value — centered cell, left-aligned content */}
               <div
-                className="px-4 py-3 flex items-center gap-3 border-r"
+                className="px-4 py-3 flex items-center justify-center border-r"
                 style={{ borderColor: 'rgba(14,173,135,0.12)' }}
               >
-                <span className="shrink-0"><CheckIcon /></span>
-                <span
-                  className="text-xl font-bold"
-                  style={{ color: 'var(--primary-900,#021097)' }}
-                >
-                  {row.zinc}
-                </span>
+                <div className="flex items-center gap-2" style={{ textAlign: 'left' }}>
+                  <span className="shrink-0"><CheckIcon /></span>
+                  <span
+                    className="text-xl font-bold"
+                    style={{ color: 'var(--primary-900,#021097)' }}
+                  >
+                    {row.zinc}
+                  </span>
+                </div>
               </div>
 
-              {/* Lead value — icon left-aligned in a fixed slot */}
-              <div className="px-4 py-3 flex items-center gap-3">
-                <span className="shrink-0"><XIcon /></span>
-                <span
-                  className="text-xl font-bold"
-                  style={{ color: '#9CA3AF' }}
-                >
-                  {row.lead}
-                </span>
+              {/* Lead value — centered cell, left-aligned content */}
+              <div className="px-4 py-3 flex items-center justify-center">
+                <div className="flex items-center gap-2" style={{ textAlign: 'left' }}>
+                  <span className="shrink-0"><XIcon /></span>
+                  <span
+                    className="text-xl font-bold"
+                    style={{ color: '#9CA3AF' }}
+                  >
+                    {row.lead}
+                  </span>
+                </div>
               </div>
             </div>
           ))}

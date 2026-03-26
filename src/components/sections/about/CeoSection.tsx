@@ -18,41 +18,47 @@ export default function CeoSection({ locale }: CeoSectionProps) {
           {t.about.ceo.title}
         </p>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* LEFT: CEO photo placeholder — compact */}
-          <div className="flex justify-center lg:justify-start">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-14">
+          {/* LEFT: CEO silhouette avatar */}
+          <div className="flex flex-col items-center shrink-0">
             <div
-              className="flex flex-col items-center justify-center rounded-2xl w-[200px] h-[200px]"
               style={{
-                background: 'var(--background-alt)',
-                border: '2px dashed var(--border)',
+                width: '220px',
+                height: '220px',
+                borderRadius: '50%',
+                background: 'var(--gray-200, #e5e7eb)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
+              aria-hidden="true"
             >
               <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
+                width="120"
+                height="120"
+                viewBox="0 0 120 120"
                 fill="none"
-                stroke="var(--text-secondary)"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
                 aria-hidden="true"
               >
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                <circle cx="12" cy="13" r="4" />
+                {/* Head */}
+                <circle cx="60" cy="38" r="22" fill="var(--gray-400, #9ca3af)" />
+                {/* Body / shoulders */}
+                <path
+                  d="M10 108 C10 78 30 62 60 62 C90 62 110 78 110 108 Z"
+                  fill="var(--gray-400, #9ca3af)"
+                />
               </svg>
-              <p
-                className="mt-2 text-xs font-medium"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                {locale === 'en' ? 'CEO Photo' : '대표이사 사진'}
-              </p>
             </div>
+            <p
+              className="mt-4 text-base font-semibold text-center"
+              style={{ color: 'var(--gray-700, #374151)' }}
+            >
+              {locale === 'en' ? 'CEO, OceanTech Inc.' : '(주)오션테크 대표이사 이우철'}
+            </p>
           </div>
 
           {/* RIGHT: CEO message */}
-          <div className="flex flex-col justify-center space-y-6">
+          <div className="flex flex-col justify-center space-y-6 flex-1">
             {lines.map((line, i) => {
               if (!line.trim()) return null;
               if (i === 0) {

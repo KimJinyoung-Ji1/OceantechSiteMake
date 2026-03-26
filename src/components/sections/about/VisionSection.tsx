@@ -142,7 +142,7 @@ export default function VisionSection({ locale }: VisionSectionProps) {
           {visionCards.map((card) => (
             <article
               key={card.key}
-              className="p-10 rounded-2xl flex flex-col items-center gap-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+              className="p-12 rounded-2xl flex flex-col items-center gap-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
               style={{
                 background: card.gradBg,
                 border: `1px solid ${card.border}`,
@@ -151,14 +151,17 @@ export default function VisionSection({ locale }: VisionSectionProps) {
             >
               <div
                 className="rounded-2xl flex items-center justify-center"
-                style={{ background: card.iconBg, width: '96px', height: '96px' }}
+                style={{ background: card.iconBg, width: '112px', height: '112px' }}
               >
-                {card.icon}
+                {/* Icon scaled up 1.3x via transform */}
+                <span style={{ display: 'flex', transform: 'scale(1.3)', transformOrigin: 'center' }}>
+                  {card.icon}
+                </span>
               </div>
-              <h3 className="card-title" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 {locale === 'en' ? card.labelEn : card.labelKo}
               </h3>
-              <p className="section-subtitle" style={{ color: 'var(--text-body)' }}>
+              <p className="text-lg leading-relaxed text-center" style={{ color: 'var(--text-body)' }}>
                 {locale === 'en' ? card.descEn : card.descKo}
               </p>
             </article>

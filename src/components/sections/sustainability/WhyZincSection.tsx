@@ -42,11 +42,15 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
           </div>
 
           {/* Product photo comparison */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch gap-4">
             {/* Lead weight */}
             <div
-              className="rounded-2xl overflow-hidden flex flex-col"
-              style={{ border: '2px solid rgba(239,68,68,0.25)', background: 'rgba(239,68,68,0.04)' }}
+              className="rounded-2xl overflow-hidden flex flex-col flex-1"
+              style={{
+                border: '2px solid rgba(239,68,68,0.5)',
+                background: 'rgba(239,68,68,0.04)',
+                boxShadow: '0 4px 20px rgba(239,68,68,0.12)',
+              }}
             >
               <div className="relative w-full" style={{ aspectRatio: '1/1', background: '#FEF2F2' }}>
                 <Image
@@ -61,17 +65,17 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
                   className="absolute inset-0 flex items-center justify-center"
                   style={{ background: 'rgba(239,68,68,0.12)' }}
                 >
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                    <circle cx="18" cy="18" r="15" fill="rgba(239,68,68,0.8)" />
-                    <path d="M11 11l14 14M25 11L11 25" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <circle cx="24" cy="24" r="20" fill="rgba(239,68,68,0.85)" />
+                    <path d="M15 15l18 18M33 15L15 33" stroke="white" strokeWidth="3" strokeLinecap="round" />
                   </svg>
                 </div>
               </div>
-              <div className="p-4">
-                <p className="font-bold text-base mb-2" style={{ color: '#DC2626' }}>
+              <div className="p-5">
+                <p className="font-bold text-xl mb-3" style={{ color: '#DC2626' }}>
                   {isEn ? 'Lead Weight' : '납추'}
                 </p>
-                <ul className="text-sm space-y-1" style={{ color: 'var(--gray-600)' }}>
+                <ul className="text-base space-y-2" style={{ color: 'var(--gray-600)' }}>
                   <li>• {isEn ? 'Toxic heavy metal' : '독성 중금속'}</li>
                   <li>• {isEn ? '1~2 yr lifespan' : '1~2년 수명'}</li>
                   <li>• {isEn ? 'Frequent replacement' : '잦은 교체'}</li>
@@ -80,10 +84,26 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
               </div>
             </div>
 
+            {/* VS divider */}
+            <div className="flex sm:flex-col items-center justify-center px-2 py-4 sm:py-0 gap-2">
+              <div className="flex-1 sm:w-px sm:flex-initial sm:h-full" style={{ background: 'var(--gray-200)', height: '1px', width: '100%' }} />
+              <span
+                className="text-xl font-black px-3 py-1.5 rounded-full shrink-0"
+                style={{ background: 'var(--gray-100)', color: 'var(--gray-500)', border: '1px solid var(--gray-200)' }}
+              >
+                VS
+              </span>
+              <div className="flex-1 sm:w-px sm:flex-initial sm:h-full" style={{ background: 'var(--gray-200)', height: '1px', width: '100%' }} />
+            </div>
+
             {/* Zinc weight */}
             <div
-              className="rounded-2xl overflow-hidden flex flex-col"
-              style={{ border: '2px solid rgba(23,233,181,0.35)', background: 'rgba(23,233,181,0.05)' }}
+              className="rounded-2xl overflow-hidden flex flex-col flex-1"
+              style={{
+                border: '2px solid rgba(23,233,181,0.55)',
+                background: 'rgba(23,233,181,0.05)',
+                boxShadow: '0 4px 20px rgba(23,233,181,0.15)',
+              }}
             >
               <div className="relative w-full" style={{ aspectRatio: '1/1', background: '#E8F5F1' }}>
                 <Image
@@ -98,17 +118,17 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
                   className="absolute inset-0 flex items-center justify-center"
                   style={{ background: 'rgba(23,233,181,0.10)' }}
                 >
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                    <circle cx="18" cy="18" r="15" fill="rgba(23,233,181,0.85)" />
-                    <path d="M10 18l5.5 5.5 11-11" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <circle cx="24" cy="24" r="20" fill="rgba(23,233,181,0.9)" />
+                    <path d="M13 24l7.5 7.5 14.5-15" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </div>
-              <div className="p-4">
-                <p className="font-bold text-base mb-2" style={{ color: 'var(--secondary-700,#047857)' }}>
+              <div className="p-5">
+                <p className="font-bold text-xl mb-3" style={{ color: 'var(--secondary-700,#047857)' }}>
                   {isEn ? 'Zinc Weight' : '아연추'}
                 </p>
-                <ul className="text-sm space-y-1" style={{ color: 'var(--gray-600)' }}>
+                <ul className="text-base space-y-2" style={{ color: 'var(--gray-600)' }}>
                   <li>• {isEn ? 'Zero toxicity' : '독성 없음'}</li>
                   <li>• {isEn ? '10+ yr lifespan' : '10년 이상 수명'}</li>
                   <li>• {isEn ? '80% cost savings' : '비용 80% 절감'}</li>
