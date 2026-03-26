@@ -45,7 +45,7 @@ const items = [
     ),
     ko: '어민 소득 80% 비용 절감',
     en: '80% Cost Reduction for Fishers',
-    bodyKo: '아연추의 수명은 납추의 5배 이상으로, 어민 1인당 연간 어장추 교체 비용을 80% 이상 절감합니다. 강원도 고성군 시범사업에서 실증되었습니다.',
+    bodyKo: '아연추의 수명은 납추의 5배 이상으로, 어민 1인당 연간 어망추 교체 비용을 80% 이상 절감합니다. 강원도 고성군 시범사업에서 실증되었습니다.',
     bodyEn: 'Zinc weights last 5x longer than lead, cutting per-fisher annual replacement costs by over 80%. Proven in the Goseong County, Gangwon pilot program.',
   },
   {

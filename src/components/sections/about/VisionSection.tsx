@@ -41,7 +41,7 @@ const visionCards = [
     key: 'mission',
     labelKo: '미션',
     labelEn: 'Mission',
-    descKo: '친환경 아연 어장추로 납을 대체하여 해양 생태계와 어민의 삶의 질을 동시에 향상시킵니다.',
+    descKo: '친환경 아연 어망추로 납을 대체하여 해양 생태계와 어민의 삶의 질을 동시에 향상시킵니다.',
     descEn: "Replace lead with eco-friendly zinc fishing weights to improve marine ecosystems and fishers' lives.",
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">

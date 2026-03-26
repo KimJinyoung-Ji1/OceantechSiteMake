@@ -50,7 +50,7 @@ export default function CeoSection({ locale }: CeoSectionProps) {
           </div>
 
           {/* RIGHT: CEO message */}
-          <div className="flex flex-col justify-center space-y-5">
+          <div className="flex flex-col justify-center space-y-6">
             {lines.map((line, i) => {
               if (!line.trim()) return null;
               if (i === 0) {
@@ -68,7 +68,7 @@ export default function CeoSection({ locale }: CeoSectionProps) {
                 return (
                   <p
                     key={i}
-                    className="text-lg font-semibold pt-5 border-t"
+                    className="text-xl font-semibold pt-6 border-t"
                     style={{ color: 'var(--gray-700, #374151)', borderColor: 'var(--gray-200, #e5e7eb)' }}
                   >
                     {line}
@@ -78,7 +78,7 @@ export default function CeoSection({ locale }: CeoSectionProps) {
               return (
                 <p
                   key={i}
-                  className="section-subtitle"
+                  className="text-lg lg:text-xl leading-relaxed"
                   style={{ color: 'var(--gray-600, #4b5563)' }}
                 >
                   {line}

@@ -26,7 +26,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
               <p className="section-subtitle">
                 {isEn
                   ? 'Lead weights used in fishing nets gradually dissolve in seawater, releasing toxic heavy metals that accumulate in marine organisms and eventually enter the human food chain.'
-                  : '그물에 사용되는 납 어장추는 해수에서 서서히 용해되어 독성 중금속을 방출합니다. 이는 해양 생물에 축적되고, 결국 인간의 식탁까지 위협합니다.'}
+                  : '그물에 사용되는 납 어망추는 해수에서 서서히 용해되어 독성 중금속을 방출합니다. 이는 해양 생물에 축적되고, 결국 인간의 식탁까지 위협합니다.'}
               </p>
               <p className="section-subtitle">
                 {isEn

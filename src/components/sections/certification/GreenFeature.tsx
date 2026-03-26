@@ -67,7 +67,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
           >
             {isEn
               ? '* Green Technology Certification is a government-issued certification (Ministry of Environment) recognizing technologies that contribute to carbon neutrality and environmental protection. Achieving this certification means that Ocean Tech\'s eco-friendly zinc fishing weight manufacturing technology has been officially verified to meet international green standards.'
-              : '* 녹색기술인증이란 정부(환경부)가 탄소중립 및 환경보호에 기여하는 기술을 공식 인증하는 제도입니다. 이 인증 획득은 오션테크의 친환경 아연 어장추 제조기술이 국제적 녹색 기준에 부합함을 공식적으로 검증받은 것을 의미합니다.'}
+              : '* 녹색기술인증이란 정부(환경부)가 탄소중립 및 환경보호에 기여하는 기술을 공식 인증하는 제도입니다. 이 인증 획득은 오션테크의 친환경 아연 어망추 제조기술이 국제적 녹색 기준에 부합함을 공식적으로 검증받은 것을 의미합니다.'}
           </p>
 
           <div className="flex flex-wrap gap-6 justify-center">

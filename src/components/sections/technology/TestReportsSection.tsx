@@ -14,7 +14,7 @@ const testReports = [
     key: 'tak',
     titleKo: '시험성적서 (TAK)',
     titleEn: 'Test Report (TAK)',
-    descKo: 'TAK 공인 시험기관의 물성 시험성적서로, 아연 어장추의 화학적 조성 및 유해물질 미검출 결과를 공식 인증합니다. 납 등 중금속 전 항목에서 기준치 이하로 확인되었습니다.',
+    descKo: 'TAK 공인 시험기관의 물성 시험성적서로, 아연 어망추의 화학적 조성 및 유해물질 미검출 결과를 공식 인증합니다. 납 등 중금속 전 항목에서 기준치 이하로 확인되었습니다.',
     descEn: 'Official material test report from TAK accredited lab, formally certifying the chemical composition and non-detection of hazardous substances in zinc fishing weights. All heavy metal categories including lead confirmed below threshold.',
     src: '/documents/certs/test-report-tak.png',
     downloadUrl: '/documents/downloads/test-report-tak.pdf',

@@ -27,14 +27,14 @@ export default function TrialSection({ locale }: TrialSectionProps) {
       value: isEn ? '~$80K' : '~1억원',
       labelKo: '사업 규모',
       labelEn: 'Project Scale',
-      detailKo: '정부 지원금과 민간 투자를 합산한 실증 사업 총 규모로, 친환경 어장추 양산 가능성을 검증했습니다.',
+      detailKo: '정부 지원금과 민간 투자를 합산한 실증 사업 총 규모로, 친환경 어망추 양산 가능성을 검증했습니다.',
       detailEn: 'Total pilot project scale combining government support and private investment, validating mass production viability of eco-friendly weights.',
     },
     {
       value: `${SITE_CONFIG.stats.costReduction}%`,
       labelKo: '비용 절감',
       labelEn: 'Cost Reduction',
-      detailKo: '기존 납추 대비 아연추의 수명이 5배 이상 길어 어민 1인당 연간 어장추 교체 비용이 80% 이상 절감되었습니다.',
+      detailKo: '기존 납추 대비 아연추의 수명이 5배 이상 길어 어민 1인당 연간 어망추 교체 비용이 80% 이상 절감되었습니다.',
       detailEn: 'Zinc weights last 5x longer than lead, reducing annual per-fisher replacement costs by over 80%.',
     },
   ];

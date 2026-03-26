@@ -8,7 +8,7 @@ interface PerformanceSectionProps {
 // Extended descriptions for each year
 const yearDetails: Record<string, { ko: string; en: string }> = {
   '2022': {
-    ko: '수협중앙회와의 단가계약으로 아연 어장추의 상업적 가능성을 입증하며 친환경 어업 전환의 새로운 이정표를 세웠습니다. 강원 고성군 실증사업은 실제 어업 현장에서의 성능 검증의 시작점이었습니다.',
+    ko: '수협중앙회와의 단가계약으로 아연 어망추의 상업적 가능성을 입증하며 친환경 어업 전환의 새로운 이정표를 세웠습니다. 강원 고성군 실증사업은 실제 어업 현장에서의 성능 검증의 시작점이었습니다.',
     en: 'The unit-price contract with SUHYUP proved the commercial viability of zinc fishing weights, marking a new milestone in eco-friendly fishery transition. The Goseong pilot was the starting point for real-world field validation.',
   },
   '2023': {

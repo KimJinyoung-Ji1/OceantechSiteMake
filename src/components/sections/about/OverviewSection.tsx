@@ -18,7 +18,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
     { label: isEn ? 'Email' : '이메일', value: SITE_CONFIG.contact.email },
     { label: isEn ? 'Address (office)' : '사무소주소', value: SITE_CONFIG.address.office },
     { label: isEn ? 'Address (main)' : '본사주소', value: SITE_CONFIG.address.main },
-    { label: isEn ? 'Business' : '사업분야', value: isEn ? 'Eco-Friendly Fishing Weights, R&D' : '친환경 어장추 제조 · 연구개발' },
+    { label: isEn ? 'Business' : '사업분야', value: isEn ? 'Eco-Friendly Fishing Weights, R&D' : '친환경 어망추 제조 · 연구개발' },
     { label: isEn ? 'Website' : '도메인', value: 'oceantechinc.com' },
     { label: isEn ? 'Green Tech Cert.' : '녹색기술인증', value: `${SITE_CONFIG.certifications.greenTech.number} (${SITE_CONFIG.certifications.greenTech.period})` },
     { label: isEn ? 'Venture Cert.' : '벤처기업확인', value: `${SITE_CONFIG.certifications.venture.number} (${SITE_CONFIG.certifications.venture.period})` },

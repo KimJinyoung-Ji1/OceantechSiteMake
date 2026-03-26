@@ -30,7 +30,7 @@ export const SITE_CONFIG = {
       period: '2025.07.24 ~ 2029.07.23',
       issuerKo: '환경부',
       issuerEn: 'Ministry of Environment',
-      techNameKo: '친환경 어장추 제조방법',
+      techNameKo: '친환경 어망추 제조방법',
       techNameEn: 'Eco-friendly fishing weight manufacturing method',
     },
     greenProduct: {
@@ -131,7 +131,7 @@ export const SITE_CONFIG = {
     { number: '10-2023-0070882', titleKo: '친환경 채낚기 추 제조방법 및 그에 의해 제조된 채낚기 추', titleEn: 'Eco-friendly Jigging Weight Manufacturing Method', date: '2023.06' },
   ],
   designPatents: [
-    { titleKo: '어장추', titleEn: 'Fishing Weight', count: 2 },
+    { titleKo: '어망추', titleEn: 'Fishing Weight', count: 2 },
     { titleKo: '낚시용 발광체', titleEn: 'Fishing Luminous Body', count: 1 },
     { titleKo: '문어 유인기 미끼', titleEn: 'Octopus Lure Bait', count: 1 },
   ],
@@ -220,11 +220,11 @@ export const SITE_CONFIG = {
     ],
   },
   history: [
-    { year: '2009.05', eventKo: '친환경 어장추 연구개발 착수', eventEn: 'Started R&D on eco-friendly fishing weights' },
+    { year: '2009.05', eventKo: '친환경 어망추 연구개발 착수', eventEn: 'Started R&D on eco-friendly fishing weights' },
     { year: '2015.02', eventKo: '해양추 관련 특허 취득', eventEn: 'Acquired marine weight-related patents' },
     { year: '2017.10', eventKo: '미래산업으로 상호 변경', eventEn: 'Renamed business entity' },
     { year: '2018.01', eventKo: '문어 유인용 낚시기구 특허 취득', eventEn: 'Patented octopus luring fishing gear' },
-    { year: '2022.05', eventKo: '수협중앙회 친환경 어장추 국내 최초 단가계약 체결', eventEn: 'Signed the first unit-price contract for eco-friendly weights with SUHYUP' },
+    { year: '2022.05', eventKo: '수협중앙회 친환경 어망추 국내 최초 단가계약 체결', eventEn: 'Signed the first unit-price contract for eco-friendly weights with SUHYUP' },
     { year: '2023.04', eventKo: '(주)오션테크 법인 설립', eventEn: 'Established Ocean Tech Inc.' },
     { year: '2023.07', eventKo: '기업부설연구소 인정', eventEn: 'Recognized as a corporate R&D center' },
     { year: '2023.12', eventKo: '벤처기업 확인', eventEn: 'Confirmed as a venture company' },
@@ -243,7 +243,7 @@ export const SITE_CONFIG = {
   performance: [
     {
       year: '2022',
-      itemsKo: ['수협중앙회 친환경 어장추 단가계약 체결', '강원 고성군 실증사업 납품 개시'],
+      itemsKo: ['수협중앙회 친환경 어망추 단가계약 체결', '강원 고성군 실증사업 납품 개시'],
       itemsEn: ['Signed a unit-price contract with SUHYUP', 'Started supply for Goseong pilot program'],
     },
     {
@@ -264,7 +264,7 @@ export const SITE_CONFIG = {
       sourceKo: '강원도일보',
       sourceEn: 'Gangwon Domin Ilbo',
       date: '2023.08.17',
-      summaryKo: '강원도 기사에서 오션테크의 아연 어장추가 해양 생태계를 보호하는 대안으로 소개됐다.',
+      summaryKo: '강원도 기사에서 오션테크의 아연 어망추가 해양 생태계를 보호하는 대안으로 소개됐다.',
       summaryEn: "Gangwon media highlighted Ocean Tech's zinc fishing weights as a practical way to protect marine ecosystems.",
       image: '/images/news/kado-article-2023.png',
     },
@@ -274,7 +274,7 @@ export const SITE_CONFIG = {
       sourceKo: '한국일보',
       sourceEn: 'Hankook Ilbo',
       date: '2023.12.27',
-      summaryKo: '친환경 어장추 제조기술의 독창성과 사업성을 인정받아 기계·해양 부문 대상을 수상했다.',
+      summaryKo: '친환경 어망추 제조기술의 독창성과 사업성을 인정받아 기계·해양 부문 대상을 수상했다.',
       summaryEn: 'The company was recognized for the originality and commercial value of its eco-friendly fishing weight technology.',
       image: '/images/news/hankook-article-2023.png',
     },
@@ -302,7 +302,7 @@ export const SITE_CONFIG = {
   ceoMessage: {
     ko: [
       '바다와 공생하는 건강한 생태계를 만드는 일은 선택이 아니라 책임입니다.',
-      '오션테크는 친환경 아연 어장추를 통해 납추를 대체하고, 해양 생태계와 어민의 삶을 동시에 지키는 기술을 만들고 있습니다.',
+      '오션테크는 친환경 아연 어망추를 통해 납추를 대체하고, 해양 생태계와 어민의 삶을 동시에 지키는 기술을 만들고 있습니다.',
       '수협중앙회와의 계약, 31개월 현장 실증, 녹색기술 인증은 저희가 걸어온 길이 현장성과 공공성을 모두 갖추고 있음을 보여줍니다.',
       '앞으로도 바다와 어민, 산업이 함께 지속될 수 있도록 더 나은 기술과 더 단단한 실행으로 답하겠습니다.',
       '(주)오션테크 대표이사 이우철',
