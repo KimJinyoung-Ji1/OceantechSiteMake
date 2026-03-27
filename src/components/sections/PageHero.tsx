@@ -29,7 +29,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
         style={{ background: 'linear-gradient(90deg, transparent 10%, var(--primary-500) 50%, transparent 90%)', opacity: 0.2 }}
       />
 
-      <div className="relative z-10 max-w-[1600px] mx-auto">
+      <div className="relative z-10 w-full">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm mb-2" style={{ color: 'var(--text-secondary)' }} aria-label="브레드크럼">
           {breadcrumb.map((item, i) => (

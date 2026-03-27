@@ -183,11 +183,9 @@ body {
 
 /* ===== Global section container — viewport-proportional padding ===== */
 .section-container {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(16px, 4vw, 96px);
-  padding-right: clamp(16px, 4vw, 96px);
+  width: 100%;
+  padding-left: clamp(16px, 5vw, 160px);
+  padding-right: clamp(16px, 5vw, 160px);
 }
 
 /* Kakao map SDK injects fixed-width SVG — clip it to container */

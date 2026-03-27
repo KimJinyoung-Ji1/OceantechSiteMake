@@ -169,7 +169,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
 
   return (
     <section className="py-6 lg:py-10 px-4 sm:px-6 lg:px-12" style={{ background: 'var(--background)' }} aria-label="문의하기">
-      <div className="max-w-[1600px] mx-auto">
+      <div className="w-full">
         {/* 3-column: Form | Contact Info | Map */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr_1fr] gap-5 lg:gap-6 items-stretch">
 

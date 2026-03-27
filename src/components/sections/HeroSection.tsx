@@ -86,7 +86,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
 
       {/* Content */}
       <div
-        className="relative z-10 w-full max-w-[1600px] mx-auto py-3 sm:py-6 lg:py-8"
+        className="relative z-10 w-full w-full py-3 sm:py-6 lg:py-8"
         style={{ paddingLeft: 'clamp(16px, 4vw, 96px)', paddingRight: 'clamp(16px, 4vw, 96px)' }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-center gap-8">
