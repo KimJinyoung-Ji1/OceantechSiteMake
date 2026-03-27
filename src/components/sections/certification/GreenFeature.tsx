@@ -16,7 +16,7 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
       style={{ background: 'var(--background)' }}
       aria-label="녹색기술인증 강조"
     >
-      <div className="max-w-[1920px] mx-auto px-3 md:px-6 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
         <div
           className="rounded-2xl p-4 md:p-8 lg:p-12 flex flex-col items-center text-center gap-4 md:gap-6"
           style={{

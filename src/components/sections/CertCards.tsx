@@ -72,7 +72,7 @@ export default function CertCards({ locale }: CertCardsProps) {
 
   return (
     <section
-      className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-24"
+      className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24"
       style={{ background: 'var(--background-alt)' }}
       aria-label="인증 및 수상"
     >

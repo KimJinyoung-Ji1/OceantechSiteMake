@@ -13,7 +13,7 @@ export default function CeoSection({ locale }: CeoSectionProps) {
 
   return (
     <section id="ceo" className="py-8 md:py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="CEO 인사말">
-      <div className="max-w-[1920px] mx-auto px-3 md:px-6 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 md:gap-10 lg:gap-14">
           {/* LEFT: label + avatar stacked */}
           <div className="flex flex-col items-center shrink-0">

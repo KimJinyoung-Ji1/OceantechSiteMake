@@ -26,7 +26,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
       style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)' }}
       aria-label="납추 vs 아연추 비교"
     >
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="text-center mb-8 md:mb-14">
           <p className="section-eyebrow" style={{ color: '#C2410C' }}>
             {isEn ? 'DETAILED COMPARISON' : '상세 비교'}

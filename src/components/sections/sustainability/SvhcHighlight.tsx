@@ -10,7 +10,7 @@ export default function SvhcHighlight({ locale }: SvhcHighlightProps) {
 
   return (
     <section className="py-16 lg:py-20" aria-label="SVHC 235종 불검출">
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
         <div
           className="rounded-2xl p-10 lg:p-16 text-center"
           style={{

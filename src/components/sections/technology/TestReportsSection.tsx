@@ -40,7 +40,7 @@ export default function TestReportsSection({ locale }: TestReportsSectionProps) 
       style={{ background: 'var(--background-alt)' }}
       aria-label="시험성적서"
     >
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="text-center mb-10">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'TEST REPORTS' : '시험성적서'}

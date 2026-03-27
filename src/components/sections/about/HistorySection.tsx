@@ -31,7 +31,7 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
   const rows = splitRows(history, COLS);
 
   return (
-    <section id="history" className="py-8 md:py-16 lg:py-20 px-3 md:px-6 lg:px-24 overflow-hidden" style={{ background: 'var(--background)' }} aria-label="연혁">
+    <section id="history" className="py-8 md:py-16 lg:py-20 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 overflow-hidden" style={{ background: 'var(--background)' }} aria-label="연혁">
       <div className="max-w-[1920px] mx-auto">
         <div className="mb-6 md:mb-12 text-center">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>

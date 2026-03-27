@@ -10,7 +10,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
 
   return (
     <section className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="왜 아연인가">
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
             <p className="section-eyebrow" style={{ color: 'var(--secondary-700,#047857)' }}>

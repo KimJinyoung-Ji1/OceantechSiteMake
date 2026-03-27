@@ -119,7 +119,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
 
   return (
     <section className="py-8 md:py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="특허현황 및 시험성적서">
-      <div className="max-w-[1920px] mx-auto px-3 md:px-6 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="text-center mb-6 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'PATENTS & TEST REPORTS' : '특허현황 및 시험성적서'}

@@ -58,7 +58,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
       style={{ background: 'var(--background-alt)' }}
       aria-label="오션테크를 선택하는 이유"
     >
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
         {/* Section Header */}
         <div className="text-center mb-6 sm:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
