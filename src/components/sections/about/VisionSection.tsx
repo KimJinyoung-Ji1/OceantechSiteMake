@@ -160,7 +160,7 @@ export default function VisionSection({ locale }: VisionSectionProps) {
               <h3 className="text-xs sm:text-xl md:text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 {locale === 'en' ? card.labelEn : card.labelKo}
               </h3>
-              <p className="text-[10px] sm:text-sm md:text-base leading-relaxed text-center" style={{ color: 'var(--text-body)' }}>
+              <p className="text-[11px] sm:text-sm md:text-base leading-relaxed text-center" style={{ color: 'var(--text-body)' }}>
                 {locale === 'en' ? card.descEn : card.descKo}
               </p>
             </article>

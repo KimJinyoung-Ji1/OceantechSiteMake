@@ -141,21 +141,38 @@ body {
 /* 모든 섹션에서 동일한 클래스 사용 → 일관성 보장 */
 
 .section-eyebrow {
-  font-size: 22px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--primary-500);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+@media (min-width: 640px) {
+  .section-eyebrow {
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-eyebrow {
+    font-size: 22px;
+  }
 }
 
 .section-title {
-  font-size: 1.125rem; /* 18px — mobile */
+  font-size: 1rem; /* 16px — mobile */
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.2;
   letter-spacing: -0.03em;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 640px) {
+  .section-title {
+    font-size: 1.125rem; /* 18px — tablet */
+    margin-bottom: 0.75rem;
+  }
 }
 @media (min-width: 1024px) {
   .section-title {
@@ -164,21 +181,90 @@ body {
 }
 
 .section-subtitle {
-  font-size: 0.813rem; /* 13px — 60% of previous 16px */
+  font-size: 11px;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.6;
+}
+@media (min-width: 640px) {
+  .section-subtitle {
+    font-size: 0.813rem; /* 13px */
+    line-height: 1.7;
+  }
 }
 
+/* ===== Card Typography — mobile-first ===== */
 .card-title {
-  font-size: 1.125rem; /* 18px */
+  font-size: 12px; /* mobile */
   font-weight: 700;
   color: var(--text-primary);
+  line-height: 1.3;
+}
+@media (min-width: 640px) {
+  .card-title {
+    font-size: 1.125rem; /* 18px — desktop */
+    line-height: 1.4;
+  }
 }
 
 .card-body {
-  font-size: 0.938rem; /* 15px */
+  font-size: 11px; /* mobile */
   color: var(--text-body);
-  line-height: 1.7;
+  line-height: 1.6;
+}
+@media (min-width: 640px) {
+  .card-body {
+    font-size: 0.938rem; /* 15px — desktop */
+    line-height: 1.7;
+  }
+}
+
+/* ===== Mobile Typography Utilities ===== */
+/* Badge: smallest readable text */
+.mobile-badge {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+@media (min-width: 640px) {
+  .mobile-badge {
+    font-size: 12px;
+  }
+}
+
+/* Meta: cert numbers, dates, secondary info */
+.mobile-meta {
+  font-size: 10px;
+  line-height: 1.3;
+}
+@media (min-width: 640px) {
+  .mobile-meta {
+    font-size: 13px;
+  }
+}
+
+/* Label: form labels, info row labels */
+.mobile-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+@media (min-width: 640px) {
+  .mobile-label {
+    font-size: 12px;
+  }
+}
+
+/* Value: info row values, contact details */
+.mobile-value {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+@media (min-width: 640px) {
+  .mobile-value {
+    font-size: 14px;
+  }
 }
 
 /* ===== Global section container — viewport-proportional padding ===== */

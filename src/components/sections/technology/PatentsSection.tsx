@@ -193,7 +193,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
               {/* Info */}
               <div className="p-1.5 sm:p-4 flex flex-col items-center text-center gap-0.5 sm:gap-2 flex-1" style={{ borderTop: '1px solid #e2e8f0' }}>
                 <span
-                  className="text-[8px] sm:text-[11px] font-bold px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-md tracking-wider uppercase text-white"
+                  className="text-[10px] sm:text-[11px] font-bold px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-md tracking-wider uppercase text-white"
                   style={{ background: badgeBg }}
                 >
                   {item.isTestReport
@@ -203,12 +203,12 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                     : (isEn ? 'PATENT' : '특허')}
                 </span>
 
-                <h3 className="text-[10px] sm:text-sm font-bold leading-tight" style={{ color: 'var(--gray-900)' }}>
+                <h3 className="text-xs sm:text-sm font-bold leading-tight" style={{ color: 'var(--gray-900)' }}>
                   {isEn ? item.titleEn : item.titleKo}
                 </h3>
 
                 <p
-                  className="text-[8px] sm:text-xs font-mono font-semibold px-1 py-0.5 rounded"
+                  className="text-[10px] sm:text-xs font-mono font-semibold px-1 py-0.5 rounded"
                   style={{ color: 'var(--primary-500)', background: 'rgba(1,104,239,0.06)' }}
                 >
                   {item.number}

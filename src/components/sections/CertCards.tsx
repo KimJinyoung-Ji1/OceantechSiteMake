@@ -109,7 +109,7 @@ export default function CertCards({ locale }: CertCardsProps) {
               {/* Featured badge */}
               {cert.featured && (
                 <div
-                  className="absolute top-3 right-2 sm:top-4 sm:right-3 z-10 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[8px] sm:text-[10px] font-bold text-white uppercase tracking-wider"
+                  className="absolute top-3 right-2 sm:top-4 sm:right-3 z-10 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[10px] sm:text-[10px] font-bold text-white uppercase tracking-wider"
                   style={{ background: cert.accent }}
                 >
                   {locale === 'en' ? 'Core' : '핵심'}
@@ -136,7 +136,7 @@ export default function CertCards({ locale }: CertCardsProps) {
               {/* Info */}
               <div className="flex-1 flex flex-col items-center px-2 pb-3 sm:px-4 sm:pb-5 text-center">
                 <h3
-                  className="font-bold text-[11px] sm:text-base mb-1 sm:mb-1.5 leading-tight"
+                  className="font-bold text-xs sm:text-base mb-1 sm:mb-1.5 leading-tight"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {locale === 'en' ? cert.titleEn : cert.titleKo}

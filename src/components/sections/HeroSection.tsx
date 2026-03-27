@@ -212,7 +212,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                   }}
                 >
                   <p className="text-sm sm:text-xl font-black leading-none" style={{ color: '#5EEAD4' }}>{s.value}</p>
-                  <p className="text-[9px] sm:text-xs font-semibold mt-0.5 sm:mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.85)' }}>{s.label}</p>
+                  <p className="text-[10px] sm:text-xs font-semibold mt-0.5 sm:mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.85)' }}>{s.label}</p>
                 </div>
               ))}
             </div>

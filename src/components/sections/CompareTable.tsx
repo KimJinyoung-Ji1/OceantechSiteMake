@@ -47,7 +47,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
             >
               {/* Recommended badge */}
               <div
-                className="absolute -top-0 left-1/2 -translate-x-1/2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-b-lg text-[8px] sm:text-[10px] font-bold tracking-wider uppercase"
+                className="absolute -top-0 left-1/2 -translate-x-1/2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-b-lg text-[10px] sm:text-[10px] font-bold tracking-wider uppercase"
                 style={{ background: 'var(--secondary-500)', color: 'var(--primary-900)' }}
               >
                 {locale === 'en' ? 'RECOMMENDED' : '추천'}

@@ -84,7 +84,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
                     isEn ? 'Frequent replacement' : '잦은 교체',
                     isEn ? 'IARC 2A carcinogen' : 'IARC 2A 발암물질',
                   ].map((text) => (
-                    <li key={text} className="flex items-center gap-1.5 sm:gap-3 text-[10px] sm:text-base" style={{ color: 'var(--text-body)' }}>
+                    <li key={text} className="flex items-center gap-1.5 sm:gap-3 text-[11px] sm:text-base" style={{ color: 'var(--text-body)' }}>
                       <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                         <circle cx="10" cy="10" r="9" fill="#FEE2E2" />
                         <path d="M7 10h6" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
@@ -125,7 +125,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
                     isEn ? '80% cost savings' : '비용 80% 절감',
                     isEn ? 'SVHC 235 non-detected' : 'SVHC 235종 미검출',
                   ].map((text) => (
-                    <li key={text} className="flex items-center gap-1.5 sm:gap-3 text-[10px] sm:text-base" style={{ color: 'var(--text-body)' }}>
+                    <li key={text} className="flex items-center gap-1.5 sm:gap-3 text-[11px] sm:text-base" style={{ color: 'var(--text-body)' }}>
                       <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                         <circle cx="10" cy="10" r="9" fill="#D1FAE5" stroke="var(--secondary-700)" strokeWidth="1.5" />
                         <path d="M6 10l3 3 5-5" stroke="var(--secondary-700)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

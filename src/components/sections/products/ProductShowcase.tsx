@@ -132,7 +132,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                         <p className="text-[10px] sm:text-lg font-extrabold mb-0.5 sm:mb-1" style={{ color: 'var(--primary-900)' }}>
                           {item.model}
                         </p>
-                        <div className="flex justify-center gap-1 sm:gap-2 text-[9px] sm:text-base font-medium" style={{ color: '#94a3b8' }}>
+                        <div className="flex justify-center gap-1 sm:gap-2 text-[10px] sm:text-base font-medium" style={{ color: '#94a3b8' }}>
                           <span>{item.weight}</span>
                           <span>·</span>
                           <span>{item.size}</span>
@@ -226,7 +226,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                     <h3 className="text-xs sm:text-lg font-bold mb-0.5 sm:mb-1" style={{ color: 'var(--gray-900)' }}>
                       {isEn ? adv.titleEn : adv.titleKo}
                     </h3>
-                    <p className="text-[10px] sm:text-sm leading-relaxed" style={{ color: 'var(--gray-500)' }}>
+                    <p className="text-[11px] sm:text-sm leading-relaxed" style={{ color: 'var(--gray-500)' }}>
                       {isEn ? adv.descEn : adv.descKo}
                     </p>
                   </div>

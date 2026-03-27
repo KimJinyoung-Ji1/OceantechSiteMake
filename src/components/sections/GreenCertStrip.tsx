@@ -107,7 +107,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
                 </span>
               </div>
               <p
-                className="text-[9px] sm:text-xs font-semibold mb-0.5 sm:mb-1"
+                className="text-[10px] sm:text-xs font-semibold mb-0.5 sm:mb-1"
                 style={{ color: 'var(--secondary-700)' }}
               >
                 {cert.label}

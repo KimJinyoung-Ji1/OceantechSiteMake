@@ -69,7 +69,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
               </span>
             </div>
             <div className="py-2.5 flex items-center justify-center" style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="text-[9px] font-bold text-white/40">VS</span>
+              <span className="text-[10px] font-bold text-white/40">VS</span>
             </div>
             <div className="px-2 py-2.5 flex items-center justify-center gap-1">
               <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#94a3b8' }} />
@@ -142,7 +142,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                     className="py-2.5 flex items-center justify-center self-stretch"
                     style={{ background: '#f1f5f9', borderLeft: '1px solid #e2e8f0', borderRight: '1px solid #e2e8f0' }}
                   >
-                    <span className="text-[9px] font-bold leading-tight text-center" style={{ color: '#475569' }}>
+                    <span className="text-[10px] font-bold leading-tight text-center" style={{ color: '#475569' }}>
                       {isEn ? row.en : row.ko}
                     </span>
                   </div>
