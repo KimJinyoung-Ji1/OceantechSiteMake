@@ -5,20 +5,6 @@ interface CompareTableProps {
   locale: Locale;
 }
 
-const CheckIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-    <circle cx="11" cy="11" r="11" fill="var(--primary-900,#021097)" />
-    <path d="M6.5 11.5l3 3 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-    <circle cx="11" cy="11" r="11" fill="#DC2626" opacity="0.15" />
-    <path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
-  </svg>
-);
-
 export default function CompareTable({ locale }: CompareTableProps) {
   const t = getTranslation(locale);
 
@@ -38,39 +24,48 @@ export default function CompareTable({ locale }: CompareTableProps) {
           </h2>
         </div>
 
-        <div className="overflow-x-auto">
         <div
-          className="rounded-2xl overflow-hidden shadow-lg min-w-[320px] lg:min-w-[480px]"
-          style={{ border: '1px solid rgba(14,173,135,0.20)' }}
+          className="rounded-2xl overflow-hidden"
+          style={{
+            boxShadow: '0 4px 24px rgba(2,16,151,0.08), 0 1px 3px rgba(0,0,0,0.06)',
+            border: '1px solid rgba(2,16,151,0.10)',
+          }}
         >
           {/* Column headers */}
-          <div className="grid grid-cols-[1fr_2fr_2fr]">
+          <div className="grid grid-cols-[minmax(70px,1.2fr)_2fr_2fr]">
+            {/* Empty corner */}
             <div
-              className="px-2 sm:px-3 py-2 sm:py-4"
-              style={{ background: '#F8FFFE', borderRight: '1px solid rgba(14,173,135,0.15)' }}
+              className="px-2 sm:px-4 py-3 sm:py-5 flex items-center justify-center"
+              style={{ background: '#f8fafc' }}
             />
+            {/* Zinc header — winner */}
             <div
-              className="px-2 sm:px-3 py-2 sm:py-4 text-center"
+              className="px-2 sm:px-4 py-3 sm:py-5 text-center relative"
               style={{
                 background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
-                borderRight: '1px solid rgba(255,255,255,0.15)',
               }}
             >
-              <div className="flex items-center justify-center gap-1 sm:gap-2 mb-0.5">
-                <CheckIcon />
-                <p className="text-white font-bold text-sm sm:text-xl leading-tight">{t.compare.zinc}</p>
+              {/* Recommended badge */}
+              <div
+                className="absolute -top-0 left-1/2 -translate-x-1/2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-b-lg text-[8px] sm:text-[10px] font-bold tracking-wider uppercase"
+                style={{ background: 'var(--secondary-500)', color: 'var(--primary-900)' }}
+              >
+                {locale === 'en' ? 'RECOMMENDED' : '추천'}
               </div>
-              <p className="text-white/75 text-xs sm:text-base">(주)오션테크</p>
+              <div className="mt-2 sm:mt-3">
+                <p className="text-white font-extrabold text-sm sm:text-xl leading-tight">{t.compare.zinc}</p>
+                <p className="text-white/70 text-[10px] sm:text-sm mt-0.5">(주)오션테크</p>
+              </div>
             </div>
+            {/* Lead header — muted */}
             <div
-              className="px-2 sm:px-3 py-2 sm:py-4 text-center"
-              style={{ background: 'linear-gradient(135deg, #374151 0%, #4B5563 100%)' }}
+              className="px-2 sm:px-4 py-3 sm:py-5 text-center"
+              style={{ background: '#f1f5f9' }}
             >
-              <div className="flex items-center justify-center gap-1 sm:gap-2 mb-0.5">
-                <XIcon />
-                <p className="text-white font-bold text-sm sm:text-xl leading-tight">{t.compare.lead}</p>
+              <div className="mt-2 sm:mt-3">
+                <p className="font-bold text-sm sm:text-xl leading-tight" style={{ color: '#94a3b8' }}>{t.compare.lead}</p>
+                <p className="text-[10px] sm:text-sm mt-0.5" style={{ color: '#b0b8c4' }}>{locale === 'en' ? 'Conventional' : '기존 제품'}</p>
               </div>
-              <p className="text-white/75 text-xs sm:text-base">{locale === 'en' ? 'Conventional Product' : '기존 제품'}</p>
             </div>
           </div>
 
@@ -78,46 +73,60 @@ export default function CompareTable({ locale }: CompareTableProps) {
           {t.compare.rows.map((row, i) => (
             <div
               key={i}
-              className="grid grid-cols-[1fr_2fr_2fr] border-t"
+              className="grid grid-cols-[minmax(70px,1.2fr)_2fr_2fr]"
               style={{
-                borderColor: 'rgba(14,173,135,0.12)',
-                background: i % 2 === 0 ? '#FFFFFF' : '#F8FFFE',
+                borderTop: '1px solid #e2e8f0',
               }}
             >
-              {/* Label — narrow, centered */}
+              {/* Label */}
               <div
-                className="px-2 sm:px-3 py-2 sm:py-3 font-semibold text-xs sm:text-lg flex items-center justify-center text-center"
+                className="px-2 sm:px-4 py-3 sm:py-4 font-bold text-[11px] sm:text-base flex items-center justify-center text-center"
                 style={{
-                  color: 'var(--text-primary)',
-                  borderRight: '1px solid rgba(14,173,135,0.12)',
+                  color: 'var(--primary-900)',
+                  background: i % 2 === 0 ? '#f8fafc' : '#ffffff',
                 }}
               >
                 {row.label}
               </div>
 
-              {/* Zinc value — centered cell, left-aligned content */}
+              {/* Zinc value — strong, positive */}
               <div
-                className="px-2 sm:px-4 py-2 sm:py-3 flex items-center justify-center border-r"
-                style={{ borderColor: 'rgba(14,173,135,0.12)' }}
+                className="px-2 sm:px-4 py-3 sm:py-4 flex flex-col items-center justify-center text-center"
+                style={{
+                  background: i % 2 === 0 ? 'rgba(2,16,151,0.03)' : 'rgba(2,16,151,0.01)',
+                  borderLeft: '1px solid #e2e8f0',
+                }}
               >
-                <div className="flex items-center gap-1.5 sm:gap-2" style={{ textAlign: 'left' }}>
-                  <span className="shrink-0"><CheckIcon /></span>
+                <div className="flex items-center gap-1 sm:gap-1.5 mb-0.5">
+                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 22 22" fill="none">
+                    <circle cx="11" cy="11" r="11" fill="var(--primary-500)" />
+                    <path d="M6.5 11.5l3 3 6-6" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                   <span
-                    className="text-xs sm:text-xl font-bold"
-                    style={{ color: 'var(--primary-900,#021097)' }}
+                    className="text-[11px] sm:text-base font-bold leading-tight"
+                    style={{ color: 'var(--primary-900)' }}
                   >
                     {row.zinc}
                   </span>
                 </div>
               </div>
 
-              {/* Lead value — centered cell, left-aligned content */}
-              <div className="px-2 sm:px-4 py-2 sm:py-3 flex items-center justify-center">
-                <div className="flex items-center gap-1.5 sm:gap-2" style={{ textAlign: 'left' }}>
-                  <span className="shrink-0"><XIcon /></span>
+              {/* Lead value — dim, negative */}
+              <div
+                className="px-2 sm:px-4 py-3 sm:py-4 flex flex-col items-center justify-center text-center"
+                style={{
+                  background: i % 2 === 0 ? '#fafafa' : '#ffffff',
+                  borderLeft: '1px solid #e2e8f0',
+                }}
+              >
+                <div className="flex items-center gap-1 sm:gap-1.5 mb-0.5">
+                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 22 22" fill="none">
+                    <circle cx="11" cy="11" r="11" fill="#FEE2E2" />
+                    <path d="M8 8l6 6M14 8l-6 6" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
                   <span
-                    className="text-xs sm:text-xl font-bold"
-                    style={{ color: '#9CA3AF' }}
+                    className="text-[11px] sm:text-base font-medium leading-tight"
+                    style={{ color: '#9ca3af' }}
                   >
                     {row.lead}
                   </span>
@@ -125,7 +134,6 @@ export default function CompareTable({ locale }: CompareTableProps) {
               </div>
             </div>
           ))}
-        </div>
         </div>
       </div>
     </section>

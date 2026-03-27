@@ -138,30 +138,29 @@ export default function VisionSection({ locale }: VisionSectionProps) {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-3 md:gap-6">
+        <div className="grid grid-cols-3 gap-2 sm:gap-5">
           {visionCards.map((card) => (
             <article
               key={card.key}
-              className="p-5 md:p-12 rounded-2xl flex flex-col items-center gap-3 md:gap-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+              className="relative p-3 sm:p-8 lg:p-12 rounded-xl sm:rounded-2xl flex flex-col items-center gap-2 sm:gap-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 overflow-hidden"
               style={{
                 background: card.gradBg,
                 border: `1px solid ${card.border}`,
-                boxShadow: '0 4px 24px rgba(2,16,151,0.06)',
+                boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
               }}
             >
               <div
-                className="rounded-2xl flex items-center justify-center"
-                style={{ background: card.iconBg, width: '80px', height: '80px' }}
+                className="rounded-xl flex items-center justify-center w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20"
+                style={{ background: card.iconBg }}
               >
-                {/* Icon scaled up 1.3x via transform */}
-                <span style={{ display: 'flex', transform: 'scale(1.3)', transformOrigin: 'center' }}>
+                <span className="flex [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-10 sm:[&>svg]:h-10 lg:[&>svg]:w-12 lg:[&>svg]:h-12">
                   {card.icon}
                 </span>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="text-xs sm:text-xl md:text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 {locale === 'en' ? card.labelEn : card.labelKo}
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-center" style={{ color: 'var(--text-body)' }}>
+              <p className="text-[10px] sm:text-sm md:text-base leading-relaxed text-center" style={{ color: 'var(--text-body)' }}>
                 {locale === 'en' ? card.descEn : card.descKo}
               </p>
             </article>

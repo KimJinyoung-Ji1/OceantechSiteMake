@@ -20,9 +20,8 @@ const certItems = [
     number: SITE_CONFIG.certifications.greenTech.number,
     period: SITE_CONFIG.certifications.greenTech.period,
     issuer: SITE_CONFIG.certifications.greenTech.issuerKo,
-    accent: 'var(--secondary-700)',
-    accentLight: 'rgba(14,173,135,0.08)',
-    accentBorder: 'rgba(14,173,135,0.25)',
+    accent: '#0EAD87',
+    accentGrad: 'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
     featured: true,
   },
   {
@@ -33,9 +32,8 @@ const certItems = [
     number: SITE_CONFIG.certifications.venture.number,
     period: SITE_CONFIG.certifications.venture.period,
     issuer: SITE_CONFIG.certifications.venture.issuerKo,
-    accent: 'var(--primary-500)',
-    accentLight: 'rgba(1,104,239,0.06)',
-    accentBorder: 'rgba(1,104,239,0.20)',
+    accent: '#0168EF',
+    accentGrad: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
     featured: false,
   },
   {
@@ -47,8 +45,7 @@ const certItems = [
     period: SITE_CONFIG.certifications.patentAward.date,
     issuer: SITE_CONFIG.certifications.patentAward.issuerKo,
     accent: '#D97706',
-    accentLight: 'rgba(217,119,6,0.06)',
-    accentBorder: 'rgba(217,119,6,0.20)',
+    accentGrad: 'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)',
     featured: false,
   },
   {
@@ -59,9 +56,8 @@ const certItems = [
     number: SITE_CONFIG.certifications.researchDept.number,
     period: SITE_CONFIG.certifications.researchDept.date,
     issuer: SITE_CONFIG.certifications.researchDept.issuerKo,
-    accent: 'var(--primary-500)',
-    accentLight: 'rgba(1,104,239,0.06)',
-    accentBorder: 'rgba(1,104,239,0.20)',
+    accent: '#7C3AED',
+    accentGrad: 'linear-gradient(135deg, #6D28D9 0%, #7C3AED 100%)',
     featured: false,
   },
 ];
@@ -73,7 +69,7 @@ export default function CertCards({ locale }: CertCardsProps) {
   return (
     <section
       className="py-10 sm:py-16 lg:py-20"
-      style={{ background: 'var(--background-alt)' }}
+      style={{ background: '#f8fafc' }}
       aria-label="인증 및 수상"
     >
       <div className="section-container">
@@ -89,13 +85,14 @@ export default function CertCards({ locale }: CertCardsProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {certItems.map((cert) => (
             <article
               key={cert.key}
-              className="group rounded-2xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer bg-white relative flex flex-col items-center"
+              className="group relative rounded-2xl overflow-hidden cursor-pointer bg-white flex flex-col transition-all duration-300 hover:-translate-y-1"
               style={{
-                border: `1px solid ${cert.accentBorder}`,
+                boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+                border: '1px solid #e2e8f0',
               }}
               onClick={() => setSelectedCert(cert)}
               role="button"
@@ -103,56 +100,68 @@ export default function CertCards({ locale }: CertCardsProps) {
               onKeyDown={(e) => e.key === 'Enter' && setSelectedCert(cert)}
               aria-label={`${locale === 'en' ? cert.titleEn : cert.titleKo} 상세보기`}
             >
+              {/* Top accent bar */}
+              <div
+                className="h-1 sm:h-1.5 w-full"
+                style={{ background: cert.accentGrad }}
+              />
+
               {/* Featured badge */}
               {cert.featured && (
                 <div
-                  className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold text-white"
+                  className="absolute top-3 right-2 sm:top-4 sm:right-3 z-10 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[8px] sm:text-[10px] font-bold text-white uppercase tracking-wider"
                   style={{ background: cert.accent }}
                 >
-                  {locale === 'en' ? 'Core' : '핵심 인증'}
+                  {locale === 'en' ? 'Core' : '핵심'}
                 </div>
               )}
 
               {/* Cert image */}
-              <div
-                className="w-full bg-white flex items-center justify-center overflow-hidden"
-                style={{ height: 160, borderBottom: `1px solid ${cert.accentBorder}` }}
-              >
-                <Image
-                  src={cert.image}
-                  alt={locale === 'en' ? cert.titleEn : cert.titleKo}
-                  width={320}
-                  height={240}
-                  className="object-contain w-full h-full p-1.5 sm:p-2 group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
-                />
+              <div className="relative w-full flex items-center justify-center overflow-hidden bg-white px-2 pt-3 pb-2 sm:px-4 sm:pt-4 sm:pb-3">
+                <div
+                  className="w-full flex items-center justify-center rounded-xl overflow-hidden"
+                  style={{ height: 110, background: '#fafbfc' }}
+                >
+                  <Image
+                    src={cert.image}
+                    alt={locale === 'en' ? cert.titleEn : cert.titleKo}
+                    width={320}
+                    height={240}
+                    className="object-contain w-full h-full p-1.5 sm:p-3 group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
               </div>
 
-              {/* Info — centered vertically and horizontally */}
-              <div className="flex-1 flex flex-col items-center justify-center p-2.5 sm:p-4 text-center w-full">
+              {/* Info */}
+              <div className="flex-1 flex flex-col items-center px-2 pb-3 sm:px-4 sm:pb-5 text-center">
                 <h3
-                  className="font-bold text-xs sm:text-lg mb-1"
+                  className="font-bold text-[11px] sm:text-base mb-1 sm:mb-1.5 leading-tight"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {locale === 'en' ? cert.titleEn : cert.titleKo}
                 </h3>
                 <p
-                  className="text-[10px] sm:text-base font-mono font-semibold break-all"
-                  style={{ color: cert.accent }}
+                  className="text-[10px] sm:text-sm font-mono font-bold break-all leading-tight px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md"
+                  style={{ color: cert.accent, background: `${cert.accent}10` }}
                 >
                   {cert.number}
                 </p>
 
-                {/* Click hint */}
-                <div
-                  className="mt-3 flex items-center justify-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{ color: cert.accent }}
+                {/* View button */}
+                <button
+                  className="mt-2 sm:mt-3 flex items-center gap-1 text-[10px] sm:text-xs font-semibold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full transition-all duration-200 group-hover:scale-105"
+                  style={{
+                    color: cert.accent,
+                    background: `${cert.accent}0a`,
+                    border: `1px solid ${cert.accent}30`,
+                  }}
                 >
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                    <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  {locale === 'en' ? 'View full' : '전체보기'}
-                </div>
+                  {locale === 'en' ? 'View' : '상세보기'}
+                </button>
               </div>
             </article>
           ))}
@@ -176,15 +185,15 @@ export default function CertCards({ locale }: CertCardsProps) {
                 className="object-contain max-h-[60vh] w-auto"
               />
             </div>
-            <div className="w-full border-t pt-4" style={{ borderColor: 'var(--gray-100)' }}>
+            <div className="w-full border-t pt-4" style={{ borderColor: '#e2e8f0' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--text-primary)' }}>
                 {locale === 'en' ? selectedCert.titleEn : selectedCert.titleKo}
               </p>
-              <p className="text-xs font-mono" style={{ color: selectedCert.accent }}>
+              <p className="text-xs font-mono font-bold" style={{ color: selectedCert.accent }}>
                 {selectedCert.number}
               </p>
               {selectedCert.period && (
-                <p className="text-xs mt-1" style={{ color: 'var(--text-body)', opacity: 0.7 }}>
+                <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
                   {selectedCert.period}
                 </p>
               )}

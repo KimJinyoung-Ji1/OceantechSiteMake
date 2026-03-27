@@ -75,11 +75,19 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           className="object-cover"
           sizes="100vw"
         />
+        {/* Desktop: original overlay / Mobile: lighter overlay */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden sm:block"
           style={{
             background:
               'linear-gradient(125deg, rgba(2,16,151,0.45) 0%, rgba(1,72,200,0.30) 50%, rgba(3,233,248,0.15) 100%)',
+          }}
+        />
+        <div
+          className="absolute inset-0 sm:hidden"
+          style={{
+            background:
+              'linear-gradient(125deg, rgba(2,16,151,0.30) 0%, rgba(1,72,200,0.18) 50%, rgba(3,233,248,0.08) 100%)',
           }}
         />
       </div>
@@ -186,24 +194,25 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                   key={i}
                   className="group rounded-xl px-1.5 py-2 sm:px-2 sm:py-3 text-center transition-all duration-500 cursor-default whitespace-nowrap"
                   style={{
-                    background: 'rgba(255,255,255,0.08)',
-                    border: '1px solid rgba(255,255,255,0.12)',
+                    background: 'rgba(0,0,0,0.35)',
+                    backdropFilter: 'blur(8px)',
+                    border: '1px solid rgba(255,255,255,0.18)',
                     transform: `rotateY(${i % 2 === 0 ? '-2' : '2'}deg)`,
                     boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'rotateY(0deg) translateY(-3px)';
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.15)';
+                    e.currentTarget.style.background = 'rgba(0,0,0,0.45)';
                     e.currentTarget.style.boxShadow = '0 8px 28px rgba(0,0,0,0.2)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = `rotateY(${i % 2 === 0 ? '-2' : '2'}deg)`;
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+                    e.currentTarget.style.background = 'rgba(0,0,0,0.35)';
                     e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.1)';
                   }}
                 >
-                  <p className="text-sm sm:text-xl font-black leading-none" style={{ color: 'var(--secondary-400, #34d399)' }}>{s.value}</p>
-                  <p className="text-[9px] sm:text-xs font-semibold mt-0.5 sm:mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.6)' }}>{s.label}</p>
+                  <p className="text-sm sm:text-xl font-black leading-none" style={{ color: '#5EEAD4' }}>{s.value}</p>
+                  <p className="text-[9px] sm:text-xs font-semibold mt-0.5 sm:mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.85)' }}>{s.label}</p>
                 </div>
               ))}
             </div>

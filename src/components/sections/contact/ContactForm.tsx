@@ -24,7 +24,7 @@ const inquiryTypes = [
   { valueKo: '기타', valueEn: 'Other' },
 ];
 
-export default function ContactForm({ locale, onSuccess, compact }: ContactFormProps) {
+export default function ContactForm({ locale, onSuccess }: ContactFormProps) {
   const t = getTranslation(locale);
   const isEn = locale === 'en';
 
@@ -80,120 +80,88 @@ export default function ContactForm({ locale, onSuccess, compact }: ContactFormP
     onSuccess();
   };
 
-  const fieldStyle = {
-    base: 'w-full px-4 py-3 rounded-xl border text-base transition-colors outline-none',
-    color: 'border-[#D0E4F5] focus:border-[#0168EF]',
-  };
+  const inputClass = 'w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base transition-all duration-200 outline-none border bg-[#f8fafc] border-[#e2e8f0] focus:border-[#0168EF] focus:bg-white focus:shadow-[0_0_0_3px_rgba(1,104,239,0.08)]';
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5"
+      className="space-y-2.5 sm:space-y-4"
       aria-label={isEn ? 'Contact Form' : '문의 폼'}
     >
-      <h3 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-        {isEn ? 'Send an Inquiry' : '문의 보내기'}
-      </h3>
-
       {error && (
         <div
-          className="px-4 py-3 rounded-xl text-sm font-medium"
+          className="px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium"
           style={{ background: '#FEF2F2', color: '#B91C1C', border: '1px solid #FECACA' }}
         >
           {error}
         </div>
       )}
 
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--text-secondary)' }} htmlFor="name">
-            {isEn ? 'Name' : '이름'} <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            value={values.name}
-            onChange={handleChange}
-            placeholder={t.contact.namePlaceholder}
-            className={`${fieldStyle.base} ${fieldStyle.color}`}
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--text-secondary)' }} htmlFor="phone">
-            {isEn ? 'Phone' : '전화번호'}
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            value={values.phone}
-            onChange={handleChange}
-            placeholder={t.contact.phonePlaceholder}
-            className={`${fieldStyle.base} ${fieldStyle.color}`}
-          />
-        </div>
-      </div>
-
-      <div>
-        <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--text-secondary)' }} htmlFor="email">
-          {isEn ? 'Email' : '이메일'} <span className="text-red-500">*</span>
-        </label>
+      <div className="grid grid-cols-2 gap-2 sm:gap-3">
         <input
-          id="email"
-          name="email"
-          type="email"
+          id="name"
+          name="name"
+          type="text"
           required
-          value={values.email}
+          value={values.name}
           onChange={handleChange}
-          placeholder={t.contact.emailPlaceholder}
-          className={`${fieldStyle.base} ${fieldStyle.color}`}
+          placeholder={`${isEn ? 'Name' : '이름'} *`}
+          className={inputClass}
+        />
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          value={values.phone}
+          onChange={handleChange}
+          placeholder={isEn ? 'Phone' : '전화번호'}
+          className={inputClass}
         />
       </div>
 
-      <div>
-        <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--text-secondary)' }} htmlFor="type">
-          {isEn ? 'Inquiry Type' : '문의 유형'}
-        </label>
-        <select
-          id="type"
-          name="type"
-          value={values.type}
-          onChange={handleChange}
-          className={`${fieldStyle.base} ${fieldStyle.color}`}
-          style={{ color: values.type ? 'var(--text-body)' : 'var(--gray-400)' }}
-        >
-          <option value="">{isEn ? 'Select type' : '유형 선택'}</option>
-          {inquiryTypes.map((opt) => (
-            <option key={opt.valueKo} value={opt.valueKo}>
-              {isEn ? opt.valueEn : opt.valueKo}
-            </option>
-          ))}
-        </select>
-      </div>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        value={values.email}
+        onChange={handleChange}
+        placeholder={`${isEn ? 'Email' : '이메일'} *`}
+        className={inputClass}
+      />
 
-      <div>
-        <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--text-secondary)' }} htmlFor="message">
-          {isEn ? 'Message' : '문의 내용'} <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          required
-          rows={5}
-          value={values.message}
-          onChange={handleChange}
-          placeholder={t.contact.messagePlaceholder}
-          className={`${fieldStyle.base} ${fieldStyle.color} resize-none`}
-        />
-      </div>
+      <select
+        id="type"
+        name="type"
+        value={values.type}
+        onChange={handleChange}
+        className={inputClass}
+        style={{ color: values.type ? 'var(--text-body)' : '#94a3b8' }}
+      >
+        <option value="">{isEn ? 'Inquiry type' : '문의 유형 선택'}</option>
+        {inquiryTypes.map((opt) => (
+          <option key={opt.valueKo} value={opt.valueKo}>
+            {isEn ? opt.valueEn : opt.valueKo}
+          </option>
+        ))}
+      </select>
+
+      <textarea
+        id="message"
+        name="message"
+        required
+        rows={4}
+        value={values.message}
+        onChange={handleChange}
+        placeholder={`${isEn ? 'Message' : '문의 내용'} *`}
+        className={`${inputClass} resize-none`}
+      />
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 rounded-xl text-base font-bold text-white transition-all duration-200 hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed"
-        style={{ background: 'var(--primary-500)' }}
+        className="w-full py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl text-sm sm:text-base font-bold text-white transition-all duration-200 hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed"
+        style={{ background: 'linear-gradient(135deg, var(--primary-500) 0%, #0350C0 100%)' }}
       >
         {loading ? t.common.loading : t.contact.submit}
       </button>

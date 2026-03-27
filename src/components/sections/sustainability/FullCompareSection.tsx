@@ -57,21 +57,24 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
             </div>
           </div>
 
-          {/* Mobile header */}
+          {/* Mobile header — 3 cols matching rows */}
           <div
-            className="sm:hidden grid grid-cols-2 rounded-t-2xl overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, var(--primary-900,#021097) 0%, var(--primary-700,#0148C8) 100%)' }}
+            className="sm:hidden grid grid-cols-[1fr_52px_1fr] rounded-t-xl overflow-hidden"
+            style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)' }}
           >
-            <div className="px-3 py-3 flex items-center justify-center gap-1.5">
-              <div className="w-2 h-2 rounded-full" style={{ background: '#F97316' }} />
-              <span className="text-xs font-bold text-white tracking-wide">
-                {isEn ? 'Zinc' : '아연추'}
+            <div className="px-2 py-2.5 flex items-center justify-center gap-1">
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#17E9B5' }} />
+              <span className="text-[10px] font-bold text-white">
+                {isEn ? 'Zinc' : '오션테크 아연추'}
               </span>
             </div>
-            <div className="px-3 py-3 flex items-center justify-center gap-1.5" style={{ borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
-              <div className="w-2 h-2 rounded-full" style={{ background: '#64748B' }} />
-              <span className="text-xs font-bold tracking-wide" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                {isEn ? 'Lead' : '납추'}
+            <div className="py-2.5 flex items-center justify-center" style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="text-[9px] font-bold text-white/40">VS</span>
+            </div>
+            <div className="px-2 py-2.5 flex items-center justify-center gap-1">
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#94a3b8' }} />
+              <span className="text-[10px] font-bold text-white/60">
+                {isEn ? 'Lead' : '기존 납추'}
               </span>
             </div>
           </div>
@@ -125,24 +128,28 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                   </div>
                 </div>
 
-                {/* Mobile row — 2 cols with label above */}
-                <div className="sm:hidden">
-                  <div className="px-3 py-1.5 text-center" style={{ background: 'var(--primary-50)', borderBottom: '1px solid var(--gray-100)' }}>
-                    <span className="text-xs font-bold" style={{ color: 'var(--primary-700)' }}>
+                {/* Mobile row — 3 cols, fixed center width */}
+                <div
+                  className="sm:hidden grid grid-cols-[1fr_52px_1fr] items-center"
+                  style={{ background: i % 2 === 0 ? 'white' : '#fafbfc' }}
+                >
+                  <div className="px-1.5 py-2.5 flex items-center justify-center text-center">
+                    <span className="text-[11px] font-bold" style={{ color: '#0EAD87' }}>
+                      {isEn ? row.goodEn : row.good}
+                    </span>
+                  </div>
+                  <div
+                    className="py-2.5 flex items-center justify-center self-stretch"
+                    style={{ background: '#f1f5f9', borderLeft: '1px solid #e2e8f0', borderRight: '1px solid #e2e8f0' }}
+                  >
+                    <span className="text-[9px] font-bold leading-tight text-center" style={{ color: '#475569' }}>
                       {isEn ? row.en : row.ko}
                     </span>
                   </div>
-                  <div className="grid grid-cols-2">
-                    <div className="px-3 py-3 flex items-center justify-center" style={{ borderRight: '1px solid var(--gray-100)' }}>
-                      <span className="text-sm font-semibold text-center" style={{ color: '#EA580C' }}>
-                        {isEn ? row.goodEn : row.good}
-                      </span>
-                    </div>
-                    <div className="px-3 py-3 flex items-center justify-center">
-                      <span className="text-sm text-center" style={{ color: 'var(--gray-500)' }}>
-                        {isEn ? row.badEn : row.bad}
-                      </span>
-                    </div>
+                  <div className="px-1.5 py-2.5 flex items-center justify-center text-center">
+                    <span className="text-[11px] font-medium" style={{ color: '#cbd5e1' }}>
+                      {isEn ? row.badEn : row.bad}
+                    </span>
                   </div>
                 </div>
               </div>

@@ -70,19 +70,19 @@ export default function ValueBento({ locale }: ValueBentoProps) {
         </div>
 
         {/* 3-column Bento Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-6">
+        <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-4 sm:mb-6">
           {items.map((item, i) => {
             const color = cardColors[i % cardColors.length];
             const num = String(i + 1).padStart(2, '0');
             return (
               <article
                 key={i}
-                className="group relative p-4 sm:p-8 rounded-2xl bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg overflow-hidden flex flex-col items-center text-center"
+                className="group relative p-3 sm:p-8 rounded-2xl bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg overflow-hidden flex flex-col items-center text-center"
                 style={{ border: `1px solid ${color.border}` }}
               >
                 {/* Large number */}
                 <p
-                  className="text-4xl sm:text-7xl font-black leading-none mb-3 sm:mb-6 select-none"
+                  className="text-2xl sm:text-7xl font-black leading-none mb-2 sm:mb-6 select-none"
                   style={{ color: color.numColor }}
                 >
                   {num}

@@ -131,30 +131,32 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5">
-          {gridItems.map((item) => (
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-5">
+          {gridItems.map((item) => {
+            const badgeBg = item.isTestReport
+              ? '#0EAD87'
+              : item.isDesign
+              ? '#0EAD87'
+              : 'var(--primary-500)';
+            return (
             <article
               key={item.key}
-              className="rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="relative rounded-xl sm:rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-1"
               style={{
                 background: 'white',
-                border: item.isTestReport
-                  ? '1px solid rgba(23,233,181,0.3)'
-                  : item.isDesign
-                  ? '1px solid rgba(23,233,181,0.2)'
-                  : '1px solid var(--gray-200)',
-                boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
               }}
             >
+              {/* Top accent */}
+              <div className="h-[3px] w-full" style={{ background: badgeBg }} />
+
               {/* Image area */}
               <button
-                className="relative cursor-pointer transition-opacity flex items-center justify-center w-full overflow-hidden h-[130px] md:h-auto"
+                className="relative cursor-pointer flex items-center justify-center w-full overflow-hidden"
                 style={{
                   aspectRatio: '4/3',
-                  background: item.isTestReport
-                    ? 'rgba(23,233,181,0.04)'
-                    : 'linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%)',
-                  borderBottom: '1px solid var(--gray-100)',
+                  background: 'linear-gradient(180deg, #fafbfc 0%, #f0f4f8 100%)',
                 }}
                 onClick={() =>
                   item.src
@@ -165,34 +167,20 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
               >
                 {item.src ? (
                   <>
-                    {/* Shadow behind image — stronger */}
-                    <div
-                      className="absolute inset-x-6 bottom-3 h-10 rounded-full pointer-events-none"
-                      style={{
-                        background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, transparent 70%)',
-                        filter: 'blur(10px)',
-                      }}
-                    />
                     <Image
                       src={item.src}
                       alt={isEn ? item.titleEn : item.titleKo}
                       fill
-                      className="object-contain p-5 group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      style={{ filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.2))' }}
-                    />
-                    {/* Reflection — mirrored gradient at bottom */}
-                    <div
-                      className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
-                      style={{
-                        background: 'linear-gradient(to top, rgba(238,242,247,0.95) 0%, rgba(248,250,252,0.6) 40%, transparent 100%)',
-                      }}
+                      className="object-contain p-2 sm:p-4 group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 640px) 33vw, (max-width: 1024px) 33vw, 33vw"
                     />
                     <div
-                      className="absolute bottom-2 right-2 px-2 py-0.5 rounded text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity z-10"
-                      style={{ background: 'rgba(0,0,0,0.55)', color: 'white' }}
+                      className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                      style={{ background: 'rgba(0,0,0,0.3)' }}
                     >
-                      {isEn ? 'Click to enlarge' : '클릭하여 확대'}
+                      <span className="px-2 py-1 rounded-md text-[10px] sm:text-xs font-semibold text-white" style={{ background: 'rgba(0,0,0,0.5)' }}>
+                        {isEn ? 'Enlarge' : '확대'}
+                      </span>
                     </div>
                   </>
                 ) : item.isTestReport ? (
@@ -202,35 +190,33 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                 )}
               </button>
 
-              {/* Info area — centered, larger text */}
-              <div className="p-2 md:p-5 flex flex-col gap-1 md:gap-3 flex-1 items-center text-center">
+              {/* Info */}
+              <div className="p-1.5 sm:p-4 flex flex-col items-center text-center gap-0.5 sm:gap-2 flex-1" style={{ borderTop: '1px solid #e2e8f0' }}>
                 <span
-                  className="text-sm font-black px-4 py-1.5 rounded-full tracking-wide"
-                  style={
-                    item.isTestReport
-                      ? { background: 'rgba(23,233,181,0.2)', color: 'var(--secondary-700,#047857)', border: '1px solid rgba(23,233,181,0.4)' }
-                      : item.isDesign
-                      ? { background: 'rgba(23,233,181,0.15)', color: 'var(--secondary-700,#047857)', border: '1px solid rgba(23,233,181,0.3)' }
-                      : { background: 'var(--primary-500)', color: 'white' }
-                  }
+                  className="text-[8px] sm:text-[11px] font-bold px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-md tracking-wider uppercase text-white"
+                  style={{ background: badgeBg }}
                 >
                   {item.isTestReport
-                    ? (isEn ? 'TEST REPORT' : '시험성적서')
+                    ? (isEn ? 'TEST' : '시험성적서')
                     : item.isDesign
                     ? (isEn ? 'DESIGN' : '디자인특허')
                     : (isEn ? 'PATENT' : '특허')}
                 </span>
 
-                <h3 className="text-base md:text-lg font-bold leading-snug" style={{ color: 'var(--gray-900)' }}>
+                <h3 className="text-[10px] sm:text-sm font-bold leading-tight" style={{ color: 'var(--gray-900)' }}>
                   {isEn ? item.titleEn : item.titleKo}
                 </h3>
 
-                <p className="text-xs md:text-sm font-mono font-semibold" style={{ color: 'var(--primary-500)' }}>
+                <p
+                  className="text-[8px] sm:text-xs font-mono font-semibold px-1 py-0.5 rounded"
+                  style={{ color: 'var(--primary-500)', background: 'rgba(1,104,239,0.06)' }}
+                >
                   {item.number}
                 </p>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
 

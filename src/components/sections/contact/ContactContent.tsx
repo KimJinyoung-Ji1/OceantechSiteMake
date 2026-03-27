@@ -167,111 +167,94 @@ export default function ContactContent({ locale }: ContactContentProps) {
     { icon: <FaxIcon />, label: isEn ? 'Fax' : '팩스', value: SITE_CONFIG.contact.fax },
   ];
 
+  const cardStyle = {
+    background: 'white',
+    border: '1px solid #e2e8f0',
+    boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
+  };
+
+  const headerGrads = [
+    'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
+    'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
+    'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)',
+  ];
+
   return (
-    <section className="py-6 lg:py-10 px-4 sm:px-6 lg:px-12" style={{ background: 'var(--background)' }} aria-label="문의하기">
-      <div className="w-full">
-        {/* 3-column: Form | Contact Info | Map */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr_1fr] gap-5 lg:gap-6 items-stretch">
+    <section className="py-4 sm:py-6 lg:py-10" style={{ background: '#f8fafc' }} aria-label="문의하기">
+      <div className="section-container">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr_1fr] gap-2.5 sm:gap-4 lg:gap-5 items-stretch">
 
           {/* ── COL 1: 문의 보내기 ── */}
-          <div
-            className="rounded-2xl overflow-hidden flex flex-col"
-            style={{
-              background: 'white',
-              border: '1px solid var(--border)',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)',
-            }}
-          >
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden flex flex-col" style={cardStyle}>
             <div
-              className="px-5 py-3 flex items-center justify-center gap-2"
-              style={{ background: 'linear-gradient(135deg, var(--primary-500) 0%, #0350C0 100%)', color: 'white' }}
+              className="px-3 py-2 sm:px-5 sm:py-2.5 flex items-center gap-2"
+              style={{ background: headerGrads[0], color: 'white' }}
             >
-              <MailIcon color="white" size={16} />
-              <span className="text-sm font-bold tracking-wide">{isEn ? 'Send Inquiry' : '문의 보내기'}</span>
+              <MailIcon color="white" size={14} />
+              <span className="text-[11px] sm:text-sm font-bold tracking-wide">{isEn ? 'Send Inquiry' : '문의 보내기'}</span>
             </div>
-            <div className="flex-1 p-5">
+            <div className="flex-1 p-2.5 sm:p-4">
               <ContactForm locale={locale} onSuccess={handleSuccess} compact />
             </div>
           </div>
 
           {/* ── COL 2: 연락처 정보 ── */}
-          <div
-            className="rounded-2xl overflow-hidden flex flex-col"
-            style={{
-              background: 'white',
-              border: '1px solid var(--border)',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)',
-            }}
-          >
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden flex flex-col" style={cardStyle}>
             <div
-              className="px-5 py-3 flex items-center justify-center gap-2"
-              style={{ background: 'linear-gradient(135deg, var(--primary-500) 0%, #0350C0 100%)', color: 'white' }}
+              className="px-3 py-2 sm:px-5 sm:py-2.5 flex items-center gap-2"
+              style={{ background: headerGrads[1], color: 'white' }}
             >
-              <PhoneIcon color="white" size={16} />
-              <span className="text-sm font-bold tracking-wide">{isEn ? 'Contact Info' : '연락처 정보'}</span>
+              <PhoneIcon color="white" size={14} />
+              <span className="text-[11px] sm:text-sm font-bold tracking-wide">{isEn ? 'Contact' : '연락처 정보'}</span>
             </div>
 
-            {/* 연락처 항목 */}
             <div className="flex-1 flex flex-col">
               {contactRows.map((row, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-3.5 px-5 py-4 transition-colors hover:bg-slate-50"
-                  style={{ borderBottom: i < contactRows.length - 1 ? '1px solid var(--gray-100)' : undefined }}
+                  className="flex items-center gap-2 sm:gap-3 px-2.5 py-2 sm:px-4 sm:py-3 transition-colors hover:bg-slate-50"
+                  style={{ borderBottom: i < contactRows.length - 1 ? '1px solid #f1f5f9' : undefined }}
                 >
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: 'var(--primary-50)', border: '1px solid var(--primary-100)' }}
+                    className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center shrink-0 [&>svg]:w-3.5 [&>svg]:h-3.5 sm:[&>svg]:w-[18px] sm:[&>svg]:h-[18px]"
+                    style={{ background: 'rgba(14,173,135,0.06)', border: '1px solid rgba(14,173,135,0.15)' }}
                   >
                     {row.icon}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs font-semibold mb-0.5" style={{ color: 'var(--text-secondary)' }}>{row.label}</p>
+                    <p className="text-[10px] sm:text-xs font-semibold" style={{ color: '#94a3b8' }}>{row.label}</p>
                     {row.href ? (
-                      <a href={row.href} className="text-sm font-semibold hover:underline" style={{ color: 'var(--primary-500)' }}>
+                      <a href={row.href} className="text-[11px] sm:text-sm font-semibold hover:underline" style={{ color: 'var(--primary-500)' }}>
                         {row.value}
                       </a>
                     ) : (
-                      <p className="text-sm font-medium leading-snug" style={{ color: 'var(--text-primary)' }}>{row.value}</p>
+                      <p className="text-[11px] sm:text-sm font-medium leading-snug break-words" style={{ color: 'var(--text-primary)' }}>{row.value}</p>
                     )}
                   </div>
                 </div>
               ))}
 
-              {/* 워터마크 로고 */}
-              <div className="flex-1 flex items-center justify-center px-5 py-4">
-                <Image
-                  src="/images/logo.png"
-                  alt=""
-                  width={280}
-                  height={70}
-                  className="object-contain"
-                  style={{ opacity: 0.15, filter: 'brightness(0) saturate(100%) invert(27%) sepia(85%) saturate(2000%) hue-rotate(210deg) brightness(95%)' }}
-                  aria-hidden="true"
-                />
-              </div>
-
               {/* 담당자 */}
               <div
-                className="flex items-center gap-4 px-5 py-4"
-                style={{ background: 'var(--gray-50)', borderTop: '1px solid var(--gray-100)' }}
+                className="flex items-center gap-2 sm:gap-3 px-2.5 py-2 sm:px-4 sm:py-3 mt-auto"
+                style={{ background: '#fafbfc', borderTop: '1px solid #f1f5f9' }}
               >
                 <div
-                  className="w-11 h-11 rounded-full flex items-center justify-center shrink-0"
-                  style={{ background: 'linear-gradient(135deg, var(--primary-500) 0%, #0350C0 100%)' }}
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0"
+                  style={{ background: headerGrads[1] }}
                 >
-                  <UserIcon />
+                  <UserIcon size={16} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>
+                  <p className="text-[11px] sm:text-sm font-bold" style={{ color: 'var(--text-primary)' }}>
                     {SITE_CONFIG.contact.manager}
-                    <span className="ml-1.5 text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>
-                      {isEn ? 'Executive Director' : '전무이사'}
+                    <span className="ml-1 text-[10px] sm:text-xs font-medium" style={{ color: '#94a3b8' }}>
+                      {isEn ? 'Director' : '전무이사'}
                     </span>
                   </p>
                   <a
                     href={`tel:${SITE_CONFIG.contact.mobile}`}
-                    className="text-sm font-semibold hover:underline"
+                    className="text-[11px] sm:text-sm font-semibold hover:underline"
                     style={{ color: 'var(--primary-500)' }}
                   >
                     {SITE_CONFIG.contact.mobile}
@@ -282,29 +265,22 @@ export default function ContactContent({ locale }: ContactContentProps) {
           </div>
 
           {/* ── COL 3: 오시는 길 ── */}
-          <div
-            className="rounded-2xl overflow-hidden flex flex-col min-w-0"
-            style={{
-              background: 'white',
-              border: '1px solid var(--border)',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)',
-            }}
-          >
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden flex flex-col min-w-0" style={cardStyle}>
             <div
-              className="px-5 py-3 flex items-center justify-center gap-2"
-              style={{ background: 'linear-gradient(135deg, var(--primary-500) 0%, #0350C0 100%)', color: 'white' }}
+              className="px-3 py-2 sm:px-5 sm:py-2.5 flex items-center gap-2"
+              style={{ background: headerGrads[2], color: 'white' }}
             >
-              <PinIcon color="white" size={16} />
-              <span className="text-sm font-bold tracking-wide">{isEn ? 'Directions' : '오시는 길'}</span>
+              <PinIcon color="white" size={14} />
+              <span className="text-[11px] sm:text-sm font-bold tracking-wide">{isEn ? 'Directions' : '오시는 길'}</span>
             </div>
-            <div className="flex-1 flex flex-col p-3 min-w-0 overflow-hidden">
+            <div className="flex-1 flex flex-col p-2 sm:p-3 min-w-0 overflow-hidden">
               <KakaoMap tall />
             </div>
-            <div className="px-5 pb-4 pt-1 text-center">
-              <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
+            <div className="px-3 pb-2.5 sm:px-5 sm:pb-4 pt-1 text-center">
+              <p className="text-[11px] sm:text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
                 {isEn ? '20 Dasan Sunhwan-ro, Namyangju-si' : '남양주시 다산순환로 20'}
               </p>
-              <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-[10px] sm:text-xs mt-0.5" style={{ color: '#94a3b8' }}>
                 {isEn ? 'Hyundai Premier Campus Bldg. E, 7F #29' : '현대프리미어캠퍼스 E동 7층 29호'}
               </p>
             </div>

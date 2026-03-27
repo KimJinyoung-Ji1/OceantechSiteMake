@@ -137,33 +137,41 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
           })}
         </div>
 
-        {/* Mobile: simple vertical list */}
-        <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-5">
-          {history.map((item, i) => {
-            const grad = yearGradients[i % yearGradients.length];
-            return (
-              <div key={i} className="flex gap-3 items-start">
-                <div
-                  className="w-[72px] h-[72px] rounded-full flex items-center justify-center shrink-0"
-                  style={{ background: grad, boxShadow: '0 4px 16px rgba(2,18,151,0.2)' }}
-                >
-                  <span className="text-sm font-black text-white text-center leading-tight px-1">
+        {/* Mobile: compact timeline */}
+        <div className="lg:hidden relative pl-6 sm:pl-8">
+          {/* Vertical line */}
+          <div
+            className="absolute left-[9px] sm:left-[11px] top-2 bottom-2 w-[2px]"
+            style={{ background: 'linear-gradient(180deg, #021297 0%, #0168EF 30%, #17E9B5 100%)' }}
+            aria-hidden="true"
+          />
+          <div className="space-y-1">
+            {history.map((item, i) => {
+              const grad = yearGradients[i % yearGradients.length];
+              return (
+                <div key={i} className="relative flex items-start gap-2.5 sm:gap-3 py-1.5 sm:py-2">
+                  {/* Timeline dot */}
+                  <div
+                    className="absolute -left-6 sm:-left-8 top-2 w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] rounded-full flex items-center justify-center z-10"
+                    style={{ background: grad, boxShadow: '0 2px 8px rgba(2,18,151,0.2)' }}
+                  >
+                    <div className="w-2 h-2 rounded-full bg-white" />
+                  </div>
+                  {/* Year tag */}
+                  <span
+                    className="shrink-0 text-[10px] sm:text-xs font-bold font-mono px-1.5 py-0.5 rounded-md mt-0.5"
+                    style={{ background: `${yearGradients[i % yearGradients.length]}`, color: 'white', minWidth: '52px', textAlign: 'center' }}
+                  >
                     {item.year}
                   </span>
+                  {/* Event text */}
+                  <p className="text-xs sm:text-sm leading-snug pt-0.5" style={{ color: 'var(--text-body)' }}>
+                    {locale === 'en' ? item.eventEn : item.eventKo}
+                  </p>
                 </div>
-                <div
-                  className="flex-1 p-3 rounded-xl text-sm leading-relaxed"
-                  style={{
-                    background: 'var(--background-alt)',
-                    border: '1px solid var(--border)',
-                    color: 'var(--text-body)',
-                  }}
-                >
-                  {locale === 'en' ? item.eventEn : item.eventKo}
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

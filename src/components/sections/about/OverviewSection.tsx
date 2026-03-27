@@ -95,42 +95,47 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
         </div>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
-          {groups.map((group, gi) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          {groups.map((group, gi) => {
+            const headerGrads = [
+              'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
+              'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
+              'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)',
+              'linear-gradient(135deg, #6D28D9 0%, #7C3AED 100%)',
+            ];
+            return (
             <div
               key={gi}
-              className="rounded-2xl overflow-hidden"
+              className="rounded-xl sm:rounded-2xl overflow-hidden"
               style={{
                 background: 'white',
-                border: '1px solid var(--border)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
               }}
             >
-              {/* Group Header — centered */}
+              {/* Group Header */}
               <div
-                className="flex items-center justify-center gap-2 px-5 py-3"
-                style={{
-                  background: 'linear-gradient(135deg, var(--primary-500) 0%, #0350C0 100%)',
-                  color: 'white',
-                }}
+                className="flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-3"
+                style={{ background: headerGrads[gi], color: 'white' }}
               >
-                <span className="opacity-80">{group.icon}</span>
-                <span className="text-base font-bold tracking-wide">{group.title}</span>
+                <span className="opacity-90 [&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-[17px] sm:[&>svg]:h-[17px]">{group.icon}</span>
+                <span className="text-xs sm:text-sm font-bold tracking-wide">{group.title}</span>
               </div>
 
               {/* Rows */}
-              <div className="divide-y" style={{ borderColor: 'var(--border)' }}>
+              <div>
                 {group.rows.map((row, ri) => (
                   <div
                     key={ri}
-                    className="flex items-start gap-2 md:gap-3 px-3 md:px-5 py-2 md:py-3 transition-colors duration-150 hover:bg-slate-50"
+                    className="flex items-start gap-2 px-3 py-1.5 sm:px-5 sm:py-2.5 transition-colors duration-150 hover:bg-slate-50"
+                    style={{ borderTop: ri > 0 ? '1px solid #f1f5f9' : undefined }}
                   >
-                    <span className="shrink-0 mt-0.5" style={{ color: 'var(--primary-500)' }}>{row.icon}</span>
+                    <span className="shrink-0 mt-0.5 [&>svg]:w-3.5 [&>svg]:h-3.5 sm:[&>svg]:w-4 sm:[&>svg]:h-4" style={{ color: 'var(--primary-500)' }}>{row.icon}</span>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--text-secondary)' }}>
+                      <p className="text-[10px] sm:text-xs font-semibold" style={{ color: '#94a3b8' }}>
                         {row.label}
                       </p>
-                      <p className="text-sm md:text-base font-medium leading-snug break-words" style={{ color: 'var(--text-primary)' }}>
+                      <p className="text-[11px] sm:text-sm font-medium leading-snug break-words" style={{ color: 'var(--text-primary)' }}>
                         {row.value}
                       </p>
                     </div>
@@ -138,7 +143,8 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
                 ))}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

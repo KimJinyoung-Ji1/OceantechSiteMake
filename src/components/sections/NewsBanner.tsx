@@ -9,6 +9,7 @@ interface NewsItem {
   date: string;
   summary: string;
   image?: string;
+  sourceColor: string;
 }
 
 const NEWS_ITEMS: NewsItem[] = [
@@ -18,6 +19,7 @@ const NEWS_ITEMS: NewsItem[] = [
     date: '2023.08.17',
     summary: '납으로 만든 어망추가 해양 생태계를 위협하고 있어 친환경 대체재에 대한 관심이 높아지고 있습니다.',
     image: '/images/news/kado-article-2023.png',
+    sourceColor: '#0168EF',
   },
   {
     title: '오션테크, 제17회 대한민국 우수특허 대상 수상',
@@ -25,6 +27,7 @@ const NEWS_ITEMS: NewsItem[] = [
     date: '2023.12.27',
     summary: '(주)오션테크가 친환경 아연 어망추 기술로 제17회 대한민국 우수특허 대상(기계/해양 부문)을 수상했습니다.',
     image: '/images/news/hankook-article-2023.png',
+    sourceColor: '#D97706',
   },
   {
     title: '친환경 아연 어망추, 고성군 31개월 시범사업 성공',
@@ -32,6 +35,7 @@ const NEWS_ITEMS: NewsItem[] = [
     date: '2024.03',
     summary: '강원도 고성군 수협과의 31개월 시범사업을 성공적으로 완료, 어민들의 높은 만족도를 확인했습니다.',
     image: '/images/news/hankook-print-2023.png',
+    sourceColor: '#0EAD87',
   },
   {
     title: '녹색기술인증 및 녹색기술제품 확인서 동시 취득',
@@ -39,6 +43,7 @@ const NEWS_ITEMS: NewsItem[] = [
     date: '2025.07',
     summary: '(주)오션테크가 친환경 어망추로 녹색기술인증(GT-25-02356)과 녹색기술제품 확인서(GTP-25-04857)를 동시 취득했습니다.',
     image: '/images/news/hankook-print2-2023.png',
+    sourceColor: '#7C3AED',
   },
 ];
 
@@ -66,102 +71,127 @@ export default function NewsBanner() {
 
   return (
     <section
-      className="py-5 sm:py-6 lg:py-10 px-3 sm:px-4 lg:px-6"
+      className="py-6 sm:py-10 lg:py-14"
       style={{ background: 'var(--background)' }}
       aria-label="뉴스 배너"
     >
-      <div className="max-w-[1400px] mx-auto">
-        <div className="text-center mb-3 sm:mb-4">
+      <div className="section-container">
+        <div className="text-center mb-4 sm:mb-6">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             NEWS
           </p>
-          <h2
-            className="section-title"
-            style={{ color: 'var(--text-primary)' }}
-          >
+          <h2 className="section-title" style={{ color: 'var(--text-primary)' }}>
             오션테크 뉴스
           </h2>
         </div>
 
+        {/* Main card */}
         <div
-          className="relative rounded-2xl overflow-hidden"
-          style={{ background: 'var(--background-alt)', border: '1px solid var(--border)' }}
+          className="rounded-2xl overflow-hidden"
+          style={{
+            boxShadow: '0 4px 24px rgba(2,16,151,0.08)',
+            border: '1px solid #e2e8f0',
+            background: 'white',
+          }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           <div className="flex items-stretch">
-            {/* Left: news selection list */}
-            <div className="hidden xl:flex flex-col shrink-0 border-r" style={{ width: 420, borderColor: 'var(--border)' }}>
+            {/* Left: news list (xl+) */}
+            <div className="hidden xl:flex flex-col shrink-0" style={{ width: 380 }}>
               {NEWS_ITEMS.map((n, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrent(idx)}
-                  className="text-left px-5 py-4 transition-all duration-200 border-b last:border-b-0"
+                  className="text-left px-5 py-4 transition-all duration-200 border-b last:border-b-0 relative"
                   style={{
-                    background: idx === current ? 'rgba(2,16,151,0.06)' : 'transparent',
-                    borderColor: 'var(--border)',
-                    borderLeft: idx === current ? '3px solid var(--primary-500)' : '3px solid transparent',
+                    background: idx === current ? '#f8fafc' : 'transparent',
+                    borderColor: '#f1f5f9',
                   }}
                 >
+                  {/* Active indicator */}
+                  <div
+                    className="absolute left-0 top-0 bottom-0 w-[3px] transition-all duration-300"
+                    style={{
+                      background: idx === current ? n.sourceColor : 'transparent',
+                      borderRadius: '0 3px 3px 0',
+                    }}
+                  />
+                  <div className="flex items-center gap-2 mb-1">
+                    <span
+                      className="w-1.5 h-1.5 rounded-full shrink-0"
+                      style={{ background: n.sourceColor }}
+                    />
+                    <span className="text-xs font-bold" style={{ color: idx === current ? n.sourceColor : '#94a3b8' }}>
+                      {n.source}
+                    </span>
+                    <span className="text-xs" style={{ color: '#b0b8c4' }}>{n.date}</span>
+                  </div>
                   <p
-                    className="text-sm font-bold mb-1 leading-snug line-clamp-2"
-                    style={{ color: idx === current ? 'var(--primary-500)' : 'var(--text-primary)' }}
+                    className="text-sm font-semibold leading-snug line-clamp-2"
+                    style={{ color: idx === current ? 'var(--text-primary)' : '#94a3b8' }}
                   >
                     {n.title}
-                  </p>
-                  <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                    {n.source} · {n.date}
                   </p>
                 </button>
               ))}
             </div>
 
-            {/* Right: thumbnail + content — crossfade */}
-            <div className="relative flex-1" style={{ minHeight: '160px' }}>
+            {/* Divider */}
+            <div className="hidden xl:block w-px" style={{ background: '#e2e8f0' }} />
+
+            {/* Right: slide content */}
+            <div className="relative flex-1" style={{ minHeight: 180 }}>
               {NEWS_ITEMS.map((n, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col lg:flex-row"
+                  className="flex flex-col sm:flex-row"
                   style={{
                     position: idx === 0 ? 'relative' : 'absolute',
                     inset: idx === 0 ? undefined : 0,
                     opacity: idx === current ? 1 : 0,
-                    transition: 'opacity 0.5s ease-in-out',
+                    transition: 'opacity 0.5s ease',
                     pointerEvents: idx === current ? 'auto' : 'none',
                   }}
                 >
+                  {/* Thumbnail */}
                   {n.image && (
                     <div
-                      className="hidden sm:block shrink-0 overflow-hidden lg:rounded-none rounded-t-2xl w-full lg:w-auto"
-                      style={{ maxWidth: 'min(280px, 100%)', minHeight: 160 }}
+                      className="hidden sm:block shrink-0 overflow-hidden"
+                      style={{ width: 260, minHeight: 180 }}
                     >
                       <Image
                         src={n.image}
                         alt={n.title}
-                        width={280}
+                        width={260}
                         height={200}
                         className="w-full h-full object-cover"
                         style={{ minHeight: 200 }}
-                        sizes="(max-width: 1024px) 100vw, 280px"
+                        sizes="260px"
                       />
                     </div>
                   )}
-                  <div className="flex-1 min-w-0 px-3 py-3 sm:px-6 sm:py-5 lg:px-6 lg:py-5">
-                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+
+                  {/* Text content */}
+                  <div className="flex-1 min-w-0 px-4 py-3 sm:px-6 sm:py-5 flex flex-col justify-center">
+                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
                       <span
-                        className="px-2.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-base font-bold"
-                        style={{ background: 'rgba(2,16,151,0.08)', color: 'var(--primary-500)' }}
+                        className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-bold text-white"
+                        style={{ background: n.sourceColor }}
                       >
                         {n.source}
                       </span>
-                      <span className="text-xs sm:text-base font-medium" style={{ color: 'var(--text-secondary)' }}>
+                      <span className="text-[10px] sm:text-sm font-medium" style={{ color: '#94a3b8' }}>
                         {n.date}
                       </span>
                     </div>
-                    <h3 className="text-sm sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 leading-snug" style={{ color: 'var(--text-primary)' }}>
+                    <h3
+                      className="text-sm sm:text-xl lg:text-2xl font-bold mb-1.5 sm:mb-3 leading-snug"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
                       {n.title}
                     </h3>
-                    <p className="text-xs sm:text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                    <p className="text-[11px] sm:text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
                       {n.summary}
                     </p>
                   </div>
@@ -170,45 +200,51 @@ export default function NewsBanner() {
             </div>
           </div>
 
-          {/* Controls */}
-          <div className="flex items-center justify-between px-4 pb-3 sm:px-6 lg:px-6">
-            {/* Dots */}
-            <div className="flex items-center gap-2">
-              {NEWS_ITEMS.map((_, i) => (
+          {/* Bottom controls */}
+          <div
+            className="flex items-center justify-between px-4 py-2.5 sm:px-6 sm:py-3"
+            style={{ borderTop: '1px solid #f1f5f9', background: '#fafbfc' }}
+          >
+            {/* Progress dots */}
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              {NEWS_ITEMS.map((n, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
                   className="rounded-full transition-all duration-300"
                   style={{
-                    width: i === current ? '24px' : '8px',
+                    width: i === current ? '20px' : '8px',
                     height: '8px',
-                    background: i === current ? 'var(--primary-500)' : 'var(--border)',
+                    background: i === current ? n.sourceColor : '#e2e8f0',
                   }}
                   aria-label={`뉴스 ${i + 1}번으로 이동`}
                 />
               ))}
+              <span className="ml-2 text-[10px] sm:text-xs font-mono font-bold" style={{ color: '#94a3b8' }}>
+                {String(current + 1).padStart(2, '0')}/{String(NEWS_ITEMS.length).padStart(2, '0')}
+              </span>
             </div>
 
-            {/* Arrows */}
-            <div className="flex items-center gap-2">
+            {/* Arrow buttons */}
+            <div className="flex items-center gap-1.5">
               <button
                 onClick={prev}
-                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:brightness-90"
-                style={{ background: 'var(--border)' }}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center transition-all hover:bg-white"
+                style={{ border: '1px solid #e2e8f0' }}
                 aria-label="이전 뉴스"
               >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M10 4L6 8L10 12" stroke="var(--text-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M10 4L6 8L10 12" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
               <button
                 onClick={next}
-                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:brightness-90"
-                style={{ background: 'var(--border)' }}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center transition-all hover:bg-white"
+                style={{ border: '1px solid #e2e8f0' }}
                 aria-label="다음 뉴스"
               >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M6 4L10 8L6 12" stroke="var(--text-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M6 4L10 8L6 12" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
             </div>

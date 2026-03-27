@@ -58,7 +58,7 @@
     "emailPlaceholder": "Email",
     "phonePlaceholder": "Phone",
     "messagePlaceholder": "Enter your message",
-    "submit": "Send Inquiry",
+    "submit": "Send",
     "successMessage": "Your inquiry has been received. We will get back to you shortly."
   },
   "footer": {
@@ -129,7 +129,7 @@
   },
   "compare": {
     "title": "How Zinc Weights Differ from Lead Weights",
-    "zinc": "Zinc Weight (OceanTech)",
+    "zinc": "Zinc Weight",
     "lead": "Conventional Lead Weight",
     "rows": [
       { "label": "Environmental Safety", "zinc": "No hazardous substances detected", "lead": "Risk of heavy metal pollution" },

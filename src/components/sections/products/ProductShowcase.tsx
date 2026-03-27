@@ -78,19 +78,19 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                 viewport={{ once: true, amount: 0.15 }}
                 variants={stagger}
               >
-                {/* Category header — single line */}
-                <motion.div className="mb-8" variants={fadeInUp}>
-                  <h3 className="text-xl lg:text-2xl font-bold" style={{ color: 'var(--primary-500)' }}>
+                {/* Category header */}
+                <motion.div className="mb-4 sm:mb-8" variants={fadeInUp}>
+                  <h3 className="text-base sm:text-xl lg:text-2xl font-bold" style={{ color: 'var(--primary-500)' }}>
                     {isEn ? category.nameEn : category.nameKo}
-                    <span className="font-normal text-base lg:text-lg ml-3" style={{ color: 'var(--text-secondary)' }}>
-                      {isEn ? category.descriptionEn : category.descriptionKo}
-                    </span>
                   </h3>
+                  <p className="text-xs sm:text-base lg:text-lg mt-0.5 sm:mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
+                    {isEn ? category.descriptionEn : category.descriptionKo}
+                  </p>
                 </motion.div>
 
                 {/* 4x1 product grid */}
                 <motion.div
-                  className="grid grid-cols-2 lg:grid-cols-4 gap-4"
+                  className="grid grid-cols-4 gap-2 sm:gap-4"
                   variants={stagger}
                 >
                   {category.items.map((item, idx) => {
@@ -105,18 +105,18 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                       className="rounded-xl overflow-hidden flex flex-col"
                       style={{
                         background: 'white',
-                        border: '1px solid var(--gray-200)',
-                        boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                        border: '1px solid #e2e8f0',
+                        boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
                         borderRadius: '12px',
                         transition: 'all 0.3s ease',
                       }}
                       variants={fadeInUp}
-                      whileHover={{ y: -4, boxShadow: '0 8px 24px rgba(0,0,0,0.14)' }}
+                      whileHover={{ y: -4, boxShadow: '0 8px 24px rgba(2,16,151,0.12)' }}
                       transition={{ duration: 0.3 }}
                     >
                       <div
                         className="relative w-full flex items-center justify-center"
-                        style={{ aspectRatio: '1/1', background: '#f5f5f5' }}
+                        style={{ aspectRatio: '1/1', background: 'linear-gradient(180deg, #fafbfc 0%, #f0f4f8 100%)' }}
                       >
                         <div className="relative" style={{ width: `${Math.round(scale * 100)}%`, height: `${Math.round(scale * 100)}%` }}>
                         <Image
@@ -128,13 +128,13 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                         />
                         </div>
                       </div>
-                      <div className="p-4 border-t text-center" style={{ borderColor: 'var(--gray-100)' }}>
-                        <p className="text-lg font-bold mb-1" style={{ color: 'var(--primary-500)' }}>
+                      <div className="p-1.5 sm:p-4 border-t text-center" style={{ borderColor: '#e2e8f0', background: 'white' }}>
+                        <p className="text-[10px] sm:text-lg font-extrabold mb-0.5 sm:mb-1" style={{ color: 'var(--primary-900)' }}>
                           {item.model}
                         </p>
-                        <div className="flex justify-center gap-2 text-lg" style={{ color: 'var(--text-secondary)' }}>
+                        <div className="flex justify-center gap-1 sm:gap-2 text-[9px] sm:text-base font-medium" style={{ color: '#94a3b8' }}>
                           <span>{item.weight}</span>
-                          <span style={{ color: 'var(--gray-300)' }}>·</span>
+                          <span>·</span>
                           <span>{item.size}</span>
                         </div>
                       </div>
@@ -152,13 +152,13 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
 
       {/* ── Advantages ── */}
       <section
-        className="py-16 lg:py-24"
-        style={{ background: 'var(--background-alt)' }}
+        className="py-10 sm:py-16 lg:py-24"
+        style={{ background: '#f8fafc' }}
         aria-label={t.products.advantagesTitle}
       >
         <div className="section-container">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-6 sm:mb-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -173,7 +173,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
@@ -181,32 +181,52 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
           >
             {advantages.map((adv, i) => {
               const Icon = ADVANTAGE_ICONS[i];
+              const accents = [
+                { bg: 'rgba(14,173,135,0.06)', border: 'rgba(14,173,135,0.15)', grad: 'linear-gradient(135deg, #0EAD87, #17E9B5)' },
+                { bg: 'rgba(1,104,239,0.06)', border: 'rgba(1,104,239,0.15)', grad: 'linear-gradient(135deg, #021097, #0168EF)' },
+                { bg: 'rgba(217,119,6,0.06)', border: 'rgba(217,119,6,0.15)', grad: 'linear-gradient(135deg, #D97706, #F59E0B)' },
+                { bg: 'rgba(124,58,237,0.06)', border: 'rgba(124,58,237,0.15)', grad: 'linear-gradient(135deg, #6D28D9, #7C3AED)' },
+              ];
+              const accent = accents[i];
               return (
                 <motion.div
                   key={adv.titleEn}
-                  className="rounded-2xl p-6 flex flex-col items-center gap-4 text-center"
+                  className="relative rounded-xl overflow-hidden p-3 sm:p-6 flex flex-col items-center gap-2 sm:gap-4 text-center"
                   style={{
                     background: 'white',
-                    border: '1px solid var(--gray-200)',
-                    boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-                    borderRadius: '12px',
+                    border: '1px solid #e2e8f0',
+                    boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
                     transition: 'all 0.3s ease',
                   }}
                   variants={fadeInUp}
-                  whileHover={{ y: -4, boxShadow: '0 8px 32px rgba(0,0,0,0.12)' }}
+                  whileHover={{ y: -4, boxShadow: '0 8px 32px rgba(2,16,151,0.10)' }}
                   transition={{ duration: 0.3 }}
                 >
+                  {/* Top accent bar */}
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                    style={{ background: 'rgba(1,104,239,0.06)', border: '1px solid rgba(1,104,239,0.15)' }}
+                    className="absolute top-0 left-0 right-0 h-1"
+                    style={{ background: accent.grad }}
+                  />
+                  {/* Number badge */}
+                  <div
+                    className="absolute top-2 right-2 sm:top-3 sm:right-3 w-5 h-5 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[9px] sm:text-xs font-bold text-white"
+                    style={{ background: accent.grad }}
                   >
-                    <Icon />
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <div
+                    className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mt-1"
+                    style={{ background: accent.bg, border: `1px solid ${accent.border}` }}
+                  >
+                    <span className="[&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-10 sm:[&>svg]:h-10">
+                      <Icon />
+                    </span>
                   </div>
                   <div>
-                    <h3 className="card-title mb-1" style={{ color: 'var(--gray-900)', textAlign: 'center' }}>
+                    <h3 className="text-xs sm:text-lg font-bold mb-0.5 sm:mb-1" style={{ color: 'var(--gray-900)' }}>
                       {isEn ? adv.titleEn : adv.titleKo}
                     </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)', textAlign: 'center' }}>
+                    <p className="text-[10px] sm:text-sm leading-relaxed" style={{ color: 'var(--gray-500)' }}>
                       {isEn ? adv.descEn : adv.descKo}
                     </p>
                   </div>

@@ -200,3 +200,13 @@ body {
   max-width: 100% !important;
   overflow: hidden !important;
 }
+
+/* CTA Section — desktop vs mobile gradient */
+.cta-section {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(2,16,151,0.92) 12%, rgba(1,72,200,0.88) 55%, rgba(3,233,248,0.90) 100%);
+}
+@media (max-width: 639px) {
+  .cta-section {
+    background: linear-gradient(180deg, #ffffff 0%, rgba(1,72,200,0.82) 20%, rgba(3,143,248,0.78) 55%, rgba(3,233,248,0.80) 100%);
+  }
+}

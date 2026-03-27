@@ -58,7 +58,7 @@
     "emailPlaceholder": "이메일",
     "phonePlaceholder": "연락처",
     "messagePlaceholder": "문의 내용을 입력해주세요",
-    "submit": "문의 보내기",
+    "submit": "보내기",
     "successMessage": "문의가 접수되었습니다. 빠르게 연락드리겠습니다."
   },
   "footer": {
@@ -129,7 +129,7 @@
   },
   "compare": {
     "title": "아연추와 납추의 차이",
-    "zinc": "아연추 (오션테크)",
+    "zinc": "아연추",
     "lead": "기존 납추",
     "rows": [
       { "label": "환경 안전성", "zinc": "유해물질 검출 없음", "lead": "중금속 오염 우려" },

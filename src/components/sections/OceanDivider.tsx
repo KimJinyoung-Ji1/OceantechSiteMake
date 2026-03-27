@@ -43,21 +43,19 @@ export default function OceanDivider({
         style={{ background: 'rgba(3,233,248,0.10)' }}
       />
 
-      {/* Strong fade from top — white to transparent */}
+      {/* Fade from top — white to transparent */}
       <div
-        className="absolute top-0 left-0 right-0 z-10"
+        className="absolute top-0 left-0 right-0 z-10 h-[40%] sm:h-[60%]"
         style={{
-          height: '70%',
-          background: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
+          background: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0) 100%)',
         }}
       />
 
-      {/* Strong fade from bottom — white to transparent */}
+      {/* Fade from bottom — white to transparent */}
       <div
-        className="absolute bottom-0 left-0 right-0 z-10"
+        className="absolute bottom-0 left-0 right-0 z-10 h-[40%] sm:h-[60%]"
         style={{
-          height: '70%',
-          background: 'linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
+          background: 'linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0) 100%)',
         }}
       />
     </div>
