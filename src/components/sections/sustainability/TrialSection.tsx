@@ -50,7 +50,7 @@ export default function TrialSection({ locale }: TrialSectionProps) {
       style={{ background: 'var(--background)' }}
       aria-label="시범사업 결과"
     >
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
+      <div className="section-container">
         <div className="text-center mb-8 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'PILOT PROGRAM' : '시범사업 결과'}

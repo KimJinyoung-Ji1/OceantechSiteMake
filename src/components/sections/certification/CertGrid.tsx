@@ -74,7 +74,7 @@ export default function CertGrid({ locale }: CertGridProps) {
 
   return (
     <section className="py-8 md:py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="인증서 목록">
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
+      <div className="section-container">
         <div className="text-center mb-6 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'CERTIFICATIONS' : '인증 현황'}

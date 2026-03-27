@@ -39,7 +39,7 @@ export default function Header({ locale }: HeaderProps) {
             boxShadow: '0 2px 8px rgba(2,16,151,0.15)',
           }}
         >
-          <div className="mx-auto flex h-16 lg:h-[88px] w-full max-w-[1920px] items-center justify-between px-2 xl:px-8 2xl:px-24">
+          <div className="section-container flex h-16 lg:h-[88px] w-full items-center justify-between">
             {/* Logo */}
             <Link href={localePath('/')} className="flex items-center gap-3 shrink-0 mr-4 lg:mr-6">
               <Image

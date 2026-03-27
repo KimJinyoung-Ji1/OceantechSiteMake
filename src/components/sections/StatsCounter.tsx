@@ -88,7 +88,7 @@ export default function StatsCounter({ locale }: StatsCounterProps) {
       style={{ background: 'linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700) 100%)' }}
       aria-label="오션테크 수치 통계"
     >
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
+      <div className="section-container">
         <div className="text-center mb-5 sm:mb-7">
           <h2 className="text-xl sm:text-3xl lg:text-5xl font-black text-white">
             {t.stats.title}

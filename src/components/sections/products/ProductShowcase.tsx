@@ -68,7 +68,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
         style={{ background: 'var(--background)' }}
         aria-label={t.products.categoryTitle}
       >
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
+        <div className="section-container">
           <div className="space-y-16 lg:space-y-20">
             {categories.map((category) => (
               <motion.div
@@ -156,7 +156,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
         style={{ background: 'var(--background-alt)' }}
         aria-label={t.products.advantagesTitle}
       >
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
+        <div className="section-container">
           <motion.div
             className="text-center mb-12"
             initial="hidden"
@@ -223,7 +223,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
         style={{ background: 'var(--primary-900)' }}
         aria-label="제품 문의"
       >
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 text-center">
+        <div className="section-container text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"

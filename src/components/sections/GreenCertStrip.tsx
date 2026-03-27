@@ -18,7 +18,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
       }}
       aria-label="녹색인증 배너"
     >
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 flex flex-wrap items-center justify-between gap-3 sm:gap-6">
+      <div className="section-container flex flex-wrap items-center justify-between gap-3 sm:gap-6">
         {/* Left: cert mark image */}
         <div className="flex items-center gap-3 sm:gap-4">
           <div

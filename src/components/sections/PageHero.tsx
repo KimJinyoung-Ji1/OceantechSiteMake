@@ -13,11 +13,13 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
 
   return (
     <section
-      className="relative px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 overflow-hidden"
+      className="relative overflow-hidden"
       aria-label="페이지 히어로"
       style={{
         paddingTop: '20px',
         paddingBottom: '20px',
+        paddingLeft: 'clamp(16px, 4vw, 96px)',
+        paddingRight: 'clamp(16px, 4vw, 96px)',
         background: 'linear-gradient(180deg, rgba(1,72,200,0.06) 0%, transparent 100%)',
       }}
     >
@@ -27,7 +29,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
         style={{ background: 'linear-gradient(90deg, transparent 10%, var(--primary-500) 50%, transparent 90%)', opacity: 0.2 }}
       />
 
-      <div className="relative z-10 max-w-[1920px] mx-auto">
+      <div className="relative z-10 max-w-[1600px] mx-auto">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm mb-2" style={{ color: 'var(--text-secondary)' }} aria-label="브레드크럼">
           {breadcrumb.map((item, i) => (

@@ -28,7 +28,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
       style={{ background: 'var(--background)' }}
       aria-label="아연추 vs 납추 비교"
     >
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
+      <div className="section-container">
         <div className="text-center mb-6 sm:mb-10">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {locale === 'en' ? 'COMPARISON' : '성능 비교'}

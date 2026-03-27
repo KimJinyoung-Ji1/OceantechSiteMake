@@ -121,11 +121,11 @@ export default function VisionSection({ locale }: VisionSectionProps) {
   return (
     <section
       id="vision"
-      className="py-8 md:py-16 lg:py-20 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 text-center"
+      className="py-8 md:py-16 lg:py-20 text-center"
       style={{ background: 'var(--background-alt)' }}
       aria-label="비전"
     >
-      <div className="max-w-[1920px] mx-auto">
+      <div className="section-container">
         <div className="mb-6 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.about.vision.title}

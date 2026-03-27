@@ -39,7 +39,7 @@ export default function Footer({ locale }: FooterProps) {
       style={{ background: 'var(--gray-900)' }}
       aria-label="푸터"
     >
-      <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 py-8 lg:py-10">
+      <div className="section-container py-8 lg:py-10">
         {/* 4-column grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-6 lg:gap-8">
 

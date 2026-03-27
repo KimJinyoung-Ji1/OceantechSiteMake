@@ -53,7 +53,7 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
 
   return (
     <section className="py-8 md:py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="환경 영향">
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
+      <div className="section-container">
         <div className="text-center mb-8 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--secondary-700,#047857)' }}>
             {isEn ? 'ENVIRONMENTAL IMPACT' : '환경 영향'}
