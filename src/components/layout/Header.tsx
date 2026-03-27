@@ -32,19 +32,25 @@ export default function Header({ locale }: HeaderProps) {
         <header
           className="border-b"
           style={{
-            background: 'linear-gradient(135deg, rgba(219,39,119,0.92) 0%, rgba(236,72,153,0.88) 50%, rgba(244,114,182,0.90) 100%)',
+            background: 'linear-gradient(135deg, rgba(2,16,151,0.92) 0%, rgba(1,72,200,0.88) 50%, rgba(3,233,248,0.90) 100%)',
             backdropFilter: 'blur(28px) saturate(180%)',
             WebkitBackdropFilter: 'blur(28px) saturate(180%)',
             borderColor: 'rgba(255,255,255,0.20)',
-            boxShadow: '0 2px 8px rgba(219,39,119,0.15)',
+            boxShadow: '0 2px 8px rgba(2,16,151,0.15)',
           }}
         >
           <div className="section-container flex h-16 lg:h-[88px] w-full items-center justify-between">
             {/* Logo */}
             <Link href={localePath('/')} className="flex items-center gap-3 shrink-0 mr-4 lg:mr-6">
-              <span className="text-white font-bold text-2xl sm:text-3xl xl:text-4xl tracking-tight" style={{ fontFamily: "'Pretendard Variable', sans-serif" }}>
-                Ari
-              </span>
+              <Image
+                src="/images/logo-brand.png"
+                alt="오션테크 로고"
+                width={300}
+                height={62}
+                className="h-[36px] sm:h-[42px] xl:h-[62px] w-auto object-contain brightness-0 invert"
+                sizes="(max-width: 1280px) 180px, 300px"
+                priority
+              />
             </Link>
 
             {/* Center nav — spread wide */}
@@ -96,7 +102,7 @@ export default function Header({ locale }: HeaderProps) {
             <div className="flex items-center gap-2 xl:hidden">
               <Link
                 href={locale === 'ko' ? '/en' : '/ko'}
-                className="rounded-lg border px-3 py-1.5 min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-sm font-semibold"
+                className="rounded-lg border px-3 py-1.5 min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-[16px] font-semibold"
                 style={{ borderColor: 'rgba(255,255,255,0.18)', color: 'rgba(255,255,255,0.7)' }}
                 aria-label="언어 전환"
               >

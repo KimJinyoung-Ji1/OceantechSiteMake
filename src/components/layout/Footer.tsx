@@ -54,9 +54,14 @@ export default function Footer({ locale }: FooterProps) {
           <div>
             {/* Logo */}
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-white font-bold text-xl sm:text-2xl tracking-tight" style={{ fontFamily: "'Pretendard Variable', sans-serif" }}>
-                Ari
-              </span>
+              <Image
+                src="/images/logo-brand.png"
+                alt="오션테크 로고"
+                width={120}
+                height={30}
+                className="h-7 sm:h-8 w-auto object-contain brightness-0 invert"
+                sizes="120px"
+              />
             </div>
 
             {/* Info — compact inline on mobile */}
