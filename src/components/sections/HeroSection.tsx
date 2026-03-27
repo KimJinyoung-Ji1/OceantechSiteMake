@@ -85,18 +85,18 @@ export default function HeroSection({ locale }: HeroSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-24 max-w-[1920px] mx-auto py-4 sm:py-6 lg:py-8">
+      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-24 max-w-[1920px] mx-auto py-3 sm:py-6 lg:py-8">
         <div
           className="flex flex-col"
         >
           {/* LEFT — Text */}
           <div className="pl-0 lg:pl-20">
-            <div className="mb-6">
+            <div className="mb-3 sm:mb-6">
               <span
                 className="inline-flex items-center gap-1.5 text-xs font-semibold"
                 style={{
                   background: 'rgba(0,0,0,0.5)',
-                  padding: '6px 16px',
+                  padding: '5px 12px',
                   borderRadius: '20px',
                   color: 'white',
                 }}
@@ -110,7 +110,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </div>
 
             <h1
-              className="text-xl sm:text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-5"
+              className="text-lg sm:text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-3 sm:mb-5"
               style={{ textShadow: '0 2px 16px rgba(0,0,0,0.3)' }}
             >
               {titleLines.map((line, i) => (
@@ -121,27 +121,27 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </h1>
 
             <p
-              className="text-lg sm:text-2xl font-bold mb-6"
+              className="text-base sm:text-2xl font-bold mb-3 sm:mb-6"
               style={{ color: '#ffffff', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}
             >
               <span style={{ color: '#5EEAD4' }}>{t.hero.subtitle}</span>
             </p>
 
             <div
-              className="mb-10 max-w-2xl"
+              className="mb-5 sm:mb-10 max-w-2xl"
               style={{
                 background: 'rgba(0,0,0,0.25)',
-                padding: '20px 24px',
+                padding: '12px 14px',
                 borderRadius: '16px',
                 backdropFilter: 'blur(8px)',
                 border: '1px solid rgba(255,255,255,0.08)',
               }}
             >
-              <div className="flex flex-col sm:flex-row gap-5 items-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 items-center">
                 {/* LEFT — cert carousel */}
-                <div className="shrink-0 flex flex-col items-center gap-3" style={{ width: '144px' }}>
+                <div className="shrink-0 flex flex-col items-center gap-2 sm:gap-3" style={{ width: '120px' }}>
                   {/* Image — no border, 3D floating feel */}
-                  <div className="relative" style={{ width: '144px', height: '186px', perspective: '600px' }}>
+                  <div className="relative" style={{ width: '120px', height: '155px', perspective: '600px' }}>
                     {CERT_SLIDES.map((slide, i) => (
                       <div
                         key={i}
@@ -158,13 +158,13 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                           alt={slide.labelKo}
                           fill
                           className="object-contain"
-                          sizes="144px"
+                          sizes="120px"
                         />
                       </div>
                     ))}
                   </div>
                   {/* Cert name + number — fixed height to prevent layout shift */}
-                  <div className="text-center relative" style={{ width: '144px', height: '36px' }}>
+                  <div className="text-center relative" style={{ width: '120px', height: '36px' }}>
                     {CERT_SLIDES.map((slide, i) => (
                       <div
                         key={i}
@@ -205,11 +205,11 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 {/* RIGHT — stats + description stacked */}
                 <div className="flex-1 flex flex-col justify-between">
                   {/* Stats row — 4 inline with 3D feel */}
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" style={{ perspective: '600px' }}>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2" style={{ perspective: '600px' }}>
                     {stats.map((s, i) => (
                       <div
                         key={i}
-                        className="group rounded-xl px-2 py-3 text-center transition-all duration-500 cursor-default whitespace-nowrap"
+                        className="group rounded-xl px-1.5 py-2 sm:px-2 sm:py-3 text-center transition-all duration-500 cursor-default whitespace-nowrap"
                         style={{
                           background: 'rgba(255,255,255,0.08)',
                           border: '1px solid rgba(255,255,255,0.12)',
@@ -227,18 +227,19 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                           e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.1)';
                         }}
                       >
-                        <p className="text-lg sm:text-xl font-black leading-none" style={{ color: 'var(--secondary-400, #34d399)' }}>{s.value}</p>
-                        <p className="text-[10px] sm:text-xs font-semibold mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.6)' }}>{s.label}</p>
+                        <p className="text-sm sm:text-xl font-black leading-none" style={{ color: 'var(--secondary-400, #34d399)' }}>{s.value}</p>
+                        <p className="text-[9px] sm:text-xs font-semibold mt-0.5 sm:mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.6)' }}>{s.label}</p>
                       </div>
                     ))}
                   </div>
 
                   {/* Divider */}
-                  <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', margin: '40px 0' }} />
+                  <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', margin: '12px 0' }} className="sm:hidden" />
+                  <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', margin: '40px 0' }} className="hidden sm:block" />
 
                   {/* Description — pushed to bottom */}
                   <p
-                    className="text-sm lg:text-base font-medium leading-relaxed mt-auto"
+                    className="text-xs sm:text-sm lg:text-base font-medium leading-relaxed mt-auto"
                     style={{ color: 'rgba(255,255,255,0.8)', textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
                   >
                     {t.hero.description}
@@ -247,10 +248,10 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-12">
               <Link
                 href={localePath('/contact')}
-                className="hero-btn-primary inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-lg font-bold"
+                className="hero-btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold"
                 style={{
                   background: 'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
                   color: 'white',
@@ -265,7 +266,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               </Link>
               <Link
                 href={localePath('/about')}
-                className="hero-btn-secondary inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-lg font-semibold"
+                className="hero-btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold"
                 style={{
                   color: 'white',
                   border: '2px solid rgba(255,255,255,0.4)',

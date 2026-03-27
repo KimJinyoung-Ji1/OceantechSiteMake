@@ -24,12 +24,12 @@ export default function CompareTable({ locale }: CompareTableProps) {
 
   return (
     <section
-      className="py-16 lg:py-20"
+      className="py-10 sm:py-16 lg:py-20"
       style={{ background: 'var(--background)' }}
       aria-label="아연추 vs 납추 비교"
     >
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 sm:mb-10">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {locale === 'en' ? 'COMPARISON' : '성능 비교'}
           </p>
@@ -46,31 +46,31 @@ export default function CompareTable({ locale }: CompareTableProps) {
           {/* Column headers */}
           <div className="grid grid-cols-[1fr_2fr_2fr]">
             <div
-              className="px-3 py-4"
+              className="px-2 sm:px-3 py-2 sm:py-4"
               style={{ background: '#F8FFFE', borderRight: '1px solid rgba(14,173,135,0.15)' }}
             />
             <div
-              className="px-3 py-4 text-center"
+              className="px-2 sm:px-3 py-2 sm:py-4 text-center"
               style={{
                 background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
                 borderRight: '1px solid rgba(255,255,255,0.15)',
               }}
             >
-              <div className="flex items-center justify-center gap-2 mb-0.5">
+              <div className="flex items-center justify-center gap-1 sm:gap-2 mb-0.5">
                 <CheckIcon />
-                <p className="text-white font-bold text-xl leading-tight">{t.compare.zinc}</p>
+                <p className="text-white font-bold text-sm sm:text-xl leading-tight">{t.compare.zinc}</p>
               </div>
-              <p className="text-white/75 text-base">(주)오션테크</p>
+              <p className="text-white/75 text-xs sm:text-base">(주)오션테크</p>
             </div>
             <div
-              className="px-3 py-4 text-center"
+              className="px-2 sm:px-3 py-2 sm:py-4 text-center"
               style={{ background: 'linear-gradient(135deg, #374151 0%, #4B5563 100%)' }}
             >
-              <div className="flex items-center justify-center gap-2 mb-0.5">
+              <div className="flex items-center justify-center gap-1 sm:gap-2 mb-0.5">
                 <XIcon />
-                <p className="text-white font-bold text-xl leading-tight">{t.compare.lead}</p>
+                <p className="text-white font-bold text-sm sm:text-xl leading-tight">{t.compare.lead}</p>
               </div>
-              <p className="text-white/75 text-base">{locale === 'en' ? 'Conventional Product' : '기존 제품'}</p>
+              <p className="text-white/75 text-xs sm:text-base">{locale === 'en' ? 'Conventional Product' : '기존 제품'}</p>
             </div>
           </div>
 
@@ -86,7 +86,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
             >
               {/* Label — narrow, centered */}
               <div
-                className="px-3 py-3 font-semibold text-lg flex items-center justify-center text-center"
+                className="px-2 sm:px-3 py-2 sm:py-3 font-semibold text-xs sm:text-lg flex items-center justify-center text-center"
                 style={{
                   color: 'var(--text-primary)',
                   borderRight: '1px solid rgba(14,173,135,0.12)',
@@ -97,13 +97,13 @@ export default function CompareTable({ locale }: CompareTableProps) {
 
               {/* Zinc value — centered cell, left-aligned content */}
               <div
-                className="px-4 py-3 flex items-center justify-center border-r"
+                className="px-2 sm:px-4 py-2 sm:py-3 flex items-center justify-center border-r"
                 style={{ borderColor: 'rgba(14,173,135,0.12)' }}
               >
-                <div className="flex items-center gap-2" style={{ textAlign: 'left' }}>
+                <div className="flex items-center gap-1.5 sm:gap-2" style={{ textAlign: 'left' }}>
                   <span className="shrink-0"><CheckIcon /></span>
                   <span
-                    className="text-xl font-bold"
+                    className="text-xs sm:text-xl font-bold"
                     style={{ color: 'var(--primary-900,#021097)' }}
                   >
                     {row.zinc}
@@ -112,11 +112,11 @@ export default function CompareTable({ locale }: CompareTableProps) {
               </div>
 
               {/* Lead value — centered cell, left-aligned content */}
-              <div className="px-4 py-3 flex items-center justify-center">
-                <div className="flex items-center gap-2" style={{ textAlign: 'left' }}>
+              <div className="px-2 sm:px-4 py-2 sm:py-3 flex items-center justify-center">
+                <div className="flex items-center gap-1.5 sm:gap-2" style={{ textAlign: 'left' }}>
                   <span className="shrink-0"><XIcon /></span>
                   <span
-                    className="text-xl font-bold"
+                    className="text-xs sm:text-xl font-bold"
                     style={{ color: '#9CA3AF' }}
                   >
                     {row.lead}

@@ -42,9 +42,9 @@ export default function CTASection({ locale }: CTASectionProps) {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center pt-16">
+      <div className="relative z-10 max-w-5xl mx-auto text-center pt-10 sm:pt-16">
         <h2
-          className="text-3xl lg:text-5xl font-extrabold mb-6 leading-tight text-white"
+          className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 sm:mb-6 leading-tight text-white"
         >
           {titleLines.map((line, i) => (
             <span key={i} className="block">
@@ -53,16 +53,16 @@ export default function CTASection({ locale }: CTASectionProps) {
           ))}
         </h2>
         <p
-          className="text-base lg:text-lg mb-10 max-w-4xl mx-auto leading-relaxed"
+          className="text-sm sm:text-base lg:text-lg mb-7 sm:mb-10 max-w-4xl mx-auto leading-relaxed"
           style={{ color: 'rgba(255,255,255,0.65)' }}
         >
           {t.cta.description}
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <Link
             href={localePath('/contact')}
-            className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-bold text-white shadow-xl hover:shadow-2xl hover:brightness-110 transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base font-bold text-white shadow-xl hover:shadow-2xl hover:brightness-110 transition-all duration-200"
             style={{
               background: 'linear-gradient(135deg, var(--secondary-700) 0%, var(--secondary-500) 100%)',
               color: 'var(--primary-900)',
@@ -75,7 +75,7 @@ export default function CTASection({ locale }: CTASectionProps) {
           </Link>
           <a
             href="/documents/catalog.pdf"
-            className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-medium border-2 transition-all duration-200 hover:bg-white/10"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base font-medium border-2 transition-all duration-200 hover:bg-white/10"
             style={{ borderColor: 'rgba(255,255,255,0.30)', color: 'rgba(255,255,255,0.85)' }}
             download
           >

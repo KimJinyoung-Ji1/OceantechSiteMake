@@ -25,7 +25,7 @@ export default function OceanDivider({
 }: OceanDividerProps) {
   return (
     <div
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden max-h-[120px] sm:max-h-none"
       style={{ height: `${height}px` }}
       aria-hidden="true"
     >

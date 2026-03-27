@@ -72,12 +72,12 @@ export default function CertCards({ locale }: CertCardsProps) {
 
   return (
     <section
-      className="py-16 lg:py-20 px-4 sm:px-6 lg:px-24"
+      className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-24"
       style={{ background: 'var(--background-alt)' }}
       aria-label="인증 및 수상"
     >
       <div className="max-w-[1920px] mx-auto">
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 sm:mb-10">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.certification.title}
           </p>
@@ -89,7 +89,7 @@ export default function CertCards({ locale }: CertCardsProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {certItems.map((cert) => (
             <article
               key={cert.key}
@@ -106,7 +106,7 @@ export default function CertCards({ locale }: CertCardsProps) {
               {/* Featured badge */}
               {cert.featured && (
                 <div
-                  className="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-xs font-bold text-white"
+                  className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold text-white"
                   style={{ background: cert.accent }}
                 >
                   {locale === 'en' ? 'Core' : '핵심 인증'}
@@ -116,28 +116,28 @@ export default function CertCards({ locale }: CertCardsProps) {
               {/* Cert image */}
               <div
                 className="w-full bg-white flex items-center justify-center overflow-hidden"
-                style={{ height: 280, borderBottom: `1px solid ${cert.accentBorder}` }}
+                style={{ height: 160, borderBottom: `1px solid ${cert.accentBorder}` }}
               >
                 <Image
                   src={cert.image}
                   alt={locale === 'en' ? cert.titleEn : cert.titleKo}
                   width={320}
                   height={240}
-                  className="object-contain w-full h-full p-2 group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-contain w-full h-full p-1.5 sm:p-2 group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
 
               {/* Info — centered vertically and horizontally */}
-              <div className="flex-1 flex flex-col items-center justify-center p-4 text-center w-full">
+              <div className="flex-1 flex flex-col items-center justify-center p-2.5 sm:p-4 text-center w-full">
                 <h3
-                  className="font-bold text-lg mb-1"
+                  className="font-bold text-xs sm:text-lg mb-1"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {locale === 'en' ? cert.titleEn : cert.titleKo}
                 </h3>
                 <p
-                  className="text-base font-mono font-semibold break-all"
+                  className="text-[10px] sm:text-base font-mono font-semibold break-all"
                   style={{ color: cert.accent }}
                 >
                   {cert.number}

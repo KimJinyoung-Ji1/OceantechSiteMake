@@ -54,13 +54,13 @@ export default function ValueBento({ locale }: ValueBentoProps) {
 
   return (
     <section
-      className="py-16 lg:py-20"
+      className="py-10 sm:py-16 lg:py-20"
       style={{ background: 'var(--background-alt)' }}
       aria-label="오션테크를 선택하는 이유"
     >
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-24">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6 sm:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.valueSection.title}
           </p>
@@ -70,38 +70,40 @@ export default function ValueBento({ locale }: ValueBentoProps) {
         </div>
 
         {/* 3-column Bento Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-6">
           {items.map((item, i) => {
             const color = cardColors[i % cardColors.length];
             const num = String(i + 1).padStart(2, '0');
             return (
               <article
                 key={i}
-                className="group relative p-8 rounded-2xl bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg overflow-hidden flex flex-col items-center text-center"
+                className="group relative p-4 sm:p-8 rounded-2xl bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg overflow-hidden flex flex-col items-center text-center"
                 style={{ border: `1px solid ${color.border}` }}
               >
                 {/* Large number */}
                 <p
-                  className="text-7xl font-black leading-none mb-6 select-none"
+                  className="text-4xl sm:text-7xl font-black leading-none mb-3 sm:mb-6 select-none"
                   style={{ color: color.numColor }}
                 >
                   {num}
                 </p>
 
                 <div
-                  className="w-16 h-16 rounded-xl flex items-center justify-center mb-5"
+                  className="w-10 h-10 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-3 sm:mb-5"
                   style={{ background: `${color.numColor}`, color: color.icon }}
                 >
-                  {icons[item.icon] ?? null}
+                  <span className="[&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-10 sm:[&>svg]:h-10">
+                    {icons[item.icon] ?? null}
+                  </span>
                 </div>
 
                 <h3
-                  className="card-title mb-4"
+                  className="text-sm sm:card-title mb-2 sm:mb-4 font-bold"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {item.title}
                 </h3>
-                <p className="card-body" style={{ color: 'var(--text-body)' }}>
+                <p className="text-xs sm:card-body leading-relaxed" style={{ color: 'var(--text-body)' }}>
                   {item.description}
                 </p>
 
@@ -117,41 +119,41 @@ export default function ValueBento({ locale }: ValueBentoProps) {
 
         {/* Full-width Pilot Card */}
         <div
-          className="rounded-2xl p-8 lg:p-12"
+          className="rounded-2xl p-5 sm:p-8 lg:p-12"
           style={{
             background: 'linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700, #0148C8) 100%)',
             border: '1px solid rgba(255,255,255,0.08)',
           }}
         >
-          <div className="flex flex-col items-center text-center gap-8">
+          <div className="flex flex-col items-center text-center gap-5 sm:gap-8">
             <div className="max-w-4xl">
               <p
-                className="text-xs font-bold uppercase tracking-widest mb-2"
+                className="text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1.5 sm:mb-2"
                 style={{ color: 'var(--secondary-500)' }}
               >
                 {locale === 'en' ? 'FIELD PROVEN' : '현장 실증 완료'}
               </p>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-3">
+              <h3 className="text-base sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3">
                 {locale === 'en'
                   ? '31-Month Real-World Pilot in Goseong, Gangwon'
                   : '강원 고성군 31개월 실증사업 완료'}
               </h3>
-              <p className="text-base text-white/65 leading-relaxed">
+              <p className="text-sm sm:text-base text-white/65 leading-relaxed">
                 {locale === 'en'
                   ? 'Verified durability, cost savings, and marine safety in a real fishing environment with SUHYUP.'
                   : '수협중앙회와 함께 실제 어업 현장에서 내구성, 비용절감, 해양 안전성을 직접 검증했습니다.'}
               </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-10 lg:gap-16">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-5 sm:gap-10 lg:gap-16 w-full">
               {pilotStats.map((s, i) => (
                 <div key={i} className="text-center">
-                  <p className="text-3xl sm:text-5xl font-black" style={{ color: 'var(--secondary-500)' }}>
+                  <p className="text-2xl sm:text-5xl font-black" style={{ color: 'var(--secondary-500)' }}>
                     {s.value}
-                    <span className="text-2xl font-semibold ml-1" style={{ color: 'var(--primary-300)' }}>
+                    <span className="text-lg sm:text-2xl font-semibold ml-1" style={{ color: 'var(--primary-300)' }}>
                       {s.unit}
                     </span>
                   </p>
-                  <p className="text-base text-white/65 mt-2 font-medium">{s.label}</p>
+                  <p className="text-xs sm:text-base text-white/65 mt-1 sm:mt-2 font-medium">{s.label}</p>
                 </div>
               ))}
             </div>

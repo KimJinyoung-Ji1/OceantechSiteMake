@@ -66,12 +66,12 @@ export default function NewsBanner() {
 
   return (
     <section
-      className="py-6 lg:py-10 px-3 sm:px-4 lg:px-6"
+      className="py-5 sm:py-6 lg:py-10 px-3 sm:px-4 lg:px-6"
       style={{ background: 'var(--background)' }}
       aria-label="뉴스 배너"
     >
       <div className="max-w-[1400px] mx-auto">
-        <div className="text-center mb-4">
+        <div className="text-center mb-3 sm:mb-4">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             NEWS
           </p>
@@ -117,7 +117,7 @@ export default function NewsBanner() {
             </div>
 
             {/* Right: thumbnail + content — crossfade */}
-            <div className="relative flex-1" style={{ minHeight: '180px' }}>
+            <div className="relative flex-1" style={{ minHeight: '160px' }}>
               {NEWS_ITEMS.map((n, idx) => (
                 <div
                   key={idx}
@@ -132,7 +132,7 @@ export default function NewsBanner() {
                 >
                   {n.image && (
                     <div
-                      className="shrink-0 overflow-hidden lg:rounded-none rounded-t-2xl w-full lg:w-auto"
+                      className="hidden sm:block shrink-0 overflow-hidden lg:rounded-none rounded-t-2xl w-full lg:w-auto"
                       style={{ maxWidth: 'min(280px, 100%)', minHeight: 160 }}
                     >
                       <Image
@@ -146,22 +146,22 @@ export default function NewsBanner() {
                       />
                     </div>
                   )}
-                  <div className="flex-1 min-w-0 px-4 py-4 sm:px-6 sm:py-5 lg:px-6 lg:py-5">
-                    <div className="flex items-center gap-3 mb-3">
+                  <div className="flex-1 min-w-0 px-3 py-3 sm:px-6 sm:py-5 lg:px-6 lg:py-5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
                       <span
-                        className="px-4 py-1.5 rounded-full text-base font-bold"
+                        className="px-2.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-base font-bold"
                         style={{ background: 'rgba(2,16,151,0.08)', color: 'var(--primary-500)' }}
                       >
                         {n.source}
                       </span>
-                      <span className="text-base font-medium" style={{ color: 'var(--text-secondary)' }}>
+                      <span className="text-xs sm:text-base font-medium" style={{ color: 'var(--text-secondary)' }}>
                         {n.date}
                       </span>
                     </div>
-                    <h3 className="text-xl lg:text-2xl font-bold mb-3 leading-snug" style={{ color: 'var(--text-primary)' }}>
+                    <h3 className="text-sm sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 leading-snug" style={{ color: 'var(--text-primary)' }}>
                       {n.title}
                     </h3>
-                    <p className="text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                    <p className="text-xs sm:text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
                       {n.summary}
                     </p>
                   </div>
