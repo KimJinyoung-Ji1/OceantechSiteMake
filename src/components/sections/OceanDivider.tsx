@@ -40,7 +40,7 @@ export default function OceanDivider({
       {/* Light cyan tint overlay */}
       <div
         className="absolute inset-0 z-0"
-        style={{ background: 'rgba(244,114,182,0.10)' }}
+        style={{ background: 'rgba(3,233,248,0.10)' }}
       />
 
       {/* Fade from top — white to transparent */}

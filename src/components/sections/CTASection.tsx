@@ -52,7 +52,7 @@ export default function CTASection({ locale }: CTASectionProps) {
           ))}
         </h2>
         <p
-          className="text-[11px] sm:text-base lg:text-lg mb-7 sm:mb-10 max-w-4xl mx-auto leading-relaxed"
+          className="text-sm sm:text-base lg:text-lg mb-7 sm:mb-10 max-w-4xl mx-auto leading-relaxed"
           style={{ color: 'rgba(255,255,255,0.65)' }}
         >
           {t.cta.description}
@@ -61,7 +61,7 @@ export default function CTASection({ locale }: CTASectionProps) {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <Link
             href={localePath('/contact')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-bold text-white shadow-xl hover:shadow-2xl hover:brightness-110 transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base font-bold text-white shadow-xl hover:shadow-2xl hover:brightness-110 transition-all duration-200"
             style={{
               background: 'linear-gradient(135deg, var(--secondary-700) 0%, var(--secondary-500) 100%)',
               color: 'var(--primary-900)',
@@ -74,7 +74,7 @@ export default function CTASection({ locale }: CTASectionProps) {
           </Link>
           <a
             href="/documents/catalog.pdf"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-medium border-2 transition-all duration-200 hover:bg-white/10"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base font-medium border-2 transition-all duration-200 hover:bg-white/10"
             style={{ borderColor: 'rgba(255,255,255,0.30)', color: 'rgba(255,255,255,0.85)' }}
             download
           >

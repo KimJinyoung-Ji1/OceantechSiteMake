@@ -22,12 +22,12 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
 
   return (
     <section
-      className="py-8 sm:py-16 lg:py-20"
+      className="py-16 lg:py-20"
       style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)' }}
       aria-label="납추 vs 아연추 비교"
     >
       <div className="section-container">
-        <div className="text-center mb-4 sm:mb-8 md:mb-14">
+        <div className="text-center mb-8 md:mb-14">
           <p className="section-eyebrow" style={{ color: '#C2410C' }}>
             {isEn ? 'DETAILED COMPARISON' : '상세 비교'}
           </p>
@@ -40,7 +40,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
           {/* Header bar — desktop only (hidden on mobile) */}
           <div
             className="hidden sm:grid grid-cols-[1fr_1px_1fr] items-center rounded-t-2xl overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, var(--primary-900,#9D174D) 0%, var(--primary-700,#BE185D) 100%)' }}
+            style={{ background: 'linear-gradient(135deg, var(--primary-900,#021097) 0%, var(--primary-700,#0148C8) 100%)' }}
           >
             <div className="px-6 py-4 flex items-center justify-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#F97316' }} />
@@ -63,7 +63,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
             style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)' }}
           >
             <div className="px-2 py-2.5 flex items-center justify-center gap-1">
-              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#FB7185' }} />
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#17E9B5' }} />
               <span className="text-[10px] font-bold text-white">
                 {isEn ? 'Zinc' : '오션테크 아연추'}
               </span>
@@ -134,7 +134,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                   style={{ background: i % 2 === 0 ? 'white' : '#fafbfc' }}
                 >
                   <div className="px-1.5 py-2.5 flex items-center justify-center text-center">
-                    <span className="text-[11px] font-bold" style={{ color: '#E11D48' }}>
+                    <span className="text-[11px] font-bold" style={{ color: '#0EAD87' }}>
                       {isEn ? row.goodEn : row.good}
                     </span>
                   </div>

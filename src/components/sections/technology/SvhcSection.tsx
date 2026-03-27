@@ -16,7 +16,7 @@ export default function SvhcSection({ locale }: SvhcSectionProps) {
         <div
           className="rounded-2xl p-5 md:p-10 lg:p-16 text-center"
           style={{
-            background: 'linear-gradient(135deg, var(--primary-900,#9D174D) 0%, var(--primary-700,#BE185D) 50%, var(--primary-500,#EC4899) 100%)',
+            background: 'linear-gradient(135deg, var(--primary-900,#021097) 0%, var(--primary-700,#0148C8) 50%, var(--primary-500,#0168EF) 100%)',
           }}
         >
           <p

@@ -21,8 +21,8 @@ const yearDetails: Record<string, { ko: string; en: string }> = {
 };
 
 const yearGrads = [
-  'linear-gradient(135deg, #9D174D 0%, #EC4899 100%)',
-  'linear-gradient(135deg, #E11D48 0%, #FB7185 100%)',
+  'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
+  'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
   'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)',
 ];
 
@@ -50,7 +50,7 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
           {/* Vertical timeline line — desktop */}
           <div
             className="hidden sm:block absolute left-[28px] top-4 bottom-4 w-[2px]"
-            style={{ background: 'linear-gradient(180deg, #9D174D 0%, #E11D48 50%, #D97706 100%)' }}
+            style={{ background: 'linear-gradient(180deg, #021097 0%, #0EAD87 50%, #D97706 100%)' }}
             aria-hidden="true"
           />
 
@@ -65,7 +65,7 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
                   style={{
                     background: 'white',
                     border: '1px solid #e2e8f0',
-                    boxShadow: '0 2px 12px rgba(157,23,77,0.05)',
+                    boxShadow: '0 2px 12px rgba(2,16,151,0.05)',
                   }}
                 >
                   {/* Timeline node — desktop */}
@@ -81,7 +81,7 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
                     <div className="p-3 sm:p-6">
                       {/* Mobile year badge */}
                       <div
-                        className="sm:hidden inline-block px-2.5 py-1 rounded-lg text-[10px] font-black text-white mb-2"
+                        className="sm:hidden inline-block px-2.5 py-1 rounded-lg text-xs font-black text-white mb-2"
                         style={{ background: grad }}
                       >
                         {p.year}
@@ -90,10 +90,10 @@ export default function PerformanceSection({ locale }: PerformanceSectionProps) 
                         {(isEn ? p.itemsEn : p.itemsKo).map((item, i) => (
                           <li key={i} className="flex items-start gap-2 sm:gap-3">
                             <svg className="mt-1 w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" viewBox="0 0 16 16" fill="none">
-                              <circle cx="8" cy="8" r="8" fill={grad.includes('0EAD87') ? '#E11D48' : grad.includes('D97706') ? '#D97706' : '#EC4899'} opacity="0.15" />
-                              <path d="M5 8l2 2 4-4" stroke={grad.includes('0EAD87') ? '#E11D48' : grad.includes('D97706') ? '#D97706' : '#EC4899'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              <circle cx="8" cy="8" r="8" fill={grad.includes('0EAD87') ? '#0EAD87' : grad.includes('D97706') ? '#D97706' : '#0168EF'} opacity="0.15" />
+                              <path d="M5 8l2 2 4-4" stroke={grad.includes('0EAD87') ? '#0EAD87' : grad.includes('D97706') ? '#D97706' : '#0168EF'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span className="text-[11px] sm:text-base font-medium leading-snug" style={{ color: 'var(--gray-700)' }}>
+                            <span className="text-xs sm:text-base font-medium leading-snug" style={{ color: 'var(--gray-700)' }}>
                               {item}
                             </span>
                           </li>

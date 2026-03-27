@@ -27,51 +27,45 @@ export default function CompareTable({ locale }: CompareTableProps) {
         <div
           className="rounded-2xl overflow-hidden"
           style={{
-            boxShadow: '0 4px 24px rgba(157,23,77,0.08), 0 1px 3px rgba(0,0,0,0.06)',
-            border: '1px solid rgba(157,23,77,0.10)',
+            boxShadow: '0 4px 24px rgba(2,16,151,0.08), 0 1px 3px rgba(0,0,0,0.06)',
+            border: '1px solid rgba(2,16,151,0.10)',
           }}
         >
           {/* Column headers */}
-          <div className="grid grid-cols-[minmax(56px,1fr)_2fr_2fr]">
+          <div className="grid grid-cols-[minmax(70px,1.2fr)_2fr_2fr]">
             {/* Empty corner */}
             <div
-              className="px-1 sm:px-4 py-2 sm:py-4 flex items-center justify-center"
+              className="px-2 sm:px-4 py-3 sm:py-5 flex items-center justify-center"
               style={{ background: '#f8fafc' }}
             />
-            {/* Zinc header — winner with ribbon badge */}
+            {/* Zinc header — winner */}
             <div
-              className="px-1 sm:px-4 py-2 sm:py-4 text-center relative overflow-visible"
+              className="px-2 sm:px-4 py-3 sm:py-5 text-center relative"
               style={{
-                background: 'linear-gradient(135deg, #9D174D 0%, #EC4899 100%)',
+                background: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
               }}
             >
-              {/* Ribbon badge — top-right corner */}
+              {/* Recommended badge */}
               <div
-                className="absolute -top-1 -right-1 sm:-top-1 sm:-right-1 z-10"
-                style={{ width: '36px', height: '36px' }}
+                className="absolute -top-0 left-1/2 -translate-x-1/2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-b-lg text-[10px] sm:text-[10px] font-bold tracking-wider uppercase"
+                style={{ background: 'var(--secondary-500)', color: 'var(--primary-900)' }}
               >
-                <div
-                  className="absolute inset-0 flex items-center justify-center"
-                  style={{
-                    background: 'linear-gradient(135deg, #FB7185 0%, #E11D48 100%)',
-                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)',
-                    borderRadius: '0 8px 0 0',
-                  }}
-                />
-                <svg className="absolute top-1 right-1" width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8l4 4 6-7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                {locale === 'en' ? 'RECOMMENDED' : '추천'}
               </div>
-              <p className="text-white font-extrabold text-xs sm:text-xl leading-tight">{t.compare.zinc}</p>
-              <p className="text-white/70 text-[10px] sm:text-sm mt-0.5">(주)오션테크</p>
+              <div className="mt-2 sm:mt-3">
+                <p className="text-white font-extrabold text-sm sm:text-xl leading-tight">{t.compare.zinc}</p>
+                <p className="text-white/70 text-[10px] sm:text-sm mt-0.5">(주)오션테크</p>
+              </div>
             </div>
             {/* Lead header — muted */}
             <div
-              className="px-1 sm:px-4 py-2 sm:py-4 text-center"
+              className="px-2 sm:px-4 py-3 sm:py-5 text-center"
               style={{ background: '#f1f5f9' }}
             >
-              <p className="font-bold text-xs sm:text-xl leading-tight" style={{ color: '#94a3b8' }}>{t.compare.lead}</p>
-              <p className="text-[10px] sm:text-sm mt-0.5" style={{ color: '#b0b8c4' }}>{locale === 'en' ? 'Conventional' : '기존 제품'}</p>
+              <div className="mt-2 sm:mt-3">
+                <p className="font-bold text-sm sm:text-xl leading-tight" style={{ color: '#94a3b8' }}>{t.compare.lead}</p>
+                <p className="text-[10px] sm:text-sm mt-0.5" style={{ color: '#b0b8c4' }}>{locale === 'en' ? 'Conventional' : '기존 제품'}</p>
+              </div>
             </div>
           </div>
 
@@ -79,7 +73,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
           {t.compare.rows.map((row, i) => (
             <div
               key={i}
-              className="grid grid-cols-[minmax(56px,1fr)_2fr_2fr]"
+              className="grid grid-cols-[minmax(70px,1.2fr)_2fr_2fr]"
               style={{
                 borderTop: '1px solid #e2e8f0',
               }}
@@ -99,7 +93,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
               <div
                 className="px-2 sm:px-4 py-3 sm:py-4 flex flex-col items-center justify-center text-center"
                 style={{
-                  background: i % 2 === 0 ? 'rgba(157,23,77,0.03)' : 'rgba(157,23,77,0.01)',
+                  background: i % 2 === 0 ? 'rgba(2,16,151,0.03)' : 'rgba(2,16,151,0.01)',
                   borderLeft: '1px solid #e2e8f0',
                 }}
               >

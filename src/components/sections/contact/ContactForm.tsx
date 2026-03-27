@@ -80,7 +80,7 @@ export default function ContactForm({ locale, onSuccess }: ContactFormProps) {
     onSuccess();
   };
 
-  const inputClass = 'w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base transition-all duration-200 outline-none border bg-[#f8fafc] border-[#e2e8f0] focus:border-[#EC4899] focus:bg-white focus:shadow-[0_0_0_3px_rgba(236,72,153,0.08)]';
+  const inputClass = 'w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base transition-all duration-200 outline-none border bg-[#f8fafc] border-[#e2e8f0] focus:border-[#0168EF] focus:bg-white focus:shadow-[0_0_0_3px_rgba(1,104,239,0.08)]';
 
   return (
     <form
@@ -90,7 +90,7 @@ export default function ContactForm({ locale, onSuccess }: ContactFormProps) {
     >
       {error && (
         <div
-          className="px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-medium"
+          className="px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium"
           style={{ background: '#FEF2F2', color: '#B91C1C', border: '1px solid #FECACA' }}
         >
           {error}

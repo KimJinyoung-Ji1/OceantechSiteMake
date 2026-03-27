@@ -87,7 +87,7 @@ export default function CertGrid({ locale }: CertGridProps) {
         <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-5">
           {certItems.map((item) => {
             const badgeStyles = item.isGreen
-              ? { bg: '#E11D48', color: 'white' }
+              ? { bg: '#0EAD87', color: 'white' }
               : (item as Record<string, unknown>).isAward
               ? { bg: '#D97706', color: 'white' }
               : { bg: 'var(--primary-500)', color: 'white' };
@@ -98,7 +98,7 @@ export default function CertGrid({ locale }: CertGridProps) {
               style={{
                 background: 'white',
                 border: '1px solid #e2e8f0',
-                boxShadow: '0 2px 12px rgba(157,23,77,0.06)',
+                boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
               }}
             >
               {/* Top accent */}
@@ -150,7 +150,7 @@ export default function CertGrid({ locale }: CertGridProps) {
 
                 <p
                   className="text-[10px] sm:text-xs font-mono font-semibold px-1 py-0.5 rounded"
-                  style={{ color: 'var(--primary-500)', background: 'rgba(236,72,153,0.06)' }}
+                  style={{ color: 'var(--primary-500)', background: 'rgba(1,104,239,0.06)' }}
                 >
                   {item.numberKo}
                 </p>

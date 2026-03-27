@@ -68,8 +68,8 @@ const visionCards = [
       </svg>
     ),
     gradBg: 'linear-gradient(135deg, #F0F4FF 0%, #E0EAFF 100%)',
-    iconBg: 'rgba(236,72,153,0.08)',
-    border: 'rgba(236,72,153,0.2)',
+    iconBg: 'rgba(1,104,239,0.08)',
+    border: 'rgba(1,104,239,0.2)',
   },
   {
     key: 'value',
@@ -110,8 +110,8 @@ const visionCards = [
       </svg>
     ),
     gradBg: 'linear-gradient(135deg, #F0FFF9 0%, #DCFCE7 100%)',
-    iconBg: 'rgba(251,113,133,0.1)',
-    border: 'rgba(251,113,133,0.3)',
+    iconBg: 'rgba(23,233,181,0.1)',
+    border: 'rgba(23,233,181,0.3)',
   },
 ];
 
@@ -146,7 +146,7 @@ export default function VisionSection({ locale }: VisionSectionProps) {
               style={{
                 background: card.gradBg,
                 border: `1px solid ${card.border}`,
-                boxShadow: '0 2px 12px rgba(157,23,77,0.06)',
+                boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
               }}
             >
               <div

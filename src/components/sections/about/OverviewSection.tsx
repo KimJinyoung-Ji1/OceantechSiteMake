@@ -87,7 +87,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
           <h2 className="section-title" style={{ color: 'var(--text-primary)' }}>
             {isEn ? 'Ocean Tech Inc.' : '(주)오션테크'}
           </h2>
-          <p className="mt-2 text-[11px] sm:text-base" style={{ color: 'var(--text-secondary)' }}>
+          <p className="mt-2 text-base" style={{ color: 'var(--text-secondary)' }}>
             {isEn
               ? 'Leading innovation in eco-friendly fishing weights since day one.'
               : '친환경 어망추의 새로운 기준을 만들어갑니다.'}
@@ -98,8 +98,8 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {groups.map((group, gi) => {
             const headerGrads = [
-              'linear-gradient(135deg, #9D174D 0%, #EC4899 100%)',
-              'linear-gradient(135deg, #E11D48 0%, #FB7185 100%)',
+              'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
+              'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
               'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)',
               'linear-gradient(135deg, #6D28D9 0%, #7C3AED 100%)',
             ];
@@ -110,7 +110,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
               style={{
                 background: 'white',
                 border: '1px solid #e2e8f0',
-                boxShadow: '0 2px 12px rgba(157,23,77,0.06)',
+                boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
               }}
             >
               {/* Group Header */}

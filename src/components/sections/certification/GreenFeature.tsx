@@ -20,8 +20,8 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
         <div
           className="rounded-2xl p-4 md:p-8 lg:p-12 flex flex-col items-center text-center gap-4 md:gap-6"
           style={{
-            background: 'linear-gradient(135deg, rgba(157,23,77,0.06) 0%, rgba(251,113,133,0.08) 100%)',
-            border: '2px solid rgba(251,113,133,0.3)',
+            background: 'linear-gradient(135deg, rgba(2,16,151,0.06) 0%, rgba(23,233,181,0.08) 100%)',
+            border: '2px solid rgba(23,233,181,0.3)',
           }}
         >
           {/* Green cert mark */}
@@ -37,15 +37,15 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
 
           <div className="flex flex-wrap gap-2 justify-center">
             <span
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] sm:text-sm font-bold"
-              style={{ background: 'rgba(251,113,133,0.15)', color: 'var(--secondary-700,#047857)' }}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-bold"
+              style={{ background: 'rgba(23,233,181,0.15)', color: 'var(--secondary-700,#047857)' }}
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--secondary-500)' }} />
               {isEn ? 'Green Technology Certification' : '녹색기술인증'}
             </span>
             <span
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] sm:text-sm font-bold"
-              style={{ background: 'rgba(251,113,133,0.15)', color: 'var(--secondary-700,#047857)' }}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-bold"
+              style={{ background: 'rgba(23,233,181,0.15)', color: 'var(--secondary-700,#047857)' }}
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--secondary-500)' }} />
               {isEn ? 'Green Product Verified' : '녹색기술제품 확인'}
@@ -72,26 +72,26 @@ export default function GreenFeature({ locale }: GreenFeatureProps) {
 
           <div className="flex flex-wrap gap-4 md:gap-6 justify-center">
             <div className="text-center">
-              <p className="text-[10px] sm:text-sm" style={{ color: 'var(--gray-700)' }}>
+              <p className="text-sm" style={{ color: 'var(--gray-700)' }}>
                 {isEn ? 'Green Tech No.' : '녹색기술인증 번호'}
               </p>
-              <p className="text-sm sm:text-lg font-bold" style={{ color: 'var(--primary-600)' }}>
+              <p className="text-lg font-bold" style={{ color: 'var(--primary-600)' }}>
                 {cert.greenTech.number}
               </p>
             </div>
             <div className="text-center">
-              <p className="text-[10px] sm:text-sm" style={{ color: 'var(--gray-700)' }}>
+              <p className="text-sm" style={{ color: 'var(--gray-700)' }}>
                 {isEn ? 'Green Product No.' : '녹색기술제품 번호'}
               </p>
-              <p className="text-sm sm:text-lg font-bold" style={{ color: 'var(--primary-600)' }}>
+              <p className="text-lg font-bold" style={{ color: 'var(--primary-600)' }}>
                 {cert.greenProduct.number}
               </p>
             </div>
             <div className="text-center">
-              <p className="text-[10px] sm:text-sm" style={{ color: 'var(--gray-700)' }}>
+              <p className="text-sm" style={{ color: 'var(--gray-700)' }}>
                 {isEn ? 'Valid Period' : '유효기간'}
               </p>
-              <p className="text-sm sm:text-lg font-bold" style={{ color: 'var(--gray-700)' }}>
+              <p className="text-lg font-bold" style={{ color: 'var(--gray-700)' }}>
                 {cert.greenTech.period}
               </p>
             </div>

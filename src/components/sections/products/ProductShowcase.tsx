@@ -83,7 +83,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                   <h3 className="text-base sm:text-xl lg:text-2xl font-bold" style={{ color: 'var(--primary-500)' }}>
                     {isEn ? category.nameEn : category.nameKo}
                   </h3>
-                  <p className="text-[11px] sm:text-base lg:text-lg mt-0.5 sm:mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="text-xs sm:text-base lg:text-lg mt-0.5 sm:mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
                     {isEn ? category.descriptionEn : category.descriptionKo}
                   </p>
                 </motion.div>
@@ -106,12 +106,12 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                       style={{
                         background: 'white',
                         border: '1px solid #e2e8f0',
-                        boxShadow: '0 2px 12px rgba(157,23,77,0.06)',
+                        boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
                         borderRadius: '12px',
                         transition: 'all 0.3s ease',
                       }}
                       variants={fadeInUp}
-                      whileHover={{ y: -4, boxShadow: '0 8px 24px rgba(157,23,77,0.12)' }}
+                      whileHover={{ y: -4, boxShadow: '0 8px 24px rgba(2,16,151,0.12)' }}
                       transition={{ duration: 0.3 }}
                     >
                       <div
@@ -182,8 +182,8 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
             {advantages.map((adv, i) => {
               const Icon = ADVANTAGE_ICONS[i];
               const accents = [
-                { bg: 'rgba(225,29,72,0.06)', border: 'rgba(225,29,72,0.15)', grad: 'linear-gradient(135deg, #E11D48, #FB7185)' },
-                { bg: 'rgba(236,72,153,0.06)', border: 'rgba(236,72,153,0.15)', grad: 'linear-gradient(135deg, #9D174D, #EC4899)' },
+                { bg: 'rgba(14,173,135,0.06)', border: 'rgba(14,173,135,0.15)', grad: 'linear-gradient(135deg, #0EAD87, #17E9B5)' },
+                { bg: 'rgba(1,104,239,0.06)', border: 'rgba(1,104,239,0.15)', grad: 'linear-gradient(135deg, #021097, #0168EF)' },
                 { bg: 'rgba(217,119,6,0.06)', border: 'rgba(217,119,6,0.15)', grad: 'linear-gradient(135deg, #D97706, #F59E0B)' },
                 { bg: 'rgba(124,58,237,0.06)', border: 'rgba(124,58,237,0.15)', grad: 'linear-gradient(135deg, #6D28D9, #7C3AED)' },
               ];
@@ -195,11 +195,11 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                   style={{
                     background: 'white',
                     border: '1px solid #e2e8f0',
-                    boxShadow: '0 2px 12px rgba(157,23,77,0.06)',
+                    boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
                     transition: 'all 0.3s ease',
                   }}
                   variants={fadeInUp}
-                  whileHover={{ y: -4, boxShadow: '0 8px 32px rgba(157,23,77,0.10)' }}
+                  whileHover={{ y: -4, boxShadow: '0 8px 32px rgba(2,16,151,0.10)' }}
                   transition={{ duration: 0.3 }}
                 >
                   {/* Top accent bar */}
@@ -261,15 +261,16 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                 ? 'Ready to switch to\neco-friendly zinc weights?'
                 : '친환경 아연추로\n전환을 고려하시나요?'}
             </h2>
-            <p className="mb-8 text-[11px] sm:text-base lg:text-lg" style={{ color: 'rgba(255,255,255,0.65)' }}>
+            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.2rem' }}>
               {isEn
                 ? 'Contact us for product specifications, pricing, and consultation on switching from lead to zinc fishing weights.'
                 : '제품 규격, 납품 가격, 납추에서 아연추로의 전환 상담을 원하시면 언제든지 연락주세요.'}
             </p>
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold transition-all text-sm sm:text-lg"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold transition-all"
               style={{
+                fontSize: '1.2rem',
                 background: 'var(--secondary-500)',
                 color: 'var(--gray-900)',
               }}

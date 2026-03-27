@@ -9,20 +9,20 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
   const isEn = locale === 'en';
 
   return (
-    <section className="py-8 sm:py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="왜 아연인가">
+    <section className="py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="왜 아연인가">
       <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-5 sm:gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
             <p className="section-eyebrow" style={{ color: 'var(--secondary-700,#047857)' }}>
               {isEn ? 'WHY ZINC?' : '왜 아연인가?'}
             </p>
             <h2
-              className="section-title mb-3 sm:mb-6"
+              className="section-title mb-6"
               style={{ color: 'var(--gray-900)' }}
             >
               {isEn ? 'Lead is Poisoning\nOur Ocean' : '납이 바다를\n오염시키고 있습니다'}
             </h2>
-            <div className="space-y-2.5 sm:space-y-5 text-[11px] sm:text-base lg:text-lg" style={{ color: 'var(--gray-600)', lineHeight: '1.7' }}>
+            <div className="space-y-5" style={{ color: 'var(--gray-600)', fontSize: '1.1rem', lineHeight: '2' }}>
               <p>
                 {isEn
                   ? 'Lead weights used in fishing nets gradually dissolve in seawater, releasing toxic heavy metals that accumulate in marine organisms and eventually enter the human food chain.'
@@ -47,7 +47,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
             <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 z-10">
               <div
                 className="w-9 h-9 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-black text-[10px] sm:text-lg"
-                style={{ background: 'linear-gradient(135deg, #9D174D, #EC4899)', color: 'white', boxShadow: '0 4px 20px rgba(236,72,153,0.35)', border: '3px solid white' }}
+                style={{ background: 'linear-gradient(135deg, #021097, #0168EF)', color: 'white', boxShadow: '0 4px 20px rgba(1,104,239,0.35)', border: '3px solid white' }}
               >
                 VS
               </div>
@@ -99,9 +99,9 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
             {/* Zinc */}
             <div
               className="rounded-xl sm:rounded-2xl overflow-hidden flex flex-col"
-              style={{ border: '1px solid #e2e8f0', background: 'white', boxShadow: '0 2px 12px rgba(225,29,72,0.06)' }}
+              style={{ border: '1px solid #e2e8f0', background: 'white', boxShadow: '0 2px 12px rgba(14,173,135,0.06)' }}
             >
-              <div className="h-1" style={{ background: 'linear-gradient(90deg, #E11D48, #FB7185)' }} />
+              <div className="h-1" style={{ background: 'linear-gradient(90deg, #0EAD87, #17E9B5)' }} />
               <div
                 className="relative w-full"
                 style={{ aspectRatio: '1/1', background: 'linear-gradient(135deg, #ECFDF5 0%, #D1FAE540 100%)' }}

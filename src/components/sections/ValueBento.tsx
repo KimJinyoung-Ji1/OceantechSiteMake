@@ -36,9 +36,9 @@ const icons: Record<string, React.ReactNode> = {
 };
 
 const cardColors = [
-  { border: 'rgba(14, 173, 135, 0.18)', icon: 'var(--secondary-700)', numColor: 'rgba(225,29,72,0.12)', gradLine: 'var(--secondary-700)' },
-  { border: 'rgba(1, 104, 239, 0.18)', icon: 'var(--primary-500)', numColor: 'rgba(236,72,153,0.10)', gradLine: 'var(--primary-500)' },
-  { border: 'rgba(3, 233, 248, 0.20)', icon: 'var(--primary-300)', numColor: 'rgba(244,114,182,0.10)', gradLine: 'var(--primary-300)' },
+  { border: 'rgba(14, 173, 135, 0.18)', icon: 'var(--secondary-700)', numColor: 'rgba(14,173,135,0.12)', gradLine: 'var(--secondary-700)' },
+  { border: 'rgba(1, 104, 239, 0.18)', icon: 'var(--primary-500)', numColor: 'rgba(1,104,239,0.10)', gradLine: 'var(--primary-500)' },
+  { border: 'rgba(3, 233, 248, 0.20)', icon: 'var(--primary-300)', numColor: 'rgba(3,233,248,0.10)', gradLine: 'var(--primary-300)' },
 ];
 
 const pilotStats = [
@@ -98,12 +98,12 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                 </div>
 
                 <h3
-                  className="text-xs sm:card-title mb-2 sm:mb-4 font-bold"
+                  className="text-sm sm:card-title mb-2 sm:mb-4 font-bold"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-[11px] sm:card-body leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                <p className="text-xs sm:card-body leading-relaxed" style={{ color: 'var(--text-body)' }}>
                   {item.description}
                 </p>
 
@@ -121,7 +121,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
         <div
           className="rounded-2xl p-5 sm:p-8 lg:p-12"
           style={{
-            background: 'linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700, #BE185D) 100%)',
+            background: 'linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700, #0148C8) 100%)',
             border: '1px solid rgba(255,255,255,0.08)',
           }}
         >
@@ -138,7 +138,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                   ? '31-Month Real-World Pilot in Goseong, Gangwon'
                   : '강원 고성군 31개월 실증사업 완료'}
               </h3>
-              <p className="text-[11px] sm:text-base text-white/65 leading-relaxed">
+              <p className="text-sm sm:text-base text-white/65 leading-relaxed">
                 {locale === 'en'
                   ? 'Verified durability, cost savings, and marine safety in a real fishing environment with SUHYUP.'
                   : '수협중앙회와 함께 실제 어업 현장에서 내구성, 비용절감, 해양 안전성을 직접 검증했습니다.'}
@@ -153,7 +153,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                       {s.unit}
                     </span>
                   </p>
-                  <p className="text-[10px] sm:text-base text-white/65 mt-1 sm:mt-2 font-medium">{s.label}</p>
+                  <p className="text-xs sm:text-base text-white/65 mt-1 sm:mt-2 font-medium">{s.label}</p>
                 </div>
               ))}
             </div>

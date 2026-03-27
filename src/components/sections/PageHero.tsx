@@ -20,7 +20,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
         paddingBottom: '20px',
         paddingLeft: 'clamp(16px, 4vw, 96px)',
         paddingRight: 'clamp(16px, 4vw, 96px)',
-        background: 'linear-gradient(180deg, rgba(219,39,119,0.06) 0%, transparent 100%)',
+        background: 'linear-gradient(180deg, rgba(1,72,200,0.06) 0%, transparent 100%)',
       }}
     >
       {/* 상단 글래스 라인 */}
@@ -31,7 +31,7 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
 
       <div className="relative z-10 w-full">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[10px] sm:text-sm mb-2" style={{ color: 'var(--text-secondary)' }} aria-label="브레드크럼">
+        <nav className="flex items-center gap-2 text-sm mb-2" style={{ color: 'var(--text-secondary)' }} aria-label="브레드크럼">
           {breadcrumb.map((item, i) => (
             <span key={i} className="flex items-center gap-2">
               {i > 0 && <span aria-hidden="true" style={{ color: 'var(--gray-400)' }}>›</span>}
@@ -52,13 +52,13 @@ export default function PageHero({ locale, title, subtitle, breadcrumb }: PageHe
             className="hidden sm:block w-1 rounded-full shrink-0"
             style={{
               height: '36px',
-              background: 'linear-gradient(180deg, var(--primary-500), var(--primary-300, #F472B6))',
+              background: 'linear-gradient(180deg, var(--primary-500), var(--primary-300, #03E9F8))',
             }}
           />
           <div>
             <h1 className="text-2xl sm:text-3xl font-extrabold" style={{ color: 'var(--text-primary)' }}>{title}</h1>
             {subtitle && (
-              <p className="text-[11px] sm:text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>{subtitle}</p>
+              <p className="text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>{subtitle}</p>
             )}
           </div>
         </div>

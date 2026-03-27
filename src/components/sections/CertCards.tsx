@@ -20,8 +20,8 @@ const certItems = [
     number: SITE_CONFIG.certifications.greenTech.number,
     period: SITE_CONFIG.certifications.greenTech.period,
     issuer: SITE_CONFIG.certifications.greenTech.issuerKo,
-    accent: '#E11D48',
-    accentGrad: 'linear-gradient(135deg, #E11D48 0%, #FB7185 100%)',
+    accent: '#0EAD87',
+    accentGrad: 'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
     featured: true,
   },
   {
@@ -32,8 +32,8 @@ const certItems = [
     number: SITE_CONFIG.certifications.venture.number,
     period: SITE_CONFIG.certifications.venture.period,
     issuer: SITE_CONFIG.certifications.venture.issuerKo,
-    accent: '#EC4899',
-    accentGrad: 'linear-gradient(135deg, #9D174D 0%, #EC4899 100%)',
+    accent: '#0168EF',
+    accentGrad: 'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
     featured: false,
   },
   {
