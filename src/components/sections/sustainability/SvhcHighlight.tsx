@@ -9,41 +9,41 @@ export default function SvhcHighlight({ locale }: SvhcHighlightProps) {
   const isEn = locale === 'en';
 
   return (
-    <section className="py-16 lg:py-20" aria-label="SVHC 235종 불검출">
+    <section className="py-8 sm:py-16 lg:py-20" aria-label="SVHC 235종 불검출">
       <div className="section-container">
         <div
-          className="rounded-2xl p-10 lg:p-16 text-center"
+          className="rounded-xl sm:rounded-2xl p-5 sm:p-10 lg:p-16 text-center"
           style={{
             background: 'linear-gradient(135deg, var(--secondary-900,#064e3b) 0%, var(--secondary-700,#047857) 100%)',
           }}
         >
           <p
-            className="text-sm font-bold uppercase tracking-widest mb-4"
+            className="text-[10px] sm:text-sm font-bold uppercase tracking-widest mb-2 sm:mb-4"
             style={{ color: 'rgba(255,255,255,0.6)' }}
           >
             EU REACH Regulation · {isEn ? 'Officially Verified' : '공식 검증'}
           </p>
-          <div className="flex items-baseline justify-center gap-3 mb-3">
+          <div className="flex items-baseline justify-center gap-2 sm:gap-3 mb-2 sm:mb-3">
             <span
-              className="text-6xl sm:text-8xl lg:text-9xl font-black"
+              className="text-5xl sm:text-8xl lg:text-9xl font-black"
               style={{ color: 'var(--secondary-300, #6ee7b7)' }}
             >
               {SITE_CONFIG.stats.svhc}
             </span>
-            <span className="text-xl sm:text-3xl font-bold text-white">
+            <span className="text-base sm:text-3xl font-bold text-white">
               {isEn ? 'types' : '종'}
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-4">
+          <h2 className="text-base sm:text-3xl lg:text-5xl font-black text-white mb-2 sm:mb-4">
             {isEn ? 'SVHC Substances Not Detected' : 'SVHC 유해물질 미검출'}
           </h2>
-          <p className="text-white/70 max-w-4xl mx-auto text-lg leading-relaxed">
+          <p className="text-white/70 max-w-4xl mx-auto text-[11px] sm:text-base lg:text-lg leading-relaxed">
             {isEn
               ? 'Substances of Very High Concern (SVHC) are chemicals subject to regulation under EU REACH regulations. All 235 substances listed were not detected in Ocean Tech\'s zinc weights, proving complete eco-friendliness.'
               : 'SVHC(고위험 우려물질)는 EU REACH 규정에 따라 관리되는 화학물질입니다. 오션테크 아연추에서는 목록에 등재된 235종 전종이 미검출되어 완전한 친환경성이 입증되었습니다.'}
           </p>
           <p
-            className="text-sm leading-relaxed mt-2 max-w-3xl mx-auto"
+            className="text-[10px] sm:text-sm leading-relaxed mt-2 max-w-3xl mx-auto"
             style={{ color: 'rgba(255,255,255,0.45)' }}
           >
             {isEn

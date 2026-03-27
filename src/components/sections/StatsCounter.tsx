@@ -39,7 +39,7 @@ function StatItem({ target, unit, label, highlight }: StatItemProps) {
           {unit}
         </span>
       </div>
-      <p className="text-xs sm:text-base font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
+      <p className="text-[10px] sm:text-base font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
         {label}
       </p>
     </div>
@@ -90,7 +90,7 @@ export default function StatsCounter({ locale }: StatsCounterProps) {
     >
       <div className="section-container">
         <div className="text-center mb-5 sm:mb-7">
-          <h2 className="text-xl sm:text-3xl lg:text-5xl font-black text-white">
+          <h2 className="text-base sm:text-3xl lg:text-5xl font-black text-white">
             {t.stats.title}
           </h2>
         </div>

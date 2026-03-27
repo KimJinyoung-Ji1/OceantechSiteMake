@@ -51,14 +51,14 @@ export default function TrialSection({ locale }: TrialSectionProps) {
       aria-label="시범사업 결과"
     >
       <div className="section-container">
-        <div className="text-center mb-8 md:mb-12">
+        <div className="text-center mb-4 sm:mb-8 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'PILOT PROGRAM' : '시범사업 결과'}
           </p>
-          <h2 className="section-title mb-3" style={{ color: 'var(--primary-500)' }}>
+          <h2 className="section-title mb-2 sm:mb-3" style={{ color: 'var(--primary-500)' }}>
             {isEn ? 'Goseong County, Gangwon' : '강원도 고성군 시범사업'}
           </h2>
-          <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-[11px] sm:text-base lg:text-lg" style={{ color: 'var(--text-secondary)' }}>
             {isEn
               ? 'Real-world pilot completed with fishing boats in Goseong County.'
               : '강원도 고성군 수협 소속 어선과 함께 31개월 실증 시범사업을 완료했습니다.'}
@@ -78,7 +78,7 @@ export default function TrialSection({ locale }: TrialSectionProps) {
             >
               <div className="px-3 md:px-6 pt-5 md:pt-8 pb-3 md:pb-4">
                 <div className="w-10 h-10 md:w-14 md:h-14 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4"
-                  style={{ background: 'rgba(1,104,239,0.06)', border: '1px solid rgba(1,104,239,0.12)' }}
+                  style={{ background: 'rgba(236,72,153,0.06)', border: '1px solid rgba(236,72,153,0.12)' }}
                 >
                   {s.icon}
                 </div>
@@ -88,7 +88,7 @@ export default function TrialSection({ locale }: TrialSectionProps) {
                 >
                   {s.value}
                 </p>
-                <p className="text-sm md:text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+                <p className="text-xs md:text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
                   {isEn ? s.labelEn : s.labelKo}
                 </p>
               </div>
@@ -96,7 +96,7 @@ export default function TrialSection({ locale }: TrialSectionProps) {
               <div className="mx-3 md:mx-6" style={{ height: '1px', background: 'var(--gray-100)' }} />
 
               <div className="px-3 md:px-6 py-3 md:py-5 flex-1">
-                <p className="text-xs md:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                <p className="text-[11px] md:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   {isEn ? s.detailEn : s.detailKo}
                 </p>
               </div>

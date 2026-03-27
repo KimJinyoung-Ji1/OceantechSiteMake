@@ -40,10 +40,10 @@ const PatentPlaceholderIcon = () => (
 // Test report icon
 const TestReportIcon = () => (
   <svg width="56" height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-    <rect x="8" y="4" width="48" height="56" rx="4" fill="rgba(23,233,181,0.07)" stroke="rgba(23,233,181,0.4)" strokeWidth="2" />
-    <rect x="16" y="14" width="32" height="4" rx="2" fill="rgba(23,233,181,0.5)" />
-    <rect x="16" y="22" width="20" height="3" rx="1.5" fill="rgba(23,233,181,0.3)" />
-    <rect x="16" y="29" width="28" height="3" rx="1.5" fill="rgba(23,233,181,0.3)" />
+    <rect x="8" y="4" width="48" height="56" rx="4" fill="rgba(251,113,133,0.07)" stroke="rgba(251,113,133,0.4)" strokeWidth="2" />
+    <rect x="16" y="14" width="32" height="4" rx="2" fill="rgba(251,113,133,0.5)" />
+    <rect x="16" y="22" width="20" height="3" rx="1.5" fill="rgba(251,113,133,0.3)" />
+    <rect x="16" y="29" width="28" height="3" rx="1.5" fill="rgba(251,113,133,0.3)" />
     <circle cx="44" cy="46" r="10" fill="#17e9b5" />
     <path d="M39 46l3 3 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
@@ -134,9 +134,9 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
         <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-5">
           {gridItems.map((item) => {
             const badgeBg = item.isTestReport
-              ? '#0EAD87'
+              ? '#E11D48'
               : item.isDesign
-              ? '#0EAD87'
+              ? '#E11D48'
               : 'var(--primary-500)';
             return (
             <article
@@ -145,7 +145,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
               style={{
                 background: 'white',
                 border: '1px solid #e2e8f0',
-                boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
+                boxShadow: '0 2px 12px rgba(157,23,77,0.06)',
               }}
             >
               {/* Top accent */}
@@ -209,7 +209,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
 
                 <p
                   className="text-[10px] sm:text-xs font-mono font-semibold px-1 py-0.5 rounded"
-                  style={{ color: 'var(--primary-500)', background: 'rgba(1,104,239,0.06)' }}
+                  style={{ color: 'var(--primary-500)', background: 'rgba(236,72,153,0.06)' }}
                 >
                   {item.number}
                 </p>

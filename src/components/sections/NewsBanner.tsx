@@ -19,7 +19,7 @@ const NEWS_ITEMS: NewsItem[] = [
     date: '2023.08.17',
     summary: '납으로 만든 어망추가 해양 생태계를 위협하고 있어 친환경 대체재에 대한 관심이 높아지고 있습니다.',
     image: '/images/news/kado-article-2023.png',
-    sourceColor: '#0168EF',
+    sourceColor: '#EC4899',
   },
   {
     title: '오션테크, 제17회 대한민국 우수특허 대상 수상',
@@ -35,7 +35,7 @@ const NEWS_ITEMS: NewsItem[] = [
     date: '2024.03',
     summary: '강원도 고성군 수협과의 31개월 시범사업을 성공적으로 완료, 어민들의 높은 만족도를 확인했습니다.',
     image: '/images/news/hankook-print-2023.png',
-    sourceColor: '#0EAD87',
+    sourceColor: '#E11D48',
   },
   {
     title: '녹색기술인증 및 녹색기술제품 확인서 동시 취득',
@@ -89,7 +89,7 @@ export default function NewsBanner() {
         <div
           className="rounded-2xl overflow-hidden"
           style={{
-            boxShadow: '0 4px 24px rgba(2,16,151,0.08)',
+            boxShadow: '0 4px 24px rgba(157,23,77,0.08)',
             border: '1px solid #e2e8f0',
             background: 'white',
           }}
@@ -186,7 +186,7 @@ export default function NewsBanner() {
                       </span>
                     </div>
                     <h3
-                      className="text-sm sm:text-xl lg:text-2xl font-bold mb-1.5 sm:mb-3 leading-snug"
+                      className="text-xs sm:text-xl lg:text-2xl font-bold mb-1.5 sm:mb-3 leading-snug"
                       style={{ color: 'var(--text-primary)' }}
                     >
                       {n.title}

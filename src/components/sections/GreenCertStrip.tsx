@@ -57,7 +57,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
         <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
           <div
             className="w-11 h-11 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0"
-            style={{ background: 'rgba(14,173,135,0.08)', border: '1px solid rgba(14,173,135,0.2)' }}
+            style={{ background: 'rgba(225,29,72,0.08)', border: '1px solid rgba(225,29,72,0.2)' }}
           >
             <Image
               src="/images/green-cert-mark.png"
@@ -75,7 +75,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
             >
               {t.greenCert.badge}
             </p>
-            <p className="text-sm sm:text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+            <p className="text-xs sm:text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
               {t.greenCert.description}
             </p>
           </div>
@@ -89,8 +89,8 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
               className="relative rounded-xl px-2 py-3 sm:px-5 sm:py-4 text-center overflow-hidden"
               style={{
                 background: 'white',
-                border: '1px solid rgba(14,173,135,0.18)',
-                boxShadow: '0 2px 8px rgba(14,173,135,0.08)',
+                border: '1px solid rgba(225,29,72,0.18)',
+                boxShadow: '0 2px 8px rgba(225,29,72,0.08)',
               }}
             >
               {/* Top accent line */}
@@ -100,7 +100,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
               />
               <div
                 className="mx-auto w-7 h-7 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-1.5 sm:mb-2"
-                style={{ background: 'rgba(14,173,135,0.08)', color: 'var(--secondary-700)' }}
+                style={{ background: 'rgba(225,29,72,0.08)', color: 'var(--secondary-700)' }}
               >
                 <span className="[&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5">
                   {cert.icon}

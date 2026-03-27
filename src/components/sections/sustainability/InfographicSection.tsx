@@ -13,8 +13,8 @@ const items = [
     bodyEn: 'Zinc is a mineral naturally present in seawater. Unlike lead, it poses no toxicity to marine ecosystems. Simply replacing lead weights can reduce marine heavy metal pollution by thousands of tons annually.',
     icon: <ShieldCheck size={36} weight="duotone" color="var(--secondary-700)" />,
     accent: 'var(--secondary-700)',
-    accentBg: 'rgba(23,233,181,0.08)',
-    accentBorder: 'rgba(23,233,181,0.2)',
+    accentBg: 'rgba(251,113,133,0.08)',
+    accentBorder: 'rgba(251,113,133,0.2)',
   },
   {
     ko: '탄소중립 정책 부합',
@@ -23,8 +23,8 @@ const items = [
     bodyEn: 'Certified under the Ministry of Environment Green Technology program. Fully compliant with Korea\'s Carbon Neutrality Framework Act, Article 60.',
     icon: <Leaf size={36} weight="duotone" color="var(--secondary-700)" />,
     accent: 'var(--secondary-700)',
-    accentBg: 'rgba(23,233,181,0.08)',
-    accentBorder: 'rgba(23,233,181,0.2)',
+    accentBg: 'rgba(251,113,133,0.08)',
+    accentBorder: 'rgba(251,113,133,0.2)',
   },
   {
     ko: '어민 소득 80% 비용 절감',
@@ -33,8 +33,8 @@ const items = [
     bodyEn: 'Zinc weights last 5x longer than lead, cutting per-fisher annual replacement costs by over 80%. Proven in the Goseong County pilot.',
     icon: <Coins size={36} weight="duotone" color="var(--primary-500)" />,
     accent: 'var(--primary-500)',
-    accentBg: 'rgba(1,104,239,0.06)',
-    accentBorder: 'rgba(1,104,239,0.15)',
+    accentBg: 'rgba(236,72,153,0.06)',
+    accentBorder: 'rgba(236,72,153,0.15)',
   },
   {
     ko: '수명 10년, 교체 최소화',
@@ -43,8 +43,8 @@ const items = [
     bodyEn: 'Under 1g weight loss in 30-month real-use tests. Verified durability enables 10+ year use vs lead replacement cycles of 1–2 years.',
     icon: <Timer size={36} weight="duotone" color="var(--primary-500)" />,
     accent: 'var(--primary-500)',
-    accentBg: 'rgba(1,104,239,0.06)',
-    accentBorder: 'rgba(1,104,239,0.15)',
+    accentBg: 'rgba(236,72,153,0.06)',
+    accentBorder: 'rgba(236,72,153,0.15)',
   },
 ];
 
@@ -54,7 +54,7 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
   return (
     <section className="py-8 md:py-16 lg:py-20" style={{ background: 'var(--background)' }} aria-label="환경 영향">
       <div className="section-container">
-        <div className="text-center mb-8 md:mb-12">
+        <div className="text-center mb-4 sm:mb-8 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--secondary-700,#047857)' }}>
             {isEn ? 'ENVIRONMENTAL IMPACT' : '환경 영향'}
           </p>
@@ -81,7 +81,7 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-sm md:text-lg font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
+                <h3 className="text-xs md:text-lg font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
                   {isEn ? item.en : item.ko}
                 </h3>
               </div>
@@ -89,7 +89,7 @@ export default function InfographicSection({ locale }: InfographicSectionProps) 
               <div className="mx-3 md:mx-6" style={{ height: '1px', background: 'var(--gray-100)' }} />
 
               <div className="px-3 md:px-6 py-3 md:py-5 flex-1">
-                <p className="text-xs md:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                <p className="text-[11px] md:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   {isEn ? item.bodyEn : item.bodyKo}
                 </p>
               </div>

@@ -101,7 +101,7 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
                             style={{
                               background: 'var(--background-alt)',
                               border: '1px solid var(--border)',
-                              boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
+                              boxShadow: '0 2px 12px rgba(157,23,77,0.06)',
                             }}
                           >
                             <p className="text-sm leading-relaxed text-center" style={{ color: 'var(--text-body)' }}>
@@ -142,7 +142,7 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
           {/* Vertical line */}
           <div
             className="absolute left-[9px] sm:left-[11px] top-2 bottom-2 w-[2px]"
-            style={{ background: 'linear-gradient(180deg, #021297 0%, #0168EF 30%, #17E9B5 100%)' }}
+            style={{ background: 'linear-gradient(180deg, #021297 0%, #EC4899 30%, #FB7185 100%)' }}
             aria-hidden="true"
           />
           <div className="space-y-1">
@@ -165,7 +165,7 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
                     {item.year}
                   </span>
                   {/* Event text */}
-                  <p className="text-xs sm:text-sm leading-snug pt-0.5" style={{ color: 'var(--text-body)' }}>
+                  <p className="text-[11px] sm:text-sm leading-snug pt-0.5" style={{ color: 'var(--text-body)' }}>
                     {locale === 'en' ? item.eventEn : item.eventKo}
                   </p>
                 </div>

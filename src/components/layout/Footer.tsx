@@ -54,14 +54,9 @@ export default function Footer({ locale }: FooterProps) {
           <div>
             {/* Logo */}
             <div className="flex items-center gap-2 mb-3">
-              <Image
-                src="/images/logo-brand.png"
-                alt="오션테크 로고"
-                width={120}
-                height={30}
-                className="h-7 sm:h-8 w-auto object-contain brightness-0 invert"
-                sizes="120px"
-              />
+              <span className="text-white font-bold text-xl sm:text-2xl tracking-tight" style={{ fontFamily: "'Pretendard Variable', sans-serif" }}>
+                Ari
+              </span>
             </div>
 
             {/* Info — compact inline on mobile */}
@@ -70,7 +65,7 @@ export default function Footer({ locale }: FooterProps) {
                 <span key={i} className="text-[11px] sm:text-xs whitespace-nowrap">
                   <span style={{ color: 'rgba(255,255,255,0.25)' }}>{item.label}</span>{' '}
                   {item.href ? (
-                    <a href={item.href} className="hover:text-[#03E9F8] transition-colors">{item.value}</a>
+                    <a href={item.href} className="hover:text-[#F472B6] transition-colors">{item.value}</a>
                   ) : (
                     item.value
                   )}
@@ -93,9 +88,9 @@ export default function Footer({ locale }: FooterProps) {
                 <span
                   key={i}
                   className="text-[9px] sm:text-[10px] px-2 py-1 rounded-md font-medium"
-                  style={{ background: 'rgba(23,233,181,0.10)', border: '1px solid rgba(23,233,181,0.20)' }}
+                  style={{ background: 'rgba(251,113,133,0.10)', border: '1px solid rgba(251,113,133,0.20)' }}
                 >
-                  <span style={{ color: '#17E9B5' }}>{cert.label}</span>{' '}
+                  <span style={{ color: '#FB7185' }}>{cert.label}</span>{' '}
                   <span style={{ color: 'rgba(255,255,255,0.55)' }}>{cert.num}</span>
                 </span>
               ))}
@@ -115,7 +110,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-xs transition-colors hover:text-[#03E9F8] inline-flex items-center py-1"
+                    className="text-xs transition-colors hover:text-[#F472B6] inline-flex items-center py-1"
                     style={{ color: 'rgba(255,255,255,0.45)' }}
                   >
                     {link.label}
@@ -138,7 +133,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-xs transition-colors hover:text-[#03E9F8] inline-flex items-center py-1"
+                    className="text-xs transition-colors hover:text-[#F472B6] inline-flex items-center py-1"
                     style={{ color: 'rgba(255,255,255,0.45)' }}
                   >
                     {link.label}
@@ -161,7 +156,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-xs transition-colors hover:text-[#03E9F8] inline-flex items-center py-1"
+                    className="text-xs transition-colors hover:text-[#F472B6] inline-flex items-center py-1"
                     style={{ color: 'rgba(255,255,255,0.45)' }}
                   >
                     {link.label}

@@ -170,12 +170,12 @@ export default function ContactContent({ locale }: ContactContentProps) {
   const cardStyle = {
     background: 'white',
     border: '1px solid #e2e8f0',
-    boxShadow: '0 2px 12px rgba(2,16,151,0.06)',
+    boxShadow: '0 2px 12px rgba(157,23,77,0.06)',
   };
 
   const headerGrads = [
-    'linear-gradient(135deg, #021097 0%, #0168EF 100%)',
-    'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
+    'linear-gradient(135deg, #9D174D 0%, #EC4899 100%)',
+    'linear-gradient(135deg, #E11D48 0%, #FB7185 100%)',
     'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)',
   ];
 
@@ -217,7 +217,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
                 >
                   <div
                     className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center shrink-0 [&>svg]:w-3.5 [&>svg]:h-3.5 sm:[&>svg]:w-[18px] sm:[&>svg]:h-[18px]"
-                    style={{ background: 'rgba(14,173,135,0.06)', border: '1px solid rgba(14,173,135,0.15)' }}
+                    style={{ background: 'rgba(225,29,72,0.06)', border: '1px solid rgba(225,29,72,0.15)' }}
                   >
                     {row.icon}
                   </div>
