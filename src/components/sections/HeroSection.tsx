@@ -75,19 +75,19 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           className="object-cover"
           sizes="100vw"
         />
-        {/* Desktop: pink overlay / Mobile: lighter pink overlay */}
+        {/* Desktop: original overlay / Mobile: lighter overlay */}
         <div
           className="absolute inset-0 hidden sm:block"
           style={{
             background:
-              'linear-gradient(125deg, rgba(157,23,77,0.45) 0%, rgba(219,39,119,0.30) 50%, rgba(244,114,182,0.15) 100%)',
+              'linear-gradient(125deg, rgba(2,16,151,0.45) 0%, rgba(1,72,200,0.30) 50%, rgba(3,233,248,0.15) 100%)',
           }}
         />
         <div
           className="absolute inset-0 sm:hidden"
           style={{
             background:
-              'linear-gradient(125deg, rgba(157,23,77,0.30) 0%, rgba(219,39,119,0.18) 50%, rgba(244,114,182,0.08) 100%)',
+              'linear-gradient(125deg, rgba(2,16,151,0.30) 0%, rgba(1,72,200,0.18) 50%, rgba(3,233,248,0.08) 100%)',
           }}
         />
       </div>
@@ -101,25 +101,11 @@ export default function HeroSection({ locale }: HeroSectionProps) {
 
           {/* LEFT — Text */}
           <div className="pl-0 lg:pl-20">
-            {/* Ari Logo */}
-            <div className="mb-4 sm:mb-6">
-              <span
-                className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tight"
-                style={{
-                  color: '#F472B6',
-                  textShadow: '0 4px 24px rgba(244,114,182,0.4), 0 2px 8px rgba(0,0,0,0.3)',
-                  fontFamily: "'Pretendard Variable', sans-serif",
-                }}
-              >
-                Ari
-              </span>
-            </div>
-
             <div className="mb-3 sm:mb-6">
               <span
-                className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold"
                 style={{
-                  background: 'rgba(157,23,77,0.5)',
+                  background: 'rgba(0,0,0,0.5)',
                   padding: '5px 12px',
                   borderRadius: '20px',
                   color: 'white',
@@ -127,7 +113,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               >
                 <span
                   className="w-1.5 h-1.5 rounded-full"
-                  style={{ background: '#F472B6' }}
+                  style={{ background: 'var(--secondary-500)' }}
                 />
                 {t.hero.badge}
               </span>
@@ -163,7 +149,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               }}
             >
               <p
-                className="text-[11px] sm:text-sm lg:text-base font-medium leading-relaxed"
+                className="text-xs sm:text-sm lg:text-base font-medium leading-relaxed"
                 style={{ color: 'rgba(255,255,255,0.8)', textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
               >
                 {t.hero.description}
@@ -173,11 +159,11 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-10">
               <Link
                 href={localePath('/contact')}
-                className="hero-btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3 sm:py-4 rounded-full text-sm sm:text-lg font-bold"
+                className="hero-btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold"
                 style={{
-                  background: 'linear-gradient(135deg, #DB2777 0%, #F472B6 100%)',
+                  background: 'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
                   color: 'white',
-                  boxShadow: '0 4px 16px rgba(219,39,119,0.3)',
+                  boxShadow: '0 4px 16px rgba(14,173,135,0.3)',
                   textShadow: '0 1px 2px rgba(0,0,0,0.2)',
                 }}
               >
@@ -188,7 +174,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               </Link>
               <Link
                 href={localePath('/about')}
-                className="hero-btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3 sm:py-4 rounded-full text-sm sm:text-lg font-semibold"
+                className="hero-btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold"
                 style={{
                   color: 'white',
                   border: '2px solid rgba(255,255,255,0.4)',
