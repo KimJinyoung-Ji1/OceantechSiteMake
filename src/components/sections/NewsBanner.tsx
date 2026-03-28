@@ -176,12 +176,12 @@ export default function NewsBanner() {
                   <div className="flex-1 min-w-0 px-4 py-3 sm:px-6 sm:py-5 flex flex-col justify-center">
                     <div className="flex items-center gap-2 mb-2 sm:mb-3">
                       <span
-                        className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-bold text-white"
+                        className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-md text-xs sm:text-sm font-bold text-white"
                         style={{ background: n.sourceColor }}
                       >
                         {n.source}
                       </span>
-                      <span className="text-[10px] sm:text-sm font-medium" style={{ color: '#94a3b8' }}>
+                      <span className="text-xs sm:text-sm font-medium" style={{ color: '#64748b' }}>
                         {n.date}
                       </span>
                     </div>
@@ -220,7 +220,7 @@ export default function NewsBanner() {
                   aria-label={`뉴스 ${i + 1}번으로 이동`}
                 />
               ))}
-              <span className="ml-2 text-[10px] sm:text-xs font-mono font-bold" style={{ color: '#94a3b8' }}>
+              <span className="ml-2 text-xs sm:text-sm font-mono font-bold" style={{ color: '#64748b' }}>
                 {String(current + 1).padStart(2, '0')}/{String(NEWS_ITEMS.length).padStart(2, '0')}
               </span>
             </div>

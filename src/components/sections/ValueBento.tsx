@@ -128,7 +128,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
           <div className="flex flex-col items-center text-center gap-5 sm:gap-8">
             <div className="max-w-4xl">
               <p
-                className="text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1.5 sm:mb-2"
+                className="text-xs sm:text-sm font-bold uppercase tracking-widest mb-1.5 sm:mb-2"
                 style={{ color: 'var(--secondary-500)' }}
               >
                 {locale === 'en' ? 'FIELD PROVEN' : '현장 실증 완료'}

@@ -129,7 +129,7 @@ export default function CertGrid({ locale }: CertGridProps) {
                   className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
                   style={{ background: 'rgba(0,0,0,0.3)' }}
                 >
-                  <span className="px-2 py-1 rounded-md text-[10px] sm:text-xs font-semibold text-white" style={{ background: 'rgba(0,0,0,0.5)' }}>
+                  <span className="px-2 py-1 rounded-md text-xs sm:text-sm font-semibold text-white" style={{ background: 'rgba(0,0,0,0.5)' }}>
                     {isEn ? 'Enlarge' : '확대'}
                   </span>
                 </div>
@@ -138,7 +138,7 @@ export default function CertGrid({ locale }: CertGridProps) {
               {/* Info */}
               <div className="p-1.5 sm:p-4 flex flex-col items-center text-center gap-0.5 sm:gap-2 flex-1" style={{ borderTop: '1px solid #e2e8f0' }}>
                 <span
-                  className="text-[10px] sm:text-[11px] font-bold px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-md tracking-wider uppercase"
+                  className="text-xs sm:text-sm font-bold px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-md tracking-wider uppercase"
                   style={{ background: badgeStyles.bg, color: badgeStyles.color }}
                 >
                   {isEn ? item.badgeLabel.en : item.badgeLabel.ko}
@@ -149,7 +149,7 @@ export default function CertGrid({ locale }: CertGridProps) {
                 </h3>
 
                 <p
-                  className="text-[10px] sm:text-xs font-mono font-semibold px-1 py-0.5 rounded"
+                  className="text-xs sm:text-sm font-mono font-semibold px-1 py-0.5 rounded"
                   style={{ color: 'var(--primary-500)', background: 'rgba(1,104,239,0.06)' }}
                 >
                   {item.numberKo}

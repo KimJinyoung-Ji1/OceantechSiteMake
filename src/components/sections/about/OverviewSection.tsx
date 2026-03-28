@@ -132,7 +132,7 @@ export default function OverviewSection({ locale }: OverviewSectionProps) {
                   >
                     <span className="shrink-0 mt-0.5 [&>svg]:w-3.5 [&>svg]:h-3.5 sm:[&>svg]:w-4 sm:[&>svg]:h-4" style={{ color: 'var(--primary-500)' }}>{row.icon}</span>
                     <div className="min-w-0">
-                      <p className="text-[10px] sm:text-xs font-semibold" style={{ color: '#94a3b8' }}>
+                      <p className="text-xs sm:text-sm font-semibold" style={{ color: '#64748b' }}>
                         {row.label}
                       </p>
                       <p className="text-[11px] sm:text-sm font-medium leading-snug break-words" style={{ color: 'var(--text-primary)' }}>

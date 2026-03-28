@@ -222,7 +222,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
                     {row.icon}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] sm:text-xs font-semibold" style={{ color: '#94a3b8' }}>{row.label}</p>
+                    <p className="text-xs sm:text-sm font-semibold" style={{ color: '#64748b' }}>{row.label}</p>
                     {row.href ? (
                       <a href={row.href} className="text-[11px] sm:text-sm font-semibold hover:underline" style={{ color: 'var(--primary-500)' }}>
                         {row.value}
@@ -248,7 +248,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
                 <div className="flex-1 min-w-0">
                   <p className="text-[11px] sm:text-sm font-bold" style={{ color: 'var(--text-primary)' }}>
                     {SITE_CONFIG.contact.manager}
-                    <span className="ml-1 text-[10px] sm:text-xs font-medium" style={{ color: '#94a3b8' }}>
+                    <span className="ml-1 text-xs sm:text-sm font-medium" style={{ color: '#64748b' }}>
                       {isEn ? 'Director' : '전무이사'}
                     </span>
                   </p>
@@ -280,7 +280,7 @@ export default function ContactContent({ locale }: ContactContentProps) {
               <p className="text-[11px] sm:text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
                 {isEn ? '20 Dasan Sunhwan-ro, Namyangju-si' : '남양주시 다산순환로 20'}
               </p>
-              <p className="text-[10px] sm:text-xs mt-0.5" style={{ color: '#94a3b8' }}>
+              <p className="text-xs sm:text-sm mt-0.5" style={{ color: '#64748b' }}>
                 {isEn ? 'Hyundai Premier Campus Bldg. E, 7F #29' : '현대프리미어캠퍼스 E동 7층 29호'}
               </p>
             </div>

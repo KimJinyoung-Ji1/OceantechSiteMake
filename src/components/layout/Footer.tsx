@@ -92,7 +92,7 @@ export default function Footer({ locale }: FooterProps) {
               ].map((cert, i) => (
                 <span
                   key={i}
-                  className="text-[9px] sm:text-[10px] px-2 py-1 rounded-md font-medium"
+                  className="text-xs sm:text-xs px-2 py-1 rounded-md font-medium"
                   style={{ background: 'rgba(23,233,181,0.10)', border: '1px solid rgba(23,233,181,0.20)' }}
                 >
                   <span style={{ color: '#17E9B5' }}>{cert.label}</span>{' '}
@@ -105,7 +105,7 @@ export default function Footer({ locale }: FooterProps) {
           {/* Column 2 — Company links (desktop only) */}
           <div className="hidden sm:block">
             <h3
-              className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3"
+              className="text-xs font-bold uppercase tracking-[0.2em] mb-3"
               style={{ color: 'rgba(255,255,255,0.3)' }}
             >
               {t.footer.links}
@@ -128,7 +128,7 @@ export default function Footer({ locale }: FooterProps) {
           {/* Column 3 — Technology links (desktop only) */}
           <div className="hidden sm:block">
             <h3
-              className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3"
+              className="text-xs font-bold uppercase tracking-[0.2em] mb-3"
               style={{ color: 'rgba(255,255,255,0.3)' }}
             >
               {t.footer.technology}
@@ -151,7 +151,7 @@ export default function Footer({ locale }: FooterProps) {
           {/* Column 4 — Support links (desktop only) */}
           <div className="hidden sm:block">
             <h3
-              className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3"
+              className="text-xs font-bold uppercase tracking-[0.2em] mb-3"
               style={{ color: 'rgba(255,255,255,0.3)' }}
             >
               {isEn ? 'Support' : '고객지원'}
@@ -177,10 +177,10 @@ export default function Footer({ locale }: FooterProps) {
           className="mt-4 sm:mt-6 pt-3 sm:pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
           style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
         >
-          <p className="text-[10px] sm:text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>
+          <p className="text-xs sm:text-sm" style={{ color: 'rgba(255,255,255,0.25)' }}>
             {t.footer.copyright}
           </p>
-          <div className="flex items-center gap-3 text-[10px] sm:text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>
+          <div className="flex items-center gap-3 text-xs sm:text-sm" style={{ color: 'rgba(255,255,255,0.25)' }}>
             <Link
               href={localePath('/privacy')}
               className="transition-colors hover:text-white"

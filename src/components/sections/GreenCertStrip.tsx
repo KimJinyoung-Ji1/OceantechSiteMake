@@ -70,7 +70,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
           </div>
           <div>
             <p
-              className="text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-0.5"
+              className="text-xs sm:text-sm font-bold uppercase tracking-widest mb-0.5"
               style={{ color: 'var(--secondary-700)' }}
             >
               {t.greenCert.badge}
@@ -107,13 +107,13 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
                 </span>
               </div>
               <p
-                className="text-[10px] sm:text-xs font-semibold mb-0.5 sm:mb-1"
+                className="text-xs sm:text-sm font-semibold mb-0.5 sm:mb-1"
                 style={{ color: 'var(--secondary-700)' }}
               >
                 {cert.label}
               </p>
               <p
-                className="text-[10px] sm:text-sm font-bold font-mono leading-tight"
+                className="text-xs sm:text-sm font-bold font-mono leading-tight"
                 style={{ color: 'var(--text-primary)' }}
               >
                 {cert.value}

@@ -129,10 +129,10 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                         </div>
                       </div>
                       <div className="p-1.5 sm:p-4 border-t text-center" style={{ borderColor: '#e2e8f0', background: 'white' }}>
-                        <p className="text-[10px] sm:text-lg font-extrabold mb-0.5 sm:mb-1" style={{ color: 'var(--primary-900)' }}>
+                        <p className="text-xs sm:text-lg font-extrabold mb-0.5 sm:mb-1" style={{ color: 'var(--primary-900)' }}>
                           {item.model}
                         </p>
-                        <div className="flex justify-center gap-1 sm:gap-2 text-[10px] sm:text-base font-medium" style={{ color: '#94a3b8' }}>
+                        <div className="flex justify-center gap-1 sm:gap-2 text-xs sm:text-base font-medium" style={{ color: '#64748b' }}>
                           <span>{item.weight}</span>
                           <span>·</span>
                           <span>{item.size}</span>
@@ -209,7 +209,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                   />
                   {/* Number badge */}
                   <div
-                    className="absolute top-2 right-2 sm:top-3 sm:right-3 w-5 h-5 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[9px] sm:text-xs font-bold text-white"
+                    className="absolute top-2 right-2 sm:top-3 sm:right-3 w-5 h-5 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold text-white"
                     style={{ background: accent.grad }}
                   >
                     {String(i + 1).padStart(2, '0')}

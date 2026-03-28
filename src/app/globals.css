@@ -100,7 +100,7 @@
   /* Secondary — Mint/Green accent */
   --secondary-500: #17E9B5;
   --secondary-400: #34D9B5;
-  --secondary-700: #0EAD87;
+  --secondary-700: #0a7d62;
 
   /* Neutral */
   --gray-900: #0F172A;
@@ -121,7 +121,7 @@
   --text-primary: #0F172A;
   --text-body: #1E293B;
   --text-secondary: #475569;
-  --text-muted: #94A3B8;
+  --text-muted: #64748b;
   --foreground: #0F172A;
 }
 
@@ -294,5 +294,21 @@ body {
 @media (max-width: 639px) {
   .cta-section {
     background: linear-gradient(180deg, #ffffff 0%, rgba(1,72,200,0.82) 20%, rgba(3,143,248,0.78) 55%, rgba(3,233,248,0.80) 100%);
+  }
+}
+
+/* ===== P0: Prevent horizontal overflow globally ===== */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ===== P3: Mobile touch targets & font size ===== */
+@media (max-width: 768px) {
+  button, a, [role="button"] {
+    min-height: 44px;
+  }
+  input, select, textarea {
+    font-size: 16px;
+    min-height: 44px;
   }
 }

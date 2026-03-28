@@ -109,7 +109,7 @@ export default function CertCards({ locale }: CertCardsProps) {
               {/* Featured badge */}
               {cert.featured && (
                 <div
-                  className="absolute top-3 right-2 sm:top-4 sm:right-3 z-10 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[10px] sm:text-[10px] font-bold text-white uppercase tracking-wider"
+                  className="absolute top-3 right-2 sm:top-4 sm:right-3 z-10 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-xs sm:text-sm font-bold text-white uppercase tracking-wider"
                   style={{ background: cert.accent }}
                 >
                   {locale === 'en' ? 'Core' : '핵심'}
@@ -142,7 +142,7 @@ export default function CertCards({ locale }: CertCardsProps) {
                   {locale === 'en' ? cert.titleEn : cert.titleKo}
                 </h3>
                 <p
-                  className="text-[10px] sm:text-sm font-mono font-bold break-all leading-tight px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md"
+                  className="text-xs sm:text-sm font-mono font-bold break-all leading-tight px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md"
                   style={{ color: cert.accent, background: `${cert.accent}10` }}
                 >
                   {cert.number}
@@ -150,7 +150,7 @@ export default function CertCards({ locale }: CertCardsProps) {
 
                 {/* View button */}
                 <button
-                  className="mt-2 sm:mt-3 flex items-center gap-1 text-[10px] sm:text-xs font-semibold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full transition-all duration-200 group-hover:scale-105"
+                  className="mt-2 sm:mt-3 flex items-center gap-1 text-xs sm:text-sm font-semibold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full transition-all duration-200 group-hover:scale-105"
                   style={{
                     color: cert.accent,
                     background: `${cert.accent}0a`,

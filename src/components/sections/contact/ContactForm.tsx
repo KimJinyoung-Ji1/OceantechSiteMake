@@ -136,7 +136,8 @@ export default function ContactForm({ locale, onSuccess }: ContactFormProps) {
         value={values.type}
         onChange={handleChange}
         className={inputClass}
-        style={{ color: values.type ? 'var(--text-body)' : '#94a3b8' }}
+        style={{ color: values.type ? 'var(--text-body)' : '#64748b' }}
+        aria-label={isEn ? 'Inquiry type' : '문의 유형 선택'}
       >
         <option value="">{isEn ? 'Inquiry type' : '문의 유형 선택'}</option>
         {inquiryTypes.map((opt) => (

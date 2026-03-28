@@ -64,16 +64,16 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
           >
             <div className="px-2 py-2.5 flex items-center justify-center gap-1">
               <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#17E9B5' }} />
-              <span className="text-[10px] font-bold text-white">
+              <span className="text-xs font-bold text-white">
                 {isEn ? 'Zinc' : '오션테크 아연추'}
               </span>
             </div>
             <div className="py-2.5 flex items-center justify-center" style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="text-[10px] font-bold text-white/40">VS</span>
+              <span className="text-xs font-bold text-white/40">VS</span>
             </div>
             <div className="px-2 py-2.5 flex items-center justify-center gap-1">
-              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#94a3b8' }} />
-              <span className="text-[10px] font-bold text-white/60">
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#64748b' }} />
+              <span className="text-xs font-bold text-white/60">
                 {isEn ? 'Lead' : '기존 납추'}
               </span>
             </div>
@@ -142,7 +142,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                     className="py-2.5 flex items-center justify-center self-stretch"
                     style={{ background: '#f1f5f9', borderLeft: '1px solid #e2e8f0', borderRight: '1px solid #e2e8f0' }}
                   >
-                    <span className="text-[10px] font-bold leading-tight text-center" style={{ color: '#475569' }}>
+                    <span className="text-xs font-bold leading-tight text-center" style={{ color: '#475569' }}>
                       {isEn ? row.en : row.ko}
                     </span>
                   </div>

@@ -159,7 +159,7 @@ export default function HistorySection({ locale, history }: HistorySectionProps)
                   </div>
                   {/* Year tag */}
                   <span
-                    className="shrink-0 text-[10px] sm:text-xs font-bold font-mono px-1.5 py-0.5 rounded-md mt-0.5"
+                    className="shrink-0 text-xs sm:text-sm font-bold font-mono px-1.5 py-0.5 rounded-md mt-0.5"
                     style={{ background: `${yearGradients[i % yearGradients.length]}`, color: 'white', minWidth: '52px', textAlign: 'center' }}
                   >
                     {item.year}

@@ -47,14 +47,14 @@ export default function CompareTable({ locale }: CompareTableProps) {
             >
               {/* Recommended badge */}
               <div
-                className="absolute -top-0 left-1/2 -translate-x-1/2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-b-lg text-[10px] sm:text-[10px] font-bold tracking-wider uppercase"
+                className="absolute -top-0 left-1/2 -translate-x-1/2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-b-lg text-xs sm:text-sm font-bold tracking-wider uppercase"
                 style={{ background: 'var(--secondary-500)', color: 'var(--primary-900)' }}
               >
                 {locale === 'en' ? 'RECOMMENDED' : '추천'}
               </div>
               <div className="mt-2 sm:mt-3">
                 <p className="text-white font-extrabold text-sm sm:text-xl leading-tight">{t.compare.zinc}</p>
-                <p className="text-white/70 text-[10px] sm:text-sm mt-0.5">(주)오션테크</p>
+                <p className="text-white/70 text-xs sm:text-sm mt-0.5">(주)오션테크</p>
               </div>
             </div>
             {/* Lead header — muted */}
@@ -63,8 +63,8 @@ export default function CompareTable({ locale }: CompareTableProps) {
               style={{ background: '#f1f5f9' }}
             >
               <div className="mt-2 sm:mt-3">
-                <p className="font-bold text-sm sm:text-xl leading-tight" style={{ color: '#94a3b8' }}>{t.compare.lead}</p>
-                <p className="text-[10px] sm:text-sm mt-0.5" style={{ color: '#b0b8c4' }}>{locale === 'en' ? 'Conventional' : '기존 제품'}</p>
+                <p className="font-bold text-sm sm:text-xl leading-tight" style={{ color: '#64748b' }}>{t.compare.lead}</p>
+                <p className="text-xs sm:text-sm mt-0.5" style={{ color: '#b0b8c4' }}>{locale === 'en' ? 'Conventional' : '기존 제품'}</p>
               </div>
             </div>
           </div>

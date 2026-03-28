@@ -46,7 +46,7 @@ export default function WhyZincSection({ locale }: WhyZincSectionProps) {
             {/* VS badge — centered overlay */}
             <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 z-10">
               <div
-                className="w-9 h-9 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-black text-[10px] sm:text-lg"
+                className="w-9 h-9 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-black text-xs sm:text-lg"
                 style={{ background: 'linear-gradient(135deg, #021097, #0168EF)', color: 'white', boxShadow: '0 4px 20px rgba(1,104,239,0.35)', border: '3px solid white' }}
               >
                 VS

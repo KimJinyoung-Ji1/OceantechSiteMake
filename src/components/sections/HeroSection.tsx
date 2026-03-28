@@ -103,7 +103,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           <div className="pl-0 lg:pl-20">
             <div className="mb-3 sm:mb-6">
               <span
-                className="inline-flex items-center gap-1.5 text-xs font-semibold"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold"
                 style={{
                   background: 'rgba(0,0,0,0.5)',
                   padding: '5px 12px',
@@ -212,7 +212,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                   }}
                 >
                   <p className="text-sm sm:text-xl font-black leading-none" style={{ color: '#5EEAD4' }}>{s.value}</p>
-                  <p className="text-[10px] sm:text-xs font-semibold mt-0.5 sm:mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.85)' }}>{s.label}</p>
+                  <p className="text-xs sm:text-sm font-semibold mt-0.5 sm:mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.85)' }}>{s.label}</p>
                 </div>
               ))}
             </div>
