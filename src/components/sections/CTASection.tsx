@@ -36,7 +36,7 @@ export default function CTASection({ locale }: CTASectionProps) {
         aria-hidden="true"
       />
       <div
-        className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full opacity-15 z-0"
+        className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full opacity-15 z-0 pointer-events-none"
         style={{ background: 'var(--primary-300)', filter: 'blur(100px)' }}
         aria-hidden="true"
       />
@@ -53,7 +53,7 @@ export default function CTASection({ locale }: CTASectionProps) {
         </h2>
         <p
           className="text-sm sm:text-base lg:text-lg mb-7 sm:mb-10 max-w-4xl mx-auto leading-relaxed"
-          style={{ color: 'rgba(255,255,255,0.65)' }}
+          style={{ color: 'rgba(255,255,255,0.85)' }}
         >
           {t.cta.description}
         </p>

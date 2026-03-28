@@ -39,7 +39,7 @@ function StatItem({ target, unit, label, highlight }: StatItemProps) {
           {unit}
         </span>
       </div>
-      <p className="text-xs sm:text-base font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
+      <p className="text-xs sm:text-base font-medium" style={{ color: 'rgba(255,255,255,0.85)' }}>
         {label}
       </p>
     </div>

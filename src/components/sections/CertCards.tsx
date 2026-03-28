@@ -149,19 +149,20 @@ export default function CertCards({ locale }: CertCardsProps) {
                 </p>
 
                 {/* View button */}
-                <button
+                <span
                   className="mt-2 sm:mt-3 flex items-center gap-1 text-xs sm:text-sm font-semibold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full transition-all duration-200 group-hover:scale-105"
                   style={{
                     color: cert.accent,
                     background: `${cert.accent}0a`,
                     border: `1px solid ${cert.accent}30`,
                   }}
+                  aria-hidden="true"
                 >
                   <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
                     <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   {locale === 'en' ? 'View' : '상세보기'}
-                </button>
+                </span>
               </div>
             </article>
           ))}

@@ -54,7 +54,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
               </div>
               <div className="mt-2 sm:mt-3">
                 <p className="text-white font-extrabold text-sm sm:text-xl leading-tight">{t.compare.zinc}</p>
-                <p className="text-white/70 text-xs sm:text-sm mt-0.5">(주)오션테크</p>
+                <p className="text-white/85 text-xs sm:text-sm mt-0.5">(주)오션테크</p>
               </div>
             </div>
             {/* Lead header — muted */}
@@ -64,7 +64,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
             >
               <div className="mt-2 sm:mt-3">
                 <p className="font-bold text-sm sm:text-xl leading-tight" style={{ color: '#64748b' }}>{t.compare.lead}</p>
-                <p className="text-xs sm:text-sm mt-0.5" style={{ color: '#b0b8c4' }}>{locale === 'en' ? 'Conventional' : '기존 제품'}</p>
+                <p className="text-xs sm:text-sm mt-0.5" style={{ color: '#64748b' }}>{locale === 'en' ? 'Conventional' : '기존 제품'}</p>
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
                   </svg>
                   <span
                     className="text-[11px] sm:text-base font-medium leading-tight"
-                    style={{ color: '#9ca3af' }}
+                    style={{ color: '#6b7280' }}
                   >
                     {row.lead}
                   </span>

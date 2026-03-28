@@ -122,14 +122,14 @@ export default function NewsBanner() {
                       className="w-1.5 h-1.5 rounded-full shrink-0"
                       style={{ background: n.sourceColor }}
                     />
-                    <span className="text-xs font-bold" style={{ color: idx === current ? n.sourceColor : '#94a3b8' }}>
+                    <span className="text-xs font-bold" style={{ color: idx === current ? n.sourceColor : '#64748b' }}>
                       {n.source}
                     </span>
-                    <span className="text-xs" style={{ color: '#b0b8c4' }}>{n.date}</span>
+                    <span className="text-xs" style={{ color: '#64748b' }}>{n.date}</span>
                   </div>
                   <p
                     className="text-sm font-semibold leading-snug line-clamp-2"
-                    style={{ color: idx === current ? 'var(--text-primary)' : '#94a3b8' }}
+                    style={{ color: idx === current ? 'var(--text-primary)' : '#64748b' }}
                   >
                     {n.title}
                   </p>

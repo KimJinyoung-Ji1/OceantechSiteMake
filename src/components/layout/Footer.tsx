@@ -65,10 +65,10 @@ export default function Footer({ locale }: FooterProps) {
             </div>
 
             {/* Info — compact inline on mobile */}
-            <div className="flex flex-wrap gap-x-3 gap-y-1 mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 mb-3" style={{ color: 'rgba(255,255,255,0.65)' }}>
               {infoItems.map((item, i) => (
                 <span key={i} className="text-[11px] sm:text-xs whitespace-nowrap">
-                  <span style={{ color: 'rgba(255,255,255,0.25)' }}>{item.label}</span>{' '}
+                  <span style={{ color: 'rgba(255,255,255,0.5)' }}>{item.label}</span>{' '}
                   {item.href ? (
                     <a href={item.href} className="hover:text-[#03E9F8] transition-colors">{item.value}</a>
                   ) : (
@@ -79,7 +79,7 @@ export default function Footer({ locale }: FooterProps) {
             </div>
 
             {/* Address */}
-            <p className="text-[11px] sm:text-xs mb-3 leading-relaxed" style={{ color: 'rgba(255,255,255,0.35)' }}>
+            <p className="text-[11px] sm:text-xs mb-3 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
               {SITE_CONFIG.address.office}
             </p>
 
@@ -96,7 +96,7 @@ export default function Footer({ locale }: FooterProps) {
                   style={{ background: 'rgba(23,233,181,0.10)', border: '1px solid rgba(23,233,181,0.20)' }}
                 >
                   <span style={{ color: '#17E9B5' }}>{cert.label}</span>{' '}
-                  <span style={{ color: 'rgba(255,255,255,0.55)' }}>{cert.num}</span>
+                  <span style={{ color: 'rgba(255,255,255,0.65)' }}>{cert.num}</span>
                 </span>
               ))}
             </div>
@@ -106,7 +106,7 @@ export default function Footer({ locale }: FooterProps) {
           <div className="hidden sm:block">
             <h3
               className="text-xs font-bold uppercase tracking-[0.2em] mb-3"
-              style={{ color: 'rgba(255,255,255,0.3)' }}
+              style={{ color: 'rgba(255,255,255,0.55)' }}
             >
               {t.footer.links}
             </h3>
@@ -116,7 +116,7 @@ export default function Footer({ locale }: FooterProps) {
                   <Link
                     href={localePath(link.href)}
                     className="text-xs transition-colors hover:text-[#03E9F8] inline-flex items-center py-1"
-                    style={{ color: 'rgba(255,255,255,0.45)' }}
+                    style={{ color: 'rgba(255,255,255,0.65)' }}
                   >
                     {link.label}
                   </Link>
@@ -129,7 +129,7 @@ export default function Footer({ locale }: FooterProps) {
           <div className="hidden sm:block">
             <h3
               className="text-xs font-bold uppercase tracking-[0.2em] mb-3"
-              style={{ color: 'rgba(255,255,255,0.3)' }}
+              style={{ color: 'rgba(255,255,255,0.55)' }}
             >
               {t.footer.technology}
             </h3>
@@ -139,7 +139,7 @@ export default function Footer({ locale }: FooterProps) {
                   <Link
                     href={localePath(link.href)}
                     className="text-xs transition-colors hover:text-[#03E9F8] inline-flex items-center py-1"
-                    style={{ color: 'rgba(255,255,255,0.45)' }}
+                    style={{ color: 'rgba(255,255,255,0.65)' }}
                   >
                     {link.label}
                   </Link>
@@ -152,7 +152,7 @@ export default function Footer({ locale }: FooterProps) {
           <div className="hidden sm:block">
             <h3
               className="text-xs font-bold uppercase tracking-[0.2em] mb-3"
-              style={{ color: 'rgba(255,255,255,0.3)' }}
+              style={{ color: 'rgba(255,255,255,0.55)' }}
             >
               {isEn ? 'Support' : '고객지원'}
             </h3>
@@ -162,7 +162,7 @@ export default function Footer({ locale }: FooterProps) {
                   <Link
                     href={localePath(link.href)}
                     className="text-xs transition-colors hover:text-[#03E9F8] inline-flex items-center py-1"
-                    style={{ color: 'rgba(255,255,255,0.45)' }}
+                    style={{ color: 'rgba(255,255,255,0.65)' }}
                   >
                     {link.label}
                   </Link>
@@ -177,10 +177,10 @@ export default function Footer({ locale }: FooterProps) {
           className="mt-4 sm:mt-6 pt-3 sm:pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
           style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
         >
-          <p className="text-xs sm:text-sm" style={{ color: 'rgba(255,255,255,0.25)' }}>
+          <p className="text-xs sm:text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
             {t.footer.copyright}
           </p>
-          <div className="flex items-center gap-3 text-xs sm:text-sm" style={{ color: 'rgba(255,255,255,0.25)' }}>
+          <div className="flex items-center gap-3 text-xs sm:text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
             <Link
               href={localePath('/privacy')}
               className="transition-colors hover:text-white"

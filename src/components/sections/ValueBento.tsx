@@ -138,7 +138,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                   ? '31-Month Real-World Pilot in Goseong, Gangwon'
                   : '강원 고성군 31개월 실증사업 완료'}
               </h3>
-              <p className="text-sm sm:text-base text-white/65 leading-relaxed">
+              <p className="text-sm sm:text-base text-white/85 leading-relaxed">
                 {locale === 'en'
                   ? 'Verified durability, cost savings, and marine safety in a real fishing environment with SUHYUP.'
                   : '수협중앙회와 함께 실제 어업 현장에서 내구성, 비용절감, 해양 안전성을 직접 검증했습니다.'}
@@ -153,7 +153,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                       {s.unit}
                     </span>
                   </p>
-                  <p className="text-xs sm:text-base text-white/65 mt-1 sm:mt-2 font-medium">{s.label}</p>
+                  <p className="text-xs sm:text-base text-white/85 mt-1 sm:mt-2 font-medium">{s.label}</p>
                 </div>
               ))}
             </div>

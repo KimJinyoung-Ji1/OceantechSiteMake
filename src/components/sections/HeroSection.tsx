@@ -267,7 +267,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                       transition: 'opacity 0.5s ease',
                     }}
                   >
-                    <p className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                    <p className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.85)' }}>
                       {locale === 'en' ? slide.labelEn : slide.labelKo}
                     </p>
                     <p className="text-sm font-black text-white mt-0.5">{slide.number}</p>

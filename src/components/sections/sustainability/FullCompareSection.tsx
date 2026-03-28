@@ -69,11 +69,11 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
               </span>
             </div>
             <div className="py-2.5 flex items-center justify-center" style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="text-xs font-bold text-white/40">VS</span>
+              <span className="text-xs font-bold text-white/70">VS</span>
             </div>
             <div className="px-2 py-2.5 flex items-center justify-center gap-1">
               <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#64748b' }} />
-              <span className="text-xs font-bold text-white/60">
+              <span className="text-xs font-bold text-white/80">
                 {isEn ? 'Lead' : '기존 납추'}
               </span>
             </div>
@@ -147,7 +147,7 @@ export default function FullCompareSection({ locale }: FullCompareSectionProps) 
                     </span>
                   </div>
                   <div className="px-1.5 py-2.5 flex items-center justify-center text-center">
-                    <span className="text-[11px] font-medium" style={{ color: '#cbd5e1' }}>
+                    <span className="text-[11px] font-medium" style={{ color: '#64748b' }}>
                       {isEn ? row.badEn : row.bad}
                     </span>
                   </div>
