@@ -44,7 +44,7 @@ export default function Footer({ locale }: FooterProps) {
   return (
     <footer
       className="text-white"
-      style={{ background: '#0f172a' }}
+      style={{ background: 'linear-gradient(180deg, #0c1220 0%, #0f172a 100%)' }}
       aria-label="푸터"
     >
       <div className="section-container py-6 sm:py-8 lg:py-10">
@@ -70,7 +70,7 @@ export default function Footer({ locale }: FooterProps) {
                 <span key={i} className="text-[11px] sm:text-xs whitespace-nowrap">
                   <span style={{ color: 'rgba(255,255,255,0.5)' }}>{item.label}</span>{' '}
                   {item.href ? (
-                    <a href={item.href} className="hover:text-[#03E9F8] transition-colors">{item.value}</a>
+                    <a href={item.href} className="hover:text-[#5EEAD4] transition-colors">{item.value}</a>
                   ) : (
                     item.value
                   )}
@@ -115,7 +115,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-xs transition-colors hover:text-[#03E9F8] inline-flex items-center py-1"
+                    className="text-xs transition-colors hover:text-[#5EEAD4] inline-flex items-center py-1"
                     style={{ color: 'rgba(255,255,255,0.65)' }}
                   >
                     {link.label}
@@ -138,7 +138,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-xs transition-colors hover:text-[#03E9F8] inline-flex items-center py-1"
+                    className="text-xs transition-colors hover:text-[#5EEAD4] inline-flex items-center py-1"
                     style={{ color: 'rgba(255,255,255,0.65)' }}
                   >
                     {link.label}
@@ -161,7 +161,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={link.href}>
                   <Link
                     href={localePath(link.href)}
-                    className="text-xs transition-colors hover:text-[#03E9F8] inline-flex items-center py-1"
+                    className="text-xs transition-colors hover:text-[#5EEAD4] inline-flex items-center py-1"
                     style={{ color: 'rgba(255,255,255,0.65)' }}
                   >
                     {link.label}
@@ -175,7 +175,7 @@ export default function Footer({ locale }: FooterProps) {
         {/* Bottom bar */}
         <div
           className="mt-4 sm:mt-6 pt-3 sm:pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+          style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
         >
           <p className="text-xs sm:text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
             {t.footer.copyright}

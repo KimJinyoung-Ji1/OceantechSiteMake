@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { SITE_CONFIG } from '@/lib/constants';
 import { getTranslation } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
@@ -73,6 +74,7 @@ export default function CertCards({ locale }: CertCardsProps) {
       aria-label="인증 및 수상"
     >
       <div className="section-container">
+        <ScrollReveal>
         <div className="text-center mb-6 sm:mb-10">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.certification.title}
@@ -84,12 +86,14 @@ export default function CertCards({ locale }: CertCardsProps) {
             {t.certification.subtitle}
           </h2>
         </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+        <ScrollReveal delay={100}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
           {certItems.map((cert) => (
             <article
               key={cert.key}
-              className="group relative rounded-2xl overflow-hidden cursor-pointer bg-white flex flex-col transition-all duration-300 hover:-translate-y-1"
+              className="group relative rounded-2xl cursor-pointer bg-white flex flex-row transition-all duration-300 hover:-translate-y-1"
               style={{
                 boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
                 border: '1px solid #e2e8f0',
@@ -100,73 +104,60 @@ export default function CertCards({ locale }: CertCardsProps) {
               onKeyDown={(e) => e.key === 'Enter' && setSelectedCert(cert)}
               aria-label={`${locale === 'en' ? cert.titleEn : cert.titleKo} 상세보기`}
             >
-              {/* Top accent bar */}
+              {/* Left accent bar */}
               <div
-                className="h-1 sm:h-1.5 w-full"
+                className="w-1 sm:w-1.5 shrink-0 rounded-l-2xl"
                 style={{ background: cert.accentGrad }}
               />
 
-              {/* Featured badge */}
-              {cert.featured && (
-                <div
-                  className="absolute top-3 right-2 sm:top-4 sm:right-3 z-10 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-xs sm:text-sm font-bold text-white uppercase tracking-wider"
-                  style={{ background: cert.accent }}
-                >
-                  {locale === 'en' ? 'Core' : '핵심'}
-                </div>
-              )}
-
-              {/* Cert image */}
-              <div className="relative w-full flex items-center justify-center overflow-hidden bg-white px-2 pt-3 pb-2 sm:px-4 sm:pt-4 sm:pb-3">
-                <div
-                  className="w-full flex items-center justify-center rounded-xl overflow-hidden"
-                  style={{ height: 110, background: '#fafbfc' }}
-                >
-                  <Image
-                    src={cert.image}
-                    alt={locale === 'en' ? cert.titleEn : cert.titleKo}
-                    width={320}
-                    height={240}
-                    className="object-contain w-full h-full p-1.5 sm:p-3 group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                </div>
+              {/* Left — cert image (세로 문서, 잘림 없음) */}
+              <div
+                className="shrink-0 flex items-center justify-center p-2 sm:p-4"
+                style={{ width: 'clamp(80px, 22vw, 160px)', background: '#fafbfc' }}
+              >
+                <Image
+                  src={cert.image}
+                  alt={locale === 'en' ? cert.titleEn : cert.titleKo}
+                  width={200}
+                  height={283}
+                  className="object-contain w-full h-auto group-hover:scale-[1.03] transition-transform duration-300"
+                  sizes="(max-width: 640px) 22vw, 160px"
+                />
               </div>
 
-              {/* Info */}
-              <div className="flex-1 flex flex-col items-center px-2 pb-3 sm:px-4 sm:pb-5 text-center">
+              {/* Right — info */}
+              <div className="flex-1 flex flex-col justify-center px-3 py-3 sm:px-5 sm:py-4 min-w-0">
+                {/* Featured badge */}
+                {cert.featured && (
+                  <span
+                    className="self-start mb-1.5 px-1.5 py-0.5 sm:px-2 sm:py-0.5 rounded text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider"
+                    style={{ background: cert.accent }}
+                  >
+                    {locale === 'en' ? 'Core' : '핵심'}
+                  </span>
+                )}
                 <h3
-                  className="font-bold text-xs sm:text-base mb-1 sm:mb-1.5 leading-tight"
+                  className="font-bold text-xs sm:text-base mb-1 sm:mb-1.5 leading-snug"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {locale === 'en' ? cert.titleEn : cert.titleKo}
                 </h3>
                 <p
-                  className="text-xs sm:text-sm font-mono font-bold break-all leading-tight px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md"
-                  style={{ color: cert.accent, background: `${cert.accent}10` }}
+                  className="text-[10px] sm:text-sm font-mono font-bold break-all leading-tight mb-1"
+                  style={{ color: cert.accent }}
                 >
                   {cert.number}
                 </p>
-
-                {/* View button */}
-                <span
-                  className="mt-2 sm:mt-3 flex items-center gap-1 text-xs sm:text-sm font-semibold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full transition-all duration-200 group-hover:scale-105"
-                  style={{
-                    color: cert.accent,
-                    background: `${cert.accent}0a`,
-                    border: `1px solid ${cert.accent}30`,
-                  }}
-                  aria-hidden="true"
-                >
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-                    <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  {locale === 'en' ? 'View' : '상세보기'}
-                </span>
+                {cert.period && (
+                  <p className="text-[10px] sm:text-xs" style={{ color: 'var(--text-secondary)' }}>
+                    {cert.period}
+                  </p>
+                )}
               </div>
             </article>
           ))}
         </div>
+        </ScrollReveal>
       </div>
 
       {/* Modal */}

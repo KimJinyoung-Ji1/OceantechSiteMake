@@ -105,10 +105,12 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               <span
                 className="inline-flex items-center gap-1.5 text-sm font-semibold"
                 style={{
-                  background: 'rgba(0,0,0,0.5)',
-                  padding: '5px 12px',
+                  background: 'rgba(255,255,255,0.12)',
+                  backdropFilter: 'blur(12px)',
+                  padding: '6px 14px',
                   borderRadius: '20px',
                   color: 'white',
+                  border: '1px solid rgba(255,255,255,0.15)',
                 }}
               >
                 <span
@@ -141,11 +143,11 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             <div
               className="mb-5 sm:mb-8 max-w-2xl"
               style={{
-                background: 'rgba(0,0,0,0.25)',
-                padding: '12px 14px',
+                background: 'rgba(255,255,255,0.08)',
+                padding: '14px 18px',
                 borderRadius: '16px',
-                backdropFilter: 'blur(8px)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,255,255,0.12)',
               }}
             >
               <p
@@ -179,7 +181,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                   color: 'white',
                   border: '2px solid rgba(255,255,255,0.4)',
                   backdropFilter: 'blur(8px)',
-                  background: 'rgba(255,255,255,0.08)',
+                  background: 'rgba(255,255,255,0.1)',
                   textShadow: '0 1px 4px rgba(0,0,0,0.3)',
                 }}
               >
@@ -194,20 +196,20 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                   key={i}
                   className="group rounded-xl px-1.5 py-2 sm:px-2 sm:py-3 text-center transition-all duration-500 cursor-default whitespace-nowrap"
                   style={{
-                    background: 'rgba(0,0,0,0.35)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(255,255,255,0.18)',
+                    background: 'rgba(255,255,255,0.1)',
+                    backdropFilter: 'blur(12px)',
+                    border: '1px solid rgba(255,255,255,0.15)',
                     transform: `rotateY(${i % 2 === 0 ? '-2' : '2'}deg)`,
                     boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'rotateY(0deg) translateY(-3px)';
-                    e.currentTarget.style.background = 'rgba(0,0,0,0.45)';
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.18)';
                     e.currentTarget.style.boxShadow = '0 8px 28px rgba(0,0,0,0.2)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = `rotateY(${i % 2 === 0 ? '-2' : '2'}deg)`;
-                    e.currentTarget.style.background = 'rgba(0,0,0,0.35)';
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
                     e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.1)';
                   }}
                 >

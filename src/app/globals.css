@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./scroll-reveal.css";
 
 /* Header nav link hover animation */
 .nav-link {

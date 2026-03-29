@@ -1,4 +1,7 @@
+'use client';
+
 import { getTranslation } from '@/lib/i18n';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { SITE_CONFIG } from '@/lib/constants';
 import type { Locale } from '@/lib/i18n';
 
@@ -60,6 +63,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
     >
       <div className="section-container">
         {/* Section Header */}
+        <ScrollReveal>
         <div className="text-center mb-6 sm:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {t.valueSection.title}
@@ -68,8 +72,10 @@ export default function ValueBento({ locale }: ValueBentoProps) {
             {t.valueSection.subtitle}
           </h2>
         </div>
+        </ScrollReveal>
 
         {/* 3-column Bento Grid */}
+        <ScrollReveal delay={100}>
         <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-4 sm:mb-6">
           {items.map((item, i) => {
             const color = cardColors[i % cardColors.length];
@@ -116,8 +122,10 @@ export default function ValueBento({ locale }: ValueBentoProps) {
             );
           })}
         </div>
+        </ScrollReveal>
 
         {/* Full-width Pilot Card */}
+        <ScrollReveal delay={200}>
         <div
           className="rounded-2xl p-5 sm:p-8 lg:p-12"
           style={{
@@ -159,6 +167,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 interface NewsItem {
   title: string;
@@ -76,6 +77,7 @@ export default function NewsBanner() {
       aria-label="뉴스 배너"
     >
       <div className="section-container">
+        <ScrollReveal>
         <div className="text-center mb-4 sm:mb-6">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             NEWS
@@ -84,8 +86,10 @@ export default function NewsBanner() {
             오션테크 뉴스
           </h2>
         </div>
+        </ScrollReveal>
 
         {/* Main card */}
+        <ScrollReveal delay={100}>
         <div
           className="rounded-2xl overflow-hidden"
           style={{
@@ -250,6 +254,7 @@ export default function NewsBanner() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

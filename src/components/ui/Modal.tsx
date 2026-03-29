@@ -39,10 +39,11 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-            className="relative z-10 w-full max-w-5xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+            className="relative z-10 w-full max-w-5xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col cursor-pointer"
             role="dialog"
             aria-modal="true"
             aria-label={title}
+            onClick={onClose}
           >
             {title && (
               <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">

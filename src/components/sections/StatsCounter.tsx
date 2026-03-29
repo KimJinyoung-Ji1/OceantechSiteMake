@@ -5,6 +5,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 import { getTranslation } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 import { useCountUp } from '@/hooks/useCountUp';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 interface StatsCounterProps {
   locale: Locale;
@@ -89,6 +90,7 @@ export default function StatsCounter({ locale }: StatsCounterProps) {
       aria-label="오션테크 수치 통계"
     >
       <div className="section-container">
+        <ScrollReveal>
         <div className="text-center mb-5 sm:mb-7">
           <h2 className="text-xl sm:text-3xl lg:text-5xl font-black text-white">
             {t.stats.title}
@@ -100,6 +102,7 @@ export default function StatsCounter({ locale }: StatsCounterProps) {
             <StatItem key={i} {...stat} />
           ))}
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

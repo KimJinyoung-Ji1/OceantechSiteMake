@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import Image from 'next/image';
 import { getTranslation } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
@@ -41,6 +44,7 @@ export default function CTASection({ locale }: CTASectionProps) {
         aria-hidden="true"
       />
 
+      <ScrollReveal>
       <div className="relative z-10 max-w-5xl mx-auto text-center pt-10 sm:pt-16">
         <h2
           className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 sm:mb-6 leading-tight text-white"
@@ -85,6 +89,7 @@ export default function CTASection({ locale }: CTASectionProps) {
           </a>
         </div>
       </div>
+      </ScrollReveal>
     </section>
   );
 }

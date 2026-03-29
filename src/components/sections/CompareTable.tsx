@@ -1,4 +1,7 @@
+'use client';
+
 import { getTranslation } from '@/lib/i18n';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import type { Locale } from '@/lib/i18n';
 
 interface CompareTableProps {
@@ -15,6 +18,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
       aria-label="아연추 vs 납추 비교"
     >
       <div className="section-container">
+        <ScrollReveal>
         <div className="text-center mb-6 sm:mb-10">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
             {locale === 'en' ? 'COMPARISON' : '성능 비교'}
@@ -23,7 +27,9 @@ export default function CompareTable({ locale }: CompareTableProps) {
             {t.compare.title}
           </h2>
         </div>
+        </ScrollReveal>
 
+        <ScrollReveal delay={100}>
         <div
           className="rounded-2xl overflow-hidden"
           style={{
@@ -135,6 +141,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
             </div>
           ))}
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

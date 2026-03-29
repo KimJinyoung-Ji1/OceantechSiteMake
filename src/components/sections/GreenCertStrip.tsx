@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { getTranslation } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 
@@ -53,6 +56,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
       aria-label="녹색인증 배너"
     >
       <div className="section-container">
+        <ScrollReveal>
         {/* Header: cert mark + title */}
         <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
           <div
@@ -121,6 +125,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
             </div>
           ))}
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );
