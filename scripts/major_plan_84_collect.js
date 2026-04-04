@@ -303,10 +303,10 @@ async function extractAttachmentCandidates(detailPage, target) {
   return candidates;
 }
 
-async function saveShortcut(target) {
-  const safe = sanitizeFileName(`${target.name}_2026_주요업무계획_검토홈페이지`);
+async function saveShortcut(target, url, label) {
+  const safe = sanitizeFileName(`${target.name}_2026_주요업무계획_${label}`);
   const filePath = path.join(REVIEW_DIR, `${safe}.url`);
-  const body = `[InternetShortcut]\r\nURL=${target.url}\r\n`;
+  const body = `[InternetShortcut]\r\nURL=${url}\r\n`;
   await fs.promises.writeFile(filePath, body, "utf8");
   return filePath;
 }
@@ -377,7 +377,7 @@ async function processTarget(browser, target) {
     }
 
     if (!candidate) {
-      const shortcut = await saveShortcut(target);
+      const shortcut = await saveShortcut(target, buildFallbackReviewUrl(target), "검토홈페이지");
       return {
         status: "검토필요",
         name: target.name,
@@ -409,7 +409,7 @@ async function processTarget(browser, target) {
       const attachments = await extractAttachmentCandidates(detailPage, target);
 
       if (!attachments.length) {
-        const shortcut = await saveShortcut(target);
+        const shortcut = await saveShortcut(target, reviewUrl, reviewUrl === target.url ? "검토홈페이지" : "검토페이지");
         return {
           status: "검토필요",
           name: target.name,
@@ -428,7 +428,7 @@ async function processTarget(browser, target) {
       }
 
       if (!outputs.length) {
-        const shortcut = await saveShortcut(target);
+        const shortcut = await saveShortcut(target, reviewUrl, reviewUrl === target.url ? "검토홈페이지" : "검토페이지");
         return {
           status: "검토필요",
           name: target.name,
@@ -450,7 +450,7 @@ async function processTarget(browser, target) {
     } catch {
       const reviewUrl =
         !isUselessUrl(candidate.href) && !isSearchEngineUrl(candidate.href) ? candidate.href : target.url;
-      const shortcut = await saveShortcut(target);
+      const shortcut = await saveShortcut(target, reviewUrl, reviewUrl === target.url ? "검토홈페이지" : "검토페이지");
       return {
         status: "검토필요",
         name: target.name,
