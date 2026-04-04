@@ -58,7 +58,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
   return (
     <section
       className="py-10 sm:py-16 lg:py-20"
-      style={{ background: '#f2f3ff' }}
+      style={{ background: 'var(--background-alt)' }}
       aria-label="오션테크를 선택하는 이유"
     >
       <div className="section-container">
@@ -83,23 +83,20 @@ export default function ValueBento({ locale }: ValueBentoProps) {
             return (
               <article
                 key={i}
-                className="group relative p-3 sm:p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col items-center text-center"
-                style={{
-                  background: 'linear-gradient(145deg, #021097 0%, #0148C8 100%)',
-                  boxShadow: '0 24px 48px -12px rgba(2,16,151,0.35)',
-                }}
+                className="group relative p-3 sm:p-8 rounded-3xl bg-white transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col items-center text-center"
+                style={{ boxShadow: '0 24px 48px -12px rgba(25,28,30,0.06)' }}
               >
                 {/* Large number */}
                 <p
                   className="text-2xl sm:text-7xl font-black leading-none mb-2 sm:mb-6 select-none"
-                  style={{ color: 'rgba(255,255,255,0.08)' }}
+                  style={{ color: color.numColor }}
                 >
                   {num}
                 </p>
 
                 <div
                   className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-3 sm:mb-5"
-                  style={{ background: 'rgba(255,255,255,0.15)', color: 'var(--primary-300)' }}
+                  style={{ background: `${color.numColor}`, color: color.icon }}
                 >
                   <span className="[&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-10 sm:[&>svg]:h-10">
                     {icons[item.icon] ?? null}
@@ -108,11 +105,11 @@ export default function ValueBento({ locale }: ValueBentoProps) {
 
                 <h3
                   className="text-sm sm:card-title mb-2 sm:mb-4 font-bold"
-                  style={{ color: 'white' }}
+                  style={{ color: 'var(--text-primary)' }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-xs sm:card-body leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                <p className="text-xs sm:card-body leading-relaxed" style={{ color: 'var(--text-body)' }}>
                   {item.description}
                 </p>
 
