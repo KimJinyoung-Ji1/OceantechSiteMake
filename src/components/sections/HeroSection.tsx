@@ -190,31 +190,20 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             </div>
 
             {/* Stats cards — LEFT column, below CTA */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2" style={{ perspective: '600px' }}>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
               {stats.map((s, i) => (
                 <div
                   key={i}
-                  className="group rounded-xl px-1.5 py-2 sm:px-2 sm:py-3 text-center transition-all duration-500 cursor-default whitespace-nowrap"
+                  className="rounded-2xl px-3 py-4 sm:px-5 sm:py-6 text-center"
                   style={{
-                    background: 'rgba(255,255,255,0.1)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(255,255,255,0.15)',
-                    transform: `rotateY(${i % 2 === 0 ? '-2' : '2'}deg)`,
-                    boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'rotateY(0deg) translateY(-3px)';
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.18)';
-                    e.currentTarget.style.boxShadow = '0 8px 28px rgba(0,0,0,0.2)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = `rotateY(${i % 2 === 0 ? '-2' : '2'}deg)`;
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-                    e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.1)';
+                    background: 'rgba(255,255,255,0.12)',
+                    backdropFilter: 'blur(16px)',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
                   }}
                 >
-                  <p className="text-sm sm:text-xl font-black leading-none" style={{ color: 'var(--primary-300)' }}>{s.value}</p>
-                  <p className="text-xs sm:text-sm font-semibold mt-0.5 sm:mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.85)' }}>{s.label}</p>
+                  <p className="text-2xl sm:text-4xl font-black leading-none mb-1 sm:mb-2" style={{ color: 'var(--primary-300)' }}>{s.value}</p>
+                  <p className="text-xs sm:text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.9)' }}>{s.label}</p>
                 </div>
               ))}
             </div>

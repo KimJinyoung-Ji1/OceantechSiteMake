@@ -28,7 +28,7 @@ function StatItem({ target, unit, label, highlight }: StatItemProps) {
     >
       <div className="flex items-end justify-center gap-0.5 sm:gap-1 mb-1 sm:mb-2">
         <span
-          className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tabular-nums"
+          className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tabular-nums"
           style={{ color: highlight ? 'var(--secondary-500)' : 'var(--primary-300)' }}
         >
           {count}
@@ -92,12 +92,12 @@ export default function StatsCounter({ locale }: StatsCounterProps) {
       <div className="section-container">
         <ScrollReveal>
         <div className="text-center mb-5 sm:mb-7">
-          <h2 className="text-xl sm:text-3xl lg:text-5xl font-black text-white">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white">
             {t.stats.title}
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-8 lg:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-10 lg:gap-4">
           {stats.map((stat, i) => (
             <StatItem key={i} {...stat} />
           ))}
