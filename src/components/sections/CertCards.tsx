@@ -70,7 +70,7 @@ export default function CertCards({ locale }: CertCardsProps) {
   return (
     <section
       className="py-10 sm:py-16 lg:py-20"
-      style={{ background: '#f8fafc' }}
+      style={{ background: 'var(--primary-50)' }}
       aria-label="인증 및 수상"
     >
       <div className="section-container">
@@ -96,7 +96,6 @@ export default function CertCards({ locale }: CertCardsProps) {
               className="group relative rounded-2xl cursor-pointer bg-white flex flex-row transition-all duration-300 hover:-translate-y-1"
               style={{
                 boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                border: '1px solid #e2e8f0',
               }}
               onClick={() => setSelectedCert(cert)}
               role="button"

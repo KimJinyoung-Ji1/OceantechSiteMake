@@ -80,16 +80,13 @@ export default function CompareTable({ locale }: CompareTableProps) {
             <div
               key={i}
               className="grid grid-cols-[minmax(70px,1.2fr)_2fr_2fr]"
-              style={{
-                borderTop: '1px solid #e2e8f0',
-              }}
             >
               {/* Label */}
               <div
                 className="px-2 sm:px-4 py-3 sm:py-4 font-bold text-[11px] sm:text-base flex items-center justify-center text-center"
                 style={{
                   color: 'var(--primary-900)',
-                  background: i % 2 === 0 ? '#f8fafc' : '#ffffff',
+                  background: i % 2 === 0 ? '#f8fafc' : '#f1f5f9',
                 }}
               >
                 {row.label}
@@ -99,7 +96,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
               <div
                 className="px-2 sm:px-4 py-3 sm:py-4 flex flex-col items-center justify-center text-center"
                 style={{
-                  background: i % 2 === 0 ? 'rgba(2,16,151,0.03)' : 'rgba(2,16,151,0.01)',
+                  background: i % 2 === 0 ? 'rgba(2,16,151,0.04)' : 'rgba(2,16,151,0.02)',
                   borderLeft: '1px solid #e2e8f0',
                 }}
               >
@@ -121,7 +118,7 @@ export default function CompareTable({ locale }: CompareTableProps) {
               <div
                 className="px-2 sm:px-4 py-3 sm:py-4 flex flex-col items-center justify-center text-center"
                 style={{
-                  background: i % 2 === 0 ? '#fafafa' : '#ffffff',
+                  background: i % 2 === 0 ? '#f5f7fa' : '#ffffff',
                   borderLeft: '1px solid #e2e8f0',
                 }}
               >

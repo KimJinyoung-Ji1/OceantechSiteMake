@@ -50,8 +50,8 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
     <section
       className="py-5 sm:py-8"
       style={{
-        background: 'linear-gradient(135deg, #f0fdf9 0%, #ecfdf5 50%, #f0f9ff 100%)',
-        borderBottom: '3px solid var(--secondary-700)',
+        background: '#EFF6FF',
+        borderBottom: '3px solid var(--primary-500)',
       }}
       aria-label="녹색인증 배너"
     >
@@ -61,7 +61,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
         <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
           <div
             className="w-11 h-11 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0"
-            style={{ background: 'rgba(14,173,135,0.08)', border: '1px solid rgba(14,173,135,0.2)' }}
+            style={{ background: 'rgba(1,104,239,0.08)', border: '1px solid rgba(1,104,239,0.2)' }}
           >
             <Image
               src="/images/green-cert-mark.png"
@@ -75,7 +75,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
           <div>
             <p
               className="text-xs sm:text-sm font-bold uppercase tracking-widest mb-0.5"
-              style={{ color: 'var(--secondary-700)' }}
+              style={{ color: 'var(--primary-500)' }}
             >
               {t.greenCert.badge}
             </p>
@@ -93,18 +93,18 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
               className="relative rounded-xl px-2 py-3 sm:px-5 sm:py-4 text-center overflow-hidden"
               style={{
                 background: 'white',
-                border: '1px solid rgba(14,173,135,0.18)',
-                boxShadow: '0 2px 8px rgba(14,173,135,0.08)',
+                border: '1px solid rgba(1,104,239,0.18)',
+                boxShadow: '0 2px 8px rgba(1,104,239,0.08)',
               }}
             >
               {/* Top accent line */}
               <div
                 className="absolute top-0 left-0 right-0 h-[3px]"
-                style={{ background: 'linear-gradient(90deg, var(--secondary-700), var(--secondary-500))' }}
+                style={{ background: 'linear-gradient(90deg, var(--primary-900), var(--primary-300))' }}
               />
               <div
                 className="mx-auto w-7 h-7 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-1.5 sm:mb-2"
-                style={{ background: 'rgba(14,173,135,0.08)', color: 'var(--secondary-700)' }}
+                style={{ background: 'rgba(1,104,239,0.08)', color: 'var(--primary-500)' }}
               >
                 <span className="[&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5">
                   {cert.icon}
@@ -112,7 +112,7 @@ export default function GreenCertStrip({ locale }: GreenCertStripProps) {
               </div>
               <p
                 className="text-xs sm:text-sm font-semibold mb-0.5 sm:mb-1"
-                style={{ color: 'var(--secondary-700)' }}
+                style={{ color: 'var(--primary-500)' }}
               >
                 {cert.label}
               </p>
