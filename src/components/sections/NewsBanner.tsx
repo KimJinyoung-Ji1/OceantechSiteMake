@@ -73,16 +73,16 @@ export default function NewsBanner() {
   return (
     <section
       className="py-6 sm:py-10 lg:py-14"
-      style={{ background: 'var(--background)' }}
+      style={{ background: 'linear-gradient(160deg, #0D1B4B 0%, #021097 50%, #0148C8 100%)' }}
       aria-label="뉴스 배너"
     >
       <div className="section-container">
         <ScrollReveal>
         <div className="text-center mb-4 sm:mb-6">
-          <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
+          <p className="section-eyebrow" style={{ color: 'var(--primary-300)' }}>
             NEWS
           </p>
-          <h2 className="section-title" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="section-title" style={{ color: 'white' }}>
             오션테크 뉴스
           </h2>
         </div>
@@ -93,9 +93,10 @@ export default function NewsBanner() {
         <div
           className="rounded-2xl overflow-hidden"
           style={{
-            boxShadow: '0 4px 24px rgba(2,16,151,0.08)',
-            border: '1px solid #e2e8f0',
-            background: 'white',
+            background: 'rgba(255,255,255,0.07)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            boxShadow: '0 24px 48px -12px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.1)',
           }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -107,33 +108,33 @@ export default function NewsBanner() {
                 <button
                   key={idx}
                   onClick={() => setCurrent(idx)}
-                  className="text-left px-5 py-4 transition-all duration-200 border-b last:border-b-0 relative"
+                  className="text-left px-5 py-4 transition-all duration-200 relative"
                   style={{
-                    background: idx === current ? '#f8fafc' : 'transparent',
-                    borderColor: '#f1f5f9',
+                    background: idx === current ? 'rgba(255,255,255,0.12)' : 'transparent',
+                    borderBottom: '1px solid rgba(255,255,255,0.08)',
                   }}
                 >
                   {/* Active indicator */}
                   <div
                     className="absolute left-0 top-0 bottom-0 w-[3px] transition-all duration-300"
                     style={{
-                      background: idx === current ? n.sourceColor : 'transparent',
+                      background: idx === current ? 'white' : 'transparent',
                       borderRadius: '0 3px 3px 0',
                     }}
                   />
                   <div className="flex items-center gap-2 mb-1">
                     <span
                       className="w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{ background: n.sourceColor }}
+                      style={{ background: idx === current ? 'white' : 'rgba(255,255,255,0.4)' }}
                     />
-                    <span className="text-xs font-bold" style={{ color: idx === current ? n.sourceColor : '#64748b' }}>
+                    <span className="text-xs font-bold" style={{ color: idx === current ? 'white' : 'rgba(255,255,255,0.5)' }}>
                       {n.source}
                     </span>
-                    <span className="text-xs" style={{ color: '#64748b' }}>{n.date}</span>
+                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{n.date}</span>
                   </div>
                   <p
                     className="text-sm font-semibold leading-snug line-clamp-2"
-                    style={{ color: idx === current ? 'var(--text-primary)' : '#64748b' }}
+                    style={{ color: idx === current ? 'white' : 'rgba(255,255,255,0.55)' }}
                   >
                     {n.title}
                   </p>
@@ -142,7 +143,7 @@ export default function NewsBanner() {
             </div>
 
             {/* Divider */}
-            <div className="hidden xl:block w-px" style={{ background: '#e2e8f0' }} />
+            <div className="hidden xl:block w-px" style={{ background: 'rgba(255,255,255,0.12)' }} />
 
             {/* Right: slide content */}
             <div className="relative flex-1" style={{ minHeight: 180 }}>
@@ -169,7 +170,7 @@ export default function NewsBanner() {
                         alt={n.title}
                         width={260}
                         height={200}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover opacity-85"
                         style={{ minHeight: 200 }}
                         sizes="260px"
                       />
@@ -181,21 +182,21 @@ export default function NewsBanner() {
                     <div className="flex items-center gap-2 mb-2 sm:mb-3">
                       <span
                         className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-md text-xs sm:text-sm font-bold text-white"
-                        style={{ background: n.sourceColor }}
+                        style={{ background: 'rgba(255,255,255,0.2)' }}
                       >
                         {n.source}
                       </span>
-                      <span className="text-xs sm:text-sm font-medium" style={{ color: '#64748b' }}>
+                      <span className="text-xs sm:text-sm font-medium" style={{ color: 'rgba(255,255,255,0.55)' }}>
                         {n.date}
                       </span>
                     </div>
                     <h3
                       className="text-sm sm:text-xl lg:text-2xl font-bold mb-1.5 sm:mb-3 leading-snug"
-                      style={{ color: 'var(--text-primary)' }}
+                      style={{ color: 'white' }}
                     >
                       {n.title}
                     </h3>
-                    <p className="text-[11px] sm:text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                    <p className="text-[11px] sm:text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
                       {n.summary}
                     </p>
                   </div>
@@ -207,7 +208,7 @@ export default function NewsBanner() {
           {/* Bottom controls */}
           <div
             className="flex items-center justify-between px-4 py-2.5 sm:px-6 sm:py-3"
-            style={{ borderTop: '1px solid #f1f5f9', background: '#fafbfc' }}
+            style={{ borderTop: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.15)' }}
           >
             {/* Progress dots */}
             <div className="flex items-center gap-1.5 sm:gap-2">
@@ -219,12 +220,12 @@ export default function NewsBanner() {
                   style={{
                     width: i === current ? '20px' : '8px',
                     height: '8px',
-                    background: i === current ? n.sourceColor : '#e2e8f0',
+                    background: i === current ? 'white' : 'rgba(255,255,255,0.25)',
                   }}
                   aria-label={`뉴스 ${i + 1}번으로 이동`}
                 />
               ))}
-              <span className="ml-2 text-xs sm:text-sm font-mono font-bold" style={{ color: '#64748b' }}>
+              <span className="ml-2 text-xs sm:text-sm font-mono font-bold" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 {String(current + 1).padStart(2, '0')}/{String(NEWS_ITEMS.length).padStart(2, '0')}
               </span>
             </div>
@@ -233,22 +234,22 @@ export default function NewsBanner() {
             <div className="flex items-center gap-1.5">
               <button
                 onClick={prev}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center transition-all hover:bg-white"
-                style={{ border: '1px solid #e2e8f0' }}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center transition-all"
+                style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}
                 aria-label="이전 뉴스"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <path d="M10 4L6 8L10 12" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M10 4L6 8L10 12" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
               <button
                 onClick={next}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center transition-all hover:bg-white"
-                style={{ border: '1px solid #e2e8f0' }}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center transition-all"
+                style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}
                 aria-label="다음 뉴스"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <path d="M6 4L10 8L6 12" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M6 4L10 8L6 12" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
             </div>
