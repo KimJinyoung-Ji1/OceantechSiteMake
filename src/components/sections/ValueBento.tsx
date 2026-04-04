@@ -83,8 +83,8 @@ export default function ValueBento({ locale }: ValueBentoProps) {
             return (
               <article
                 key={i}
-                className="group relative p-3 sm:p-8 rounded-2xl bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg overflow-hidden flex flex-col items-center text-center"
-                style={{ border: `1px solid ${color.border}` }}
+                className="group relative p-3 sm:p-8 rounded-3xl bg-white transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col items-center text-center"
+                style={{ boxShadow: '0 24px 48px -12px rgba(25,28,30,0.06)' }}
               >
                 {/* Large number */}
                 <p
@@ -95,7 +95,7 @@ export default function ValueBento({ locale }: ValueBentoProps) {
                 </p>
 
                 <div
-                  className="w-10 h-10 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-3 sm:mb-5"
+                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-3 sm:mb-5"
                   style={{ background: `${color.numColor}`, color: color.icon }}
                 >
                   <span className="[&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-10 sm:[&>svg]:h-10">
@@ -127,12 +127,14 @@ export default function ValueBento({ locale }: ValueBentoProps) {
         {/* Full-width Pilot Card */}
         <ScrollReveal delay={200}>
         <div
-          className="rounded-2xl p-5 sm:p-8 lg:p-12"
+          className="relative overflow-hidden rounded-3xl p-5 sm:p-8 lg:p-12"
           style={{
             background: 'linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700, #0148C8) 100%)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            boxShadow: '0 32px 64px -16px rgba(2,16,151,0.4)',
           }}
         >
+          {/* Decorative glow */}
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'rgba(3,233,248,0.15)', filter: 'blur(80px)' }} aria-hidden="true" />
           <div className="flex flex-col items-center text-center gap-5 sm:gap-8">
             <div className="max-w-4xl">
               <p
