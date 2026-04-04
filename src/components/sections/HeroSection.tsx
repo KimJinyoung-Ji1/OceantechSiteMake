@@ -80,7 +80,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           className="absolute inset-0 hidden sm:block"
           style={{
             background:
-              'linear-gradient(125deg, rgba(2,16,151,0.65) 0%, rgba(1,72,200,0.45) 50%, rgba(3,233,248,0.20) 100%)',
+              'linear-gradient(125deg, rgba(2,16,151,0.45) 0%, rgba(1,72,200,0.30) 50%, rgba(3,233,248,0.15) 100%)',
           }}
         />
         <div
@@ -136,7 +136,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               className="text-base sm:text-2xl font-bold mb-3 sm:mb-6"
               style={{ color: '#ffffff', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}
             >
-              <span style={{ color: 'var(--primary-300)' }}>{t.hero.subtitle}</span>
+              <span style={{ color: '#5EEAD4' }}>{t.hero.subtitle}</span>
             </p>
 
             {/* Description */}
@@ -163,9 +163,9 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                 href={localePath('/contact')}
                 className="hero-btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold"
                 style={{
-                  background: 'linear-gradient(135deg, var(--primary-900) 0%, var(--primary-500) 100%)',
+                  background: 'linear-gradient(135deg, #0EAD87 0%, #17E9B5 100%)',
                   color: 'white',
-                  boxShadow: '0 4px 20px rgba(1,104,239,0.4)',
+                  boxShadow: '0 4px 16px rgba(14,173,135,0.3)',
                   textShadow: '0 1px 2px rgba(0,0,0,0.2)',
                 }}
               >
@@ -213,7 +213,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                     e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.1)';
                   }}
                 >
-                  <p className="text-sm sm:text-xl font-black leading-none" style={{ color: 'var(--primary-300)' }}>{s.value}</p>
+                  <p className="text-sm sm:text-xl font-black leading-none" style={{ color: '#5EEAD4' }}>{s.value}</p>
                   <p className="text-xs sm:text-sm font-semibold mt-0.5 sm:mt-1 leading-none" style={{ color: 'rgba(255,255,255,0.85)' }}>{s.label}</p>
                 </div>
               ))}

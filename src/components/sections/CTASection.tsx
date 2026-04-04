@@ -18,7 +18,6 @@ export default function CTASection({ locale }: CTASectionProps) {
   return (
     <section
       className="pt-0 pb-24 px-4 relative overflow-hidden cta-section"
-      style={{ background: 'linear-gradient(135deg, var(--primary-900) 0%, #0148C8 100%)' }}
       aria-label="문의 유도 섹션"
     >
       {/* Ocean background image with low opacity */}
@@ -68,10 +67,8 @@ export default function CTASection({ locale }: CTASectionProps) {
             href={localePath('/contact')}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-base font-bold text-white shadow-xl hover:shadow-2xl hover:brightness-110 transition-all duration-200"
             style={{
-              background: 'rgba(255,255,255,0.15)',
-              backdropFilter: 'blur(12px)',
-              border: '2px solid rgba(255,255,255,0.5)',
-              color: 'white',
+              background: 'linear-gradient(135deg, var(--secondary-700) 0%, var(--secondary-500) 100%)',
+              color: 'var(--primary-900)',
             }}
           >
             {t.cta.primary}
