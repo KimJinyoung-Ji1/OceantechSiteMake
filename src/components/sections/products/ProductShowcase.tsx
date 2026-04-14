@@ -118,7 +118,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                         className="relative w-full overflow-hidden"
                         style={{ aspectRatio: '1/1', background: 'linear-gradient(180deg, #fafbfc 0%, #f0f4f8 100%)' }}
                       >
-                        <div className="absolute bottom-0 left-1/2" style={{ width: `${Math.round(scale * 100)}%`, height: `${Math.round(scale * 100)}%`, transform: 'translateX(-50%)' }}>
+                        <div className="absolute bottom-0 inset-x-0" style={{ height: `${Math.round(scale * 100)}%` }}>
                         <Image
                           src={item.image}
                           alt={item.model}
