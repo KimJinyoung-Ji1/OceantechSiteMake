@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
   company: {
     name: '(주)오션테크',
     nameEn: 'Ocean Tech Inc.',
-    ceo: '이우철',
+    ceo: '이운봉',
     bizNo: '127-87-02624',
     corpNo: '284111-0408596',
     slogan: '바다와 함께 공생하는 기업',
@@ -339,18 +339,18 @@ export const SITE_CONFIG = {
   },
   ceoMessage: {
     ko: [
-      '바다와 공생하는 건강한 생태계를 만드는 일은 선택이 아니라 책임입니다.',
-      '오션테크는 친환경 아연 어망추를 통해 납추를 대체하고, 해양 생태계와 어민의 삶을 동시에 지키는 기술을 만들고 있습니다.',
-      '수협중앙회와의 계약, 31개월 현장 실증, 녹색기술 인증은 저희가 걸어온 길이 현장성과 공공성을 모두 갖추고 있음을 보여줍니다.',
-      '앞으로도 바다와 어민, 산업이 함께 지속될 수 있도록 더 나은 기술과 더 단단한 실행으로 답하겠습니다.',
-      '(주)오션테크 대표이사 이우철',
+      '우리가 기대어 살아가는 바다는 인류의 오랜 터전이자, 다음 세대에게 온전히 물려주어야 할 가장 소중한 생명의 보고입니다. 그러나 오랫동안 관행처럼 사용되어 온 기존의 납추는 바다 밑바닥에 가라앉아 심각한 중금속 오염을 유발하며 해양 생태계를 소리 없이 파괴해 왔습니다.',
+      '저희 (주)오션테크는 \'건강한 바다, 행복한 어민\'이라는 뚜렷한 비전 아래, 이러한 해양 환경 문제를 근본적으로 해결하고자 오랜 시간 연구와 개발에 매진해 왔습니다. 그 치열한 노력의 결실로, 인체와 해양 환경에 무해한 100% 순수 친환경 아연추를 개발하였고, 그 기술력을 인정받아 국가 공인 \'녹색인증\'을 획득하는 쾌거를 이루었습니다.',
+      '(주)오션테크의 친환경 아연추는 단순히 기존 제품의 대체재를 넘어, 훼손되어 가는 바다를 살리는 생명 보호의 첫걸음입니다. 저희는 뛰어난 기술력을 바탕으로 어민 여러분께 더욱 튼튼하고 효율적이며 안전한 조업 환경을 제공하여 수산업의 경쟁력을 높이는 데 기여하고 있습니다. 바다의 건강이 곧 어민의 행복이며, 우리 모두의 풍요로운 미래로 이어진다고 굳게 믿습니다.',
+      '앞으로도 (주)오션테크는 현실에 안주하지 않고, 끊임없는 기술 혁신과 투철한 사명감을 바탕으로 친환경 수산업을 선도하는 기업으로 도약하겠습니다. 바다와 인간이 아름답게 공존하는 지속 가능한 미래를 만들어가는 저희의 힘찬 여정에 변함없는 관심과 따뜻한 성원을 부탁드립니다.',
+      '(주)오션테크 대표이사 이운봉',
     ],
     en: [
-      'Building a healthier marine ecosystem is not an option. It is our responsibility.',
-      'Ocean Tech develops eco-friendly zinc fishing weights that replace lead and protect both marine life and the livelihood of fishers.',
-      'Our contract with SUHYUP, 31-month field pilot, and green certifications prove that our technology works in the real world.',
-      'We will continue to deliver practical innovation so the ocean, the industry, and fishing communities can thrive together.',
-      'Lee Woo-chul, CEO of Ocean Tech Inc.',
+      'The ocean, humanity\'s enduring foundation, is the most precious reservoir of life that we must pass on intact to the next generation. Yet conventional lead weights, used out of long-standing practice, sink to the seabed causing serious heavy-metal contamination and silently destroying the marine ecosystem.',
+      'Under the clear vision of "A Healthy Ocean, Thriving Fishers," Ocean Tech Inc. has devoted years of research and development to fundamentally solving these marine environmental challenges. As a result of relentless effort, we developed 100% pure eco-friendly zinc weights that are harmless to both people and the ocean, earning the nationally recognized "Green Certification."',
+      'Our eco-friendly zinc weights go beyond being a simple substitute — they represent the first step in protecting life and reviving our damaged seas. Backed by outstanding technology, we provide fishers with stronger, more efficient, and safer working conditions, contributing to the competitiveness of the fisheries industry. We firmly believe that a healthy ocean means happy fishers and a prosperous future for us all.',
+      'Ocean Tech Inc. will never rest on its achievements. Driven by continuous technological innovation and an unwavering sense of mission, we will leap forward as a leader in eco-friendly fisheries. We sincerely ask for your continued interest and warm support as we forge ahead on our journey toward a sustainable future where the ocean and humanity coexist in harmony.',
+      'Lee Woon-bong, CEO of Ocean Tech Inc.',
     ],
   },
 } as const;
