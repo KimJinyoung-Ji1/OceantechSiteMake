@@ -115,15 +115,15 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                       transition={{ duration: 0.3 }}
                     >
                       <div
-                        className="relative w-full flex items-end justify-center"
+                        className="relative w-full overflow-hidden"
                         style={{ aspectRatio: '1/1', background: 'linear-gradient(180deg, #fafbfc 0%, #f0f4f8 100%)' }}
                       >
-                        <div className="relative" style={{ width: `${Math.round(scale * 100)}%`, height: `${Math.round(scale * 100)}%` }}>
+                        <div className="absolute bottom-0 left-1/2" style={{ width: `${Math.round(scale * 100)}%`, height: `${Math.round(scale * 100)}%`, transform: 'translateX(-50%)' }}>
                         <Image
                           src={item.image}
                           alt={item.model}
                           fill
-                          className="object-contain"
+                          className="object-contain object-bottom"
                           sizes="(max-width: 768px) 45vw, (max-width: 1024px) 22vw, 20vw"
                         />
                         </div>
