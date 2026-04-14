@@ -46,7 +46,7 @@ const cardColors = [
 
 const pilotStats = [
   { value: '31', unit: '개월', label: '현장 실증' },
-  { value: '19', unit: '척', label: '어선 참여' },
+  { value: '19', unit: '차', label: '어선 항해' },
   { value: '80', unit: '%', label: '비용 절감' },
   { value: '235', unit: '종', label: 'SVHC 불검출' },
 ];
