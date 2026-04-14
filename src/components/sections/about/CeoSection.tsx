@@ -59,7 +59,7 @@ export default function CeoSection({ locale }: CeoSectionProps) {
                   </p>
                 );
               }
-              if (line.startsWith('(주)오션테크') || line.startsWith('Lee Woo-chul')) {
+              if (line.startsWith('(주)오션테크') || line.startsWith('Lee Woon-bong')) {
                 return (
                   <p
                     key={i}
