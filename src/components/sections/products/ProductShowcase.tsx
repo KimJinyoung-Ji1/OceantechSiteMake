@@ -115,7 +115,7 @@ export default function ProductShowcase({ locale }: ProductShowcaseProps) {
                       transition={{ duration: 0.3 }}
                     >
                       <div
-                        className="relative w-full flex items-center justify-center"
+                        className="relative w-full flex items-end justify-center"
                         style={{ aspectRatio: '1/1', background: 'linear-gradient(180deg, #fafbfc 0%, #f0f4f8 100%)' }}
                       >
                         <div className="relative" style={{ width: `${Math.round(scale * 100)}%`, height: `${Math.round(scale * 100)}%` }}>
