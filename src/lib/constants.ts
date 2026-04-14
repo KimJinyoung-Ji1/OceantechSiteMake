@@ -9,8 +9,8 @@ export const SITE_CONFIG = {
     sloganSub: '건강한 바다, 행복한 어민',
   },
   contact: {
-    tel: '031-551-0405',
-    fax: '031-556-7721',
+    tel: '031-566-7720',
+    fax: '031-566-7721',
     email: 'oceantee@naver.com',
     manager: '이채진 전무이사',
     mobile: '010-6348-1210',
