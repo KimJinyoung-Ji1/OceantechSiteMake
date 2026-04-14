@@ -48,7 +48,7 @@ const pilotStats = [
   { value: '31', unit: '개월', label: '현장 실증' },
   { value: '19', unit: '차', label: '어선 항해' },
   { value: '80', unit: '%', label: '비용 절감' },
-  { value: '235', unit: '종', label: 'SVHC 불검출' },
+  { value: '235', unit: '종', label: '환경오염물질 SVHC 불검출' },
 ];
 
 export default function ValueBento({ locale }: ValueBentoProps) {
@@ -148,8 +148,8 @@ export default function ValueBento({ locale }: ValueBentoProps) {
               </h3>
               <p className="text-sm sm:text-base text-white/85 leading-relaxed">
                 {locale === 'en'
-                  ? 'Verified durability, cost savings, and marine safety in a real fishing environment with SUHYUP.'
-                  : '수협중앙회와 함께 실제 어업 현장에서 내구성, 비용절감, 해양 안전성을 직접 검증했습니다.'}
+                  ? 'Verified durability, cost savings, and marine safety in a real fishing environment with set net and gill net fisheries associations.'
+                  : '정치망, 자망협회와 함께 실제 어업 현장에서 내구성, 비용절감, 해양 안전성을 직접 검증했습니다.'}
               </p>
             </div>
             <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-5 sm:gap-10 lg:gap-16 w-full">
