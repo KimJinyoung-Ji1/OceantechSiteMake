@@ -31,7 +31,7 @@ export default function Footer({ locale }: FooterProps) {
   const supportLinks = [
     { label: isEn ? 'Contact' : '문의하기', href: '/contact' },
     { label: isEn ? 'Certifications' : '인증현황', href: '/certification' },
-    { label: isEn ? 'News' : '뉴스', href: '/about#news' },
+    { label: isEn ? 'News' : '뉴스', href: '/#news' },
   ];
 
   const infoItems = [
