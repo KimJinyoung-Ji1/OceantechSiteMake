@@ -11,11 +11,13 @@ interface PatentsSectionProps {
 }
 
 const patentImages: Record<string, string> = {
-  '10-2197917': '/documents/certs/patent-2197917.png',
-  '10-1887767': '/documents/certs/patent-page5.png',
-  '10-2508401': '/documents/certs/patent-page6.png',
-  '10-1895932': '/documents/certs/patent-award-certificate.png',
-  '10-1802799': '/documents/certs/breaking-test.png',
+  '10-2197917': '/documents/certs/patent-10-2197917.png',
+  '10-1801707': '/documents/certs/patent-10-1801707.png',
+  '10-1801709': '/documents/certs/patent-10-1801709.png',
+  '10-2587572': '/documents/certs/patent-10-2587572.png',
+  '10-2613875': '/documents/certs/patent-10-2613875.png',
+  '10-2640453': '/documents/certs/patent-10-2640453.png',
+  '10-2779255': '/documents/certs/patent-10-2779255.png',
 };
 
 const patentDownloads: Record<string, string> = {
@@ -56,25 +58,53 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
   const patents = SITE_CONFIG.patents;
   const designPatents = SITE_CONFIG.designPatents;
 
-  // Test report items
+  // Test report & certification items
   const testReports = [
     {
       key: 'testTak',
       number: 'TAK-2024-008089',
-      titleKo: '시험성적서 (TAK)',
-      titleEn: 'Test Report (TAK)',
-      src: '/documents/certs/test-report-tak.png',
+      titleKo: '6대 중금속 시험 - 시험성적서 (TAK)',
+      titleEn: 'Heavy Metal Test Report (TAK)',
+      src: '/documents/certs/test-report-tak-individual.png',
       downloadUrl: '/documents/downloads/test-report-tak.pdf',
       isTestReport: true,
     },
     {
       key: 'testTbk',
       number: 'TBK-2024-000252',
-      titleKo: '시험성적서 (TBK)',
-      titleEn: 'Test Report (TBK)',
-      src: '/documents/certs/test-report-tbk.png',
+      titleKo: '인체환경 내분비계 안전 테스트 - 시험성적서 (TBK)',
+      titleEn: 'Endocrine Safety Test Report (TBK)',
+      src: '/documents/certs/test-report-tbk-individual.png',
       downloadUrl: '/documents/downloads/test-report-tbk.pdf',
       isTestReport: true,
+    },
+    {
+      key: 'svhc',
+      number: 'TBK-2024-000252',
+      titleKo: '유해물질 235종 불검출 - SVHC 시험보고서',
+      titleEn: '235 SVHC Substances Non-detected Report',
+      src: '/documents/certs/svhc-report-individual.png',
+      downloadUrl: '/documents/downloads/svhc-report.pdf',
+      isTestReport: true,
+    },
+    {
+      key: 'breakTest',
+      number: '어장추 파기시험',
+      titleKo: '어장추 파기(분쇄) 시험 - 시험성적서',
+      titleEn: 'Fishing Weight Destruction Test Report',
+      src: '/documents/certs/breaking-test-individual.png',
+      downloadUrl: null,
+      isTestReport: true,
+    },
+    {
+      key: 'patentAward',
+      number: '2023 제17회',
+      titleKo: '대한민국 우수특허대상 수상',
+      titleEn: '17th Korea Excellence Patent Award',
+      src: '/documents/certs/patent-award-2023.png',
+      downloadUrl: null,
+      isTestReport: false,
+      isAward: true,
     },
   ];
 
@@ -90,6 +120,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
       downloadUrl: patentDownloads[p.number] ?? null,
       isTestReport: false,
       isDesign: false,
+      isAward: false,
     })),
     {
       key: 'design',
@@ -103,6 +134,7 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
       downloadUrl: null,
       isTestReport: false,
       isDesign: true,
+      isAward: false,
     },
     ...testReports.map((r) => ({
       key: r.key,
@@ -112,8 +144,9 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
       date: '',
       src: r.src,
       downloadUrl: r.downloadUrl,
-      isTestReport: true,
+      isTestReport: r.isTestReport,
       isDesign: false,
+      isAward: 'isAward' in r && r.isAward,
     })),
   ];
 
@@ -122,18 +155,20 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
       <div className="section-container">
         <div className="text-center mb-6 md:mb-12">
           <p className="section-eyebrow" style={{ color: 'var(--primary-500)' }}>
-            {isEn ? 'PATENTS & TEST REPORTS' : '특허현황 및 시험성적서'}
+            {isEn ? 'PATENTS · CERTIFICATIONS · TEST REPORTS' : '특허 · 인증 · 시험성적'}
           </p>
           <h2 className="section-title" style={{ color: 'var(--gray-900)' }}>
             {isEn
-              ? `${patents.length} Patents · ${designPatents.reduce((a, d) => a + d.count, 0)} Design Patents · 2 Test Reports`
-              : `특허 ${patents.length}건 · 디자인특허 ${designPatents.reduce((a, d) => a + d.count, 0)}건 · 시험성적서 2건`}
+              ? `${patents.length} Patents · ${designPatents.reduce((a, d) => a + d.count, 0)} Design Patents · Test Reports & Awards`
+              : `특허 ${patents.length}건 · 디자인특허 ${designPatents.reduce((a, d) => a + d.count, 0)}건 · 시험성적서 · 수상`}
           </h2>
         </div>
 
-        <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-5">
           {gridItems.map((item) => {
-            const badgeBg = item.isTestReport
+            const badgeBg = item.isAward
+              ? '#D4A017'
+              : item.isTestReport
               ? '#0EAD87'
               : item.isDesign
               ? '#0EAD87'
@@ -196,7 +231,9 @@ export default function PatentsSection({ locale }: PatentsSectionProps) {
                   className="text-xs sm:text-sm font-bold px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-md tracking-wider uppercase text-white"
                   style={{ background: badgeBg }}
                 >
-                  {item.isTestReport
+                  {item.isAward
+                    ? (isEn ? 'AWARD' : '수상')
+                    : item.isTestReport
                     ? (isEn ? 'TEST' : '시험성적서')
                     : item.isDesign
                     ? (isEn ? 'DESIGN' : '디자인특허')
