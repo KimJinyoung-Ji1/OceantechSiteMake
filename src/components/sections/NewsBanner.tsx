@@ -11,9 +11,46 @@ interface NewsItem {
   summary: string;
   image?: string;
   sourceColor: string;
+  url?: string;
 }
 
 const NEWS_ITEMS: NewsItem[] = [
+  {
+    title: '고성군 친환경 어구추 호평 — "보급 확대를"',
+    source: '강원도민일보',
+    date: '2025.12.03',
+    summary: '고성군이 도입한 친환경 아연 어구추가 기존 납추 대비 강도 40배, 교체 주기 10배로 어민들의 높은 호평을 받고 있습니다. 30개 이상 언론사 동시 보도.',
+    image: '/images/news/kado-article-2025.jpg',
+    sourceColor: '#0168EF',
+    url: 'https://www.kado.net/news/articleView.html?idxno=2020202',
+  },
+  {
+    title: '동해안 정치망 친환경 어구 추 확대 보급 기대…해양 오염 차단',
+    source: '아시아경제',
+    date: '2025.12.01',
+    summary: '세계 최초로 개발된 친환경 아연 어구추가 가성비와 만족도가 높은 것으로 나타나, 동해안 정치망 전체 확대 보급이 기대되고 있습니다.',
+    image: '/images/news/asiae-article-2025.jpg',
+    sourceColor: '#E11D48',
+    url: 'https://www.asiae.co.kr/article/2025120121233068937',
+  },
+  {
+    title: '친환경 어구 추 시범 사업 만족도 높아',
+    source: 'CNB뉴스',
+    date: '2025.12.02',
+    summary: '고성군의 친환경 아연추 시범 사업 결과, 강도 40배·교체 주기 10배의 성능과 함께 어민들의 높은 만족도가 확인됐습니다.',
+    image: '/images/news/cnb-article-2025.jpg',
+    sourceColor: '#2563EB',
+    url: 'https://www.cnbnews.com/news/article.html?no=765033',
+  },
+  {
+    title: '고성군, 친환경 아연추 효과 입증',
+    source: '환경일보',
+    date: '2025.12.01',
+    summary: '2022년부터 오션테크와 함께 진행한 시범 사업에서 반영구적 제품으로 기존 추 대비 40배 강도, 10배 긴 교체 주기가 입증됐습니다.',
+    image: '/images/news/hkbs-article-2025.jpg',
+    sourceColor: '#059669',
+    url: 'https://www.hkbs.co.kr/news/articleView.html?idxno=811999',
+  },
   {
     title: "중금속 '납추' 바다 생태계 위협…친환경 대체재 주목",
     source: '강원도민일보',
@@ -21,6 +58,7 @@ const NEWS_ITEMS: NewsItem[] = [
     summary: '납으로 만든 어망추가 해양 생태계를 위협하고 있어 친환경 대체재에 대한 관심이 높아지고 있습니다.',
     image: '/images/news/kado-article-2023.png',
     sourceColor: '#0168EF',
+    url: 'https://www.kado.net/news/articleView.html?idxno=2020202',
   },
   {
     title: '오션테크, 제17회 대한민국 우수특허 대상 수상',
@@ -29,6 +67,7 @@ const NEWS_ITEMS: NewsItem[] = [
     summary: '(주)오션테크가 친환경 아연 어망추 기술로 제17회 대한민국 우수특허 대상(기계/해양 부문)을 수상했습니다.',
     image: '/images/news/hankook-article-2023.png',
     sourceColor: '#D97706',
+    url: 'https://www.hankookilbo.com/News/Read/A2023122213400001977',
   },
   {
     title: '친환경 아연 어망추, 고성군 31개월 시범사업 성공',
@@ -72,6 +111,7 @@ export default function NewsBanner() {
 
   return (
     <section
+      id="news"
       className="py-6 sm:py-10 lg:py-14"
       style={{ background: 'var(--background)' }}
       aria-label="뉴스 배너"
@@ -189,12 +229,24 @@ export default function NewsBanner() {
                         {n.date}
                       </span>
                     </div>
-                    <h3
-                      className="text-sm sm:text-xl lg:text-2xl font-bold mb-1.5 sm:mb-3 leading-snug"
-                      style={{ color: 'var(--text-primary)' }}
-                    >
-                      {n.title}
-                    </h3>
+                    {n.url ? (
+                      <a
+                        href={n.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm sm:text-xl lg:text-2xl font-bold mb-1.5 sm:mb-3 leading-snug block hover:underline"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        {n.title}
+                      </a>
+                    ) : (
+                      <h3
+                        className="text-sm sm:text-xl lg:text-2xl font-bold mb-1.5 sm:mb-3 leading-snug"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        {n.title}
+                      </h3>
+                    )}
                     <p className="text-[11px] sm:text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
                       {n.summary}
                     </p>
