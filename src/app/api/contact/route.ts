@@ -1,5 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function getResend() {
   const { Resend } = require('resend') as typeof import('resend');
   return new Resend(process.env.RESEND_API_KEY);
@@ -42,12 +51,12 @@ export async function POST(req: NextRequest) {
     const notifyEmail = process.env.NOTIFY_EMAIL;
     if (process.env.RESEND_API_KEY && notifyEmail) {
       const resend = getResend();
-      const inquiryType = type || '일반 문의';
+      const inquiryType = escapeHtml(type || '일반 문의');
 
       const phoneRow = phone
-        ? `<tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:16px 20px;font-weight:700;color:#475569;background:#f8fafc;">\uc804\ud654\ubc88\ud638</td><td style="padding:16px 20px;">${phone}</td></tr>`
+        ? `<tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:16px 20px;font-weight:700;color:#475569;background:#f8fafc;">\uc804\ud654\ubc88\ud638</td><td style="padding:16px 20px;">${escapeHtml(phone)}</td></tr>`
         : '';
-      const msgHtml = message.replace(/\n/g, '<br>');
+      const msgHtml = escapeHtml(message).replace(/\n/g, '<br>');
 
       const htmlContent = [
         '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0;background:#f0f4f8;">',
@@ -58,8 +67,8 @@ export async function POST(req: NextRequest) {
         '</div>',
         '<div style="background:#ffffff;padding:0;border-radius:0 0 16px 16px;box-shadow:0 4px 24px rgba(0,0,0,0.06);">',
         '<table style="width:100%;border-collapse:collapse;">',
-        `<tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:16px 20px;font-weight:700;color:#475569;width:110px;background:#f8fafc;">\uc774\ub984</td><td style="padding:16px 20px;">${name}</td></tr>`,
-        `<tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:16px 20px;font-weight:700;color:#475569;background:#f8fafc;">\uc774\uba54\uc77c</td><td style="padding:16px 20px;"><a href="mailto:${email}" style="color:#0168EF;">${email}</a></td></tr>`,
+        `<tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:16px 20px;font-weight:700;color:#475569;width:110px;background:#f8fafc;">\uc774\ub984</td><td style="padding:16px 20px;">${escapeHtml(name)}</td></tr>`,
+        `<tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:16px 20px;font-weight:700;color:#475569;background:#f8fafc;">\uc774\uba54\uc77c</td><td style="padding:16px 20px;"><a href="mailto:${escapeHtml(email)}" style="color:#0168EF;">${escapeHtml(email)}</a></td></tr>`,
         phoneRow,
         `<tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:16px 20px;font-weight:700;color:#475569;background:#f8fafc;">\ubb38\uc758\uc720\ud615</td><td style="padding:16px 20px;">${inquiryType}</td></tr>`,
         `<tr><td style="padding:16px 20px;font-weight:700;color:#475569;background:#f8fafc;vertical-align:top;">\ubb38\uc758\ub0b4\uc6a9</td><td style="padding:16px 20px;line-height:1.7;">${msgHtml}</td></tr>`,
