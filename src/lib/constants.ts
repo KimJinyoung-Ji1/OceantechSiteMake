@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
   company: {
     name: '(주)오션테크',
     nameEn: 'Ocean Tech Inc.',
-    ceo: '이운봉',
+    ceo: '이우철',
     bizNo: '127-87-02624',
     corpNo: '284111-0408596',
     slogan: '바다와 함께 공생하는 기업',
@@ -350,14 +350,14 @@ export const SITE_CONFIG = {
       '저희 (주)오션테크는 \'건강한 바다, 행복한 어민\'이라는 뚜렷한 비전 아래, 이러한 해양 환경 문제를 근본적으로 해결하고자 오랜 시간 연구와 개발에 매진해 왔습니다. 그 치열한 노력의 결실로, 인체와 해양 환경에 무해한 100% 순수 친환경 아연추를 개발하였고, 그 기술력을 인정받아 국가 공인 \'녹색인증\'을 획득하는 쾌거를 이루었습니다.',
       '(주)오션테크의 친환경 아연추는 단순히 기존 제품의 대체재를 넘어, 훼손되어 가는 바다를 살리는 생명 보호의 첫걸음입니다. 저희는 뛰어난 기술력을 바탕으로 어민 여러분께 더욱 튼튼하고 효율적이며 안전한 조업 환경을 제공하여 수산업의 경쟁력을 높이는 데 기여하고 있습니다. 바다의 건강이 곧 어민의 행복이며, 우리 모두의 풍요로운 미래로 이어진다고 굳게 믿습니다.',
       '앞으로도 (주)오션테크는 현실에 안주하지 않고, 끊임없는 기술 혁신과 투철한 사명감을 바탕으로 친환경 수산업을 선도하는 기업으로 도약하겠습니다. 바다와 인간이 아름답게 공존하는 지속 가능한 미래를 만들어가는 저희의 힘찬 여정에 변함없는 관심과 따뜻한 성원을 부탁드립니다.',
-      '(주)오션테크 대표이사 이운봉',
+      '(주)오션테크 대표이사 이우철',
     ],
     en: [
       'The ocean, humanity\'s enduring foundation, is the most precious reservoir of life that we must pass on intact to the next generation. Yet conventional lead weights, used out of long-standing practice, sink to the seabed causing serious heavy-metal contamination and silently destroying the marine ecosystem.',
       'Under the clear vision of "A Healthy Ocean, Thriving Fishers," Ocean Tech Inc. has devoted years of research and development to fundamentally solving these marine environmental challenges. As a result of relentless effort, we developed 100% pure eco-friendly zinc weights that are harmless to both people and the ocean, earning the nationally recognized "Green Certification."',
       'Our eco-friendly zinc weights go beyond being a simple substitute — they represent the first step in protecting life and reviving our damaged seas. Backed by outstanding technology, we provide fishers with stronger, more efficient, and safer working conditions, contributing to the competitiveness of the fisheries industry. We firmly believe that a healthy ocean means happy fishers and a prosperous future for us all.',
       'Ocean Tech Inc. will never rest on its achievements. Driven by continuous technological innovation and an unwavering sense of mission, we will leap forward as a leader in eco-friendly fisheries. We sincerely ask for your continued interest and warm support as we forge ahead on our journey toward a sustainable future where the ocean and humanity coexist in harmony.',
-      'Lee Woon-bong, CEO of Ocean Tech Inc.',
+      'Lee Woo-cheol, CEO of Ocean Tech Inc.',
     ],
   },
 } as const;

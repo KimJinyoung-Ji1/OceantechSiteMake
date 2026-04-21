@@ -25,7 +25,7 @@ function KakaoMap({ tall }: { tall?: boolean }) {
   const [mapError, setMapError] = useState(false);
 
   useEffect(() => {
-    const apiKey = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY || 'f61f53eda89c8d4e2692fe91b4eefabe';
+    const apiKey = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY;
     if (!apiKey) { setMapError(true); return; }
 
     let cancelled = false;

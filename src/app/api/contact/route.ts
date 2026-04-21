@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const NOTIFY_EMAIL = 'oceantee@naver.com';
-
 function getResend() {
   const { Resend } = require('resend') as typeof import('resend');
   return new Resend(process.env.RESEND_API_KEY);
@@ -41,7 +39,8 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. Send email notification
-    if (process.env.RESEND_API_KEY) {
+    const notifyEmail = process.env.NOTIFY_EMAIL;
+    if (process.env.RESEND_API_KEY && notifyEmail) {
       const resend = getResend();
       const inquiryType = type || '일반 문의';
 
@@ -71,7 +70,7 @@ export async function POST(req: NextRequest) {
 
       await resend.emails.send({
         from: 'OceanTech <noreply@oceantechinc.com>',
-        to: [NOTIFY_EMAIL],
+        to: [notifyEmail],
         subject: `[OceanTech] \uc0c8 \ubb38\uc758 - ${inquiryType} (${name})`,
         html: htmlContent,
       });
